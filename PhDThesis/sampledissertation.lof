@@ -1,0 +1,153 @@
+\babel@toc {american}{}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Cosmic ray spectrum and components}}{4}{figure.caption.1}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Element abundances between the GCR and the solar system}}{5}{figure.caption.2}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{5}{figure.caption.2}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{5}{figure.caption.2}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Heliosphere and Particle rate detected by Voyager 1.}}{9}{figure.caption.3}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{9}{figure.caption.3}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{9}{figure.caption.3}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Cosmic rays intensity and Monthly mean sunspot numbers.}}{10}{figure.caption.4}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces The measured antiproton flux.}}{12}{figure.caption.5}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces The AMS-01 detector.}}{14}{figure.caption.6}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{14}{figure.caption.6}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{14}{figure.caption.6}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces The AMS-02 detector on the ISS.}}{14}{figure.caption.7}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Schematic view of the AMS-02 experiment.}}{15}{figure.caption.8}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces The TRD and its support structure during construction.}}{16}{figure.caption.9}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Illustration of the TRD separation between electrons and protons.}}{17}{figure.caption.10}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Preparing for test of the permanent magnet.}}{18}{figure.caption.11}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{18}{figure.caption.11}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{18}{figure.caption.11}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces A silicon tracker inner plane fully equipped with ladders.}}{18}{figure.caption.12}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Principle of operation of the double-sided silicon micro-strip sensors.}}{19}{figure.caption.13}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Tracker resolution measured with 400 GeV protons at the test beam and MC.}}{20}{figure.caption.15}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Tracker resolution from MC simulation for protons.}}{21}{figure.caption.16}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces The TOF planes arrangement in the AMS-02 experiment.}}{22}{figure.caption.17}
+\contentsline {figure}{\numberline {3.12}{\ignorespaces The TOF $\beta $ resolution and charge distribution.}}{23}{figure.caption.18}
+\contentsline {figure}{\numberline {3.13}{\ignorespaces The RICH PMT plane, its expansion volume and two radiators.}}{24}{figure.caption.19}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{24}{figure.caption.19}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{24}{figure.caption.19}
+\contentsline {figure}{\numberline {3.14}{\ignorespaces The RICH $\beta $ and charge resolution.}}{24}{figure.caption.20}
+\contentsline {figure}{\numberline {3.15}{\ignorespaces The ECAL superlayer structure.}}{25}{figure.caption.21}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{25}{figure.caption.21}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{25}{figure.caption.21}
+\contentsline {figure}{\numberline {3.16}{\ignorespaces The ECAL rejection power and energy resolution.}}{26}{figure.caption.22}
+\contentsline {figure}{\numberline {3.17}{\ignorespaces The ACC scintillator panels pair and PMTs.}}{27}{figure.caption.23}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{27}{figure.caption.23}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{27}{figure.caption.23}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{27}{figure.caption.23}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{27}{figure.caption.23}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{27}{figure.caption.23}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces The antiproton statistics comparison between MC and ISS data.}}{31}{figure.caption.24}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Comparison of the lower TOF charge distributions for ISS and proton MC.}}{36}{figure.caption.28}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Four most important input variables for charge confusion.}}{38}{figure.caption.29}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{38}{figure.caption.29}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{38}{figure.caption.29}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{38}{figure.caption.29}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {}}}{38}{figure.caption.29}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces The charge confusion estimator.}}{40}{figure.caption.30}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces The background rejection power of charge confusion estimator.}}{40}{figure.caption.31}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Seperation between the electrons and protons in $\Lambda _\mathrm {TRD}$ estimator.}}{42}{figure.caption.32}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Negative ISS data and Fit result in 2.97 to 3.29 GV}}{45}{figure.caption.34}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{45}{figure.caption.34}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{45}{figure.caption.34}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Example template fit in the low rigidity range of 2.97 to 3.29 GV.}}{46}{figure.caption.35}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{46}{figure.caption.35}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{46}{figure.caption.35}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces The number of antiproton and proton events obtained in the low rigidity range.}}{47}{figure.caption.36}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Example template fit in the intermediate rigidity range of 5.9 to 6.47 GV.}}{48}{figure.caption.38}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces The number of antiproton and proton events obtained in the intermediate rigidity range.}}{49}{figure.caption.39}
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Negative rigidity ISS data and fit result in the rigidity range of 175 to 211 GV in $\Lambda _{\rm {CC}}$ and $\Lambda _\mathrm {TRD}$ space.}}{50}{figure.caption.40}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{50}{figure.caption.40}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{50}{figure.caption.40}
+\contentsline {figure}{\numberline {4.13}{\ignorespaces Example template fit in the high rigidity range of 175 to 211 GV.}}{51}{figure.caption.41}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{51}{figure.caption.41}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{51}{figure.caption.41}
+\contentsline {figure}{\numberline {4.14}{\ignorespaces The antiproton and proton numbers obtained in the high rigidity range.}}{52}{figure.caption.42}
+\contentsline {figure}{\numberline {4.15}{\ignorespaces The parameterizations of the normalized antiproton and electron templates.}}{53}{figure.caption.43}
+\contentsline {figure}{\numberline {4.16}{\ignorespaces Time-dependence of the a) $\mu _{\rm {\mathaccentV {bar}016{p},TRD}}$ b) $\sigma _{\rm {\mathaccentV {bar}016{p},TRD}}$ c) $\mu _{\rm {e^{-},TRD}}$ d) $\sigma _{\rm {e^{-},TRD}}$ in 6.47 to 7.76 GV.}}{54}{figure.caption.44}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{54}{figure.caption.44}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{54}{figure.caption.44}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{54}{figure.caption.44}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {}}}{54}{figure.caption.44}
+\contentsline {figure}{\numberline {4.17}{\ignorespaces Time-dependence of the a) $\mu _{\rm {\mathaccentV {bar}016{p}},TOF}$ b) $\sigma _{\rm {\mathaccentV {bar}016{p}},TOF}$ c) $\mu _{\rm {e^{-}},TOF}$ d) $\sigma _{\rm {e^{-}},TOF}$ e) $\mu _{\rm {secondaries},TOF}$ f) $\sigma _{\rm {secondaries},TOF}$ in 3.64 to 4.43 GV.}}{55}{figure.caption.45}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{55}{figure.caption.45}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{55}{figure.caption.45}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{55}{figure.caption.45}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {}}}{55}{figure.caption.45}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {}}}{55}{figure.caption.45}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {}}}{55}{figure.caption.45}
+\contentsline {figure}{\numberline {4.18}{\ignorespaces Example template fit in 6.47 to 7.76 GV with data from Feb.2017 to Jul.2017.}}{56}{figure.caption.46}
+\contentsline {figure}{\numberline {4.19}{\ignorespaces Antiproton numbers in 6.47 to 7.76 GV with six Bartels' Rotation.}}{57}{figure.caption.47}
+\contentsline {figure}{\numberline {4.20}{\ignorespaces $\chi ^2$/ndf of the fits in 6.47 to 7.76 GV with six Bartel's Rotation.}}{57}{figure.caption.48}
+\contentsline {figure}{\numberline {4.21}{\ignorespaces Effective acceptance of protons and antiprotons.}}{59}{figure.caption.49}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{59}{figure.caption.49}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{59}{figure.caption.49}
+\contentsline {figure}{\numberline {4.22}{\ignorespaces Proton to antiproton effective acceptance ratios.}}{59}{figure.caption.50}
+\contentsline {figure}{\numberline {4.23}{\ignorespaces Live time fraction vs. ISS position.}}{61}{figure.caption.51}
+\contentsline {figure}{\numberline {4.24}{\ignorespaces Measuring time as a function of the live time fraction.}}{61}{figure.caption.52}
+\contentsline {figure}{\numberline {4.25}{\ignorespaces Illustration of the Earth\IeC {\textquoteright }s magnetic field.}}{62}{figure.caption.53}
+\contentsline {figure}{\numberline {4.26}{\ignorespaces The St\IeC {\o }rmer rigidity cutoff as a function of the ISS Position.}}{63}{figure.caption.54}
+\contentsline {figure}{\numberline {4.27}{\ignorespaces The measuring time from the St\IeC {\o }rmer geomagnetic cutoff.}}{64}{figure.caption.55}
+\contentsline {figure}{\numberline {4.28}{\ignorespaces The measuring time comparison between the St\IeC {\o }rmer and IGRF cutoffs.}}{64}{figure.caption.56}
+\contentsline {figure}{\numberline {4.29}{\ignorespaces The measuring time in each six Bartels Rotations time bin.}}{65}{figure.caption.57}
+\contentsline {figure}{\numberline {4.30}{\ignorespaces The migration matrix for full span at the high rigidity range for proton MC.}}{66}{figure.caption.58}
+\contentsline {figure}{\numberline {4.31}{\ignorespaces The raw and unfolded events for antiproton and proton.}}{68}{figure.caption.59}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{68}{figure.caption.59}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{68}{figure.caption.59}
+\contentsline {figure}{\numberline {4.32}{\ignorespaces The time-averaged antiproton to proton flux ratio in three rigidity ranges.}}{69}{figure.caption.60}
+\contentsline {figure}{\numberline {4.33}{\ignorespaces The time-averaged antiproton to proton flux ratio with statistical uncertainty only.}}{69}{figure.caption.61}
+\contentsline {figure}{\numberline {4.34}{\ignorespaces The relative statistical uncertainty of the antiproton to proton flux ratio.}}{70}{figure.caption.62}
+\contentsline {figure}{\numberline {4.35}{\ignorespaces The antiproton to proton flux ratio in 1.92 to 2.4 GV in six Bartels Rotation.}}{70}{figure.caption.63}
+\contentsline {figure}{\numberline {4.36}{\ignorespaces The relative statistical uncertainty of the antiproton to proton flux ratio in 1.92 to 2.4 GV in six Bartels Rotation.}}{71}{figure.caption.64}
+\contentsline {figure}{\numberline {4.37}{\ignorespaces Effective acceptance ratio with antiproton cross sections varied by $\pm 10\%$. }}{72}{figure.caption.65}
+\contentsline {figure}{\numberline {4.38}{\ignorespaces The systematic uncertainty from acceptance.}}{73}{figure.caption.66}
+\contentsline {figure}{\numberline {4.39}{\ignorespaces The template fit results in 2.15 to 2.4 GV while varying the signal efficiency.}}{74}{figure.caption.67}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{74}{figure.caption.67}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{74}{figure.caption.67}
+\contentsline {figure}{\numberline {4.40}{\ignorespaces The systematic uncertainty of the antiproton to proton flux ratio from the template fit range.}}{74}{figure.caption.68}
+\contentsline {figure}{\numberline {4.41}{\ignorespaces Charge confusion level in MC and data.}}{75}{figure.caption.69}
+\contentsline {figure}{\numberline {4.42}{\ignorespaces Data/MC charge confusion level ratio.}}{76}{figure.caption.70}
+\contentsline {figure}{\numberline {4.43}{\ignorespaces The relative systematic uncertainty from the charge confusion.}}{76}{figure.caption.71}
+\contentsline {figure}{\numberline {4.44}{\ignorespaces The relative total systematic error of the antiproton to proton flux ratio.}}{77}{figure.caption.72}
+\contentsline {figure}{\numberline {4.45}{\ignorespaces The systematic uncertainty in 1.92 to 2.4 GV in six Bartels Rotation.}}{78}{figure.caption.73}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces The time-averaged antiproton to proton flux ratio.}}{80}{figure.caption.74}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{80}{figure.caption.74}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{80}{figure.caption.74}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Comparison between the antiproton to proton flux ratio in this analysis and in the Physics Report.}}{81}{figure.caption.75}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Uncertainty breakdown of the time-averaged antiproton to proton flux ratio.}}{82}{figure.caption.76}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces The statistical and systematic uncertainty comparison between this analysis and in Physics Report.}}{82}{figure.caption.77}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Time-dependent antiproton to proton flux ratios for five bins.}}{84}{figure.caption.78}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Time-dependent antiproton to proton flux ratio compared with model.}}{85}{figure.caption.79}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Averaged relative statistical and systematic uncertainties of the time-dependent antiproton to proton flux ratio.}}{85}{figure.caption.80}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Breakdown of the total relative uncertainty in 1.92 to 2.4 GV.}}{86}{figure.caption.81}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{87}{subfigure.5.9.2}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{87}{subfigure.5.9.2}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Comparison between the antiproton to proton flux ratio and the electron to positron flux ratio over time in four rigidity bins.}}{88}{figure.caption.83}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{88}{figure.caption.83}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {}}}{88}{figure.caption.83}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Distributions for $\bm {Q_{\rm {LowTOF}}}$ and $\bm {Q_{\rm {UppTOF}}}$ in 330 to 525 GV.}}{91}{figure.caption.84}
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Distributions for $\bm {\delta _{\rm {R_{L9}}}}$ and $\bm {\Gamma _{\rm {Central}}}$ in 330 to 525 GV.}}{92}{figure.caption.85}
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Distributions for $log\bm {\chi ^2_{\rm {X}}}$, $log\bm {\chi ^2_{\rm {Y}}}$, $log\bm {\chi ^2_{\rm {X_{Inner}}}}$ and $log\bm {\chi ^2_{\rm {Y_{Inner}}}}$ in 330 to 525 GV.}}{93}{figure.caption.86}
+\contentsline {figure}{\numberline {A.4}{\ignorespaces Distributions for $\bm {Q_{\rm {L9}}}$ and $\bm {Q_{\rm {L78}}}$ in 330 to 525 GV.}}{94}{figure.caption.87}
+\contentsline {figure}{\numberline {A.5}{\ignorespaces Distributions for $\bm {\delta _{Q}}$ in 330 to 525 GV.}}{95}{figure.caption.88}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{95}{figure.caption.88}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{95}{figure.caption.88}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{95}{figure.caption.88}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{95}{figure.caption.88}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{95}{figure.caption.88}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{95}{figure.caption.88}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{95}{figure.caption.88}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {}}}{95}{figure.caption.88}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{95}{figure.caption.88}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{95}{figure.caption.88}
+\contentsline {figure}{\numberline {A.6}{\ignorespaces Distributions for \bm {$\Lambda _{\mathrm {TRD}}$} in 330 to 525 GV.}}{96}{figure.caption.89}
+\addvspace {10\p@ }
+\addvspace {10\p@ }

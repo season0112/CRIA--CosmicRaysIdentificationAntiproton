@@ -1,0 +1,23 @@
+
+
+584 you could show a plot of event counts before and after rewighting and compared to ISS data, which should then match. Be more specific about the reweighting. Which formula did you use? Your thesis should contain every piece of information that is needed to reproduce your results.
+
+629: it would be good to see distributions of the quanties that you cut on, e.g. the
+  reconstructed charges, from MC signal and/or tagged ISS signal events.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,70 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.30)  11 SEP 2022 16:26
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**upennstyle.sty
+(./upennstyle.sty
+LaTeX2e <2018-04-01> patch level 2
+Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
+
+LaTeX Warning: You have requested package `',
+               but the package provides `upennstyle'.
+
+Package: upennstyle 2022/03/22 University of Pennsylvania Dissertation Style
+(/usr/local/texlive/2018/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2018/03/24 v5.7 Page Geometry
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
+)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count80
+\Gm@cntv=\count81
+\c@Gm@tempcnt=\count82
+\Gm@bindingoffset=\dimen102
+\Gm@wd@mp=\dimen103
+\Gm@odd@mp=\dimen104
+\Gm@even@mp=\dimen105
+\Gm@layoutwidth=\dimen106
+\Gm@layoutheight=\dimen107
+\Gm@layouthoffset=\dimen108
+\Gm@layoutvoffset=\dimen109
+\Gm@dimlist=\toks15
+
+/usr/local/texlive/2018/texmf-dist/tex/latex/geometry/geometry.sty:1001: Missin
+g \endcsname inserted.
+<to be read again> 
+                   \@classoptionslist 
+l.1001 \ProcessOptionsKV[c]{Gm}
+                               %
+? 
+/usr/local/texlive/2018/texmf-dist/tex/latex/geometry/geometry.sty:1001: Emerge
+ncy stop.
+<to be read again> 
+                   \@classoptionslist 
+l.1001 \ProcessOptionsKV[c]{Gm}
+                               %
+End of file on the terminal!
+
+ 
+Here is how much of TeX's memory you used:
+ 513 strings out of 492649
+ 7755 string characters out of 6129622
+ 69447 words of memory out of 5000000
+ 4476 multiletter control sequences out of 15000+600000
+ 3640 words of font info for 14 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 23i,0n,19p,123b,15s stack positions out of 5000i,500n,10000p,200000b,80000s
+/usr/local/texlive/2018/texmf-dist/tex/latex/geometry/geometry.sty:1001:  ==> F
+atal error occurred, no output PDF file produced!

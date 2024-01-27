@@ -1,0 +1,24 @@
+Identified batchsystem as "slurm".
+Reading job settings from '/home/bo791269/Software/ACsoft/configs/acsoft-job-settings.cfg'...
+Reading job settings from '/home/bo791269/Software/AntiprotonAnalysis/Configuration/analysis-job-settings.cfg'...
+Storing status of git repository /home/bo791269/Software/gbatch to sandbox...
+Storing status of git repository /home/bo791269/Software/ACsoft to sandbox...
+Storing status of git repository /home/bo791269/Software/AntiprotonAnalysis to sandbox...
+[31mWARNING:[0m  You have uncommitted changes in your working directory!
+
+Writing job scripts...
+Writing array job script…
+Writing job scripts…
+Starting job submission...
+Submitting job /rwthfs/rz/cluster/home/bo791269/Software/AntiprotonAnalysis/Recipes/Measuringtime/step002/submission.sh
+sbatch: [W] Your total project quota for jara0052 was exceeded by a factor of 1.5048461144444.
+sbatch: [W] Submission for this project will be rejected after 2020-11-01
+sbatch:     if the total quota is exceeded by a factor of 2.
+sbatch: [W] Please consider submitting a project application for a larger project type, see
+sbatch:     https://help.itc.rwth-aachen.de/service/rhr4fjjutttf/article/45825b06afb647e194be4a5b9f5b8768
+sbatch: [W] The project jara0052 has used up all of its quota
+sbatch:     for this and the next month. Please compare 'r_wlm_usage -p jara0052 -q'.
+sbatch: [W] The project jara0052 has used up all of its quota
+sbatch:     for this and the next month. Please compare 'r_wlm_usage -p jara0052 -q'.
+sbatch: [I] Partition set to 'c18m_low'.
+Submitted batch job 26848767

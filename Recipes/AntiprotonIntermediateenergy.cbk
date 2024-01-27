@@ -1,0 +1,365 @@
+#Example: cookbook init AntiprotonIntermediateenergy.cbk --set MCelectron=B1091_el.pl1.0_25200_7.6_all,MCantiproton=B1042_antipr.pl1.1800_7.6_all,MCproton=B1220_pr.pl1phpsa.0550.4_00_7.8_all,ISSData=B1130_pass7_7.8_all,Cluster=HPC,RICHCUT=free,TRACKERPATTERN=0124,BINMERGE=1
+## For all
+MCelectron=NONE
+MCantiproton=NONE
+MCproton=None
+ISSData=NONE
+Cluster=NONE
+RICHCUT=NONE
+TRACKERPATTERN=NONE
+BINMERGE=NONE
+
+######################################################################################
+[interactive]
+    some set up to mkdir for AntiprotonIntermediateEnergy.
+    command:mkdir -p $HPCINTERMEDIATEDIR/total/; mkdir -p $HPCINTERMEDIATEDIR/${ISSData}/positive/results/reduced_root; mkdir -p $HPCINTERMEDIATEDIR/${ISSData}/positive/results/finebinroot; cp $MY_ANALYSIS/Scripts/HPC/others/time.txt $MY_ANALYSIS/Scripts/HPC/others/time_6months.txt $HPCINTERMEDIATEDIR/total/; cd $HPCINTERMEDIATEDIR/total/; mkdir -p Unfolding_Matrices; mkdir -p rootfiles/positive; mkdir -p rootfiles/negative; mkdir -p TimeVariationPlots; mkdir -p Time_Averaged_ratio/unfolding; mkdir -p Time_Averaged_ratio/binmerge1/RigidityRootFiles; mkdir -p Time_Averaged_ratio/binmerge2/RigidityRootFiles; mkdir -p numpyfiles/positive; mkdir -p numpyfiles/negative; mkdir -p rootfiles_6months/negative; mkdir -p rootfiles_6months/positive; mkdir -p numpyfiles_6months/negative; mkdir -p numpyfiles_6months/positive; mkdir -p results/plot/Polarplot;  
+
+[acqt]
+  Write ISS data negative
+    job:AntiprotonIntermediateEnergy
+    filelist:$MY_ANALYSIS/ReferenceFiles/ACQTfile/HPC/${ISSData}/${ISSData}.list
+    args:--mpi --mpi_nodes 1 --njobs 1000 --timelimit 6:00 --arguments '--particleID ISS'
+    directory: $HPCINTERMEDIATEDIR/${ISSData}/negative
+    nexpected_per_process: 2
+
+[acqt]
+  Write MCelectron  MC negative tree for the analysis
+    job:AntiprotonIntermediateEnergy
+    filelist:$MY_ANALYSIS/ReferenceFiles/ACQTfile/HPC/${MCelectron}/${MCelectron}.list
+    args:--mpi --mpi_nodes 1 --njobs 1000 --timelimit 6:00 --arguments '--McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/HPC/${MCelectron}/mcScalingWeights.root --particleID Electron'
+    directory: $HPCINTERMEDIATEDIR/${MCelectron}/negative
+    nexpected_per_process: 2
+
+[acqt]
+  Write Pion tree (Negative Proton MC)
+    job:AntiprotonIntermediateEnergy
+    filelist:$MY_ANALYSIS/ReferenceFiles/ACQTfile/HPC/${MCproton}/${MCproton}.list
+    args:--mpi --mpi_nodes 1 --njobs 1000 --timelimit 6:00 --arguments '--McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/HPC/${MCproton}/mcScalingWeights.root --particleID Proton'
+    directory: $HPCINTERMEDIATEDIR/${MCproton}/negative
+    nexpected_per_process: 2
+
+[acqt]
+  Write ${MCantiproton} MC negative tree for the analysis
+    job:AntiprotonIntermediateEnergy
+    filelist:$MY_ANALYSIS/ReferenceFiles/ACQTfile/HPC/${MCantiproton}/${MCantiproton}.list
+    args:--mpi --mpi_nodes 1 --njobs 1000 --timelimit 6:00 --arguments '--McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/HPC/${MCantiproton}/mcScalingWeights.root --particleID Antiproton'
+    directory: $HPCINTERMEDIATEDIR/${MCantiproton}/negative
+    nexpected_per_process: 2
+
+[acqt]
+  Write ISS data positive
+    job:AntiprotonIntermediateEnergy
+    filelist:$MY_ANALYSIS/ReferenceFiles/ACQTfile/HPC/${ISSData}/${ISSData}.list
+    args:--mpi --mpi_nodes 1 --njobs 1000 --timelimit 6:00 --arguments '--particleID ISS' --max_jobs 500
+    directory: $HPCINTERMEDIATEDIR/${ISSData}/positive
+    nexpected_per_process: 2
+
+#[generic]
+#    Merge ISS DATA negative ROOT Tree files
+#    job: $MY_ANALYSIS/Scripts/Not_used_scripts/ac_merge_long_list.sh
+#    args: --argument "$HPCINTERMEDIATEDIR/${ISSData}/negative/results AntiprotonIntermediateEnergy_Tree_* $HPCINTERMEDIATEDIR ${ISSData}_Tree_negative"
+#    nmin: 0
+#    nmax: 0
+#    directory: $HPCINTERMEDIATEDIR
+
+[generic]
+    Merge ISS DATA negative ROOT Tree files part1
+    job: ac_merge
+    args: --argument "--input $HPCINTERMEDIATEDIR/${ISSData}/negative/results/AntiprotonIntermediateEnergy_Tree_00[0-4]*.root --resultprefix ${ISSData}_Tree_negative_part_0_4 --resultdir $HPCINTERMEDIATEDIR"
+    nmin: 0
+    nmax: 0
+
+[generic]
+    Merge ISS DATA negative ROOT Tree files part2
+    job: ac_merge
+    args: --argument "--input $HPCINTERMEDIATEDIR/${ISSData}/negative/results/AntiprotonIntermediateEnergy_Tree_00[5-9]*.root --resultprefix ${ISSData}_Tree_negative_part_5_9 --resultdir $HPCINTERMEDIATEDIR"
+    nmin: 0
+    nmax: 0
+
+[interactive]
+    Merge all ISS data negative tree.
+    command: ac_merge --input $HPCINTERMEDIATEDIR/${ISSData}_Tree_negative_part_0_4.root $HPCINTERMEDIATEDIR/${ISSData}_Tree_negative_part_5_9.root --resultprefix ${ISSData}_Tree_negative --resultdir $HPCINTERMEDIATEDIR
+
+[generic]
+    Merge ${MCantiproton} negative ROOT Tree files
+    job: ac_merge
+    args: --argument "--input $HPCINTERMEDIATEDIR/${MCantiproton}/negative/results/AntiprotonIntermediateEnergy_Tree_*.root --resultprefix ${MCantiproton}_Tree_negative --resultdir $HPCINTERMEDIATEDIR"
+    nmin: 0
+    nmax: 0
+
+[generic]
+    Merge ${MCantiproton} negative ROOT Auxiliary files
+    job: ac_merge
+    args: --argument "--input $HPCINTERMEDIATEDIR/${MCantiproton}/negative/results/AntiprotonIntermediateEnergy_Auxiliary_*.root --resultprefix ${MCantiproton}_Auxiliary_negative --resultdir $HPCINTERMEDIATEDIR"
+    nmin: 0
+    nmax: 0
+
+[generic]
+    Merge ${MCelectron} negative ROOT Tree files
+    job: ac_merge
+    args: --argument "--input $HPCINTERMEDIATEDIR/${MCelectron}/negative/results/AntiprotonIntermediateEnergy_Tree_*.root --resultprefix ${MCelectron}_Tree_negative --resultdir $HPCINTERMEDIATEDIR"
+    nmin: 0
+    nmax: 0
+
+[generic]
+    Merge ${MCelectron} negative ROOT Auxiliary files
+    job: ac_merge
+    args: --argument "--input $HPCINTERMEDIATEDIR/${MCelectron}/negative/results/AntiprotonIntermediateEnergy_Auxiliary_*.root --resultprefix ${MCelectron}_Auxiliary_negative --resultdir $HPCINTERMEDIATEDIR"
+    nmin: 0
+    nmax: 0
+
+[generic]
+    Merge ${MCproton} negative ROOT Tree files
+    job: ac_merge
+    args: --argument "--input $HPCINTERMEDIATEDIR/${MCproton}/negative/results/AntiprotonIntermediateEnergy_Tree_*.root --resultprefix ${MCproton}_Tree_negative --resultdir $HPCINTERMEDIATEDIR"
+    nmin: 0
+    nmax: 0
+
+#[interactive]
+#    Merge mpi split index of ISS Positive Tree
+#    command: mkdir -p $HPCINTERMEDIATEDIR/${ISSData}/positive/results/reduced_root; mkdir -p $HPCINTERMEDIATEDIR/${ISSData}/positive/results/finebinroot; source $MY_ANALYSIS/Scripts/HPC/IntermediateRange/Lowrange_ISSpositive_merge.sh $HPCINTERMEDIATEDIR/${ISSData}/positive/results 1000;
+
+[interactive]
+    Compute effective acceptance for MC B1042 antiproton
+    command: calculate_effective_acceptance
+    args: --McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${Cluster}/B1042_antipr.pl1.1800_7.6_all/mcScalingWeights.root --inputfile $HPCINTERMEDIATEDIR/B1042_antipr.pl1.1800_7.6_all_Auxiliary.root --outputFileName $HPCINTERMEDIATEDIR/EffectiveAcceptance_B1042_antipr.pl1.1800_7.6_all --selectors QualityCuts --kinematicVariable momentum --xmin 2.97 --xmax 18.0 --species Antiproton --mcComparisionCanvas
+
+[interactive]
+    Compute effective acceptance for MC B1042 proton
+    command: calculate_effective_acceptance
+    args: --McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${Cluster}/B1042_pr.pl1.1800_7.6_all/mcScalingWeights.root --inputfile $HPCINTERMEDIATEDIR/B1042_pr.pl1.1800_7.6_all_Auxiliary.root --outputFileName $HPCINTERMEDIATEDIR/EffectiveAcceptance_B1042_pr.pl1.1800_7.6_all --selectors QualityCuts --kinematicVariable momentum --xmin 2.97 --xmax 18.0 --species Proton --mcComparisionCanvas
+
+[interactive]
+    Calculate Triggerefficiency from Auxiliary file.
+    command: TriggerEfficiency --RigidityRange INTERMEDIATERANGE
+
+[generic]
+    Merge mpi split index of ISS Positive Tree
+    job: ac_merge
+    args: --arguments '--input $HPCINTERMEDIATEDIR/${ISSData}/positive/results/AntiprotonIntermediateEnergy_Tree_%05d_* --resultdir $HPCINTERMEDIATEDIR/${ISSData}/positive/results/reduced_root/ --resultprefix AntiprotonIntermediateEnergy_Tree_%05d'
+    nmin: 0
+    nmax: 999
+
+[joblist]
+    Split ISS positive data in Rigidity and timestamp(published range)
+    job: $MY_ANALYSIS/Scripts/HPC/others/PositiveData_Split_WithMPIMerge.py
+    args: --arguments '--path $HPCINTERMEDIATEDIR/${ISSData}/positive/results/reduced_root --rigidityrange intermediaterange --rigiditystart 10 --rigidityend 30 --inputfile %s --rigiditysign positive --datamode ISSdata'
+    jobs_from: $HPCINTERMEDIATEDIR/${ISSData}/positive/results/reduced_root/
+
+[generic]
+    Final merge for ISS positvie data
+    job: $MY_ANALYSIS/Scripts/HPC/others/Finalmerge.sh
+    args: --memory 100 --timelimit 23:00 --arguments '$HPCINTERMEDIATEDIR intermediaterange 10 30 B1130_pass7_7.8_all positive' ## For HPC interactively: 10-30 is from 2.97-18.0. Please note that array index in bash shell is from 0, but in zsh is from 1. please check it's on which shell.(batch jobs are in bash shell, interactively juams is in bash and hpc is in zsh)
+    nmin: 0
+    nmax: 0
+
+#######################################################################################
+
+[generic]
+    Split ISS negative data in Rigidity and timestamp(Published range)
+    job: $MY_ANALYSIS/Scripts/HPC/others/NegativeData_Split_NoMPIMerge.py
+    args: --arguments '--cluster HPC --rigidityrange intermediaterange --datamode ISSdata --data ${ISSData}_Tree_negative --Rigidity_start 9 --Rigidity_end 29' --timelimit 23:00 --memory 100
+    nmin: 0
+    nmax: 0
+
+
+[generic]
+    Split Antiproton MC data in Rigidity and timestamp(published range)
+    job: $MY_ANALYSIS/Scripts/HPC/others/NegativeData_Split_NoMPIMerge.py
+    args: --arguments '--cluster HPC --rigidityrange intermediaterange --datamode MC --data ${MCantiproton}_Tree_negative --Rigidity_start 9 --Rigidity_end 29' --timelimit 23:00
+    nmin: 0
+    nmax: 0
+
+[generic]
+    Split Electron MC data in Rigidity and timestamp(published range)
+    job: $MY_ANALYSIS/Scripts/HPC/others/NegativeData_Split_NoMPIMerge.py
+    args: --arguments '--cluster HPC --rigidityrange intermediaterange --datamode MC --data ${MCelectron}_Tree_negative --Rigidity_start 9 --Rigidity_end 29' --timelimit 23:00
+    nmin: 0
+    nmax: 0
+
+[generic]
+    Split Pion MC data in Rigidity and timestamp(published range)
+    job: $MY_ANALYSIS/Scripts/HPC/others/NegativeData_Split_NoMPIMerge.py
+    args: --arguments '--cluster HPC --rigidityrange intermediaterange --datamode MC --data ${MCproton}_Tree_negative --Rigidity_start 9 --Rigidity_end 29' --timelimit 23:00
+    nmin: 0
+    nmax: 0
+
+[interactive]
+    Move root and numpy files. 
+    command:mv $HPCINTERMEDIATEDIR/*.root $HPCINTERMEDIATEDIR/total/; mv $HPCINTERMEDIATEDIR/*.npy $HPCINTERMEDIATEDIR/total/;
+
+[generic]
+    6 Months split.
+    job: $MY_ANALYSIS/Scripts/HPC/others/split_Bartel.py
+    args: --timelimit 23:00 --arguments '--mode 6months --cluster HPC --issversion pass7ext2 --Rigidity_start 9 --Rigidity_end 29 --rigidityrange IntermediateRange'
+    nmin: 0
+    nmax: 0
+
+
+[generic]
+    Bartel split.
+    job: $MY_ANALYSIS/Scripts/HPC/others/split_Bartel.py
+    args: --timelimit 23:00 --arguments '--mode Bartel --cluster HPC --issversion pass7ext2 --Rigidity_start 9 --Rigidity_end 29 --rigidityrange IntermediateRange'
+    nmin: 0
+    nmax: 0
+
+
+[interactive]
+    Calculate RichBeta cut value with different antiproton signal efficiency.
+    command:$MY_ANALYSIS/Scripts/HPC/IntermediateRange/signal_cut.py --cluster ${Cluster} 
+
+
+#[interactive]
+#    (Option, this one is still in progress...) Calculate CClevel and plot.
+#    command:$MY_ANALYSIS/Scripts/HPC/IntermediateRange/cclevel.py 
+
+#######################################################################################
+[interactive]
+    Make and Save Original Templates and Data Histograms
+    command: source /home/bo791269/Software/AntiprotonAnalysis/Scripts/SubmitScript/MakeHistogram_TimeAveraged_Intermediate.sh
+
+#[interactive]
+#    Parameterization of Templates (May2015)
+#    command: $MY_ANALYSIS/Scripts/HPC/IntermediateRange/ParameterizationTemplates.py --Range intermediate --issversion 2016paper --GenerateNumber 1500
+#[interactive]
+#    Parameterization of Templates (Nov2017)
+#    command: $MY_ANALYSIS/Scripts/HPC/IntermediateRange/ParameterizationTemplates.py --Range intermediate --issversion PhysicsReport --GenerateNumber 1500
+#[interactive]
+#    Parameterization of Templates (Full Time Range)
+#    command: $MY_ANALYSIS/Scripts/HPC/IntermediateRange/ParameterizationTemplates.py --Range intermediate --issversion pass7.8 --GenerateNumber 1500
+
+#[interactive]
+#    Time average Template Fit for Published Range (May2015) (Parameterized Template)
+#    command: Antiproton_IntermediateTF1D --richcut ${RICHCUT} --trackerpattern ${TRACKERPATTERN} --issversion 2016paper --rigidity_start 10 --rigidity_end 30 --binmerge ${BINMERGE} --signalefficiency 0.8 --Testmode Yes --ParametrilizedMode Yes --GenerateNumbers 1500
+#[interactive]
+#    Time average Template Fit for PhysicsReport Range (Nov2017) (Parameterized Template)
+#    command: Antiproton_IntermediateTF1D --richcut ${RICHCUT} --trackerpattern ${TRACKERPATTERN} --issversion PhysicsReport --rigidity_start 10 --rigidity_end 30 --binmerge ${BINMERGE} --signalefficiency 0.8 --Testmode Yes --ParametrilizedMode Yes --GenerateNumbers 1500
+#[interactive]
+#    Time average Template Fit for full time range (Full Time Range) (Parameterized Template)
+#    command: Antiproton_IntermediateTF1D --richcut ${RICHCUT} --trackerpattern ${TRACKERPATTERN} --issversion pass7.8 --rigidity_start 10 --rigidity_end 30 --binmerge ${BINMERGE} --signalefficiency 0.8 --Testmode Yes --ParametrilizedMode Yes --GenerateNumbers 1500
+
+[interactive]
+    Time average Template Fit (Original Template)
+    command: Antiproton_IntermediateTF1D --richcut ${RICHCUT} --trackerpattern ${TRACKERPATTERN} --issversion 2016paper --rigidity_start 10 --rigidity_end 30 --binmerge 1 --signalefficiency 0.8 --Testmode Yes --ParametrilizedMode No --GenerateNumbers 1 --FullRange No; Antiproton_IntermediateTF1D --richcut ${RICHCUT} --trackerpattern ${TRACKERPATTERN} --issversion 2016paper --rigidity_start 10 --rigidity_end 30 --binmerge 2 --signalefficiency 0.8 --Testmode Yes --ParametrilizedMode No --GenerateNumbers 1 --FullRange No; Antiproton_IntermediateTF1D --richcut ${RICHCUT} --trackerpattern ${TRACKERPATTERN} --issversion PhysicsReport --rigidity_start 10 --rigidity_end 30 --binmerge 1 --signalefficiency 0.8 --Testmode Yes --ParametrilizedMode No --GenerateNumbers 1 --FullRange No; Antiproton_IntermediateTF1D --richcut ${RICHCUT} --trackerpattern ${TRACKERPATTERN} --issversion PhysicsReport --rigidity_start 10 --rigidity_end 30 --binmerge 2 --signalefficiency 0.8 --Testmode Yes --ParametrilizedMode No --GenerateNumbers 1 --FullRange No; Antiproton_IntermediateTF1D --richcut ${RICHCUT} --trackerpattern ${TRACKERPATTERN} --issversion pass7.8 --rigidity_start 10 --rigidity_end 30 --binmerge 1 --signalefficiency 0.8 --Testmode Yes --ParametrilizedMode No --GenerateNumbers 1 --FullRange No; Antiproton_IntermediateTF1D --richcut ${RICHCUT} --trackerpattern ${TRACKERPATTERN} --issversion pass7.8 --rigidity_start 10 --rigidity_end 30 --binmerge 2 --signalefficiency 0.8 --Testmode Yes --ParametrilizedMode No --GenerateNumbers 1 --FullRange No 
+
+#[interactive]
+#    (Temporary Fix) Move averaged result in different Dir.
+#    command:$MY_ANALYSIS/Scripts/HPC/IntermediateRange/mvresult.sh
+
+#[interactive] 
+#    Calculate System Error due to Shape (2016 Time range)
+#    command:$MY_ANALYSIS/Scripts/HPC/IntermediateRange/CalculateSysErrorFromShape.py --Range intermediate --issversion 2016paper --GenerateNumber 1500
+
+#[interactive] 
+#    Calculate System Error due to Shape (PhysicsReport Time range)
+#    command:$MY_ANALYSIS/Scripts/HPC/IntermediateRange/CalculateSysErrorFromShape.py --Range intermediate --issversion PhysicsReport --GenerateNumber 1500
+
+#[interactive] 
+#    Calculate System Error due to Shape (Full time range)
+#    command:$MY_ANALYSIS/Scripts/HPC/IntermediateRange/CalculateSysErrorFromShape.py --Range intermediate --issversion pass7.8 --GenerateNumber 1500
+
+[interactive]
+    Calculate System Error due to Signal Efficiency
+    command: $MY_ANALYSIS/Scripts/HPC/LowRange/CalculateSystematicError_FromSigEff.py --Range intermediate --issversion 2016paper --TimeMode TimeAveraged; $MY_ANALYSIS/Scripts/HPC/LowRange/CalculateSystematicError_FromSigEff.py --Range intermediate --issversion PhysicsReport --TimeMode TimeAveraged; $MY_ANALYSIS/Scripts/HPC/LowRange/CalculateSystematicError_FromSigEff.py --Range intermediate --issversion pass7.8 --TimeMode TimeAveraged
+
+[interactive]
+    Plot Time average results
+    command:$MY_ANALYSIS/Scripts/HPC/IntermediateRange/AntiprotonIntermediate_averaged_plot.py --cluster HPC --trackerpattern ${TRACKERPATTERN} --richcut ${RICHCUT}
+
+[generic]
+    Produce Unfolding_Matrices.
+    job: $MY_ANALYSIS/Scripts/HPC/others/MigrationMatrix_fill.py
+    args: --partition c18m --arguments '--dataset B1042_antipr.pl1.1800_7.6_all_Tree --energy INTERMEDIATEENERGYRANGE --ecalBDTCut --trdProtonHeliumCut --physicstriggerCut --cluster HPC' --timelimit 23:00 --memory 100
+    nmin: 0
+    nmax: 0
+
+[interactive]
+    Unfolding for intermediate range
+    command:Unfolding_Bayes_Intermediate --issversion pass7.8; Unfolding_Bayes_Intermediate --issversion PhysicsReport; Unfolding_Bayes_Intermediate --issversion 2016paper 
+
+[interactive]
+    (Option) Plot Time average results with different tracker patterns. 
+    command:$MY_ANALYSIS/Scripts/HPC/IntermediateRange/plot_averaged.py
+
+[interactive]
+    Make and Save Time Dependent Templates (6 months; 3 Bartels(TimeIndex=123 is empty, need to rrun second time from 126); 6 Bartels)
+    command: source /home/bo791269/Software/AntiprotonAnalysis/Scripts/SubmitScript/MakeHistogram_TimeDependent_Intermediate.sh
+
+#[generic]
+#    Time Variation 3 Bartel Rotations Template Fit (Parameterized Template)
+#    job: Antiproton_IntermediateTF1D_TimeStamp_3and6_BartalRotations
+#    args: --timelimit 23:00 --memory 100 --arguments '--richcut ${RICHCUT} --trackerpattern ${TRACKERPATTERN} --timemode 3BartalRotation --rigidity_start 10 --rigidity_end 30 --binmerge ${BINMERGE} --signalefficiency 0.8 --ParametrilizedMode Yes --GenerateNumbers 1500 --FullRange No'
+#    nmin: 0
+#    nmax: 0
+#[generic]
+#    Time Variation 6 Bartel Rotations Template Fit (Parameterized Template)
+#    job: Antiproton_IntermediateTF1D_TimeStamp_3and6_BartalRotations
+#    args: --timelimit 23:00 --memory 100 --arguments '--richcut ${RICHCUT} --trackerpattern ${TRACKERPATTERN} --timemode 6BartalRotation --rigidity_start 10 --rigidity_end 30 --binmerge ${BINMERGE} --signalefficiency 0.8 --ParametrilizedMode Yes --GenerateNumbers 1500 --FullRange No'
+#    nmin: 0
+#    nmax: 0
+#[generic]
+#    Time Variation 6 months Template Fit (Parameterized Template)
+#    job: Antiproton_IntermediateTF1D_TimeStamp_3and6_BartalRotations
+#    args: --timelimit 23:00 --memory 100 --arguments '--richcut ${RICHCUT} --trackerpattern ${TRACKERPATTERN} --timemode 6months --rigidity_start 10 --rigidity_end 30 --binmerge ${BINMERGE} --signalefficiency 0.8 --ParametrilizedMode Yes --GenerateNumbers 1500 --FullRange No'
+#    nmin: 0
+#    nmax: 0
+
+[interactive]
+    Time Variation 3 Bartel Rotations Template Fit (Original Template)
+    command: Antiproton_IntermediateTF1D_TimeStamp_3and6_BartalRotations --richcut ${RICHCUT} --trackerpattern ${TRACKERPATTERN} --timemode 3BartalRotation --rigidity_start 10 --rigidity_end 30 --binmerge 2 --signalefficiency 0.8 --ParametrilizedMode No --GenerateNumbers 1 --SysErrEffStudyMode No --StartTimeIndex 0 --FullRange No
+
+[interactive]
+    Time Variation 6 Bartel Rotations Template Fit (Original Template)
+    command: Antiproton_IntermediateTF1D_TimeStamp_3and6_BartalRotations --richcut ${RICHCUT} --trackerpattern ${TRACKERPATTERN} --timemode 6BartalRotation --rigidity_start 10 --rigidity_end 30 --binmerge 2 --signalefficiency 0.8 --ParametrilizedMode No --GenerateNumbers 1 --SysErrEffStudyMode No --StartTimeIndex 0 --FullRange No
+
+[interactive]
+    Time Variation 6 months Template Fit (Original Template)
+    command: Antiproton_IntermediateTF1D_TimeStamp_3and6_BartalRotations --richcut ${RICHCUT} --trackerpattern ${TRACKERPATTERN} --timemode 6months --rigidity_start 10 --rigidity_end 30 --binmerge 2 --signalefficiency 0.8 --ParametrilizedMode No --GenerateNumbers 1 --SysErrEffStudyMode No --StartTimeIndex 0 --FullRange No
+
+[interactive]
+    Time Variation 3 Bartel Rotations Template Fit (SysErrEff Study)
+    command: Antiproton_IntermediateTF1D_TimeStamp_3and6_BartalRotations --richcut ${RICHCUT} --trackerpattern ${TRACKERPATTERN} --timemode 3BartalRotation --rigidity_start 10 --rigidity_end 30 --binmerge 2 --signalefficiency 0.8 --ParametrilizedMode No --GenerateNumbers 1 --SysErrEffStudyMode Yes --StartTimeIndex 0 --FullRange No
+
+[interactive]
+    Time Variation 6 Bartel Rotations Template Fit (SysErrEff Study)
+    command: Antiproton_IntermediateTF1D_TimeStamp_3and6_BartalRotations --richcut ${RICHCUT} --trackerpattern ${TRACKERPATTERN} --timemode 6BartalRotation --rigidity_start 10 --rigidity_end 30 --binmerge 2 --signalefficiency 0.8 --ParametrilizedMode No --GenerateNumbers 1 --SysErrEffStudyMode Yes --StartTimeIndex 0 --FullRange No
+
+[interactive]
+    Time Variation 6 months Template Fit (SysErrEff Study)
+    command: Antiproton_IntermediateTF1D_TimeStamp_3and6_BartalRotations --richcut ${RICHCUT} --trackerpattern ${TRACKERPATTERN} --timemode 6months --rigidity_start 10 --rigidity_end 30 --binmerge 2 --signalefficiency 0.8 --ParametrilizedMode No --GenerateNumbers 1 --SysErrEffStudyMode Yes --StartTimeIndex 0 --FullRange No
+
+[interactive]
+    Calculate System Error due to Signal Efficiency (6 months)
+    command:$MY_ANALYSIS/Scripts/HPC/LowRange/CalculateSystematicError_FromSigEff.py --Range intermediate --TimeMode TimeDependent --TimeSplitMode 6months
+
+[interactive]
+    Calculate System Error due to Signal Efficiency (3 Bartels)
+    command:$MY_ANALYSIS/Scripts/HPC/LowRange/CalculateSystematicError_FromSigEff.py --Range intermediate --TimeMode TimeDependent --TimeSplitMode 3BartalRotation
+
+[interactive]
+    Calculate System Error due to Signal Efficiency (6 Bartels)
+    command:$MY_ANALYSIS/Scripts/HPC/LowRange/CalculateSystematicError_FromSigEff.py --Range intermediate --TimeMode TimeDependent --TimeSplitMode 6BartalRotation
+
+[interactive]
+    Plot for 6months Time variations
+    command:$MY_ANALYSIS/Scripts/HPC/others/TimeDependentPlot/plot_variation_result_low.py --cluster ${Cluster} --timemode 6months --trackerpattern ${TRACKERPATTERN} --richcut free --binmerge 2 --ratiopattern antiproton_to_proton --rigidityrange intermediate
+
+[interactive]
+    Plot for 3BartalRotation Time variations
+    command:$MY_ANALYSIS/Scripts/HPC/others/TimeDependentPlot/plot_variation_result_low.py --cluster ${Cluster} --timemode 3Bartels --trackerpattern ${TRACKERPATTERN} --richcut free --binmerge 2 --ratiopattern antiproton_to_proton --rigidityrange intermediate
+
+[interactive]
+    Plot for 6BartalRotation Time variations
+    command:$MY_ANALYSIS/Scripts/HPC/others/TimeDependentPlot/plot_variation_result_low.py --cluster ${Cluster} --timemode 6Bartels --trackerpattern ${TRACKERPATTERN} --richcut free --binmerge 2 --ratiopattern antiproton_to_proton --rigidityrange intermediate
+
+[interactive]
+    PolarPlot for Antiproton result
+    command:$MY_ANALYSIS/Scripts/HPC/others/TimeDependentPlot/plotAntiprotonratioPolar.py --cluster ${Cluster} 
+
+
+
+
+
+
+
+

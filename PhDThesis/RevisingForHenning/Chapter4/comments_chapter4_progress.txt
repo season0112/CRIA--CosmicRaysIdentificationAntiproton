@@ -1,0 +1,159 @@
+
+
+Chapter 4
+
+526, 524-532 What is special about the time-dependent analysis? It seems there is no
+  dedicated section to discuss this? My understanding was that the time-dependent
+  flux should be a highlight of this thesis, so emphasis should be put on any issues
+  in the analysis that needs extra care when deriving the time-dependent
+  results/uncertainties.
+
+
+568/571 be much more specific, list the version numbers of all MC simulations used,
+  give details about the data/MC ratio, including a plot as a function of p
+1055:  
+The systematic uncertainty on acceptance should also depend on how well the material budget of the detector is
+described in the MC. Did you produce these MCs yourself? (Discuss in the general data
+overview section.)
+
+
+569 constant in log p means that the spectrum is proportional to -1. So which version
+  was used, -2.7 or -1 or both? Why the difference? Why is it important for your analysis?
+
+584 you could show a plot of event counts before and after rewighting and compared to ISS
+  data, which should then match.
+  Be more specific about the reweighting. Which formula did you use? Your thesis should
+  contain every piece of information that is needed to reproduce your results.
+
+Table 4.1: The "Description" column is not very illuminating. See Niko's thesis or
+  Matthew Behlmann's thesis from MIT for examples on how to explain each quality cut
+  with 2-3 sentences.
+
+629: it would be good to see distributions of the quantities that you cut on, e.g. the
+  reconstructed charges, from MC signal and/or tagged ISS signal events.
+
+636 etc: Try to use mathematical notation to make your statements more concise,
+  e.g., "$0.7<Q_\mathrm{TRK}<1.3$ is better than a long sentence. (But you have
+  to define your quantities/notation, of course.)
+
+1024 / Fig. 4.27: If the unfolding is important, you should do a toy MC study to show
+that it works as expected on known input data.
+
+Chapter 4.5 Effective Acceptance:
+Fig. 4.17:
+ - Why are the error bars vastly different? It seems that some of the ups and downs are much larger than the error bars. What is the physics behind this?
+ - There should also be a plot of the p and pbar absolute acceptances for the three selections before showing this plot.
+
+4.4 Template Fit里：
+In general, a plot like Fig. 1 in the pbar/p paper (PRL 117, 091103
+(2016)) would be good to explain the general analysis strategy.
+
+4.10 Systematic Uncertainty:
+You assume that the template shapes are known perfectly, but in
+reality, they also come with some uncertainty / wiggle room, which
+should lead to a systematic uncertainty. E.g., what happens when you
+vary the cuts defining your templates? Or when you vary the templates
+within their statistical uncertainty?
+
+
+Fig. 4.28:
+  - It is strange to show the value of an uncertainty when the value of the quantity itself has not been
+  shown yet.
+Fig. 4.30 / 1075: But before you show the value of the pbar/p ratio, an absolute
+uncertainty is meaningless.
+
+
+%%%% Intermediate Range:
+Fig. 4.8.: Use consistent style (marker size?!) compared to Fig. 4.5.
+   The range for the x-axis is very strange. Show the electron component in its entirety.
+   Why not simply plot Lambda_TRD? No need to include the sign here?
+
+Fig. 4.9: zoom into y-axis???
+
+Fig. 4.13: 
+    The chi2 at lower values of R is not really what would be expected for good fits?
+
+
+---- 已经弄完,但需要最后检查一遍：
+  - define $\Lambda_\mathrm{CC}$ for Charge Confusion Estimator and used it everywhere
+
+727: define $\Lambda_\mathrm{TRD}$ for TRD likelihood estimator and used it everywhere,
+  instead of terms like "TRDLikelihood".
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+%%%% 4.2 CC estimator  (0 comments)
+
+
+%%%% 4.3 TRD estimator (0 comments)
+
+
+%%%% 4.4 Template Fit  (12 comments)
+
+
+
+
+%%%% Low Range:
+
+Fig. 4.4 should display continuous lines, not data points. How are the lines chosen?
+  You need to show distributions of the relevant variables to motivate your cuts.
+
+Figs 4.5, 4.7: The chi2/ndf that you quote here is probably misleading. You have to quote
+  both the chi2 and the ndf. Since this is a 2D template fit, ndf is probably large. But
+  then a chi2/ndf indicates a very poor fit. 
+Remove all chi2 plots?
+
+Fig. 4.7: Use "$\chi^2/ndf$" consistently, not "Chi2/dof".
+
+
+
+%%%% Intermediate Range:
+
+%%%% High Range:
+
+%%%% Time dependent analysis
+
+Section 4.4.2: Are the templates derived individually for each time bin, or globally once
+  and for all? Are the distribtutions stable in time?
+
+Fig. 4.14: Again, the plot range is very strange路
+
+Fig. 4.15, 4.16:
+  - Plot dN/dt, where dt is livetime, to avoid the enormous jumps.
+  - Keep the fonts / plot style consistent across your thesis.
+
+
+
+%%%% 4.5 Effective Acceptance (0 comments)
+
+%%%% 4.6 Measuring Time       (0 comment)
+
+%%%% 4.7 Trigger Efficiency (0 comments)
+
+%%%% 4.8 Unfolding (0 comments)
+
+
+%%%% 4.9 Antiproton To Proton Flux Ratio Calculation (1 comments)
+
+1038: But in your discussion of the unfolding, neither measuring time
+nor trigger efficiency are used or needed?
+Answer: Measuring time is mentioned. 
+
+
+%%%% 4.10 Systematic Uncertainty (0 comments)
+
+
+
+
+
+
+
+
+
+
+
+
+
+

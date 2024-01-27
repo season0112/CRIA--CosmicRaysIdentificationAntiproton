@@ -1,0 +1,51 @@
+
+顺序：
+1. 图片格式:
+Fig. 4.19: notation! 
+Figs. 4.9, 4.11, 4.14: use consistent notation (-> Eq. (4.7)), and avoid slang ("BinWidth").
+Figs. 4.15, 4.16, 4.19, 4.20, 4.29, and many others:
+Keep the style of your figures consistent. Use boldface Arial fonts
+like in Fig. 4.13. （黑体！！！）
+
+
+
+
+2. Henning v3.0 comment:
+
+Fig. 5.1: I don't understand why you start the fit at 60 GV. From the plot, I get the impression that something interesting happens above 100 GV.
+
+668: The wording in the solution is misleading to me, since you cannot change the MC spectrum after the simulation. Maybe it would be good to give an equation and define the relevant quantities.
+
+718: Cut the new plot at ~10^(-5).
+
+778: Maybe your notation is inconsistent, but I maintain that -1 < (a-b)/(a+b) < 1, regardless of what a and b are.
+
+850: What you do is probably fine, but I think it needs clearer explanation. (Fit Range 问题补图)
+
+Table 4.5: To my understanding, cutting on the quantity used in the template fit is simply equivalent to limiting the fit range.
+
+1080: But couldn't the differences that you see compared to Phys.Rep. in Fig. 5.2 be due to improper treatment of the geomagnetic cutoff?
+
+1098: The description of unfolding in Niko's thesis is poor. I would give the equation that relates measured and true counts by the migration matrix, which is also what you show in Fig. 4.30, then state that the problem cannot be solved by simple matrix inversion, and so on...
+
+1212: temple -> template
+
+Fig. 5.2 (2): Are you sure that you crop your figures before inserting them?
+
+1236: The tilde ('~') was missing in front of the '\cite'.
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+   

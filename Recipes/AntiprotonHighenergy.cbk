@@ -1,0 +1,552 @@
+#Example: cookbook init ../AntiprotonHighenergy.cbk --set issdataversion=pass7.8,binningversion=525version,cluster=HPC,pattern=0,ifVGGNN=Yes
+issdataversion=NONE
+binningversion=NONE
+pattern=NONE
+cluster=NONE
+ifVGGNN=NONE
+
+######################################################################################
+#### Write Tree
+
+[interactive]
+    some set up.
+    command:mkdir -p $HPCHIGHENERGYDATADIR; cd $HPCHIGHENERGYDATADIR; mkdir -p mvaplots; mkdir -p CCEstimatorplots; mkdir -p CCpercentageplot; mkdir -p RejectionPlots; mkdir -p B1042_antipr.pl1.1800_7.6_all_525version; mkdir -p B1042_pr.pl1.1800_7.6_all_525version/positive; mkdir -p B1042_pr.pl1.1800_7.6_all_525version/negative; mkdir -p B1042_antipr.pl1.1800_7.6_all_450version; mkdir -p B1042_pr.pl1.1800_7.6_all_450version/positive; mkdir -p B1091_el.pl1.0_25200_7.6_all/results/finebinroot; mkdir -p B1091_el.pl1.0_25200_7.6_all/results/reduced_root; mkdir -p B1091_el.pl1.2002000_7.6_all/results/finebinroot; mkdir -p B1091_el.pl1.2002000_7.6_all/results/reduced_root; mkdir -p B1091_el.pl1.0_25_2000_7.6_all/results/finebinroot; mkdir -p B1091_el.pl1.0_25_2000_7.6_all/results/reduced_root; mkdir -p B1042_pr.pl1.flux.l1a9.2016000_7.6_all; mkdir -p B1220_pr.pl1phpsa.l1o9.flux.2016000.4_00_7.8_all/positive/; mkdir -p B1220_pr.pl1phpsa.l1o9.flux.2016000.4_00_7.8_all/negative/; mkdir -p B1130_pass7_7.8_all/negative; mkdir -p B1130_pass7_7.8_all/positive; mkdir -p B1130_pass7_7.8_all/positive/results/reduced_root; mkdir -p B1130_pass7_7.8_all/positive/results/finebinroot; mkdir -p B1042_pr.pl1.flux.l1a9.2016000_7.6_all/positive/results/reduced_root; mkdir -p B1042_pr.pl1.flux.l1a9.2016000_7.6_all/positive/results/finebinroot; mkdir -p B1042_pr.pl1.flux.l1a9.2016000_7.6_all/negative/results/reduced_root; mkdir -p B1042_pr.pl1.flux.l1a9.2016000_7.6_all/negative/results/finebinroot;
+
+[acqt]
+    Write MC B1042 antiproton (1-800) (Negative) for Acceptance (525version)
+    job:ExampleAnalysisTreeWriter
+    filelist:$MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_antipr.pl1.1800_7.6_all/B1042_antipr.pl1.1800_7.6_all.list
+    args:--partition c18m --mpi --mpi_nodes 1 --njobs 1000 --timelimit 23:00 --arguments '--McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_antipr.pl1.1800_7.6_all/mcScalingWeights.root --particleID Antiproton --SignOfRigidity Negative --BinningVersion 525version'
+    directory: $HPCHIGHENERGYDATADIR/B1042_antipr.pl1.1800_7.6_all_525version/
+    nexpected_per_process: 2
+
+[acqt]
+    Write MC B1042 proton (1-800) (Positive) for Acceptance (525version)
+    job:ExampleAnalysisTreeWriter
+    filelist:$MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_pr.pl1.1800_7.6_all/B1042_pr.pl1.1800_7.6_all.list
+    args:--partition c18m --mpi --mpi_nodes 1 --njobs 1000 --timelimit 23:00 --arguments '--McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_pr.pl1.1800_7.6_all/mcScalingWeights.root --particleID Proton --SignOfRigidity Positive --BinningVersion 525version'
+    directory: $HPCHIGHENERGYDATADIR/B1042_pr.pl1.1800_7.6_all_525version/positive
+    nexpected_per_process: 2
+
+#[acqt]
+#    Write MC B1042 proton (1-800) (Negative) 
+#    job:ExampleAnalysisTreeWriter
+#    filelist:$MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_pr.pl1.1800_7.6_all/B1042_pr.pl1.1800_7.6_all.list
+#    args:--partition c18m --mpi --mpi_nodes 1 --njobs 1000 --timelimit 23:00 --arguments '--McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_pr.pl1.1800_7.6_all/mcScalingWeights.root --particleID Proton --SignOfRigidity Negative --BinningVersion 525version'
+#    directory: $HPCHIGHENERGYDATADIR/B1042_pr.pl1.1800_7.6_all_525version/negative
+#    nexpected_per_process: 2
+
+[acqt]
+    Write MC B1042 antiproton (1-800) (Negative) for Acceptance (450version)
+    job:ExampleAnalysisTreeWriter
+    filelist:$MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_antipr.pl1.1800_7.6_all/B1042_antipr.pl1.1800_7.6_all.list
+    args:--partition c18m --mpi --mpi_nodes 1 --njobs 1000 --timelimit 23:00 --arguments '--McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_antipr.pl1.1800_7.6_all/mcScalingWeights.root --particleID Antiproton --SignOfRigidity Negative --BinningVersion 450version'
+    directory: $HPCHIGHENERGYDATADIR/B1042_antipr.pl1.1800_7.6_all_450version/
+    nexpected_per_process: 2
+
+[acqt]
+    Write MC B1042 proton (1-800) (Positive) for Acceptance (450version)
+    job:ExampleAnalysisTreeWriter
+    filelist:$MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_pr.pl1.1800_7.6_all/B1042_pr.pl1.1800_7.6_all.list
+    args:--partition c18m --mpi --mpi_nodes 1 --njobs 1000 --timelimit 23:00 --arguments '--McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_pr.pl1.1800_7.6_all/mcScalingWeights.root --particleID Proton --SignOfRigidity Positive --BinningVersion 450version'
+    directory: $HPCHIGHENERGYDATADIR/B1042_pr.pl1.1800_7.6_all_450version/positive
+    nexpected_per_process: 2
+
+[acqt]
+    Write MC B1042 proton (1-800) (Negative) for CCLevel (525version)
+    job:ExampleAnalysisTreeWriter
+    filelist:$MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_pr.pl1.1800_7.6_all/B1042_pr.pl1.1800_7.6_all.list
+    args:--partition c18m --mpi --mpi_nodes 1 --njobs 1000 --timelimit 23:00 --arguments '--McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_pr.pl1.1800_7.6_all/mcScalingWeights.root --particleID Proton --SignOfRigidity Negative --BinningVersion 525version'
+    directory: $HPCHIGHENERGYDATADIR/B1042_pr.pl1.1800_7.6_all_525version/negative
+    nexpected_per_process: 2
+
+#[acqt]
+#    Write MC B1091 electron (0.25-200GeV) (Negative) for Template 
+#    job:ExampleAnalysisTreeWriter
+#    filelist:$MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1091_el.pl1.0_25200_7.6_all/B1091_el.pl1.0_25200_7.6_all.list
+#    args:--partition c18m --mpi --mpi_nodes 1 --njobs 1000 --timelimit 23:00 --arguments '--McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1091_el.pl1.0_25200_7.6_all/mcScalingWeights.root --particleID Electron --SignOfRigidity Negative --BinningVersion 525version'
+#    directory: $HPCHIGHENERGYDATADIR/B1091_el.pl1.0_25200_7.6_all/
+#    nexpected_per_process: 2
+
+#[acqt]
+#    Write MC B1091 electron (200-2000GeV) (Negative) for Template
+#    job:ExampleAnalysisTreeWriter
+#    filelist:$MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1091_el.pl1.2002000_7.6_all/B1091_el.pl1.2002000_7.6_all.list
+#    args:--partition c18m --mpi --mpi_nodes 1 --njobs 1000 --timelimit 23:00 --arguments '--McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1091_el.pl1.2002000_7.6_all/mcScalingWeights.root --particleID Electron --SignOfRigidity Negative --BinningVersion 525version'
+#    directory: $HPCHIGHENERGYDATADIR/B1091_el.pl1.2002000_7.6_all/
+#    nexpected_per_process: 2
+
+[acqt]
+    Write MC B1091 electron (0.25-2000GeV) (Negative) for Template
+    job:ExampleAnalysisTreeWriter
+    filelist:$MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1091_el.pl1.0_25_2000_7.6_all_merged/B1091_el.pl1.0_25_2000_7.6_all.list
+    args:--partition c18m --mpi --mpi_nodes 1 --njobs 1000 --timelimit 23:00 --arguments '--McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1091_el.pl1.0_25_2000_7.6_all_merged/mcScalingWeights.root --particleID Electron --SignOfRigidity Negative --BinningVersion 525version'
+    directory: $HPCHIGHENERGYDATADIR/B1091_el.pl1.0_25_2000_7.6_all/
+    nexpected_per_process: 2
+
+
+[acqt]
+    Write MC B1042 proton l1and9 (20-1600GeV) (Positive) for Template
+    job:ExampleAnalysisTreeWriter
+    filelist:$MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_pr.pl1.flux.l1a9.2016000_7.6_all/B1042_pr.pl1.flux.l1a9.2016000_7.6_all.list
+    args:--partition c18m --mpi --mpi_nodes 1 --njobs 1000 --timelimit 23:00 --arguments '--McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_pr.pl1.flux.l1a9.2016000_7.6_all/mcScalingWeights.root --particleID Proton --SignOfRigidity Positive --BinningVersion 525version'
+    directory: $HPCHIGHENERGYDATADIR/B1042_pr.pl1.flux.l1a9.2016000_7.6_all/positive/
+    nexpected_per_process: 2
+
+[acqt]
+    Write MC B1042 proton l1and9 (20-1600GeV) (Negative) for Template
+    job:ExampleAnalysisTreeWriter
+    filelist:$MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_pr.pl1.flux.l1a9.2016000_7.6_all/B1042_pr.pl1.flux.l1a9.2016000_7.6_all.list
+    args:--partition c18m --mpi --mpi_nodes 1 --njobs 1000 --timelimit 23:00 --arguments '--McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_pr.pl1.flux.l1a9.2016000_7.6_all/mcScalingWeights.root --particleID Proton --SignOfRigidity Negative --BinningVersion 525version'
+    directory: $HPCHIGHENERGYDATADIR/B1042_pr.pl1.flux.l1a9.2016000_7.6_all/negative/
+    nexpected_per_process: 2
+
+#[acqt]
+#    Write MC B1220 proton positive tree for the analysis
+#    job:ExampleAnalysisTreeWriter
+#    filelist:$MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1220_pr.pl1phpsa.l1o9.flux.2016000.4_00_7.8_all/B1220_pr.pl1phpsa.l1o9.flux.2016000.4_00_7.8_all.list
+#    args:--partition c18m --mpi --mpi_nodes 1 --njobs 1000 --timelimit 23:00 --arguments '--McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1220_pr.pl1phpsa.l1o9.flux.2016000.4_00_7.8_all/mcScalingWeights.root --particleID Proton --SignOfRigidity Positive --BinningVersion 525version'
+#    directory: $HPCHIGHENERGYDATADIR/B1220_pr.pl1phpsa.l1o9.flux.2016000.4_00_7.8_all/positive/
+#    nexpected_per_process: 2
+
+#[acqt]
+#    Write MC B1220 proton negative tree for the analysis
+#    job:ExampleAnalysisTreeWriter
+#    filelist:$MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1220_pr.pl1phpsa.l1o9.flux.2016000.4_00_7.8_all/B1220_pr.pl1phpsa.l1o9.flux.2016000.4_00_7.8_all.list
+#    args:--partition c18m --mpi --mpi_nodes 1 --njobs 1000 --timelimit 23:00 --arguments '--McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1220_pr.pl1phpsa.l1o9.flux.2016000.4_00_7.8_all/mcScalingWeights.root --particleID Proton --SignOfRigidity Negative --BinningVersion 525version'
+#    directory: $HPCHIGHENERGYDATADIR/B1220_pr.pl1phpsa.l1o9.flux.2016000.4_00_7.8_all/negative/
+#    nexpected_per_process: 2
+
+[acqt]
+    Write ISS negative data tree for the analysis
+    job:ExampleAnalysisTreeWriter
+    filelist:$MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1130_pass7_7.8_all/B1130_pass7_7.8_all.list
+    args:--partition c18m --mpi --mpi_nodes 1 --njobs 1000 --timelimit 23:00 --arguments '--particleID ISS --SignOfRigidity Negative --BinningVersion 525version'
+    directory: $HPCHIGHENERGYDATADIR/B1130_pass7_7.8_all/negative/
+    nexpected_per_process: 2
+
+[acqt]
+    Write ISS positive data tree for the analysis
+    job:ExampleAnalysisTreeWriter
+    filelist:$MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1130_pass7_7.8_all/B1130_pass7_7.8_all.list
+    args:--partition c18m --mpi --mpi_nodes 1 --njobs 1000 --timelimit 23:00 --arguments '--particleID ISS --SignOfRigidity Positive --BinningVersion 525version'
+    directory: $HPCHIGHENERGYDATADIR/B1130_pass7_7.8_all/positive/
+    nexpected_per_process: 2
+
+#### Merge auxiliary ROOT files
+
+[generic]
+    Merge MC B1042 antiproton (1-800) auxiliary ROOT files (525 version)
+    job: ac_merge
+    args: --partition c18m --argument "--input $HPCHIGHENERGYDATADIR/B1042_antipr.pl1.1800_7.6_all_525version/results/ExampleAnalysis_Auxiliary_*.root --resultprefix B1042_antipr.pl1.1800_7.6_all_525version_Auxiliary --resultdir $HPCHIGHENERGYDATADIR"
+    nmin: 0
+    nmax: 0
+
+[generic]
+    Merge MC B1042 proton (1-800) auxiliary ROOT files (525 version)
+    job: ac_merge
+    args: --partition c18m --argument "--input $HPCHIGHENERGYDATADIR/B1042_pr.pl1.1800_7.6_all_525version/positive/results/ExampleAnalysis_Auxiliary_*.root --resultprefix B1042_pr.pl1.1800_7.6_all_525version_Auxiliary --resultdir $HPCHIGHENERGYDATADIR"
+    nmin: 0
+    nmax: 0
+
+[generic]
+    Merge MC B1042 antiproton (1-800) auxiliary ROOT files (450 version)
+    job: ac_merge
+    args: --partition c18m --argument "--input $HPCHIGHENERGYDATADIR/B1042_antipr.pl1.1800_7.6_all_450version/results/ExampleAnalysis_Auxiliary_*.root --resultprefix B1042_antipr.pl1.1800_7.6_all_450version_Auxiliary --resultdir $HPCHIGHENERGYDATADIR"
+    nmin: 0
+    nmax: 0
+
+[generic]
+    Merge MC B1042 proton (1-800) auxiliary ROOT files (450 version)
+    job: ac_merge
+    args: --partition c18m --argument "--input $HPCHIGHENERGYDATADIR/B1042_pr.pl1.1800_7.6_all_450version/positive/results/ExampleAnalysis_Auxiliary_*.root --resultprefix B1042_pr.pl1.1800_7.6_all_450version_Auxiliary --resultdir $HPCHIGHENERGYDATADIR"
+    nmin: 0
+    nmax: 0
+
+#[interactive]
+#    Make list for B1220 data merge.
+#    command:cd $HPCHIGHENERGYDATADIR/B1220_pr.pl1phpsa.l1o9.flux.2016000.4_00_7.8_all/positive/results; ls ExampleAnalysis_Tree_* | sed "s:^:`pwd`/:" > ../positive_tree_list.txt; ls ExampleAnalysis_Auxiliary_* | sed "s:^:`pwd`/:" > ../positive_auxiliary_list.txt; cd $HPCHIGHENERGYDATADIR/B1220_pr.pl1phpsa.l1o9.flux.2016000.4_00_7.8_all/negative/results; ls ExampleAnalysis_Tree_* | sed "s:^:`pwd`/:" > ../negative_tree_list.txt; ls ExampleAnalysis_Auxiliary_* | sed "s:^:`pwd`/:" > ../negative_auxiliary_list.txt;
+
+#[generic]
+#    Merge MC B1220 proton auxiliary ROOT files 
+#    job: ac_merge
+#    args: --partition c18m --timelimit 18:00 --argument "--inputlist $HPCHIGHENERGYDATADIR/B1220_pr.pl1phpsa.l1o9.flux.2016000.4_00_7.8_all/positive/positive_auxiliary_list.txt --resultprefix B1220_pr.pl1phpsa.l1o9.flux.2016000.4_00_7.8_all_Auxiliary --resultdir $HPCHIGHENERGYDATADIR"
+#    nmin: 0
+#    nmax: 0
+
+
+#### Calculate effective acceptance
+
+[interactive]
+    Compute effective acceptance for MC B1042 antiproton (for 525 version)
+    command: calculate_effective_acceptance
+    args: --McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_antipr.pl1.1800_7.6_all/mcScalingWeights.root --inputfile $HPCHIGHENERGYDATADIR/B1042_antipr.pl1.1800_7.6_all_525version_Auxiliary.root --outputFileName $HPCHIGHENERGYDATADIR/EffectiveAcceptance_B1042_antipr.pl1.1800_7.6_all_525version --selectors QualityCuts --kinematicVariable momentum --xmin 14.0 --xmax 1131 --species Antiproton --mcComparisionCanvas
+
+[interactive]
+    Compute effective acceptance for MC B1042 proton (for 525 version)
+    command: calculate_effective_acceptance
+    args: --McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_pr.pl1.1800_7.6_all/mcScalingWeights.root --inputfile $HPCHIGHENERGYDATADIR/B1042_pr.pl1.1800_7.6_all_525version_Auxiliary.root --outputFileName $HPCHIGHENERGYDATADIR/EffectiveAcceptance_B1042_pr.pl1.1800_7.6_all_525version --selectors QualityCuts --kinematicVariable momentum --xmin 14.0 --xmax 1131 --species Proton --mcComparisionCanvas
+
+[interactive]
+    Compute effective acceptance for MC B1042 antiproton (for 450 version)
+    command: calculate_effective_acceptance
+    args: --McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_antipr.pl1.1800_7.6_all/mcScalingWeights.root --inputfile $HPCHIGHENERGYDATADIR/B1042_antipr.pl1.1800_7.6_all_450version_Auxiliary.root --outputFileName $HPCHIGHENERGYDATADIR/EffectiveAcceptance_B1042_antipr.pl1.1800_7.6_all_450version --selectors QualityCuts --kinematicVariable momentum --xmin 14.0 --xmax 1131 --species Antiproton --mcComparisionCanvas
+
+[interactive]
+    Compute effective acceptance for MC B1042 proton (for 450 version)
+    command: calculate_effective_acceptance
+    args: --McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_pr.pl1.1800_7.6_all/mcScalingWeights.root --inputfile $HPCHIGHENERGYDATADIR/B1042_pr.pl1.1800_7.6_all_450version_Auxiliary.root --outputFileName $HPCHIGHENERGYDATADIR/EffectiveAcceptance_B1042_pr.pl1.1800_7.6_all_450version --selectors QualityCuts --kinematicVariable momentum --xmin 14.0 --xmax 1131 --species Proton --mcComparisionCanvas
+
+
+#### Merge result ROOT files
+[interactive]
+    Merge MC B1042 proton positive result ROOT files
+    command:ac_merge --input $HPCHIGHENERGYDATADIR/B1042_pr.pl1.1800_7.6_all_525version/positive/results/ExampleAnalysis_Tree_*.root --resultprefix B1042_pr.pl1.1800_7.6_all_Tree_positive --resultdir $HPCHIGHENERGYDATADIR
+
+[interactive]
+    Merge MC B1042 proton negative result ROOT files
+    command:ac_merge --input $HPCHIGHENERGYDATADIR/B1042_pr.pl1.1800_7.6_all_525version/negative/results/ExampleAnalysis_Tree_*.root --resultprefix B1042_pr.pl1.1800_7.6_all_Tree_negative --resultdir $HPCHIGHENERGYDATADIR
+
+[generic]
+    Merge MC B1042 antiproton negative result ROOT files
+    job: ac_merge
+    args: --partition c18m --argument "--input $HPCHIGHENERGYDATADIR/B1042_antipr.pl1.1800_7.6_all_525version/results/ExampleAnalysis_Tree_*.root --resultprefix B1042_antipr.pl1.1800_7.6_all_Tree --resultdir $HPCHIGHENERGYDATADIR"
+    nmin: 0
+    nmax: 0
+
+#[generic]
+#    Merge MC B1220 proton positive result ROOT files
+#    job: ac_merge
+#    args: --partition c18m --timelimit 18:00 --argument "--inputlist $HPCHIGHENERGYDATADIR/B1220_pr.pl1phpsa.l1o9.flux.2016000.4_00_7.8_all/positive/positive_tree_list.txt --resultprefix B1220_pr.pl1phpsa.l1o9.flux.2016000.4_00_7.8_all_Tree_positive --resultdir $HPCHIGHENERGYDATADIR"
+#    nmin: 0
+#    nmax: 0
+
+#[generic]
+#    Merge MC B1220 proton negative result ROOT files
+#    job: ac_merge
+#    args: --partition c18m --timelimit 18:00 --argument "--inputlist $HPCHIGHENERGYDATADIR/B1220_pr.pl1phpsa.l1o9.flux.2016000.4_00_7.8_all/negative/negative_tree_list.txt --resultprefix B1220_pr.pl1phpsa.l1o9.flux.2016000.4_00_7.8_all_Tree_negative --resultdir $HPCHIGHENERGYDATADIR"
+#    nmin: 0
+#    nmax: 0
+
+#[generic]
+#    Merge MC B1091 electron (0.25-200GeV) result ROOT files
+#    job: ac_merge
+#    args: --partition c18m --argument "--input $HPCHIGHENERGYDATADIR/B1091_el.pl1.0_25200_7.6_all/results/ExampleAnalysis_Tree_*.root --resultprefix B1091_el.pl1.0_25200_7.6_all_Tree --resultdir $HPCHIGHENERGYDATADIR"
+#    nmin: 0
+#    nmax: 0
+
+#[generic]
+#    Merge MC B1091 electron (200-2000GeV) result ROOT files
+#    job: ac_merge
+#    args: --partition c18m --argument "--input $HPCHIGHENERGYDATADIR/B1091_el.pl1.2002000_7.6_all/results/ExampleAnalysis_Tree_*.root --resultprefix B1091_el.pl1.2002000_7.6_all_Tree --resultdir $HPCHIGHENERGYDATADIR"
+#    nmin: 0
+#    nmax: 0
+
+#[generic]
+#    Merge two MC B1091 electron result ROOT files
+#    job: ac_merge
+#    args: --partition c18m --argument "--input $HPCHIGHENERGYDATADIR/B1091_el.pl1.0_25200_7.6_all_Tree.root $HPCHIGHENERGYDATADIR/B1091_el.pl1.2002000_7.6_all_Tree.root --resultprefix B1091_el.pl1.0_25_2000_7.6_all_Tree --resultdir $HPCHIGHENERGYDATADIR"
+#    nmin: 0
+#    nmax: 0
+
+[generic]
+    Merge MC B1042 proton (20-1600GeV) l1and9 positive result ROOT files
+    job: ac_merge
+    args: --partition c18m --argument "--input $HPCHIGHENERGYDATADIR/B1042_pr.pl1.flux.l1a9.2016000_7.6_all/positive/results/ExampleAnalysis_Tree_*.root --resultprefix B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_positive --resultdir $HPCHIGHENERGYDATADIR"
+    nmin: 0
+    nmax: 0
+
+[generic]
+    Merge MC B1042 proton (20-1600GeV) l1and9 negative result ROOT files
+    job: ac_merge
+    args: --partition c18m --argument "--input $HPCHIGHENERGYDATADIR/B1042_pr.pl1.flux.l1a9.2016000_7.6_all/negative/results/ExampleAnalysis_Tree_*.root --resultprefix B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_negative --resultdir $HPCHIGHENERGYDATADIR"
+    nmin: 0
+    nmax: 0
+
+[interactive]
+    Make list for ISS data merge.
+    command:cd $HPCHIGHENERGYDATADIR/B1130_pass7_7.8_all/negative/results; ls ExampleAnalysis_Tree_* | sed "s:^:`pwd`/:" > ../negative_tree_list.txt; ls ExampleAnalysis_Auxiliary_* | sed "s:^:`pwd`/:" > ../negative_auxiliary_list.txt; cd $HPCHIGHENERGYDATADIR/B1130_pass7_7.8_all/positive/results; ls ExampleAnalysis_Tree_* | sed "s:^:`pwd`/:" > ../positive_tree_list.txt; ls ExampleAnalysis_Auxiliary_* | sed "s:^:`pwd`/:" > ../positive_auxiliary_list.txt;
+
+[generic]
+    Merge ISS negative data result ROOT files
+    job: ac_merge
+    args: --partition c18m --argument "--inputlist $HPCHIGHENERGYDATADIR/B1130_pass7_7.8_all/negative/negative_tree_list.txt --resultprefix B1130_pass7_7.8_all_Tree_negative --resultdir $HPCHIGHENERGYDATADIR"
+    nmin: 0
+    nmax: 0
+
+
+#### Positive Merge and Split
+
+#1. ISS positive
+[generic]
+    Merge mpi split index of ISS Positive Tree
+    job: ac_merge
+    args: --partition c18m --arguments '--input $HPCHIGHENERGYDATADIR/B1130_pass7_7.8_all/positive/results/ExampleAnalysis_Tree_%05d_* --resultdir $HPCHIGHENERGYDATADIR/B1130_pass7_7.8_all/positive/results/reduced_root/ --resultprefix ExampleAnalysis_Tree_%05d'
+    nmin: 0
+    nmax: 999
+
+[joblist]
+    Split ISS positive data in Rigidity and timestamp(published range)
+    job: $MY_ANALYSIS/Scripts/HPC/others/PositiveData_Split_WithMPIMerge.py
+    args: --partition c18m --arguments '--path $HPCHIGHENERGYDATADIR/B1130_pass7_7.8_all/positive/results/reduced_root --rigidityrange highrange --rigiditystart 27 --rigidityend 58 --inputfile %s --datamode ISSdata --rigiditysign positive' #27-58:14.1-450.
+    jobs_from: $HPCHIGHENERGYDATADIR/B1130_pass7_7.8_all/positive/results/reduced_root/
+
+[generic]
+    Final merge for ISS positvie data 
+    job: $MY_ANALYSIS/Scripts/HPC/others/Finalmerge.sh
+    args: --partition c18m --memory 100 --timelimit 23:00 --arguments '$HPCHIGHENERGYDATADIR highrange 27 58 B1130_pass7_7.8_all positive' ## For HPC interactively: 27-58 is from 14.1-450. Please note that array index in bash shell is from 0, but in zsh is from 1. please check it's on which shell.(batch jobs are in bash shell, interactively juams is in bash and hpc is in zsh)
+    nmin: 0
+    nmax: 0
+
+#2. B1042 proton
+[generic]
+    Merge mpi split index of B1042 Proton Tree
+    job: ac_merge
+    args: --partition c18m --arguments '--input $HPCHIGHENERGYDATADIR/B1042_pr.pl1.flux.l1a9.2016000_7.6_all/positive/results/ExampleAnalysis_Tree_%05d_* --resultdir $HPCHIGHENERGYDATADIR/B1042_pr.pl1.flux.l1a9.2016000_7.6_all/positive/results/reduced_root/ --resultprefix ExampleAnalysis_Tree_%05d'
+    nmin: 0
+    nmax: 125
+
+[joblist]
+    Split B1042 Proton positive data in Rigidity
+    job: $MY_ANALYSIS/Scripts/HPC/others/PositiveData_Split_WithMPIMerge.py
+    args: --partition c18m --arguments '--path $HPCHIGHENERGYDATADIR/B1042_pr.pl1.flux.l1a9.2016000_7.6_all/positive/results/reduced_root --rigidityrange highrange --rigiditystart 27 --rigidityend 58 --inputfile %s --datamode MC --rigiditysign positive'
+    jobs_from: $HPCHIGHENERGYDATADIR/B1042_pr.pl1.flux.l1a9.2016000_7.6_all/positive/results/reduced_root/
+
+[generic]
+    Final merge for B1042 Proton positive data
+    job: $MY_ANALYSIS/Scripts/HPC/others/Finalmerge.sh
+    args: --partition c18m --memory 100 --timelimit 23:00 --arguments '$HPCHIGHENERGYDATADIR highrange 27 58 B1042_pr.pl1.flux.l1a9.2016000_7.6_all positive' 
+    nmin: 0
+    nmax: 0
+
+
+[generic]
+    Merge mpi split index of Electron Tree (B1091_el.pl1.0_25_2000_7.6_all)
+    job: ac_merge
+    args: --partition c18m --arguments '--input $HPCHIGHENERGYDATADIR/B1091_el.pl1.0_25_2000_7.6_all/results/ExampleAnalysis_Tree_%05d_* --resultdir $HPCHIGHENERGYDATADIR/B1091_el.pl1.0_25_2000_7.6_all/results/reduced_root/ --resultprefix ExampleAnalysis_Tree_%05d'
+    nmin: 0
+    nmax: 321
+
+[joblist]
+    Split Electron data in Rigidity (B1091_el.pl1.0_25_2000_7.6_all)
+    job: $MY_ANALYSIS/Scripts/HPC/others/PositiveData_Split_WithMPIMerge.py
+    args: --partition c18m --arguments '--path $HPCHIGHENERGYDATADIR/B1091_el.pl1.0_25_2000_7.6_all/results/reduced_root --rigidityrange highrange --rigiditystart 27 --rigidityend 58 --inputfile %s --datamode MC --rigiditysign negative' 
+    jobs_from: $HPCHIGHENERGYDATADIR/B1091_el.pl1.0_25_2000_7.6_all/results/reduced_root/
+
+[generic]
+    Final merge for Electron data (B1091_el.pl1.0_25_2000_7.6_all)
+    job: $MY_ANALYSIS/Scripts/HPC/others/Finalmerge.sh
+    args: --partition c18m --memory 100 --timelimit 23:00 --arguments '$HPCHIGHENERGYDATADIR highrange 27 58 B1091_el.pl1.0_25_2000_7.6_all'
+    nmin: 0
+    nmax: 0
+
+
+#3. B1220 proton
+#[generic]
+#    Split B1220 Proton positive data in Rigidity
+#    job: $MY_ANALYSIS/Scripts/HPC/others/PositiveData_Split_NoMPIMerge.py
+#    args: --partition c18m --timelimit 18:00 --memory 100 --timelimit 23:00 --arguments '--path $HPCHIGHENERGYDATADIR/ --rigidityrange highrange --rigiditystart 27 --rigidityend 58 --inputfile B1220_pr.pl1phpsa.l1o9.flux.2016000.4_00_7.8_all_Tree_positive.root --datamode MC --rigiditysign positive'
+#    nmin: 0
+#    nmax: 0
+
+#4. B1042 proton
+[generic]
+    Split B1042 proton positive data in Rigidity
+    job: $MY_ANALYSIS/Scripts/HPC/others/PositiveData_Split_NoMPIMerge.py
+    args: --partition c18m --arguments '--path $HPCHIGHENERGYDATADIR/ --rigidityrange highrange --rigiditystart 27 --rigidityend 58 --inputfile B1042_pr.pl1.1800_7.6_all_Tree_positive.root --datamode MC --rigiditysign positive' --timelimit 23:00
+    nmin: 0
+    nmax: 0
+
+
+#### Negative Rigidity Split
+[generic]
+    Split B1042 proton negative data in Rigidity. 
+    job: $MY_ANALYSIS/Scripts/HPC/others/NegativeData_Split_NoMPIMerge.py
+    args: --partition c18m --arguments '--cluster ${cluster} --rigidityrange highrange --datamode MC --data B1042_pr.pl1.1800_7.6_all_Tree_negative --Rigidity_start 26 --Rigidity_end 57' --timelimit 23:00
+    nmin: 0
+    nmax: 0
+
+[generic]
+    Split B1042 antiproton negative data in Rigidity. 
+    job: $MY_ANALYSIS/Scripts/HPC/others/NegativeData_Split_NoMPIMerge.py
+    args: --partition c18m --arguments '--cluster ${cluster} --rigidityrange highrange --datamode MC --data B1042_antipr.pl1.1800_7.6_all_Tree --Rigidity_start 26 --Rigidity_end 57' --timelimit 23:00
+    nmin: 0
+    nmax: 0
+
+[generic]
+    Split B1091 Electron negaitve data in Rigidity.
+    job: $MY_ANALYSIS/Scripts/HPC/others/NegativeData_Split_NoMPIMerge.py
+    args: --memory 100 --partition c18m --arguments '--cluster ${cluster} --rigidityrange highrange --datamode MC --data B1091_el.pl1.0_25_2000_7.6_all_Tree --Rigidity_start 26 --Rigidity_end 57' --timelimit 23:00
+    nmin: 0
+    nmax: 0
+
+[generic]
+    Split B1042 Proton (20-1600GeV) l1and9 negative data in Rigidity.
+    job: $MY_ANALYSIS/Scripts/HPC/others/NegativeData_Split_NoMPIMerge.py
+    args: --partition c18m --arguments '--cluster ${cluster} --rigidityrange highrange --datamode MC --data B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_negative --Rigidity_start 26 --Rigidity_end 57' --timelimit 23:00
+    nmin: 0
+    nmax: 0
+
+#[generic]
+#    Split B1220 Proton negative data in Rigidity.
+#    job: $MY_ANALYSIS/Scripts/HPC/others/NegativeData_Split_NoMPIMerge.py
+#    args: --partition c18m --timelimit 18:00 --arguments '--cluster ${cluster} --rigidityrange highrange --datamode MC --data B1220_pr.pl1phpsa.l1o9.flux.2016000.4_00_7.8_all_Tree_negative --Rigidity_start 26 --Rigidity_end 57' --timelimit 23:00
+#    nmin: 0
+#    nmax: 0
+
+[generic]
+    Split ISS negative data in Rigidity and timestamp (Published range)
+    job: $MY_ANALYSIS/Scripts/HPC/others/NegativeData_Split_NoMPIMerge.py
+    args: --partition c18m --arguments '--cluster ${cluster} --rigidityrange highrange --datamode ISSdata --data B1130_pass7_7.8_all_Tree_negative --Rigidity_start 26 --Rigidity_end 57' --timelimit 23:00
+    nmin: 0
+    nmax: 0
+
+
+#### HPC high energy analysis 
+
+[interactive]
+    some set up
+    command: cd $HPCHIGHENERGYDATADIR; mkdir -p ISS_anylsis/data; mkdir -p ISS_anylsis/antiproton_to_proton_ratio_plot/; mkdir -p ISS_anylsis/unfolding/plot_ratio; cd ISS_anylsis/data; mkdir -p templatefit/negative; mkdir -p templatefit/positive; cd templatefit/negative/; mkdir -p FixedCC/Plot_RigidityResolution/; mkdir -p FixedCC/Plot_ISSCCLevelOverRigidityResolution/; mkdir -p FixedCC/Plot_UncertaintyBand/; mkdir -p rootfiles FitResult Fit_plots_CCfree; mkdir -p ../positive; cd ../positive; mkdir -p FitResult Fit_plots_CCfree rootfiles ProtonRawNumber; mkdir -p /hpcwork/jara0052/sichen/Measuringtime/${issdataversion}/${binningversion}/;              
+
+[generic]
+    Produce Unfolding_Matrices.
+    job: $MY_ANALYSIS/Scripts/HPC/others/MigrationMatrix_fill.py
+    args: --partition c18m --arguments '--pattern ${pattern}  --dataset B1042_antipr.pl1.1800_7.6_all --energy HIGHENERGYRANGE --binningversion ${binningversion} --ecalBDTCut --trdProtonHeliumCut --physicstriggerCut --cluster ${cluster}' --timelimit 23:00 --memory 100 
+    nmin: 0
+    nmax: 0
+
+[generic]
+    Apply VGG16 neural network on MC/ISS data (For Pattern 0)
+    job: $MY_ANALYSIS/Scripts/HPC/HighRange/loadmodel_application.py
+    args: --partition c18m --gpu 1 --arguments '--issversion ${issdataversion} --rigidityBinOption All --ecalBDTCut --trdProtonHeliumCut --physicstriggerCut' --timelimit 23:00 --memory 100 
+    nmin: 0
+    nmax: 0
+
+## Helper script:/home/bo791269/Software/AntiprotonAnalysis/Scripts/HPC/HighRange/CCEstimatorApplicationSubmitScript/CCTMVA_Application_submit.sh
+[generic]
+    Apply TMVA BDT on MC/ISS data (For All Tracker Pattern) (No EcalBDTCut except Pattern 0) 
+    job: $MY_ANALYSIS/Scripts/HPC/HighRange/TMVA_Application_submit.py
+    args: --partition c18m --arguments '--issversion ${issdataversion} --pattern ${pattern} --rigidityBinSection All --trdProtonHeliumCut --physicstriggerCut' --timelimit 23:00 --memory 100 --partition c18g
+    nmin: 0
+    nmax: 0
+
+
+#[generic]
+#    Calculate proton number from ISS data (If vgg16 P0, change ifVGGP0 flag to True)
+#    job: $MY_ANALYSIS/Scripts/HPC/HighRange/proton_number.py
+#    args: --partition c18m --arguments '--issversion ${issdataversion} --binning ${binningversion} --pattern ${pattern} --ifVGGP0 No' --timelimit 23:00
+#    nmin: 0
+#    nmax: 0
+[interactive]
+     Calculate proton number from ISS data (If vgg16 P0, change ifVGGP0 flag to True)
+    command: $MY_ANALYSIS/Scripts/HPC/HighRange/proton_number.py --issversion ${issdataversion} --binning ${binningversion} --pattern ${pattern} --ifVGGP0 No
+
+[interactive]
+    Merge 14.1-38.9 GV CCProton Template (MC). (If vgg16 P0, change ifVGGP0 flag to True)
+    command: $MY_ANALYSIS/Scripts/HPC/HighRange/merge_14.1_38.9_negative.py --pattern ${pattern} --ifVGGP0 No 
+
+[generic]
+    Generate rootfiles from numpy file, and create plots (If vgg16 P0, change ifVGGP0 flag to True)
+    job: $MY_ANALYSIS/Scripts/HPC/HighRange/2d_templatefit_binnumberfix_cccutfree.py
+    args: --partition c18m --arguments '--issversion ${issdataversion} --trdlow 0.0 --trdhigh 1.6 --pattern ${pattern} --ifVGGP0 No' --timelimit 23:00
+    nmin: 0
+    nmax: 0
+#HelperSubmitScript:/home/bo791269/Software/AntiprotonAnalysis/Scripts/SubmitScript/GenerateRootfiles_SubmitScript.sh
+
+[interactive]
+    Copy rootfiles from negative to positive
+    command: cp $HPCHIGHENERGYDATADIR/ISS_anylsis/data/templatefit/negative/rootfiles/* $HPCHIGHENERGYDATADIR/ISS_anylsis/data/templatefit/positive/rootfiles/
+
+#[interactive]
+#    Negative ISS data 2D template fit (fit with CC level free) (interactively)
+#    command: Antiproton_TF2D --binningversion ${binningversion} --Rigidityofdataset data_negative --FitMethod ccfree --issversion ${issdataversion} --pattern ${pattern}
+
+[generic]
+    Negative ISS data 2D template fit (fit with CC level free)
+    job: Antiproton_TF2D
+    args: --partition c18m --arguments '--binningversion ${binningversion} --Rigidityofdataset data_negative --FitMethod ccfree --issversion ${issdataversion} --pattern ${pattern} --ifVGGNN No' --timelimit 23:00
+    nmin: 0
+    nmax: 0
+# Helper Tool:/home/bo791269/Software/AntiprotonAnalysis/Scripts/SubmitScript/HighTemplateFit_forAllPatterns.sh
+
+#[interactive]
+#    Positive ISS data 2D template fit, write results and create fit plots (interactively)
+#    command: Antiproton_TF2D --binningversion ${binningversion} --Rigidityofdataset data_positive --FitMethod ccfree --issversion ${issdataversion} --pattern ${pattern}
+#    directory: $HPCHIGHENERGYDATADIR/ISS_anylsis/data/templatefit/positive/
+
+[generic]
+    Positive ISS data 2D template fit (fit with CC level free)
+    job: Antiproton_TF2D
+    args: --partition c18m --arguments '--binningversion ${binningversion} --Rigidityofdataset data_positive --FitMethod ccfree --issversion ${issdataversion} --pattern ${pattern} --ifVGGNN No' --timelimit 23:00
+    nmin: 0
+    nmax: 0
+
+#[interactive]
+##    Plot Ratio with different settings (CCcut, CCnumber, TRDnumbers). For binned template fit only.
+##    command: $MY_ANALYSIS/Scripts/HPC/HighRange/Plot_Ratio_DifferentBinnedSettings.py --issversion ${issdataversion} --binningversion ${binningversion} --pattern ${pattern}
+
+[interactive]
+    Make Reweighting for MC
+    command: $MY_ANALYSIS/Scripts/HPC/HighRange/ReweightingFacter.py --pattern ${pattern}
+
+[interactive]
+    Draw calcualte ISS/MC CClevel, cccut_efficiency, signal_to_background_ratio, pbar and proton numbers, raw ratio etc. (First Point need to be checked, manually fixed for now!)
+    command: $MY_ANALYSIS/Scripts/HPC/HighRange/CCLevel.py --issversion ${issdataversion} --binningversion ${binningversion} --pattern ${pattern} --ifVGGNN No
+# Helper Tool:/home/bo791269/Software/AntiprotonAnalysis/Scripts/SubmitScript/CCLevelSubmit.sh
+
+#[interactive]
+#    Make Rigidity Model (Fit cores of 1/R)
+#    command: $MY_ANALYSIS/Scripts/HPC/others/RigidityResolution.py --pattern ${pattern} --binningversion ${binningversion}
+
+#[interactive]
+#    Fit Regidity Model to ISSCCLevel and give the ratio
+#    command: $MY_ANALYSIS/Scripts/HPC/others/FitCClevel.py --pattern ${pattern} --issversion ${issdataversion} --binningversion ${binningversion} --ifVGGNN No
+# Helper Tool:/home/bo791269/Software/AntiprotonAnalysis/Scripts/SubmitScript/FitCClevelSubmit.sh
+
+[interactive]
+    Derive uncertainties from the ratio
+    command: /home/bo791269/Software/AntiprotonAnalysis/Scripts/HPC/HighRange/CalculateUncertaintyBand.py --pattern ${pattern} --issversion ${issdataversion} --binningversion ${binningversion} --ifVGGNN No
+# Helper Tool:/home/bo791269/Software/AntiprotonAnalysis/Scripts/SubmitScript/CalculateUncertaintyBandSubmit.sh
+
+#[interactive]
+#    Negative ISS data 2D template fit (Refit with FixedCC value and its variation of uncertainty band)
+#    command: Antiproton_TF2D --binningversion ${binningversion} --Rigidityofdataset data_negative --FitMethod ccfixed --issversion ${issdataversion} --pattern ${pattern}
+
+[generic]
+    Negative ISS data 2D template fit (Refit with FixedCC value and its variation of uncertainty band)
+    job: Antiproton_TF2D
+    args: --partition c18m --arguments '--binningversion ${binningversion} --Rigidityofdataset data_negative --FitMethod ccfixed --issversion ${issdataversion} --pattern ${pattern} --ifVGGNN No' --timelimit 23:00
+    nmin: 0
+    nmax: 0
+# Helper:/home/bo791269/Software/AntiprotonAnalysis/Scripts/SubmitScript/HighTemplateFit_CCSysRefit_forAllPatterns.sh
+
+[interactive]
+    Produce root files containing proton and antiproton numbers and necessary values for unfloding like MeasuringTime,Acceptance etc.
+    command: $MY_ANALYSIS/Scripts/HPC/HighRange/antip_p_Number_TH2D.py --issversion ${issdataversion} --binningversion ${binningversion} --pattern ${pattern} --ifVGGNN No
+# Helper:/home/bo791269/Software/AntiprotonAnalysis/Scripts/SubmitScript/HighProduceRootFiles.sh
+
+[interactive]
+    Apply unfolding and draw ratio.
+    command: Unfolding_Bayes --binningversion ${binningversion} --issversion ${issdataversion} --pattern ${pattern} --ifVGGNN No
+# Helper:/home/bo791269/Software/AntiprotonAnalysis/Scripts/SubmitScript/HighUnfolding_Bayes.sh
+
+
+[interactive]
+    Merge results from all patterns.
+    command:root $MY_ANALYSIS/Macros/HighRange/Plot_Ratio_AllPatterns_HighRange.C 
+
+#[interactive]
+#    Calculate Triggerefficiency from Auxiliary file.
+#    command: TriggerEfficiency --binningversion ${binningversion} --RigidityRange HIGHRANGE
+
+#[interactive]
+##    Plot Triggerefficiency 
+##    command: root -l /home/bo791269/Software/AntiprotonAnalysis/Macros/HighRange/Plot_Trigger.C 
+
+#[interactive]
+#    Flux Calculation.
+#    command: FluxCalculation --binningversion ${binningversion} --issversion ${issdataversion} 
+
+
+
+

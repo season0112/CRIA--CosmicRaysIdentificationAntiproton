@@ -1,0 +1,172 @@
+
+General comments
+================
+
+- After reading the entire thesis, I feel that more emphasis should be
+  put on the time-dependent results because they are really new, while
+  the ratio has been published in PRL and Phys.Rep. before. But for
+  this, you need more plots specific for the time-dependent analysis:
+  how do the relevant distributions (CC estimator, charges, etc.;
+  template shapes) evolve over time? Are they stable?
+
+- It strikes me as a strange omission that all ingredients needed to
+  calculate the p and pbar fluxes are given in the thesis, but the
+  fluxes are never shown. The pbar/p ratio matches the published one
+  very well. What about the fluxes? If they do not match, this should
+  at least be mentioned in the thesis. A lot of emphasis is put on the
+  measuring time and trigger efficiency, for example, even though they
+  cancel in the ratio. It might be that the delta_p in Eqs. 4.6 and
+  4.12 is different from one, and determining it would mean a
+  substantial amount of work, but this should be discussed in the
+  thesis.
+
+
+
+
+
+- There are other sources of systematic error discussed in the PRL
+  pbar paper. Even if the effects are not studies in this thesis, they
+  should be mentioned and briefly discussed and the magnitudes
+  compared to the uncertainties studied here.
+
+1. It includes uncertainties in the definition of the geomagnetic cutoff factor, in the event selection, and in the shape of the templates.
+1.1: Variation of the geomagnetic cutoff factor in the range 1.2 to 1.4 shows a systematic uncertainty of ∼1% at 1 GV and negligible above 2 GV for both N~ p ̄ and N~ p.
+1.2:To evaluate systematic uncertainties related to the event selection, the
+analysis is repeated in each rigidity bin ∼1000 times with different sets of cut values,such that the selection efficiency varies up to 10%.
+1.3:Shape of the fit templates: proton and electron has no error, CCP has.
+
+2. in the inelastic cross sections of protons and antiprotons in the detector materials and in the migration matrices Mp ̄ij and Mpij
+
+3.absolute rigidity scale.
+
+4.The fourth source, relevant only for the p ̄
+flux, is the uncertainty in the normalization of the effective
+folded acceptance A~ p ̄ .
+
+In this work: 
+1.1 No
+1.2 Yes
+1.3 Yes
+2 Yes
+3 No
+4 Doesn't matter.
+
+Note:Cut value doesn't give systematic error in PRL neither.
+Weiwei Xu'email
+template cuts has no error.
+  
+
+
+
+
+
+
+
+
+
+
+Fig. 4.28: systematic error from acceptance is 5e-7 at low R,
+Fig. 5.2: pbar/p is 0.01e-3 at low R
+=> relative syst. uncertainty due to acceptance is 5%, yet the
+correction from A_p/A_pbar is 30%. This appears to be a rather
+aggressive error estimation.
+
+
+
+
+
+
+
+
+Chapter 5
+=========
+
+Section 5.2: Use the same style (fonts!) for the figures as for section 5.1.
+
+Fig. 5.10: Keep the style consistent with the other Figures. 
+图5.6
+来源：drawPbarRatioInAll.drawPbarRatioInAllRigidity (fig, axes = plt.subplots(len(showindex_all), 1, figsize=(20,40), sharex=True))
+参数1：row.errorbar(x_data, PbarResult['PbarRatioLowAll'][int((showindex_low[i]-1)/2),:] * NormalizedFactor, PbarResult['PbarTotErrorLowAll'][int((showindex_low[i]-1)/2),:] * NormalizedFactor, marker='o', linestyle="None", markersize=20, markerfacecolor="b", ecolor="b", linewidth=5)
+参数2：row.tick_params(axis='x', labeltop=False, labelbottom=True , labelleft=False, labelright=False, direction='in', length=20, width=5)
+参数3：row.tick_params(axis='y', labeltop=False, labelbottom=False, labelleft=True , labelright=False, direction='in', length=20, width=5)
+参数4：plt.setp(row.get_yticklabels(), fontsize=40)
+参数5：plt.xticks(fontsize=35)  （年份）
+
+图5.7
+来源：drawRelativeErrorvsRigidity.drawRelativeErrorvsRigidity (fig, axes = plt.subplots(1,1,figsize=(40,20), sharex=True))
+参数1：
+MarkersizeValue = 35
+plt.plot(binning.BinsCenter_TimeDependent_Low[0:-RevmovePointInLow]                , np.average(PbarResult['RelativeStatisticalErrorLowAll'],axis=1)[0:-RevmovePointInLow]*100, marker='o', linestyle="None", markersize=MarkersizeValue, markerfacecolor="r", linewidth=5, markeredgecolor='r', label="Statistical uncertainty")
+参数2：    axes.tick_params(axis='x', labeltop=False, labelbottom=True , labelleft=False, labelright=False, direction='in', length=30, width=10)
+参数3：    plt.yticks(fontsize=70)
+参数4：    plt.xticks(fontsize=70) （刚度）
+参数5：    plt.legend(loc='best',fontsize=45, frameon=False)
+参数6：    plt.xlabel("Rigidity (GV)", fontsize=70)
+参数7：    plt.ylabel("Relative Error (%)", fontsize=70)
+
+图5.8
+来源：drawBreakDownOfTotalError.drawBreakDownOfTotalError (plt.figure(figsize=(40,18)))
+参数1：
+MarkersizeValue = 35
+plt.plot(dates[0:15]+dates[16:38]+dates[39:], np.delete(draw.Error_Sys3B,[15,38])/np.delete(draw.B3result,[15,38]), marker='o', linestyle="None", markersize=MarkersizeValue, label="SysError(FitRange)")
+参数2：ax.tick_params(axis='x', labeltop=False, labelbottom=True , labelleft=False, labelright=False, direction='in', length=30, width=10)
+参数3：plt.xticks(fontsize=70)（年份）
+参数4：plt.yticks(fontsize=70)
+参数5：plt.legend(loc='best',fontsize=45, frameon=False)
+
+
+图5.9
+来源：drawFitNumbers.drawBinmergedRatio (fig = plt.figure(figsize=(40,20)))
+参数1：    plt.errorbar( binning.BinsCenter_TimeDependent_Low[0:-RevmovePointInLow]                , time_averaged_antiproton_low/time_averaged_proton_low                  , yerr=time_averaged_totalerror_low         , marker='o',linestyle="None", markersize=35, markerfacecolor="red", markeredgecolor="red", ecolor="red", elinewidth=10, capsize=15, capthick=8, label='Time Averaged result') (upper plot)
+参数2：    plt.xticks(fontsize=70) （刚度） (upper plot)
+参数3：    plt.yticks(fontsize=70) (upper plot)
+参数4：    plt.legend(loc='best', fontsize=45, frameon=False)
+参数5：    plt.xlabel("Rigidity (GV)"  , fontsize=70) (lower plot)
+参数6：    plt.xticks(fontsize=70) (lower plot)
+参数7：    plt.yticks(fontsize=45) (lower plot)
+参数8：    ax1.tick_params(axis='x', which='both', direction='in', length=0, width=0)
+参数9：    ax1.tick_params(axis='y', which='both', direction='in', length=30, width=10)
+参数10：   plt.ylabel(r'$\rm{\overline{p}/p}$ ($\times$ $10^{-5}$)', fontsize=70)  (upper plot)
+参数11：   plt.ylabel(r'$\frac{{\rm{Residual}}}{{\rm{Averaged}} \; 6 \; {\rm{Bartels}}}$', fontsize=50) (lower plot)
+参数12：   ax2.errorbar( binning.BinsCenter_TimeDependent_Low[0:-RevmovePointInLow], residual_low, yerr=0, marker='s',linestyle="None",markersize=35, markerfacecolor="k", ecolor="k" )  (lower plot)
+
+
+图5.10
+来源：drawCompareWithElectron.drawCompareWithElectron (plt.figure(figsize=(40,16)))
+参数1：    ax2.errorbar(dates[0:15]+dates[16:38]+dates[39:], np.delete(draw.B3result,[15,38]) * Antiprotonratio_Scaler, yerr=np.delete(draw.Error_Total3B,[15,38]) * Antiprotonratio_Scaler, marker='o',linestyle="None",markersize=40, markerfacecolor="b", ecolor="b",linewidth=7， label= r'$\overline{\rm {p}}$/p' ) (反质子)  (这里的markersize=40和linewidth=7的目测比较美观的。)
+参数2：    ax3.errorbar(dates_1Bartel, EleOverPosRatio_Rebin_Perugia * Electron_Scaler, yerr = EleOverPosRatioError_Rebin_Perugia * Electron_Scaler, marker='o', linestyle="None", markersize=13, markerfacecolor="r", ecolor="r", markeredgecolor='r', label=r'$\rm{e^-}$/$\rm{e^+}$' + r'$\times$' + "{:.2}".format(Electron_Scaler*1e6) + r'$\times$' + r'10$^{-6}$') (电子)
+参数3：    ax1.tick_params(axis='x', direction='in', length=30, width=10, pad=40.0)
+参数4：    plt.xticks(fontsize=60) （年份）    (对比图5.6中的：figsizeX 20./ fontsize 35 = figsizeX 40./ fontsize 70，但是实测70有点大，改为65)
+参数5：    plt.yticks(fontsize=100)
+参数6：    leg = fig.legend(loc="upper right", bbox_to_anchor=(0.87,1), bbox_transform=ax3.transAxes, fontsize=60, frameon=False)
+参数7：    ax2.tick_params(axis='y', direction='in', length=30, width=10, colors='black', pad=40.0)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

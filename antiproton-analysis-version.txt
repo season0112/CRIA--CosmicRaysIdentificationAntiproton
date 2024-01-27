@@ -1,0 +1,2 @@
+antiproton-analysis 7.0:
+from MVA variables (3 of them are revised to be rigidity independent) to build VGG16 neurual network.

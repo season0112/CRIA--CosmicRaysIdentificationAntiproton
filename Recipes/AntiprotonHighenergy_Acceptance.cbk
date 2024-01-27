@@ -1,0 +1,602 @@
+#Example: cookbook init AntiprotonHighenergy_Acceptance.cbk --set cluster=HPC
+#cluster=NONE
+
+
+#### Mkdir dir.
+[interactive]
+    some set up.
+    command: mkdir -p $HPCHIGHENERGYDATADIR/B1042_antipr.pl1.1800_7.6_all_525version/Pattern0; mkdir -p $HPCHIGHENERGYDATADIR/B1042_antipr.pl1.1800_7.6_all_525version/Pattern1; mkdir -p $HPCHIGHENERGYDATADIR/B1042_antipr.pl1.1800_7.6_all_525version/Pattern2; mkdir -p $HPCHIGHENERGYDATADIR/B1042_antipr.pl1.1800_7.6_all_525version/Pattern3; mkdir -p $HPCHIGHENERGYDATADIR/B1042_antipr.pl1.1800_7.6_all_525version/Pattern4; mkdir -p $HPCHIGHENERGYDATADIR/B1042_antipr.pl1.1800_7.6_all_525version/Pattern5; mkdir -p $HPCHIGHENERGYDATADIR/B1042_antipr.pl1.1800_7.6_all_525version/Pattern-1; 
+            mkdir -p $HPCHIGHENERGYDATADIR/B1042_pr.pl1.1800_7.6_all_525version/positive/Pattern0; mkdir -p $HPCHIGHENERGYDATADIR/B1042_pr.pl1.1800_7.6_all_525version/positive/Pattern1; mkdir -p $HPCHIGHENERGYDATADIR/B1042_pr.pl1.1800_7.6_all_525version/positive/Pattern2; mkdir -p $HPCHIGHENERGYDATADIR/B1042_pr.pl1.1800_7.6_all_525version/positive/Pattern3; mkdir -p $HPCHIGHENERGYDATADIR/B1042_pr.pl1.1800_7.6_all_525version/positive/Pattern4; mkdir -p $HPCHIGHENERGYDATADIR/B1042_pr.pl1.1800_7.6_all_525version/positive/Pattern5; mkdir -p $HPCHIGHENERGYDATADIR/B1042_pr.pl1.1800_7.6_all_525version/positive/Pattern-1;
+            mkdir -p $HPCHIGHENERGYDATADIR/B1042_antipr.pl1.1800_7.6_all_450version//Pattern0; mkdir -p $HPCHIGHENERGYDATADIR/B1042_antipr.pl1.1800_7.6_all_450version/Pattern1; mkdir -p $HPCHIGHENERGYDATADIR/B1042_antipr.pl1.1800_7.6_all_450version/Pattern2; mkdir -p $HPCHIGHENERGYDATADIR/B1042_antipr.pl1.1800_7.6_all_450version/Pattern3; mkdir -p $HPCHIGHENERGYDATADIR/B1042_antipr.pl1.1800_7.6_all_450version/Pattern4; mkdir -p $HPCHIGHENERGYDATADIR/B1042_antipr.pl1.1800_7.6_all_450version/Pattern5; mkdir -p $HPCHIGHENERGYDATADIR/B1042_antipr.pl1.1800_7.6_all_450version/Pattern-1;
+            mkdir -p $HPCHIGHENERGYDATADIR/B1042_pr.pl1.1800_7.6_all_450version/positive/Pattern0; mkdir -p $HPCHIGHENERGYDATADIR/B1042_pr.pl1.1800_7.6_all_450version/positive/Pattern1; mkdir -p $HPCHIGHENERGYDATADIR/B1042_pr.pl1.1800_7.6_all_450version/positive/Pattern2; mkdir -p $HPCHIGHENERGYDATADIR/B1042_pr.pl1.1800_7.6_all_450version/positive/Pattern3; mkdir -p $HPCHIGHENERGYDATADIR/B1042_pr.pl1.1800_7.6_all_450version/positive/Pattern4; mkdir -p $HPCHIGHENERGYDATADIR/B1042_pr.pl1.1800_7.6_all_450version/positive/Pattern5; mkdir -p $HPCHIGHENERGYDATADIR/B1042_pr.pl1.1800_7.6_all_450version/positive/Pattern-1;
+
+#### Write Tree
+## Write 525 version.
+# Antiproton MC
+[acqt]
+    Write MC B1042 antiproton (1-800) (Negative) for Acceptance (525version) (Pattern0)
+    job:ExampleAnalysisTreeWriter
+    filelist:$MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_antipr.pl1.1800_7.6_all/B1042_antipr.pl1.1800_7.6_all.list
+    args:--partition c18m --mpi --mpi_nodes 1 --njobs 1000 --timelimit 23:00 --arguments '--McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_antipr.pl1.1800_7.6_all/mcScalingWeights.root --particleID Antiproton --SignOfRigidity Negative --BinningVersion 525version --pattern 0'
+    directory: $HPCHIGHENERGYDATADIR/B1042_antipr.pl1.1800_7.6_all_525version/Pattern0
+    nexpected_per_process: 2
+
+[acqt]
+    Write MC B1042 antiproton (1-800) (Negative) for Acceptance (525version) (Pattern1)
+    job:ExampleAnalysisTreeWriter
+    filelist:$MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_antipr.pl1.1800_7.6_all/B1042_antipr.pl1.1800_7.6_all.list
+    args:--partition c18m --mpi --mpi_nodes 1 --njobs 1000 --timelimit 23:00 --arguments '--McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_antipr.pl1.1800_7.6_all/mcScalingWeights.root --particleID Antiproton --SignOfRigidity Negative --BinningVersion 525version --pattern 1'
+    directory: $HPCHIGHENERGYDATADIR/B1042_antipr.pl1.1800_7.6_all_525version/Pattern1
+    nexpected_per_process: 2
+
+[acqt]
+    Write MC B1042 antiproton (1-800) (Negative) for Acceptance (525version) (Pattern2)
+    job:ExampleAnalysisTreeWriter
+    filelist:$MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_antipr.pl1.1800_7.6_all/B1042_antipr.pl1.1800_7.6_all.list
+    args:--partition c18m --mpi --mpi_nodes 1 --njobs 1000 --timelimit 23:00 --arguments '--McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_antipr.pl1.1800_7.6_all/mcScalingWeights.root --particleID Antiproton --SignOfRigidity Negative --BinningVersion 525version --pattern 2'
+    directory: $HPCHIGHENERGYDATADIR/B1042_antipr.pl1.1800_7.6_all_525version/Pattern2
+    nexpected_per_process: 2
+
+[acqt]
+    Write MC B1042 antiproton (1-800) (Negative) for Acceptance (525version) (Pattern3)
+    job:ExampleAnalysisTreeWriter
+    filelist:$MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_antipr.pl1.1800_7.6_all/B1042_antipr.pl1.1800_7.6_all.list
+    args:--partition c18m --mpi --mpi_nodes 1 --njobs 1000 --timelimit 23:00 --arguments '--McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_antipr.pl1.1800_7.6_all/mcScalingWeights.root --particleID Antiproton --SignOfRigidity Negative --BinningVersion 525version --pattern 3'
+    directory: $HPCHIGHENERGYDATADIR/B1042_antipr.pl1.1800_7.6_all_525version/Pattern3
+    nexpected_per_process: 2
+
+[acqt]
+    Write MC B1042 antiproton (1-800) (Negative) for Acceptance (525version) (Pattern4)
+    job:ExampleAnalysisTreeWriter
+    filelist:$MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_antipr.pl1.1800_7.6_all/B1042_antipr.pl1.1800_7.6_all.list
+    args:--partition c18m --mpi --mpi_nodes 1 --njobs 1000 --timelimit 23:00 --arguments '--McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_antipr.pl1.1800_7.6_all/mcScalingWeights.root --particleID Antiproton --SignOfRigidity Negative --BinningVersion 525version --pattern 4'
+    directory: $HPCHIGHENERGYDATADIR/B1042_antipr.pl1.1800_7.6_all_525version/Pattern4
+    nexpected_per_process: 2
+
+[acqt]
+    Write MC B1042 antiproton (1-800) (Negative) for Acceptance (525version) (Pattern5)
+    job:ExampleAnalysisTreeWriter
+    filelist:$MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_antipr.pl1.1800_7.6_all/B1042_antipr.pl1.1800_7.6_all.list
+    args:--partition c18m --mpi --mpi_nodes 1 --njobs 1000 --timelimit 23:00 --arguments '--McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_antipr.pl1.1800_7.6_all/mcScalingWeights.root --particleID Antiproton --SignOfRigidity Negative --BinningVersion 525version --pattern 5'
+    directory: $HPCHIGHENERGYDATADIR/B1042_antipr.pl1.1800_7.6_all_525version/Pattern5
+    nexpected_per_process: 2
+
+[acqt]
+    Write MC B1042 antiproton (1-800) (Negative) for Acceptance (525version) (Pattern-1)
+    job:ExampleAnalysisTreeWriter
+    filelist:$MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_antipr.pl1.1800_7.6_all/B1042_antipr.pl1.1800_7.6_all.list
+    args:--partition c18m --mpi --mpi_nodes 1 --njobs 1000 --timelimit 23:00 --arguments '--McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_antipr.pl1.1800_7.6_all/mcScalingWeights.root --particleID Antiproton --SignOfRigidity Negative --BinningVersion 525version --pattern -1'
+    directory: $HPCHIGHENERGYDATADIR/B1042_antipr.pl1.1800_7.6_all_525version/Pattern-1
+    nexpected_per_process: 2
+
+# Proton MC
+[acqt]
+    Write MC B1042 proton (1-800) (Positive) for Acceptance (525version) (Pattern0)
+    job:ExampleAnalysisTreeWriter
+    filelist:$MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_pr.pl1.1800_7.6_all/B1042_pr.pl1.1800_7.6_all.list
+    args:--partition c18m --mpi --mpi_nodes 1 --njobs 1000 --timelimit 23:00 --arguments '--McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_pr.pl1.1800_7.6_all/mcScalingWeights.root --particleID Proton --SignOfRigidity Positive --BinningVersion 525version --pattern 0'
+    directory: $HPCHIGHENERGYDATADIR/B1042_pr.pl1.1800_7.6_all_525version/positive/Pattern0
+    nexpected_per_process: 2
+
+[acqt]
+    Write MC B1042 proton (1-800) (Positive) for Acceptance (525version) (Pattern1)
+    job:ExampleAnalysisTreeWriter
+    filelist:$MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_pr.pl1.1800_7.6_all/B1042_pr.pl1.1800_7.6_all.list
+    args:--partition c18m --mpi --mpi_nodes 1 --njobs 1000 --timelimit 23:00 --arguments '--McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_pr.pl1.1800_7.6_all/mcScalingWeights.root --particleID Proton --SignOfRigidity Positive --BinningVersion 525version --pattern 1'
+    directory: $HPCHIGHENERGYDATADIR/B1042_pr.pl1.1800_7.6_all_525version/positive/Pattern1
+    nexpected_per_process: 2
+
+[acqt]
+    Write MC B1042 proton (1-800) (Positive) for Acceptance (525version) (Pattern2)
+    job:ExampleAnalysisTreeWriter
+    filelist:$MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_pr.pl1.1800_7.6_all/B1042_pr.pl1.1800_7.6_all.list
+    args:--partition c18m --mpi --mpi_nodes 1 --njobs 1000 --timelimit 23:00 --arguments '--McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_pr.pl1.1800_7.6_all/mcScalingWeights.root --particleID Proton --SignOfRigidity Positive --BinningVersion 525version --pattern 2'
+    directory: $HPCHIGHENERGYDATADIR/B1042_pr.pl1.1800_7.6_all_525version/positive/Pattern2
+    nexpected_per_process: 2
+
+[acqt]
+    Write MC B1042 proton (1-800) (Positive) for Acceptance (525version) (Pattern3)
+    job:ExampleAnalysisTreeWriter
+    filelist:$MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_pr.pl1.1800_7.6_all/B1042_pr.pl1.1800_7.6_all.list
+    args:--partition c18m --mpi --mpi_nodes 1 --njobs 1000 --timelimit 23:00 --arguments '--McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_pr.pl1.1800_7.6_all/mcScalingWeights.root --particleID Proton --SignOfRigidity Positive --BinningVersion 525version --pattern 3'
+    directory: $HPCHIGHENERGYDATADIR/B1042_pr.pl1.1800_7.6_all_525version/positive/Pattern3
+    nexpected_per_process: 2
+
+[acqt]
+    Write MC B1042 proton (1-800) (Positive) for Acceptance (525version) (Pattern4)
+    job:ExampleAnalysisTreeWriter
+    filelist:$MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_pr.pl1.1800_7.6_all/B1042_pr.pl1.1800_7.6_all.list
+    args:--partition c18m --mpi --mpi_nodes 1 --njobs 1000 --timelimit 23:00 --arguments '--McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_pr.pl1.1800_7.6_all/mcScalingWeights.root --particleID Proton --SignOfRigidity Positive --BinningVersion 525version --pattern 4'
+    directory: $HPCHIGHENERGYDATADIR/B1042_pr.pl1.1800_7.6_all_525version/positive/Pattern4
+    nexpected_per_process: 2
+
+[acqt]
+    Write MC B1042 proton (1-800) (Positive) for Acceptance (525version) (Pattern5)
+    job:ExampleAnalysisTreeWriter
+    filelist:$MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_pr.pl1.1800_7.6_all/B1042_pr.pl1.1800_7.6_all.list
+    args:--partition c18m --mpi --mpi_nodes 1 --njobs 1000 --timelimit 23:00 --arguments '--McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_pr.pl1.1800_7.6_all/mcScalingWeights.root --particleID Proton --SignOfRigidity Positive --BinningVersion 525version --pattern 5'
+    directory: $HPCHIGHENERGYDATADIR/B1042_pr.pl1.1800_7.6_all_525version/positive/Pattern5
+    nexpected_per_process: 2
+
+[acqt]
+    Write MC B1042 proton (1-800) (Positive) for Acceptance (525version) (Pattern-1)
+    job:ExampleAnalysisTreeWriter
+    filelist:$MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_pr.pl1.1800_7.6_all/B1042_pr.pl1.1800_7.6_all.list
+    args:--partition c18m --mpi --mpi_nodes 1 --njobs 1000 --timelimit 23:00 --arguments '--McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_pr.pl1.1800_7.6_all/mcScalingWeights.root --particleID Proton --SignOfRigidity Positive --BinningVersion 525version --pattern -1'
+    directory: $HPCHIGHENERGYDATADIR/B1042_pr.pl1.1800_7.6_all_525version/positive/Pattern-1
+    nexpected_per_process: 2
+
+
+
+## Write 450 version:
+# Antiproton MC
+[acqt]
+    Write MC B1042 antiproton (1-800) (Negative) for Acceptance (450version) (Pattern0)
+    job:ExampleAnalysisTreeWriter
+    filelist:$MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_antipr.pl1.1800_7.6_all/B1042_antipr.pl1.1800_7.6_all.list
+    args:--partition c18m --mpi --mpi_nodes 1 --njobs 1000 --timelimit 23:00 --arguments '--McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_antipr.pl1.1800_7.6_all/mcScalingWeights.root --particleID Antiproton --SignOfRigidity Negative --BinningVersion 450version --pattern 0'
+    directory: $HPCHIGHENERGYDATADIR/B1042_antipr.pl1.1800_7.6_all_450version/Pattern0
+    nexpected_per_process: 2
+
+[acqt]
+    Write MC B1042 antiproton (1-800) (Negative) for Acceptance (450version) (Pattern1)
+    job:ExampleAnalysisTreeWriter
+    filelist:$MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_antipr.pl1.1800_7.6_all/B1042_antipr.pl1.1800_7.6_all.list
+    args:--partition c18m --mpi --mpi_nodes 1 --njobs 1000 --timelimit 23:00 --arguments '--McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_antipr.pl1.1800_7.6_all/mcScalingWeights.root --particleID Antiproton --SignOfRigidity Negative --BinningVersion 450version --pattern 1'
+    directory: $HPCHIGHENERGYDATADIR/B1042_antipr.pl1.1800_7.6_all_450version/Pattern1
+    nexpected_per_process: 2
+
+[acqt]
+    Write MC B1042 antiproton (1-800) (Negative) for Acceptance (450version) (Pattern2)
+    job:ExampleAnalysisTreeWriter
+    filelist:$MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_antipr.pl1.1800_7.6_all/B1042_antipr.pl1.1800_7.6_all.list
+    args:--partition c18m --mpi --mpi_nodes 1 --njobs 1000 --timelimit 23:00 --arguments '--McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_antipr.pl1.1800_7.6_all/mcScalingWeights.root --particleID Antiproton --SignOfRigidity Negative --BinningVersion 450version --pattern 2'
+    directory: $HPCHIGHENERGYDATADIR/B1042_antipr.pl1.1800_7.6_all_450version/Pattern2
+    nexpected_per_process: 2
+
+[acqt]
+    Write MC B1042 antiproton (1-800) (Negative) for Acceptance (450version) (Pattern3)
+    job:ExampleAnalysisTreeWriter
+    filelist:$MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_antipr.pl1.1800_7.6_all/B1042_antipr.pl1.1800_7.6_all.list
+    args:--partition c18m --mpi --mpi_nodes 1 --njobs 1000 --timelimit 23:00 --arguments '--McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_antipr.pl1.1800_7.6_all/mcScalingWeights.root --particleID Antiproton --SignOfRigidity Negative --BinningVersion 450version --pattern 3'
+    directory: $HPCHIGHENERGYDATADIR/B1042_antipr.pl1.1800_7.6_all_450version/Pattern3
+    nexpected_per_process: 2
+
+[acqt]
+    Write MC B1042 antiproton (1-800) (Negative) for Acceptance (450version) (Pattern4)
+    job:ExampleAnalysisTreeWriter
+    filelist:$MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_antipr.pl1.1800_7.6_all/B1042_antipr.pl1.1800_7.6_all.list
+    args:--partition c18m --mpi --mpi_nodes 1 --njobs 1000 --timelimit 23:00 --arguments '--McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_antipr.pl1.1800_7.6_all/mcScalingWeights.root --particleID Antiproton --SignOfRigidity Negative --BinningVersion 450version --pattern 4'
+    directory: $HPCHIGHENERGYDATADIR/B1042_antipr.pl1.1800_7.6_all_450version/Pattern4
+    nexpected_per_process: 2
+
+[acqt]
+    Write MC B1042 antiproton (1-800) (Negative) for Acceptance (450version) (Pattern5)
+    job:ExampleAnalysisTreeWriter
+    filelist:$MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_antipr.pl1.1800_7.6_all/B1042_antipr.pl1.1800_7.6_all.list
+    args:--partition c18m --mpi --mpi_nodes 1 --njobs 1000 --timelimit 23:00 --arguments '--McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_antipr.pl1.1800_7.6_all/mcScalingWeights.root --particleID Antiproton --SignOfRigidity Negative --BinningVersion 450version --pattern 5'
+    directory: $HPCHIGHENERGYDATADIR/B1042_antipr.pl1.1800_7.6_all_450version/Pattern5
+    nexpected_per_process: 2
+
+[acqt]
+    Write MC B1042 antiproton (1-800) (Negative) for Acceptance (450version) (Pattern-1)
+    job:ExampleAnalysisTreeWriter
+    filelist:$MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_antipr.pl1.1800_7.6_all/B1042_antipr.pl1.1800_7.6_all.list
+    args:--partition c18m --mpi --mpi_nodes 1 --njobs 1000 --timelimit 23:00 --arguments '--McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_antipr.pl1.1800_7.6_all/mcScalingWeights.root --particleID Antiproton --SignOfRigidity Negative --BinningVersion 450version --pattern -1'
+    directory: $HPCHIGHENERGYDATADIR/B1042_antipr.pl1.1800_7.6_all_450version/Pattern-1
+    nexpected_per_process: 2
+
+# Proton MC
+[acqt]
+    Write MC B1042 proton (1-800) (Positive) for Acceptance (450version) (Pattern0)
+    job:ExampleAnalysisTreeWriter
+    filelist:$MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_pr.pl1.1800_7.6_all/B1042_pr.pl1.1800_7.6_all.list
+    args:--partition c18m --mpi --mpi_nodes 1 --njobs 1000 --timelimit 23:00 --arguments '--McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_pr.pl1.1800_7.6_all/mcScalingWeights.root --particleID Proton --SignOfRigidity Positive --BinningVersion 450version --pattern 0'
+    directory: $HPCHIGHENERGYDATADIR/B1042_pr.pl1.1800_7.6_all_450version/positive/Pattern0
+    nexpected_per_process: 2
+
+[acqt]
+    Write MC B1042 proton (1-800) (Positive) for Acceptance (450version) (Pattern1)
+    job:ExampleAnalysisTreeWriter
+    filelist:$MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_pr.pl1.1800_7.6_all/B1042_pr.pl1.1800_7.6_all.list
+    args:--partition c18m --mpi --mpi_nodes 1 --njobs 1000 --timelimit 23:00 --arguments '--McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_pr.pl1.1800_7.6_all/mcScalingWeights.root --particleID Proton --SignOfRigidity Positive --BinningVersion 450version --pattern 1'
+    directory: $HPCHIGHENERGYDATADIR/B1042_pr.pl1.1800_7.6_all_450version/positive/Pattern1
+    nexpected_per_process: 2
+
+[acqt]
+    Write MC B1042 proton (1-800) (Positive) for Acceptance (450version) (Pattern2)
+    job:ExampleAnalysisTreeWriter
+    filelist:$MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_pr.pl1.1800_7.6_all/B1042_pr.pl1.1800_7.6_all.list
+    args:--partition c18m --mpi --mpi_nodes 1 --njobs 1000 --timelimit 23:00 --arguments '--McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_pr.pl1.1800_7.6_all/mcScalingWeights.root --particleID Proton --SignOfRigidity Positive --BinningVersion 450version --pattern 2'
+    directory: $HPCHIGHENERGYDATADIR/B1042_pr.pl1.1800_7.6_all_450version/positive/Pattern2
+    nexpected_per_process: 2
+
+[acqt]
+    Write MC B1042 proton (1-800) (Positive) for Acceptance (450version) (Pattern3)
+    job:ExampleAnalysisTreeWriter
+    filelist:$MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_pr.pl1.1800_7.6_all/B1042_pr.pl1.1800_7.6_all.list
+    args:--partition c18m --mpi --mpi_nodes 1 --njobs 1000 --timelimit 23:00 --arguments '--McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_pr.pl1.1800_7.6_all/mcScalingWeights.root --particleID Proton --SignOfRigidity Positive --BinningVersion 450version --pattern 3'
+    directory: $HPCHIGHENERGYDATADIR/B1042_pr.pl1.1800_7.6_all_450version/positive/Pattern3
+    nexpected_per_process: 2
+
+[acqt]
+    Write MC B1042 proton (1-800) (Positive) for Acceptance (450version) (Pattern4)
+    job:ExampleAnalysisTreeWriter
+    filelist:$MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_pr.pl1.1800_7.6_all/B1042_pr.pl1.1800_7.6_all.list
+    args:--partition c18m --mpi --mpi_nodes 1 --njobs 1000 --timelimit 23:00 --arguments '--McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_pr.pl1.1800_7.6_all/mcScalingWeights.root --particleID Proton --SignOfRigidity Positive --BinningVersion 450version --pattern 4'
+    directory: $HPCHIGHENERGYDATADIR/B1042_pr.pl1.1800_7.6_all_450version/positive/Pattern4
+    nexpected_per_process: 2
+
+[acqt]
+    Write MC B1042 proton (1-800) (Positive) for Acceptance (450version) (Pattern5)
+    job:ExampleAnalysisTreeWriter
+    filelist:$MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_pr.pl1.1800_7.6_all/B1042_pr.pl1.1800_7.6_all.list
+    args:--partition c18m --mpi --mpi_nodes 1 --njobs 1000 --timelimit 23:00 --arguments '--McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_pr.pl1.1800_7.6_all/mcScalingWeights.root --particleID Proton --SignOfRigidity Positive --BinningVersion 450version --pattern 5'
+    directory: $HPCHIGHENERGYDATADIR/B1042_pr.pl1.1800_7.6_all_450version/positive/Pattern5
+    nexpected_per_process: 2
+
+[acqt]
+    Write MC B1042 proton (1-800) (Positive) for Acceptance (450version) (Pattern-1)
+    job:ExampleAnalysisTreeWriter
+    filelist:$MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_pr.pl1.1800_7.6_all/B1042_pr.pl1.1800_7.6_all.list
+    args:--partition c18m --mpi --mpi_nodes 1 --njobs 1000 --timelimit 23:00 --arguments '--McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_pr.pl1.1800_7.6_all/mcScalingWeights.root --particleID Proton --SignOfRigidity Positive --BinningVersion 450version --pattern -1'
+    directory: $HPCHIGHENERGYDATADIR/B1042_pr.pl1.1800_7.6_all_450version/positive/Pattern-1
+    nexpected_per_process: 2
+
+
+#### Merge auxiliary ROOT files
+## Merge 525 version.
+# Antiproton MC
+[generic]
+    Merge MC B1042 antiproton (1-800) auxiliary ROOT files (525 version) (Pattern 0)
+    job: ac_merge
+    args: --partition c18m --argument "--input $HPCHIGHENERGYDATADIR/B1042_antipr.pl1.1800_7.6_all_525version/Pattern0/results/ExampleAnalysis_Auxiliary_*.root --resultprefix B1042_antipr.pl1.1800_7.6_all_525version_Pattern0_Auxiliary --resultdir $HPCHIGHENERGYDATADIR"
+    nmin: 0
+    nmax: 0
+
+[generic]
+    Merge MC B1042 antiproton (1-800) auxiliary ROOT files (525 version) (Pattern 1)
+    job: ac_merge
+    args: --partition c18m --argument "--input $HPCHIGHENERGYDATADIR/B1042_antipr.pl1.1800_7.6_all_525version/Pattern1/results/ExampleAnalysis_Auxiliary_*.root --resultprefix B1042_antipr.pl1.1800_7.6_all_525version_Pattern1_Auxiliary --resultdir $HPCHIGHENERGYDATADIR"
+    nmin: 0
+    nmax: 0
+
+[generic]
+    Merge MC B1042 antiproton (1-800) auxiliary ROOT files (525 version) (Pattern 2)
+    job: ac_merge
+    args: --partition c18m --argument "--input $HPCHIGHENERGYDATADIR/B1042_antipr.pl1.1800_7.6_all_525version/Pattern2/results/ExampleAnalysis_Auxiliary_*.root --resultprefix B1042_antipr.pl1.1800_7.6_all_525version_Pattern2_Auxiliary --resultdir $HPCHIGHENERGYDATADIR"
+    nmin: 0
+    nmax: 0
+
+[generic]
+    Merge MC B1042 antiproton (1-800) auxiliary ROOT files (525 version) (Pattern 3)
+    job: ac_merge
+    args: --partition c18m --argument "--input $HPCHIGHENERGYDATADIR/B1042_antipr.pl1.1800_7.6_all_525version/Pattern3/results/ExampleAnalysis_Auxiliary_*.root --resultprefix B1042_antipr.pl1.1800_7.6_all_525version_Pattern3_Auxiliary --resultdir $HPCHIGHENERGYDATADIR"
+    nmin: 0
+    nmax: 0
+
+[generic]
+    Merge MC B1042 antiproton (1-800) auxiliary ROOT files (525 version) (Pattern 4)
+    job: ac_merge
+    args: --partition c18m --argument "--input $HPCHIGHENERGYDATADIR/B1042_antipr.pl1.1800_7.6_all_525version/Pattern4/results/ExampleAnalysis_Auxiliary_*.root --resultprefix B1042_antipr.pl1.1800_7.6_all_525version_Pattern4_Auxiliary --resultdir $HPCHIGHENERGYDATADIR"
+    nmin: 0
+    nmax: 0
+
+[generic]
+    Merge MC B1042 antiproton (1-800) auxiliary ROOT files (525 version) (Pattern 5)
+    job: ac_merge
+    args: --partition c18m --argument "--input $HPCHIGHENERGYDATADIR/B1042_antipr.pl1.1800_7.6_all_525version/Pattern5/results/ExampleAnalysis_Auxiliary_*.root --resultprefix B1042_antipr.pl1.1800_7.6_all_525version_Pattern5_Auxiliary --resultdir $HPCHIGHENERGYDATADIR"
+    nmin: 0
+    nmax: 0
+
+[generic]
+    Merge MC B1042 antiproton (1-800) auxiliary ROOT files (525 version) (Pattern -1)
+    job: ac_merge
+    args: --partition c18m --argument "--input $HPCHIGHENERGYDATADIR/B1042_antipr.pl1.1800_7.6_all_525version/Pattern-1/results/ExampleAnalysis_Auxiliary_*.root --resultprefix B1042_antipr.pl1.1800_7.6_all_525version_Pattern-1_Auxiliary --resultdir $HPCHIGHENERGYDATADIR"
+    nmin: 0
+    nmax: 0
+
+# Proton MC
+[generic]
+    Merge MC B1042 proton (1-800) auxiliary ROOT files (525 version) (Pattern 0)
+    job: ac_merge
+    args: --partition c18m --argument "--input $HPCHIGHENERGYDATADIR/B1042_pr.pl1.1800_7.6_all_525version/positive/Pattern0/results/ExampleAnalysis_Auxiliary_*.root --resultprefix B1042_pr.pl1.1800_7.6_all_525version_Pattern0_Auxiliary --resultdir $HPCHIGHENERGYDATADIR"
+    nmin: 0
+    nmax: 0
+
+[generic]
+    Merge MC B1042 proton (1-800) auxiliary ROOT files (525 version) (Pattern 1)
+    job: ac_merge
+    args: --partition c18m --argument "--input $HPCHIGHENERGYDATADIR/B1042_pr.pl1.1800_7.6_all_525version/positive/Pattern1/results/ExampleAnalysis_Auxiliary_*.root --resultprefix B1042_pr.pl1.1800_7.6_all_525version_Pattern1_Auxiliary --resultdir $HPCHIGHENERGYDATADIR"
+    nmin: 0
+    nmax: 0
+
+[generic]
+    Merge MC B1042 proton (1-800) auxiliary ROOT files (525 version) (Pattern 2)
+    job: ac_merge
+    args: --partition c18m --argument "--input $HPCHIGHENERGYDATADIR/B1042_pr.pl1.1800_7.6_all_525version/positive/Pattern2/results/ExampleAnalysis_Auxiliary_*.root --resultprefix B1042_pr.pl1.1800_7.6_all_525version_Pattern2_Auxiliary --resultdir $HPCHIGHENERGYDATADIR"
+    nmin: 0
+    nmax: 0
+
+[generic]
+    Merge MC B1042 proton (1-800) auxiliary ROOT files (525 version) (Pattern 3)
+    job: ac_merge
+    args: --partition c18m --argument "--input $HPCHIGHENERGYDATADIR/B1042_pr.pl1.1800_7.6_all_525version/positive/Pattern3/results/ExampleAnalysis_Auxiliary_*.root --resultprefix B1042_pr.pl1.1800_7.6_all_525version_Pattern3_Auxiliary --resultdir $HPCHIGHENERGYDATADIR"
+    nmin: 0
+    nmax: 0
+
+[generic]
+    Merge MC B1042 proton (1-800) auxiliary ROOT files (525 version) (Pattern 4)
+    job: ac_merge
+    args: --partition c18m --argument "--input $HPCHIGHENERGYDATADIR/B1042_pr.pl1.1800_7.6_all_525version/positive/Pattern4/results/ExampleAnalysis_Auxiliary_*.root --resultprefix B1042_pr.pl1.1800_7.6_all_525version_Pattern4_Auxiliary --resultdir $HPCHIGHENERGYDATADIR"
+    nmin: 0
+    nmax: 0
+
+[generic]
+    Merge MC B1042 proton (1-800) auxiliary ROOT files (525 version) (Pattern 5)
+    job: ac_merge
+    args: --partition c18m --argument "--input $HPCHIGHENERGYDATADIR/B1042_pr.pl1.1800_7.6_all_525version/positive/Pattern5/results/ExampleAnalysis_Auxiliary_*.root --resultprefix B1042_pr.pl1.1800_7.6_all_525version_Pattern5_Auxiliary --resultdir $HPCHIGHENERGYDATADIR"
+    nmin: 0
+    nmax: 0
+
+[generic]
+    Merge MC B1042 proton (1-800) auxiliary ROOT files (525 version) (Pattern -1)
+    job: ac_merge
+    args: --partition c18m --argument "--input $HPCHIGHENERGYDATADIR/B1042_pr.pl1.1800_7.6_all_525version/positive/Pattern-1/results/ExampleAnalysis_Auxiliary_*.root --resultprefix B1042_pr.pl1.1800_7.6_all_525version_Pattern-1_Auxiliary --resultdir $HPCHIGHENERGYDATADIR"
+    nmin: 0
+    nmax: 0
+
+
+## Merge 450 version.
+# Antiproton MC
+
+[generic]
+    Merge MC B1042 antiproton (1-800) auxiliary ROOT files (450 version) (Pattern 0)
+    job: ac_merge
+    args: --partition c18m --argument "--input $HPCHIGHENERGYDATADIR/B1042_antipr.pl1.1800_7.6_all_450version/Pattern0/results/ExampleAnalysis_Auxiliary_*.root --resultprefix B1042_antipr.pl1.1800_7.6_all_450version_Pattern0_Auxiliary --resultdir $HPCHIGHENERGYDATADIR"
+    nmin: 0
+    nmax: 0
+
+[generic]
+    Merge MC B1042 antiproton (1-800) auxiliary ROOT files (450 version) (Pattern 1)
+    job: ac_merge
+    args: --partition c18m --argument "--input $HPCHIGHENERGYDATADIR/B1042_antipr.pl1.1800_7.6_all_450version/Pattern1/results/ExampleAnalysis_Auxiliary_*.root --resultprefix B1042_antipr.pl1.1800_7.6_all_450version_Pattern1_Auxiliary --resultdir $HPCHIGHENERGYDATADIR"
+    nmin: 0
+    nmax: 0
+
+[generic]
+    Merge MC B1042 antiproton (1-800) auxiliary ROOT files (450 version) (Pattern 2)
+    job: ac_merge
+    args: --partition c18m --argument "--input $HPCHIGHENERGYDATADIR/B1042_antipr.pl1.1800_7.6_all_450version/Pattern2/results/ExampleAnalysis_Auxiliary_*.root --resultprefix B1042_antipr.pl1.1800_7.6_all_450version_Pattern2_Auxiliary --resultdir $HPCHIGHENERGYDATADIR"
+    nmin: 0
+    nmax: 0
+
+[generic]
+    Merge MC B1042 antiproton (1-800) auxiliary ROOT files (450 version) (Pattern 3)
+    job: ac_merge
+    args: --partition c18m --argument "--input $HPCHIGHENERGYDATADIR/B1042_antipr.pl1.1800_7.6_all_450version/Pattern3/results/ExampleAnalysis_Auxiliary_*.root --resultprefix B1042_antipr.pl1.1800_7.6_all_450version_Pattern3_Auxiliary --resultdir $HPCHIGHENERGYDATADIR"
+    nmin: 0
+    nmax: 0
+
+[generic]
+    Merge MC B1042 antiproton (1-800) auxiliary ROOT files (450 version) (Pattern 4)
+    job: ac_merge
+    args: --partition c18m --argument "--input $HPCHIGHENERGYDATADIR/B1042_antipr.pl1.1800_7.6_all_450version/Pattern4/results/ExampleAnalysis_Auxiliary_*.root --resultprefix B1042_antipr.pl1.1800_7.6_all_450version_Pattern4_Auxiliary --resultdir $HPCHIGHENERGYDATADIR"
+    nmin: 0
+    nmax: 0
+
+[generic]
+    Merge MC B1042 antiproton (1-800) auxiliary ROOT files (450 version) (Pattern 5)
+    job: ac_merge
+    args: --partition c18m --argument "--input $HPCHIGHENERGYDATADIR/B1042_antipr.pl1.1800_7.6_all_450version/Pattern5/results/ExampleAnalysis_Auxiliary_*.root --resultprefix B1042_antipr.pl1.1800_7.6_all_450version_Pattern5_Auxiliary --resultdir $HPCHIGHENERGYDATADIR"
+    nmin: 0
+    nmax: 0
+
+[generic]
+    Merge MC B1042 antiproton (1-800) auxiliary ROOT files (450 version) (Pattern -1)
+    job: ac_merge
+    args: --partition c18m --argument "--input $HPCHIGHENERGYDATADIR/B1042_antipr.pl1.1800_7.6_all_450version/Pattern-1/results/ExampleAnalysis_Auxiliary_*.root --resultprefix B1042_antipr.pl1.1800_7.6_all_450version_Pattern-1_Auxiliary --resultdir $HPCHIGHENERGYDATADIR"
+    nmin: 0
+    nmax: 0
+
+# Proton MC
+[generic]
+    Merge MC B1042 proton (1-800) auxiliary ROOT files (450 version) (Pattern 0)
+    job: ac_merge
+    args: --partition c18m --argument "--input $HPCHIGHENERGYDATADIR/B1042_pr.pl1.1800_7.6_all_450version/positive/Pattern0/results/ExampleAnalysis_Auxiliary_*.root --resultprefix B1042_pr.pl1.1800_7.6_all_450version_Pattern0_Auxiliary --resultdir $HPCHIGHENERGYDATADIR"
+    nmin: 0
+    nmax: 0
+
+[generic]
+    Merge MC B1042 proton (1-800) auxiliary ROOT files (450 version) (Pattern 1)
+    job: ac_merge
+    args: --partition c18m --argument "--input $HPCHIGHENERGYDATADIR/B1042_pr.pl1.1800_7.6_all_450version/positive/Pattern1/results/ExampleAnalysis_Auxiliary_*.root --resultprefix B1042_pr.pl1.1800_7.6_all_450version_Pattern1_Auxiliary --resultdir $HPCHIGHENERGYDATADIR"
+    nmin: 0
+    nmax: 0
+
+[generic]
+    Merge MC B1042 proton (1-800) auxiliary ROOT files (450 version) (Pattern 2)
+    job: ac_merge
+    args: --partition c18m --argument "--input $HPCHIGHENERGYDATADIR/B1042_pr.pl1.1800_7.6_all_450version/positive/Pattern2/results/ExampleAnalysis_Auxiliary_*.root --resultprefix B1042_pr.pl1.1800_7.6_all_450version_Pattern2_Auxiliary --resultdir $HPCHIGHENERGYDATADIR"
+    nmin: 0
+    nmax: 0
+
+[generic]
+    Merge MC B1042 proton (1-800) auxiliary ROOT files (450 version) (Pattern 3)
+    job: ac_merge
+    args: --partition c18m --argument "--input $HPCHIGHENERGYDATADIR/B1042_pr.pl1.1800_7.6_all_450version/positive/Pattern3/results/ExampleAnalysis_Auxiliary_*.root --resultprefix B1042_pr.pl1.1800_7.6_all_450version_Pattern3_Auxiliary --resultdir $HPCHIGHENERGYDATADIR"
+    nmin: 0
+    nmax: 0
+
+[generic]
+    Merge MC B1042 proton (1-800) auxiliary ROOT files (450 version) (Pattern 4)
+    job: ac_merge
+    args: --partition c18m --argument "--input $HPCHIGHENERGYDATADIR/B1042_pr.pl1.1800_7.6_all_450version/positive/Pattern4/results/ExampleAnalysis_Auxiliary_*.root --resultprefix B1042_pr.pl1.1800_7.6_all_450version_Pattern4_Auxiliary --resultdir $HPCHIGHENERGYDATADIR"
+    nmin: 0
+    nmax: 0
+
+[generic]
+    Merge MC B1042 proton (1-800) auxiliary ROOT files (450 version) (Pattern 5)
+    job: ac_merge
+    args: --partition c18m --argument "--input $HPCHIGHENERGYDATADIR/B1042_pr.pl1.1800_7.6_all_450version/positive/Pattern5/results/ExampleAnalysis_Auxiliary_*.root --resultprefix B1042_pr.pl1.1800_7.6_all_450version_Pattern5_Auxiliary --resultdir $HPCHIGHENERGYDATADIR"
+    nmin: 0
+    nmax: 0
+
+[generic]
+    Merge MC B1042 proton (1-800) auxiliary ROOT files (450 version) (Pattern -1)
+    job: ac_merge
+    args: --partition c18m --argument "--input $HPCHIGHENERGYDATADIR/B1042_pr.pl1.1800_7.6_all_450version/positive/Pattern-1/results/ExampleAnalysis_Auxiliary_*.root --resultprefix B1042_pr.pl1.1800_7.6_all_450version_Pattern-1_Auxiliary --resultdir $HPCHIGHENERGYDATADIR"
+    nmin: 0
+    nmax: 0
+
+
+#### Calculate effective acceptance
+##for 525 version
+# Antiproton
+[interactive]
+    Compute effective acceptance for MC B1042 antiproton (for 525 version) (Pattern 0)
+    command: calculate_effective_acceptance
+    args: --McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_antipr.pl1.1800_7.6_all/mcScalingWeights.root --inputfile $HPCHIGHENERGYDATADIR/B1042_antipr.pl1.1800_7.6_all_525version_Pattern0_Auxiliary.root --outputFileName $HPCHIGHENERGYDATADIR/EffectiveAcceptance_B1042_antipr.pl1.1800_7.6_all_Pattern0_525version --selectors QualityCuts --kinematicVariable momentum --xmin 14.0 --xmax 1131 --species Antiproton --mcComparisionCanvas
+
+[interactive]
+    Compute effective acceptance for MC B1042 antiproton (for 525 version) (Pattern 1)
+    command: calculate_effective_acceptance
+    args: --McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_antipr.pl1.1800_7.6_all/mcScalingWeights.root --inputfile $HPCHIGHENERGYDATADIR/B1042_antipr.pl1.1800_7.6_all_525version_Pattern1_Auxiliary.root --outputFileName $HPCHIGHENERGYDATADIR/EffectiveAcceptance_B1042_antipr.pl1.1800_7.6_all_Pattern1_525version --selectors QualityCuts --kinematicVariable momentum --xmin 14.0 --xmax 1131 --species Antiproton --mcComparisionCanvas
+
+[interactive]
+    Compute effective acceptance for MC B1042 antiproton (for 525 version) (Pattern 2)
+    command: calculate_effective_acceptance
+    args: --McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_antipr.pl1.1800_7.6_all/mcScalingWeights.root --inputfile $HPCHIGHENERGYDATADIR/B1042_antipr.pl1.1800_7.6_all_525version_Pattern2_Auxiliary.root --outputFileName $HPCHIGHENERGYDATADIR/EffectiveAcceptance_B1042_antipr.pl1.1800_7.6_all_Pattern2_525version --selectors QualityCuts --kinematicVariable momentum --xmin 14.0 --xmax 1131 --species Antiproton --mcComparisionCanvas
+
+[interactive]
+    Compute effective acceptance for MC B1042 antiproton (for 525 version) (Pattern 3)
+    command: calculate_effective_acceptance
+    args: --McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_antipr.pl1.1800_7.6_all/mcScalingWeights.root --inputfile $HPCHIGHENERGYDATADIR/B1042_antipr.pl1.1800_7.6_all_525version_Pattern3_Auxiliary.root --outputFileName $HPCHIGHENERGYDATADIR/EffectiveAcceptance_B1042_antipr.pl1.1800_7.6_all_Pattern3_525version --selectors QualityCuts --kinematicVariable momentum --xmin 14.0 --xmax 1131 --species Antiproton --mcComparisionCanvas
+
+[interactive]
+    Compute effective acceptance for MC B1042 antiproton (for 525 version) (Pattern 4)
+    command: calculate_effective_acceptance
+    args: --McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_antipr.pl1.1800_7.6_all/mcScalingWeights.root --inputfile $HPCHIGHENERGYDATADIR/B1042_antipr.pl1.1800_7.6_all_525version_Pattern4_Auxiliary.root --outputFileName $HPCHIGHENERGYDATADIR/EffectiveAcceptance_B1042_antipr.pl1.1800_7.6_all_Pattern4_525version --selectors QualityCuts --kinematicVariable momentum --xmin 14.0 --xmax 1131 --species Antiproton --mcComparisionCanvas
+
+[interactive]
+    Compute effective acceptance for MC B1042 antiproton (for 525 version) (Pattern 5)
+    command: calculate_effective_acceptance
+    args: --McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_antipr.pl1.1800_7.6_all/mcScalingWeights.root --inputfile $HPCHIGHENERGYDATADIR/B1042_antipr.pl1.1800_7.6_all_525version_Pattern5_Auxiliary.root --outputFileName $HPCHIGHENERGYDATADIR/EffectiveAcceptance_B1042_antipr.pl1.1800_7.6_all_Pattern5_525version --selectors QualityCuts --kinematicVariable momentum --xmin 14.0 --xmax 1131 --species Antiproton --mcComparisionCanvas
+
+[interactive]
+    Compute effective acceptance for MC B1042 antiproton (for 525 version) (Pattern -1)
+    command: calculate_effective_acceptance
+    args: --McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_antipr.pl1.1800_7.6_all/mcScalingWeights.root --inputfile $HPCHIGHENERGYDATADIR/B1042_antipr.pl1.1800_7.6_all_525version_Pattern-1_Auxiliary.root --outputFileName $HPCHIGHENERGYDATADIR/EffectiveAcceptance_B1042_antipr.pl1.1800_7.6_all_Pattern-1_525version --selectors QualityCuts --kinematicVariable momentum --xmin 14.0 --xmax 1131 --species Antiproton --mcComparisionCanvas
+
+# Proton
+[interactive]
+    Compute effective acceptance for MC B1042 proton (for 525 version) (Pattern 0)
+    command: calculate_effective_acceptance
+    args: --McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_pr.pl1.1800_7.6_all/mcScalingWeights.root --inputfile $HPCHIGHENERGYDATADIR/B1042_pr.pl1.1800_7.6_all_525version_Pattern0_Auxiliary.root --outputFileName $HPCHIGHENERGYDATADIR/EffectiveAcceptance_B1042_pr.pl1.1800_7.6_all_Pattern0_525version --selectors QualityCuts --kinematicVariable momentum --xmin 14.0 --xmax 1131 --species Proton --mcComparisionCanvas
+
+[interactive]
+    Compute effective acceptance for MC B1042 proton (for 525 version) (Pattern 1)
+    command: calculate_effective_acceptance
+    args: --McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_pr.pl1.1800_7.6_all/mcScalingWeights.root --inputfile $HPCHIGHENERGYDATADIR/B1042_pr.pl1.1800_7.6_all_525version_Pattern1_Auxiliary.root --outputFileName $HPCHIGHENERGYDATADIR/EffectiveAcceptance_B1042_pr.pl1.1800_7.6_all_Pattern1_525version --selectors QualityCuts --kinematicVariable momentum --xmin 14.0 --xmax 1131 --species Proton --mcComparisionCanvas
+
+[interactive]
+    Compute effective acceptance for MC B1042 proton (for 525 version) (Pattern 2)
+    command: calculate_effective_acceptance
+    args: --McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_pr.pl1.1800_7.6_all/mcScalingWeights.root --inputfile $HPCHIGHENERGYDATADIR/B1042_pr.pl1.1800_7.6_all_525version_Pattern2_Auxiliary.root --outputFileName $HPCHIGHENERGYDATADIR/EffectiveAcceptance_B1042_pr.pl1.1800_7.6_all_Pattern2_525version --selectors QualityCuts --kinematicVariable momentum --xmin 14.0 --xmax 1131 --species Proton --mcComparisionCanvas
+
+[interactive]
+    Compute effective acceptance for MC B1042 proton (for 525 version) (Pattern 3)
+    command: calculate_effective_acceptance
+    args: --McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_pr.pl1.1800_7.6_all/mcScalingWeights.root --inputfile $HPCHIGHENERGYDATADIR/B1042_pr.pl1.1800_7.6_all_525version_Pattern3_Auxiliary.root --outputFileName $HPCHIGHENERGYDATADIR/EffectiveAcceptance_B1042_pr.pl1.1800_7.6_all_Pattern3_525version --selectors QualityCuts --kinematicVariable momentum --xmin 14.0 --xmax 1131 --species Proton --mcComparisionCanvas
+
+[interactive]
+    Compute effective acceptance for MC B1042 proton (for 525 version) (Pattern 4)
+    command: calculate_effective_acceptance
+    args: --McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_pr.pl1.1800_7.6_all/mcScalingWeights.root --inputfile $HPCHIGHENERGYDATADIR/B1042_pr.pl1.1800_7.6_all_525version_Pattern4_Auxiliary.root --outputFileName $HPCHIGHENERGYDATADIR/EffectiveAcceptance_B1042_pr.pl1.1800_7.6_all_Pattern4_525version --selectors QualityCuts --kinematicVariable momentum --xmin 14.0 --xmax 1131 --species Proton --mcComparisionCanvas
+
+[interactive]
+    Compute effective acceptance for MC B1042 proton (for 525 version) (Pattern 5)
+    command: calculate_effective_acceptance
+    args: --McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_pr.pl1.1800_7.6_all/mcScalingWeights.root --inputfile $HPCHIGHENERGYDATADIR/B1042_pr.pl1.1800_7.6_all_525version_Pattern5_Auxiliary.root --outputFileName $HPCHIGHENERGYDATADIR/EffectiveAcceptance_B1042_pr.pl1.1800_7.6_all_Pattern5_525version --selectors QualityCuts --kinematicVariable momentum --xmin 14.0 --xmax 1131 --species Proton --mcComparisionCanvas
+
+[interactive]
+    Compute effective acceptance for MC B1042 proton (for 525 version) (Pattern -1)
+    command: calculate_effective_acceptance
+    args: --McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_pr.pl1.1800_7.6_all/mcScalingWeights.root --inputfile $HPCHIGHENERGYDATADIR/B1042_pr.pl1.1800_7.6_all_525version_Pattern-1_Auxiliary.root --outputFileName $HPCHIGHENERGYDATADIR/EffectiveAcceptance_B1042_pr.pl1.1800_7.6_all_Pattern-1_525version --selectors QualityCuts --kinematicVariable momentum --xmin 14.0 --xmax 1131 --species Proton --mcComparisionCanvas
+
+
+##for 450 version
+# Antiproton
+[interactive]
+    Compute effective acceptance for MC B1042 antiproton (for 450 version) (Pattern 0)
+    command: calculate_effective_acceptance
+    args: --McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_antipr.pl1.1800_7.6_all/mcScalingWeights.root --inputfile $HPCHIGHENERGYDATADIR/B1042_antipr.pl1.1800_7.6_all_450version_Pattern0_Auxiliary.root --outputFileName $HPCHIGHENERGYDATADIR/EffectiveAcceptance_B1042_antipr.pl1.1800_7.6_all_Pattern0_450version --selectors QualityCuts --kinematicVariable momentum --xmin 14.0 --xmax 1131 --species Antiproton --mcComparisionCanvas
+
+[interactive]
+    Compute effective acceptance for MC B1042 antiproton (for 450 version) (Pattern 1)
+    command: calculate_effective_acceptance
+    args: --McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_antipr.pl1.1800_7.6_all/mcScalingWeights.root --inputfile $HPCHIGHENERGYDATADIR/B1042_antipr.pl1.1800_7.6_all_450version_Pattern1_Auxiliary.root --outputFileName $HPCHIGHENERGYDATADIR/EffectiveAcceptance_B1042_antipr.pl1.1800_7.6_all_Pattern1_450version --selectors QualityCuts --kinematicVariable momentum --xmin 14.0 --xmax 1131 --species Antiproton --mcComparisionCanvas
+
+[interactive]
+    Compute effective acceptance for MC B1042 antiproton (for 450 version) (Pattern 2)
+    command: calculate_effective_acceptance
+    args: --McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_antipr.pl1.1800_7.6_all/mcScalingWeights.root --inputfile $HPCHIGHENERGYDATADIR/B1042_antipr.pl1.1800_7.6_all_450version_Pattern2_Auxiliary.root --outputFileName $HPCHIGHENERGYDATADIR/EffectiveAcceptance_B1042_antipr.pl1.1800_7.6_all_Pattern2_450version --selectors QualityCuts --kinematicVariable momentum --xmin 14.0 --xmax 1131 --species Antiproton --mcComparisionCanvas
+
+[interactive]
+    Compute effective acceptance for MC B1042 antiproton (for 450 version) (Pattern 3)
+    command: calculate_effective_acceptance
+    args: --McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_antipr.pl1.1800_7.6_all/mcScalingWeights.root --inputfile $HPCHIGHENERGYDATADIR/B1042_antipr.pl1.1800_7.6_all_450version_Pattern3_Auxiliary.root --outputFileName $HPCHIGHENERGYDATADIR/EffectiveAcceptance_B1042_antipr.pl1.1800_7.6_all_Pattern3_450version --selectors QualityCuts --kinematicVariable momentum --xmin 14.0 --xmax 1131 --species Antiproton --mcComparisionCanvas
+
+[interactive]
+    Compute effective acceptance for MC B1042 antiproton (for 450 version) (Pattern 4)
+    command: calculate_effective_acceptance
+    args: --McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_antipr.pl1.1800_7.6_all/mcScalingWeights.root --inputfile $HPCHIGHENERGYDATADIR/B1042_antipr.pl1.1800_7.6_all_450version_Pattern4_Auxiliary.root --outputFileName $HPCHIGHENERGYDATADIR/EffectiveAcceptance_B1042_antipr.pl1.1800_7.6_all_Pattern4_450version --selectors QualityCuts --kinematicVariable momentum --xmin 14.0 --xmax 1131 --species Antiproton --mcComparisionCanvas
+
+[interactive]
+    Compute effective acceptance for MC B1042 antiproton (for 450 version) (Pattern 5)
+    command: calculate_effective_acceptance
+    args: --McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_antipr.pl1.1800_7.6_all/mcScalingWeights.root --inputfile $HPCHIGHENERGYDATADIR/B1042_antipr.pl1.1800_7.6_all_450version_Pattern5_Auxiliary.root --outputFileName $HPCHIGHENERGYDATADIR/EffectiveAcceptance_B1042_antipr.pl1.1800_7.6_all_Pattern5_450version --selectors QualityCuts --kinematicVariable momentum --xmin 14.0 --xmax 1131 --species Antiproton --mcComparisionCanvas
+
+[interactive]
+    Compute effective acceptance for MC B1042 antiproton (for 450 version) (Pattern -1)
+    command: calculate_effective_acceptance
+    args: --McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_antipr.pl1.1800_7.6_all/mcScalingWeights.root --inputfile $HPCHIGHENERGYDATADIR/B1042_antipr.pl1.1800_7.6_all_450version_Pattern-1_Auxiliary.root --outputFileName $HPCHIGHENERGYDATADIR/EffectiveAcceptance_B1042_antipr.pl1.1800_7.6_all_Pattern-1_450version --selectors QualityCuts --kinematicVariable momentum --xmin 14.0 --xmax 1131 --species Antiproton --mcComparisionCanvas
+
+
+# Proton
+[interactive]
+    Compute effective acceptance for MC B1042 proton (for 450 version) (Pattern 0)
+    command: calculate_effective_acceptance
+    args: --McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_pr.pl1.1800_7.6_all/mcScalingWeights.root --inputfile $HPCHIGHENERGYDATADIR/B1042_pr.pl1.1800_7.6_all_450version_Pattern0_Auxiliary.root --outputFileName $HPCHIGHENERGYDATADIR/EffectiveAcceptance_B1042_pr.pl1.1800_7.6_all_Pattern0_450version --selectors QualityCuts --kinematicVariable momentum --xmin 14.0 --xmax 1131 --species Proton --mcComparisionCanvas
+
+[interactive]
+    Compute effective acceptance for MC B1042 proton (for 450 version) (Pattern 1)
+    command: calculate_effective_acceptance
+    args: --McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_pr.pl1.1800_7.6_all/mcScalingWeights.root --inputfile $HPCHIGHENERGYDATADIR/B1042_pr.pl1.1800_7.6_all_450version_Pattern1_Auxiliary.root --outputFileName $HPCHIGHENERGYDATADIR/EffectiveAcceptance_B1042_pr.pl1.1800_7.6_all_Pattern1_450version --selectors QualityCuts --kinematicVariable momentum --xmin 14.0 --xmax 1131 --species Proton --mcComparisionCanvas
+
+[interactive]
+    Compute effective acceptance for MC B1042 proton (for 450 version) (Pattern 2)
+    command: calculate_effective_acceptance
+    args: --McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_pr.pl1.1800_7.6_all/mcScalingWeights.root --inputfile $HPCHIGHENERGYDATADIR/B1042_pr.pl1.1800_7.6_all_450version_Pattern2_Auxiliary.root --outputFileName $HPCHIGHENERGYDATADIR/EffectiveAcceptance_B1042_pr.pl1.1800_7.6_all_Pattern2_450version --selectors QualityCuts --kinematicVariable momentum --xmin 14.0 --xmax 1131 --species Proton --mcComparisionCanvas
+
+[interactive]
+    Compute effective acceptance for MC B1042 proton (for 450 version) (Pattern 3)
+    command: calculate_effective_acceptance
+    args: --McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_pr.pl1.1800_7.6_all/mcScalingWeights.root --inputfile $HPCHIGHENERGYDATADIR/B1042_pr.pl1.1800_7.6_all_450version_Pattern3_Auxiliary.root --outputFileName $HPCHIGHENERGYDATADIR/EffectiveAcceptance_B1042_pr.pl1.1800_7.6_all_Pattern3_450version --selectors QualityCuts --kinematicVariable momentum --xmin 14.0 --xmax 1131 --species Proton --mcComparisionCanvas
+
+[interactive]
+    Compute effective acceptance for MC B1042 proton (for 450 version) (Pattern 4)
+    command: calculate_effective_acceptance
+    args: --McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_pr.pl1.1800_7.6_all/mcScalingWeights.root --inputfile $HPCHIGHENERGYDATADIR/B1042_pr.pl1.1800_7.6_all_450version_Pattern4_Auxiliary.root --outputFileName $HPCHIGHENERGYDATADIR/EffectiveAcceptance_B1042_pr.pl1.1800_7.6_all_Pattern4_450version --selectors QualityCuts --kinematicVariable momentum --xmin 14.0 --xmax 1131 --species Proton --mcComparisionCanvas
+
+[interactive]
+    Compute effective acceptance for MC B1042 proton (for 450 version) (Pattern 5)
+    command: calculate_effective_acceptance
+    args: --McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_pr.pl1.1800_7.6_all/mcScalingWeights.root --inputfile $HPCHIGHENERGYDATADIR/B1042_pr.pl1.1800_7.6_all_450version_Pattern5_Auxiliary.root --outputFileName $HPCHIGHENERGYDATADIR/EffectiveAcceptance_B1042_pr.pl1.1800_7.6_all_Pattern5_450version --selectors QualityCuts --kinematicVariable momentum --xmin 14.0 --xmax 1131 --species Proton --mcComparisionCanvas
+
+[interactive]
+    Compute effective acceptance for MC B1042 proton (for 450 version) (Pattern -1)
+    command: calculate_effective_acceptance
+    args: --McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1042_pr.pl1.1800_7.6_all/mcScalingWeights.root --inputfile $HPCHIGHENERGYDATADIR/B1042_pr.pl1.1800_7.6_all_450version_Pattern-1_Auxiliary.root --outputFileName $HPCHIGHENERGYDATADIR/EffectiveAcceptance_B1042_pr.pl1.1800_7.6_all_Pattern-1_450version --selectors QualityCuts --kinematicVariable momentum --xmin 14.0 --xmax 1131 --species Proton --mcComparisionCanvas
+
+

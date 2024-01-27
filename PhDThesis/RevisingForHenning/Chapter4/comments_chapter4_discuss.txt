@@ -1,0 +1,220 @@
+Chapter 4
+
+##########################
+## General
+## 4 Comments
+##########################
+
+526, 524-532 What is special about the time-dependent analysis? It seems there is no
+  dedicated section to discuss this? My understanding was that the time-dependent
+  flux should be a highlight of this thesis, so emphasis should be put on any issues
+  in the analysis that need extra care when deriving the time-dependent
+  results/uncertainties.
+
+
+##########################
+## 4.1 Data Selection
+## 21 Comments
+##########################
+
+565 interaction of what? discuss also digitization of the simulated signals, trigger
+  simulation, etc.
+
+568/571 be much more specfic, list the version numbers of all MC simulations used,
+  give details about the data/MC ratio, including a plot as a function of p
+
+584 you could show a plot of event counts before and after rewighting and compared to ISS
+  data, which should then match.
+  Be more specific about the reweighting. Which formula did you use? Your thesis should
+  contain every piece of information that is needed to reproduce your results.
+
+Table 4.1: The "Description" column is not very illuminating. See Niko's thesis or
+  Matthew Behlmann's thesis from MIT for examples on how to explain each quality cut
+  with 2-3 sentences.
+
+619: The cut on single tracker track is very problematic as a preselection cut.
+  Is the tracking efficiency well reproduced by the MC? Do you show fluxes in the
+  end where this could matter?
+add: focus on ratio.
+
+629: it would be good to see distributions of the quanties that you cut on, e.g. the
+  reconstructed charges, from MC signal and/or tagged ISS signal events.
+
+
+##########################
+## 4.2 Charge Confusion Estimator
+## 11 Comments
+##########################
+
+668: it's not so simple. What if the rigidity in an event is wrongly reconstructed,
+  but still positive? Then this event shows the same behavior as charge confusion
+  and should not be used in the signal sample for training. You could define the
+  signal sample to be within a few sigma_R around R_true. There should be a "gap"
+  between the signal and background samples.
+add£ºignore
+
+Fig. 4.1:
+  - the plot ranges for a,b,d are not chosen well: the distributions extend beyond
+    the axis ranges
+
+692: Can't you simply use the rigidity values from the inner vs all fits directly, instead
+  of the chi2 values?
+
+
+##########################
+## 4.3 TRD Estimator
+## 8 Comments
+##########################
+
+
+##########################
+## 4.4 Template Fit
+## 23 Comments
+##########################
+
+
+Table 4.4: 
+  Why not use ECAL to get a clean e- template? add: description.
+  Why can you use the number of TRD hits? They may be completely unrelated to the tracks in
+  the TRD.
+  Are the same TOF beta and TRD likelihood cuts used for all templates and data? Why? Why
+  list them in the table in the first place? add: description.
+(similar comments hold for Table 4.5)
+
+Fig. 4.4 should display continuous lines, not data points. How are the lines chosen?
+  You need to show distributions of the relevant variables to motivate your cuts.
+
+Fig. 4.5:
+  - Before Fig. 4.5, you should show the full 2D plot and then explain the projections.
+  - Why does the pbar template not peak at zero?
+  - The maximum in b) is too low, the result histogram is cut off at the top.
+  - It seems that the range of the Lambda_TRD axis in b) is not chosen well. What
+    about the left part of the distribution? Also, the choice for the axis range in a0
+    is strange: The right part is almost empty, but the tail on the left side is cut off.
+  - The fit results for the counts and their uncertainties should also be given in the legend.
+
+Figs 4.5, 4.7: The chi2/ndf that you quote here is probably misleading. You have to quote
+  both the chi2 and the ndf. Since this is a 2D template fit, ndf is probably large. But
+  then a chi2/ndf indicates a very poor fit. 
+
+Fig. 4.8.: 
+   The range for the x-axis is very strange. Show the electron component in its entirety.
+
+Fig. 4.11:
+  - The number of events given in the legend (3817) does obviously not match the counts
+    in the histograms. Likewise, where are the electrons seen in b) in the upper plot?
+    Are there additional cuts on Lambda_TRD when drawing the Lambda_CC projection and v.v.?
+    This has to be discussed in the text.
+
+Fig. 4.12:  You did not discuss using different sets of tracker patterns before, did you? Instead of plotting the raw numbers, it would be better to draw, e.g, dN/dR, which should be a smooth curve independent of the binning. 
+add: pattern->description.
+
+Section 4.4.2: Are the templates derived individually for each time bin, or globally once
+  and for all? Are the distribtutions stable in time?
+
+Fig. 4.14: Again, the plot range is very strangeÂ·
+
+Fig. 4.15, 4.16:
+  - Plot dN/dt, where dt is livetime, to avoid the enormous jumps.
+
+
+##########################
+## 4.5 Effective Acceptance
+## 10 Comments
+##########################
+
+Fig. 4.17:
+
+ - Why are the error bars vastly different? It seems that some of the ups and downs are much larger than the error bars. What is the physics behind this?£¨11.10.2021 Group meeting£©
+
+ - There should also be a plot of the p and pbar absolute acceptances
+   for the three selections before showing this plot.
+
+ - Lastly: This correction is HUGE. How do you know it is correct? Are
+   there any crosschecks for this in AMS? According to the pbar/p
+   paper (PRL 117, 091103 (2016)), the ratio is 1.15 at 1 GV, in your
+   plot it's closer to 1.30.
+add: cite PPT, due to cuts and selections, this value changes. 
+
+
+##########################
+## 4.6 Measuring Time
+## 13 Comments
+##########################
+
+
+##########################
+## 4.7 Trigger Efficiency
+## 5 Comments
+##########################
+
+Fig. 4.25:
+  - Why is this a continuous curve? It's probably extracted from
+    binned data?
+  - You can also get the trigger efficiency from MC and compare.
+  - The trigger efficiency seems to be rather low. Do you have a
+    crosscheck for the values?
+
+
+
+##########################
+## 4.8 Unfolding
+## 3 Comments
+##########################
+
+1024 / Fig. 4.27: Does the figure show the effect of the unfolding on
+the antiproton (or proton) counts? Or on the pbar/p ratio? In line
+1023, you say "counts", in line 1024, you say "ratio". If it's the
+counts, the effect of the unfolding should cancel in the final ratio?
+
+If the unfolding is important, you should do a toy MC study to show
+that it works as expected on known input data.
+(raw number, acceptance)
+
+##########################
+## 4.9 Antiproton To Proton Flux Ratio Calculation
+## 2 Comments
+##########################
+
+1038: But in your discussion of the unfolding, neither measuring time
+nor trigger efficiency are used or needed?
+
+##########################
+## 4.10 Systematic Uncertainty
+## 14 Comments
+##########################
+
+1055: Why 10%? Why not 15%? 5%? This should be related to the
+uncertainties on the cross section data. What does "the cross sections
+are varied" mean? Randomly? Set to nominal +- 10%? I would assume that
+they were varied individually for p and pbar and the two contributions
+are added in quadrature? How does the ratio of acceptances (Fig. 4.17)
+change in these cases? The systematic uncertainty on acceptance should
+also depend on how well the material budget of the detector is
+described in the MC.
+
+
+Fig. 4.28:
+  - It is strange to show the value of an uncertainty when the value of the quantity itself has not been shown yet.
+add: 4.10:ratio with statistic error.
+
+You assume that the template shapes are known perfectly, but in
+reality, they also come with some uncertainty / wiggle room, which
+should lead to a systematic uncertainty. E.g., what happens when you
+vary the cuts defining your templates? Or when you vary the templates
+within their statistical uncertainty?
+
+Fig. 4.30 / 1075: But before you show the value of the pbar/p ratio, an absolute
+uncertainty is meaningless.
+
+Fig. 4.34: What about the statistical error? Adjust the plotting
+style. I think that the systematic error should not fluctuate from
+time bin to bin, but a constant value (average) should be used
+instead.
+add: add statis error in 4.37, remove total sys.
+
+
+
+
+
+

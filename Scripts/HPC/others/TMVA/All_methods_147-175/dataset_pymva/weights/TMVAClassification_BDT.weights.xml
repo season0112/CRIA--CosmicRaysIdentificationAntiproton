@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<MethodSetup Method="BDT::BDT">
+  <GeneralInfo>
+    <Info name="TMVA Release" value="4.2.1 [262657]"/>
+    <Info name="ROOT Release" value="6.14/08 [396808]"/>
+    <Info name="Creator" value="bo791269"/>
+    <Info name="Date" value="Sun Jan 27 01:04:31 2019"/>
+    <Info name="Host" value="Linux lxplus001.cern.ch 3.10.0-862.14.4.el7.x86_64 #1 SMP Wed Sep 26 15:12:11 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux"/>
+    <Info name="Dir" value="/rwthfs/rz/cluster/home/bo791269/TMVA/All_methods_147-175_MLPBNN_testonly"/>
+    <Info name="Training events" value="88265"/>
+    <Info name="TrainingTime" value="1.39380908e+00"/>
+    <Info name="AnalysisType" value="Classification"/>
+  </GeneralInfo>
+  <Options>
+    <Option name="V" modified="Yes">False</Option>
+    <Option name="VerbosityLevel" modified="No">Default</Option>
+    <Option name="VarTransform" modified="No">None</Option>
+    <Option name="H" modified="Yes">False</Option>
+    <Option name="CreateMVAPdfs" modified="No">False</Option>
+    <Option name="IgnoreNegWeightsInTraining" modified="No">False</Option>
+    <Option name="NTrees" modified="Yes">850</Option>
+    <Option name="MaxDepth" modified="Yes">3</Option>
+    <Option name="MinNodeSize" modified="Yes">2.5%</Option>
+    <Option name="nCuts" modified="Yes">20</Option>
+    <Option name="BoostType" modified="Yes">AdaBoost</Option>
+    <Option name="AdaBoostR2Loss" modified="No">quadratic</Option>
+    <Option name="UseBaggedBoost" modified="Yes">True</Option>
+    <Option name="Shrinkage" modified="No">1.000000e+00</Option>
+    <Option name="AdaBoostBeta" modified="Yes">5.000000e-01</Option>
+    <Option name="UseRandomisedTrees" modified="No">False</Option>
+    <Option name="UseNvars" modified="No">4</Option>
+    <Option name="UsePoissonNvars" modified="No">True</Option>
+    <Option name="BaggedSampleFraction" modified="Yes">5.000000e-01</Option>
+    <Option name="UseYesNoLeaf" modified="No">True</Option>
+    <Option name="NegWeightTreatment" modified="No">inverseboostnegweights</Option>
+    <Option name="Css" modified="No">1.000000e+00</Option>
+    <Option name="Cts_sb" modified="No">1.000000e+00</Option>
+    <Option name="Ctb_ss" modified="No">1.000000e+00</Option>
+    <Option name="Cbb" modified="No">1.000000e+00</Option>
+    <Option name="NodePurityLimit" modified="No">5.000000e-01</Option>
+    <Option name="SeparationType" modified="Yes">giniindex</Option>
+    <Option name="RegressionLossFunctionBDTG" modified="No">huber</Option>
+    <Option name="HuberQuantile" modified="No">7.000000e-01</Option>
+    <Option name="DoBoostMonitor" modified="No">False</Option>
+    <Option name="UseFisherCuts" modified="No">False</Option>
+    <Option name="MinLinCorrForFisher" modified="No">8.000000e-01</Option>
+    <Option name="UseExclusiveVars" modified="No">False</Option>
+    <Option name="DoPreselection" modified="No">False</Option>
+    <Option name="SigToBkgFraction" modified="No">1.000000e+00</Option>
+    <Option name="PruneMethod" modified="No">nopruning</Option>
+    <Option name="PruneStrength" modified="No">0.000000e+00</Option>
+    <Option name="PruningValFraction" modified="No">5.000000e-01</Option>
+    <Option name="SkipNormalization" modified="No">False</Option>
+    <Option name="nEventsMin" modified="No">0</Option>
+    <Option name="UseBaggedGrad" modified="No">False</Option>
+    <Option name="GradBaggingFraction" modified="No">5.000000e-01</Option>
+    <Option name="UseNTrainEvents" modified="No">0</Option>
+    <Option name="NNodesMax" modified="No">0</Option>
+  </Options>
+  <Variables NVar="16">
+    <Variable VarIndex="0" Expression="a1" Label="a1" Title="a1" Unit="" Internal="a1" Type="F" Min="1.57373667e-01" Max="1.24246657e+00"/>
+    <Variable VarIndex="1" Expression="a2" Label="a2" Title="a2" Unit="" Internal="a2" Type="F" Min="-1.51193914e+01" Max="4.00456572e+00"/>
+    <Variable VarIndex="2" Expression="a3" Label="a3" Title="a3" Unit="" Internal="a3" Type="F" Min="-5.69186084e+03" Max="2.84588086e+03"/>
+    <Variable VarIndex="3" Expression="a4" Label="a4" Title="a4" Unit="" Internal="a4" Type="F" Min="-9.99852955e-01" Max="4.97340471e-01"/>
+    <Variable VarIndex="4" Expression="a5" Label="a5" Title="a5" Unit="" Internal="a5" Type="F" Min="-5.22256327e+00" Max="5.22256327e+00"/>
+    <Variable VarIndex="5" Expression="a6" Label="a6" Title="a6" Unit="" Internal="a6" Type="F" Min="-2.16296172e+00" Max="2.35471702e+00"/>
+    <Variable VarIndex="6" Expression="a7" Label="a7" Title="a7" Unit="" Internal="a7" Type="F" Min="-3.55545311e+01" Max="1.21747368e+02"/>
+    <Variable VarIndex="7" Expression="a8" Label="a8" Title="a8" Unit="" Internal="a8" Type="F" Min="-3.22184873e+00" Max="1.39832640e+00"/>
+    <Variable VarIndex="8" Expression="a9" Label="a9" Title="a9" Unit="" Internal="a9" Type="F" Min="-3.22184873e+00" Max="1.37559271e+00"/>
+    <Variable VarIndex="9" Expression="a10" Label="a10" Title="a10" Unit="" Internal="a10" Type="F" Min="-2.75343609e+00" Max="9.99795198e-01"/>
+    <Variable VarIndex="10" Expression="a11" Label="a11" Title="a11" Unit="" Internal="a11" Type="F" Min="-2.31309462e+00" Max="9.99992847e-01"/>
+    <Variable VarIndex="11" Expression="a12" Label="a12" Title="a12" Unit="" Internal="a12" Type="F" Min="-6.77213516e+01" Max="1.84312522e+00"/>
+    <Variable VarIndex="12" Expression="a13" Label="a13" Title="a13" Unit="" Internal="a13" Type="F" Min="0.00000000e+00" Max="1.00076920e+02"/>
+    <Variable VarIndex="13" Expression="a14" Label="a14" Title="a14" Unit="" Internal="a14" Type="F" Min="0.00000000e+00" Max="4.24719095e+00"/>
+    <Variable VarIndex="14" Expression="a15" Label="a15" Title="a15" Unit="" Internal="a15" Type="F" Min="7.61214733e-01" Max="1.49992204e+00"/>
+    <Variable VarIndex="15" Expression="a16" Label="a16" Title="a16" Unit="" Internal="a16" Type="F" Min="8.04693282e-01" Max="1.99997473e+00"/>
+  </Variables>
+  <Spectators NSpec="0"/>
+  <Classes NClass="2">
+    <Class Name="Signal" Index="0"/>
+    <Class Name="Background" Index="1"/>
+  </Classes>
+  <Transformations NTransformations="0"/>
+  <MVAPdfs/>
+  <Weights NTrees="2" AnalysisType="0">
+    <BinaryTree type="DecisionTree" boostWeight="2.8122020640867500e-03" itree="0">
+      <Node pos="s" depth="0" NCoef="0" IVar="-1" Cut="0.0000000000000000e+00" cType="1" res="-9.9000000000000000e+01" rms="0.0000000000000000e+00" purity="5.0000000000000000e-01" nType="-1"/>
+    </BinaryTree>
+    <BinaryTree type="DecisionTree" boostWeight="0.0000000000000000e+00" itree="1">
+      <Node pos="s" depth="0" NCoef="0" IVar="-1" Cut="0.0000000000000000e+00" cType="1" res="-9.9000000000000000e+01" rms="0.0000000000000000e+00" purity="5.0000000000000000e-01" nType="-1"/>
+    </BinaryTree>
+  </Weights>
+</MethodSetup>

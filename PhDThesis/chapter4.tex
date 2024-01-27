@@ -1,0 +1,87 @@
+
+\chpt{Analysis} \label{ChapterAnalysis}
+
+
+%% Flux definition 
+In this chapter, the details of the antiproton analysis will be given, including all the steps of deriving the time-averaged and time-dependent antiproton to proton flux ratio. To determine the flux ratio, the definition of flux should be given first. In general, the flux as a function of true rigidity is calculated by: 
+
+\begin{equation}
+\label{FluxCalculationEquation}
+\Phi(|R|_{\rm{true}}) = \frac{N(|R|_{\rm{true}})}{\Delta R \cdot T(|R|_{\rm{true}}) \cdot A(|R|_{\rm{true}}) \cdot \epsilon(|R|_{\rm{true}}) }
+\end{equation}
+
+where $N(|R|_{\rm{true}})$ is the number of events in this rigidity bin, $\Delta R$ is the rigidity bins width, $T(|R|_{\rm{true}})$ is the measuring time, $\epsilon(|R|_{\rm{true}})$ is the trigger efficiency and $A(|R|_{\rm{true}})$ is the effective acceptance. The quantities in equation \ref{FluxCalculationEquation} are as a function of true rigidity, while the number of events, derived from the template fit (a method to extract signal and background events from the total event distribution, see Section \ref{TempalteFitSection}), is expressed as a function of reconstructed rigidity. To get the event number in true rigidity, a procedure called "unfolding" is performed. This will be discussed further in section \ref{unfoldingsection}.  \par
+
+
+%% Time Averaged: Antiproton to Proton flux ratio
+In this thesis, the objective is the antiproton to proton flux ratio. Therefore, the dedicated formula should be determined based on the equation \ref{FluxCalculationEquation}. Given the antiproton and proton flux definitions:
+
+\begin{equation} 
+\begin{aligned}  
+\Phi_{\bar{p}}(|R|_{\rm{true}}) =  \frac{N_{\bar{p}}(|R|_{\rm{true}})}{\Delta R_{\bar{p}} \cdot T_{\bar{p}}(|R|_{\rm{true}}) \cdot A_{\bar{p}}(|R|_{\rm{true}}) \cdot \epsilon_{\bar{p}}(|R|_{\rm{true}}) }\\
+\Phi_{p}(|R|_{\rm{true}}) =  \frac{N_{p}(|R|_{\rm{true}})}{\Delta R_{p} \cdot T_{p}(|R|_{\rm{true}}) \cdot A_{p}(|R|_{\rm{true}}) \cdot \epsilon_{p}(|R|_{\rm{true}}) }
+\end{aligned}
+\end{equation}
+
+the antiproton to proton flux ratio is defined as the antiproton flux divided by the proton flux. In this process, some terms can be strictly canceled out, like in the AMS-02 positron to electron flux ratio analysis \cite{ZimmermannPhDThesis}. Therefore, the overall calculation can be simplified:
+
+\begin{equation} 
+\begin{aligned}  
+\frac{\Phi_{\bar{p}}(|R|_{\rm{true}})}{\Phi_{p}(|R|_{\rm{true}})} &= \frac{N_{\bar{p}}(|R|_{\rm{true}}) \cdot \Delta R_{p} \cdot T_{p}(|R|_{\rm{true}}) \cdot A_{p}(|R|_{\rm{true}}) \cdot \epsilon_{p}(|R|_{\rm{true}}) }{ N_{p}(|R|_{\rm{true}}) \cdot \Delta R_{\bar{p}} \cdot T_{\bar{p}}(|R|_{\rm{true}}) \cdot A_{\bar{p}}(|R|_{\rm{true}}) \cdot \epsilon_{\bar{p}}(|R|_{\rm{true}}) } \\ 
+&= \frac{N_{\bar{p}}(|R|_{\rm{true}}) \cdot A_{p}(|R|_{\rm{true}})}{N_{p}(|R|_{\rm{true}}) \cdot A_{\bar{p}}(|R|_{\rm{true}})} \\ 
+&= \frac{N_{\bar{p}}(|R|_{\rm{true}}) \cdot A^\mathrm{MC}_{p}(|R|_{\rm{true}}) \cdot (1+\delta_{p}(|R|_{\rm{true}}))}{N_{p}(|R|_{\rm{true}}) \cdot A^\mathrm{MC}_{\bar{p}}(|R|_{\rm{true}}) \cdot (1+\delta_{\bar{p}}(|R|_{\rm{true}}))} \\ 
+& = \frac{N_{\bar{p}}(|R|_{\rm{true}}) \cdot A^\mathrm{MC}_{p}(|R|_{\rm{true}})}{N_{p}(|R|_{\rm{true}}) \cdot A^\mathrm{MC}_{\bar{p}}(|R|_{\rm{true}})}
+\end{aligned}
+\label{PbarOverProtonRatioEquation}
+\end{equation}
+
+where $A^{\mathrm{MC}}_{p}(|R|_{\rm{true}})$ and $A^{\mathrm{MC}}_{\bar{p}}(|R|_{\rm{true}})$ are the effective acceptances of proton and antiproton taken from the MC, $\delta_{p}(|R|_{\rm{true}})$ and $\delta_{\bar{p}}(|R|_{\rm{true}})$ are the data/MC corrections of the proton and antiproton effective acceptances, more details about these will be given in section \ref{EffectiveAcceptanceSection}. As shown in equation \ref{PbarOverProtonRatioEquation} the terms that cancel out in the antiproton to proton flux ratio are the rigidity bin width $\Delta R$, the measuring time $T(|R|_{\rm{true}})$, the trigger efficiency $\epsilon(|R|_{\rm{true}})$ and the data/MC corrections of the effective acceptance $(1+\delta(|R|_{\rm{true}}))$. The details of these terms will be shown in detail in the following sections. These cancellations simplify the calculation of the antiproton to proton flux ratio.  \par
+% Although the measuring time and the trigger efficiency cancel out in the ratio calculation, they are still used in the unfolding process. 
+
+
+%% Time Dependent: Antiproton to Proton flux ratio
+For the time-dependent antiproton to proton flux ratio calculation, the formula in time bin $i$ is given in Equation \ref{TimeDependentPbarOverProtonRatioEquation}, which is similar to the time-averaged one. The difference is that the number of events is obtained from the individual template fits in every six Bartels Rotation time bin. \par
+
+\begin{equation} 
+\begin{aligned}  
+\frac{\Phi_{\bar{p},i}(|R|_{\rm{true}})}{\Phi_{p,i}(|R|_{\rm{true}})} &= \frac{N_{\bar{p},i}(|R|_{\rm{true}}) \cdot \Delta R_{p,i} \cdot T_{p,i}(|R|_{\rm{true}}) \cdot A_{p,i}(|R|_{\rm{true}}) \cdot \epsilon_{p,i}(|R|_{\rm{true}}) }{ N_{p,i}(|R|_{\rm{true}}) \cdot \Delta R_{\bar{p},i} \cdot T_{\bar{p},i}(|R|_{\rm{true}}) \cdot A_{\bar{p},i}(|R|_{\rm{true}}) \cdot \epsilon_{\bar{p},i}(|R|_{\rm{true}}) } \\ 
+& = \frac{N_{\bar{p},i}(|R|_{\rm{true}}) \cdot A^\mathrm{MC}_{p,i}(|R|_{\rm{true}})}{N_{p,i}(|R|_{\rm{true}}) \cdot A^\mathrm{MC}_{\bar{p,i}}(|R|_{\rm{true}})}
+\end{aligned}
+\label{TimeDependentPbarOverProtonRatioEquation}
+\end{equation}
+
+
+%% Content of Analysis Chapter
+In section \ref{DataSelectionSection}, the cuts and selections are discussed. Section \ref{chargeconfusion} shows the construction of the charge confusion estimator. Section \ref{TRDEstimatorSection} describes how the TRD likelihood estimator is constructed. In section \ref{TempalteFitSection}, the template fit procedures to get the antiproton signals in different rigidity ranges are shown. Section \ref{EffectiveAcceptanceSection} gives the details about how to calculate the effective acceptances of antiproton and proton. In section \ref{MeasuringTimeSection}, the measuring time used in this analysis is determined. Although the measuring time is canceled in the antiproton to proton flux ratio calculation, it has to be calculated because the rigidity cutoff is not simulated in the MC simulation which is used for unfolding, also the measuring time in the time-dependent analysis is important to understand the event numbers change. Section \ref{unfoldingsection} shows the unfolding procedure. In section \ref{SecAntiprotonToProtonRatio}, the antiproton to proton flux ratio is given with statistical uncertainty only. In section \ref{SystematicUncertaintiesSection}, the different systematic uncertainties in different rigidity ranges are discussed.  \par
+
+%In section \ref{TriggerEfficiencySection}, the trigger efficiency used in this analysis is calculated.
+%In section \ref{SecAntiprotonToProtonRatio}, the formula for the calculation of antiproton to proton flux ratio is derived. 
+
+\input{Charpter4/DataSelection}
+
+\input{Charpter4/Chargeconfusionestimator}
+
+\input{Charpter4/TRDestimator}  
+
+\input{Charpter4/TemplateFit}  
+
+\input{Charpter4/EffectiveAcceptance}
+
+\input{Charpter4/MeasuringTime}
+
+%\input{Charpter4/TriggerEfficiency}
+
+\input{Charpter4/Unfolding}
+
+\input{Charpter4/AntiprotonToProtonRatio}
+
+\input{Charpter4/SystematicUncertainty}
+
+
+
+
+
+
+
+
+

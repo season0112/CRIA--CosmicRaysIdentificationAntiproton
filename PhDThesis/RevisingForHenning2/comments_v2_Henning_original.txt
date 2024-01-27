@@ -1,0 +1,223 @@
+39,41,353: "kind of" is a weak expression
+
+47-50 do not really belong in a thesis abstract
+
+52: what does the spectrum look like?
+
+58: "Above 10 GV the time structure is mostly ignorable." is redundant
+with "... the antiproton to proton flux ratio keeps stable in the high
+rigidity range."
+
+Fig. 2.1a, Fig. 2.2, Fig. 2.3b, Fig. 3.3, Fig. 3.5: quote original sources
+instead of the references you use at the moment
+
+103, and in general: no space between reference and '.'
+
+122: Fig. 62c of the Phys. Rep. gives a different impression.
+
+Eq. 2.1: remove parenthesis around "-gamma"
+
+218: This sentence makes no sense to me.
+
+Eq. 2.4: that's not really a "solution". What about the spatial
+dependence?
+
+284: but the diffusion coefficient is orders of magnitude smaller
+
+472: $p$ etc.
+
+Figs. 3.16, 3.17: put side by side at half size?
+
+590: "should" implies that you did not actually do it, despite better
+knowledge
+
+611: But you just showed that the measuring time cancels from the
+equations...?
+
+657: discuss the jumps in the spectral shapes
+
+668: a weight cannot be calculated as a ratio of event number over
+flux, dimensions don't match
+
+676: the "pass ratio" is not well defined. What exactly is the
+denominator? Events before all cuts? After the previous cut? ...?
+
+718, 722: show the charge distributions (after suitable cuts)
+
+738: which cut value?
+
+747: noise/spurious hits close to the particle track ...
+
+778: but mathematically, this quantity should be between -1 and 1, in
+contradiction with Fig. 4.2b.
+
+793: is the training done separately in different rigidity bins? if
+so, which binning?
+
+Fig. 4.2: the range 330 to 525 GV refers to reconstructed rigidity?
+
+822: the pdfs also depend on the layer number, Xe partial pressure and
+pathlength inside the straw
+
+Fig. 4.5: it seems that there is a contamination in the ISS electron
+sample around Lambda_TRD=1, maybe from charge-confused protons? Do you
+apply a cut on CC before filling these histograms?
+
+831: what is a template fit?
+
+850: the "secondaries" need more explanation/motivation. Also, they
+appear to be awfully degenerate with electrons according to your
+plots. How can the fit tell them apart from the electrons?
+
+Table 4.4: I do not understand your choice of cuts here: How can you
+compare beta_low to 1/beta_TOF? Why do you even allow negative beta?
+The Lambda_TRD peaks at 0.4 for electrons, so you will cut almost all
+of them away when constructing the electron template? What kind of
+template is "negative rigidity data"?
+
+Does table 4.4 only refer to the low rigidity range?
+
+Motivate why you use 1/beta instead of beta.
+
+869: You can simply define beta(R,m) once. Use $\pi$ for pion.
+
+876, 1163: "official" is a bad word.
+
+881: what is L? what is f? I don't think this notation makes sense.
+
+883: the N_i are the free parameters in the fit
+
+885: it makes no sense to cut Fig. 4.7 at x=0.7. Show the full plot,
+and also for R>0, to illustrate where the contributions are found in
+the 1/beta-Lambda plane. You need the protons to prove that the
+antiprotons are not simply a tail of the electron distribution.
+
+888: you should also show the full 2D plots (data and best-fit model)
+first, for illustration. And what about R>0? You need the proton
+counts, too.
+
+Fig. 4.8: plot ranges are too narrow.
+
+Fig. 4.9, 4.11: also plot the proton numbers
+
+908: I do not understand this sentence.
+
+Table 4.5: Also here, you cannot cut on the same quantity that you
+want to extract a template for (Lambda_TRD).
+
+Fig. 4.10: also show the R>0 side, or the sign(R) on the x-axis makes
+no sense.
+
+Figs. 4.9, 4.11, 4.14: use consistent notation (-> Eq. (4.7)), and avoid slang
+("BinWidth").
+
+911: you need a plot to illustrate this cut.
+
+971: what about tau?
+
+Figs. 4.15, 4.16, 4.19, 4.20, 4.29, and many others:
+Keep the style of your figures consistent. Use boldface Arial fonts
+like in Fig. 4.13.
+
+Fig. 4.15: Lambda_TRD should not be negative. Use histograms instead
+of points for electron, antiproton.
+
+Fig. 4.16: these changes probably reflect the changing Xe partial pressure
+in the TRD due to the way the TRD was operated.
+
+Fig. 4.19: notation! Label x-axis ("date").
+
+1004: not a complete sentence.
+
+1019: which parameterizations? this was not mentioned before.
+
+Fig. 4.21: Combine in a single plot, or at least use same y-range,
+avoid yellow.
+
+Fig. 4.22: never use yellow markers.
+
+1021: I don't think that is true.
+
+1026: time needed for readout
+
+Figs. 4.23-4.26: do you really need these figures?
+
+1080: but if IGRF is correct, your particles will be under-cutoff!?
+
+Fig. 4.29: why does T drop in 2018?
+
+1098: this is not really how unfolding works.
+
+1110: No, you have to normalize every projection along y such that the
+sum of probabilities is 1.
+
+Fig. 4.31: The y-axis is poorly labelled. Avoid yellow and light cyan
+markers. On this scale, and with so many different categories in the
+plot, it's very hard to see anything.
+
+I think to show that the results of the unfolding can be trusted, you
+need at least a simple toy MC study. What happened to the ratio plot
+of raw vs unfolded counts? How important is the unfolding?
+
+1129: so how are the results calculated from the data in Fig. 4.32?
+
+Fig. 4.35. Fig. 5.5: it's pbar/p / 10^-5, not pbar/p x 10^-5
+
+1167: But in part, the spread seen here will be simply due to
+statistical fluctuations.
+
+Fig. 4.42: It's not really clear how you calculate the yellow
+uncertainty band.
+
+1212: you need a statement which syst. errors are correlated over
+time.
+
+Fig. 4.45: Plotting the relative uncertainties should simplify things,
+e.g. the acceptance error should become constant?
+
+Fig. 5.1: You should try to get some physics out of the data: Is there
+a spectral break around 100 GeV? What is the significance? Are the
+data consistent with a straight line in log R?
+
+Fig. 5.2: "due to limited statistics": that is clearly not the
+case. Could the deviation be related to different treatments of the
+geomagnetic cutoff? Use the full text width for the figure. Legend:
+quote time range (May 2011 - ...) instead.
+
+1236: AMS-02~\cite{...ref2...}
+
+1238-1239: remove line break
+
+1251: Plus, you probably use stricter cuts.
+
+Figs. 5.5, 5.9: Here, you may only use the statistical and time-dependent
+systematic errors.
+
+1270: I don't really see a rising trend.
+
+1271: rephrase the (incomplete) sentence "At last, ..."
+
+1271: there is no such thing as "the" solar modulation model
+
+Fig. 5.6: you should be more precise on what "taken from [129]" means,
+since the curve you display is not found in that paper.
+
+Figs. 5.7, 5.8: separate syst. error into time-dependent and
+time-independent errors. Syst. errors should be flat as a function of
+time?
+
+Fig. 5.9: It seems to me that you could match pbar/p and e-/e+ by
+introducing a time-shift between the two, which decreases with
+rigidity.
+
+1343: This sentence doesn't really make sense.
+
+1372, Fig. 2: you should see -1 < delta < 1
+
+1382, Fig.3: wrong x-axis labels, "log" is missing
+
+1398: you could show the plot for a different R range then.
+
+Appendix: you quote uncertainties as 0.01 or 0.02, but in these cases,
+an additional digit should be given.
+

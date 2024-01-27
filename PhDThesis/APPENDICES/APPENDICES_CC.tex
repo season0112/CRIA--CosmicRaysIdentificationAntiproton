@@ -1,0 +1,155 @@
+
+%% Appendix - Input variables for charge confusion
+ 
+ \vspace{-1cm}
+ 
+% Definition And Signal background plots 
+Apart from the four variables shown in section \ref{chargeconfusion}, the full list of the remaining twelve input variables used for the training of the charge confusion estimator ${\Lambda_{\rm{CC}}}$ is given in this appendix. Nine of them are constructed from the Tracker, two from the TOF, and one from the TRD. 
+
+\begin{enumerate}
+
+% TOF charge
+\item \textbf{TOF Charge} \par
+For the TOF subdetector, the charge measurements are used for the training. $\bm{Q_{\rm{LowTOF}}}$ and $\bm{Q_{\rm{UppTOF}}}$ are the TOF charge measurements from the lower TOF and the upper TOF. In figure \ref{TOFchargeDistributions}, the distributions of the $\bm{Q_{\rm{LowTOF}}}$ and $\bm{Q_{\rm{UppTOF}}}$ are shown.   
+
+\begin{figure}[H]
+    \centering
+    \subfigure[]{
+        \includegraphics[width=0.47\textwidth, height=0.25\textheight]{Figures/appendix/appendixA/{proton_330_525_to_330_525_LowerTofCharge_15_Logy_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0}.pdf} 
+    }
+    \vspace{-3mm}
+    \subfigure[]{
+	\includegraphics[width=0.47\textwidth, height=0.25\textheight]{Figures/appendix/appendixA/{proton_330_525_to_330_525_UpperTofCharge_14_Logy_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0}.pdf} 
+    }
+    \caption[Distributions for $\bm{Q_{\rm{LowTOF}}}$ and $\bm{Q_{\rm{UppTOF}}}$ in 330 to 525 GV.]{Distributions for a) $\bm{Q_{\rm{LowTOF}}}$ and b) $\bm{Q_{\rm{UppTOF}}}$ in the rigidity bin of 330 to 525 GV in fullspan tracker pattern. The points represent the observed ISS data and the histograms show the expected number of events from MC simulation for the charge correct antiprotons (blue) and the charge confused protons (red).}    
+    \label{TOFchargeDistributions}
+\end{figure}
+
+\clearpage
+
+% Rigidity Asymmetry and Matching
+\item \textbf{Rigidity Asymmetry and Matching}  \par
+The rigidity is reconstructed from the tracker measurements. Depending on the number of tracker layers used for this reconstruction, different rigidity values are obtained. Therefore, the asymmetry and matching variables can be constructed and used as inputs for the training. $\bm{\delta_{\rm{R_{L9}}}}$ and $\bm{\Gamma_{\rm{Central}}}$ their definitions are given below:
+
+\begin{equation*}
+\begin{aligned}
+& \bm{\delta_{\rm{R_{L9}}}} =  \frac{R_{\rm{Inner+L9}}-R_{\rm{Inner}}}{R_{\rm{Inner+L9}}+R_{\rm{Inner}}} \\
+& \bm{\Gamma_{\rm{Central}}} = \left [ \left ( \frac{1}{R_{\rm{UppInner}}}  \right )- \left (\frac{1}{R_{\rm{LowInner}}} \right ) \right] \cdot 100 \cdot \frac{R}{|R|}
+\end{aligned}
+\end{equation*}
+
+where the $R_{\rm{Inner}}$ and $R_{\rm{Inner+L9}}$ are the rigidities constructed from the inner tracker layers and the inner tracker layers plus layer 9 respectively, $R_{\rm{UppInner}}$ and $R_{\rm{LowInner}}$ are constructed from the upper half of the inner tracker layers and the lower half of the inner tracker layers respectively. \par
+
+In figure \ref{RigidityQualityDistributions}, the distributions of the two variables are shown.   
+
+\begin{figure}[H]
+    \centering
+    \subfigure[]{
+        \includegraphics[width=0.47\textwidth, height=0.25\textheight]{Figures/appendix/appendixA/{proton_330_525_to_330_525_RigidityAsymmetryL9_2_Logy_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0}.pdf} 
+    }
+    \subfigure[]{
+	\includegraphics[width=0.47\textwidth, height=0.25\textheight]{Figures/appendix/appendixA/{proton_330_525_to_330_525_InnerRigidityMatch_6_Logy_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0}.pdf} 
+    }
+    \caption[Distributions for $\bm{\delta_{\rm{R_{L9}}}}$ and $\bm{\Gamma_{\rm{Central}}}$ in 330 to 525 GV.]{Distributions for a) $\bm{\delta_{\rm{R_{L9}}}}$ b) $\bm{\Gamma_{\rm{Central}}}$ in the rigidity bin of 330 to 525 GV in fullspan tracker pattern. The points represent the observed ISS data and the histograms show the expected number of events from MC simulation for the charge correct antiprotons (blue) and the charge confused protons (red).}
+    \label{RigidityQualityDistributions}
+\end{figure}
+
+\clearpage
+
+% Tracker Fit Chi2
+\item \textbf{Tracker Fit $\chi^2$} \par
+The tracker track fit quality provides important information for the charge confusion estimator. Due to the interaction, the charge confused events have worse tracker fit quality. Therefore, the $\chi^2$ of the fit can be used as an input for the training. In total, four variables related to $\chi^2$ are used: the log $\chi^2$ of the tracker track fit for both directions X and Y ($\bm{\chi^2_{\rm{X}}}$ and $\bm{\chi^2_{\rm{Y}}}$) and the log $\chi^2$ of the inner tracker track fit for X and Y ($\bm{\chi^2_{\rm{X_{Inner}}}}$ and $\bm{\chi^2_{\rm{Y_{Inner}}}}$). In figure \ref{TrackerFitChi2Distributions}, the distributions of these four variables are shown.
+
+\begin{figure}[H]
+    \centering
+    %\setlength{\belowdisplayskip}{20pt}
+    %\setlength{\abovedisplayskip}{20pt}
+    %\setlength{\abovecaptionskip}{0pt}
+    \subfigure[]{
+        \includegraphics[width=0.47\textwidth, height=0.25\textheight]{Figures/appendix/appendixA/{proton_330_525_to_330_525_TrackerChi2X_9_Logy_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0}.pdf} 
+    }
+    %\vspace{-3mm}
+    \subfigure[]{
+	\includegraphics[width=0.47\textwidth, height=0.25\textheight]{Figures/appendix/appendixA/{proton_330_525_to_330_525_TrackerChi2Y_10_Logy_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0}.pdf} 
+    } 
+    %\vspace{-3mm}
+    \subfigure[]{
+        \includegraphics[width=0.47\textwidth, height=0.25\textheight]{Figures/appendix/appendixA/{proton_330_525_to_330_525_InnerTrackerChi2X_7_Logy_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0}.pdf} 
+    } 
+    %\vspace{-10mm}
+    \subfigure[]{
+	\includegraphics[width=0.47\textwidth, height=0.25\textheight]{Figures/appendix/appendixA/{proton_330_525_to_330_525_InnerTrackerChi2Y_8_Logy_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0}.pdf} 
+    }
+    %\vspace{-10mm}        
+    \caption[Distributions for $log\bm{\chi^2_{\rm{X}}}$, $log\bm{\chi^2_{\rm{Y}}}$, $log\bm{\chi^2_{\rm{X_{Inner}}}}$ and $log\bm{\chi^2_{\rm{Y_{Inner}}}}$ in 330 to 525 GV.]{Distributions for a) log $\bm{\chi^2_{\rm{X}}}$ b) log $\bm{\chi^2_{\rm{Y}}}$ c) log $\bm{\chi^2_{\rm{X_{Inner}}}}$ d) log $\bm{\chi^2_{\rm{Y_{Inner}}}}$ in the rigidity bin of 330 to 525 GV in fullspan tracker pattern. The points represent the observed ISS data and the histograms show the expected number of events from MC simulation for the charge correct antiprotons (blue) and the charge confused protons (red).}
+    \label{TrackerFitChi2Distributions}
+\end{figure}
+
+\clearpage
+
+% Tracker charges
+\item \textbf{Tracker Charge} \par
+Due to the interaction of the incoming particle with the detector material, the tracker charge measurement could contain information of charge confusion. Therefore, this is added to the training variables list. The $\bm{Q_{\rm{L9}}}$ and $\bm{Q_{\rm{L78}}}$ are the two variables relevant to this. $\bm{Q_{\rm{L9}}}$ is the tracker charge measurement from layer 9. $\bm{Q_{\rm{L78}}}$ is the mean value of the tracker charge measurement from layers 7 and 8. In figure \ref{TrackerChargeDistributions}, the distributions of the two variables are shown.   
+
+\begin{figure}[H]
+    \centering
+    \subfigure[]{
+        \includegraphics[width=0.47\textwidth, height=0.25\textheight]{Figures/appendix/appendixA/{proton_330_525_to_330_525_TrackerL9Charge_12_Logy_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0}.pdf} 
+    }
+    \subfigure[]{
+	\includegraphics[width=0.47\textwidth, height=0.25\textheight]{Figures/appendix/appendixA/{proton_330_525_to_330_525_TrackerL78Charge_13_Logy_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0}.pdf} 
+    }
+    \caption[Distributions for $\bm{Q_{\rm{L9}}}$ and $\bm{Q_{\rm{L78}}}$ in 330 to 525 GV.]{Distributions for a) $\bm{Q_{\rm{L9}}}$ b) $\bm{Q_{\rm{L78}}}$ in the rigidity bin of 330 to 525 GV in fullspan tracker pattern. The points represent the observed ISS data and the histograms show the expected number of events from MC simulation for the charge correct antiprotons (blue) and the charge confused protons (red).}
+    \label{TrackerChargeDistributions}
+\end{figure}
+
+\clearpage
+
+% Charge asymmetry
+\item \textbf{Charge Asymmetry} \par
+The tracker charge asymmetry also provides information for the charge confusion estimator. $\bm{\delta_{Q}}$ is the asymmetry of the tracker charge measurements and its definition is given below: 
+
+\begin{equation*}
+\begin{aligned}
+\bm{\delta_{Q}} = \frac{Q_{\rm{L58}} - Q_{\rm{L24}}}{Q_{\rm{Inner}}}
+\end{aligned}
+\end{equation*}
+
+where $Q_{\rm{L58}}$ is the mean value of the tracker charge from layers 5 and 8. $Q_{\rm{L24}}$ is the mean value of the tracker charge from layers 2 and 4 and finally $Q_{\rm{Inner}}$ is the tracker charge from the inner tracker. \par
+
+In figure \ref{TrackerL58L24ChargeAsymmetryDistribution}, the distributions of the $\bm{\delta_{Q}}$ is shown. The seperation power in this plot is not very obvious but it depends on the rigidity bin and tracker patterns. In other rigidity bin and tracker patterns it is useful, therefore this variable is included. 
+
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.47\textwidth, height=0.25\textheight]{Figures/appendix/appendixA/{proton_330_525_to_330_525_TrackerChargeAsymmetry_11_Logy_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_1}.pdf}
+\caption[Distributions for $\bm{\delta_{Q}}$ in 330 to 525 GV.]{Distributions for $\bm{\delta_{Q}}$ in the rigidity bin of 330 to 525 GV in Inner+L1 tracker pattern. The points represent the observed ISS data and the histograms show the expected number of events from MC simulation for the charge correct antiprotons (blue) and the charge confused protons (red).}
+\label{TrackerL58L24ChargeAsymmetryDistribution}
+\end{figure}
+
+\clearpage
+
+
+% TRDLikelihood
+\item \textbf{TRDLikelihood} \par
+
+The last variable is the \bm{$\Lambda_{\mathrm{TRD}}$}. Because of the potential particle interactions in the TRD volume which result in charge confused events, the \bm{$\Lambda_{\mathrm{TRD}}$} provides the separation power between charge correct antiprotons and charge confused protons. In figure \ref{TRDLikelihoodDistribution}, the distribution of the \bm{$\Lambda_{\mathrm{TRD}}$} is shown.   
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.47\textwidth, height=0.25\textheight]{Figures/appendix/appendixA/{proton_330_525_to_330_525_TRDLikelihood_0_Logy_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0}.pdf}
+\caption[Distributions for \bm{$\Lambda_{\mathrm{TRD}}$} in 330 to 525 GV.]{Distributions for \bm{$\Lambda_{\mathrm{TRD}}$} in the rigidity bin of 330 to 525 GV in fullspan tracker pattern. The points represent the observed ISS data and the histograms show the expected number of events from MC simulation for the charge correct antiprotons (blue) and the charge confused protons (red).}
+\label{TRDLikelihoodDistribution}
+\end{figure}
+
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+

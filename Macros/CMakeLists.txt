@@ -1,0 +1,6 @@
+set(rigidityresolution others/RigidityResolution.C)
+set(Gaus2DFilter_test.C)
+set(effective_acceptance_ratio.C)
+set(Plot_below10_ratio_newloadpath.C)
+add_project_rootmacro_target(Macros ROOTMACROS ${rigidityresolution})
+add_root_macro_build_targets()

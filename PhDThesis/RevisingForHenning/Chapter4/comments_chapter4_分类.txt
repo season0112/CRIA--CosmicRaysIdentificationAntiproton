@@ -1,0 +1,518 @@
+Chapter 4
+
+##########################
+## General
+## 4 Comments
+##########################
+
+526, 524-532 What is special about the time-dependent analysis? It seems there is no
+  dedicated section to discuss this? My understanding was that the time-dependent
+  flux should be a highlight of this thesis, so emphasis should be put on any issues
+  in the analysis that need extra care when deriving the time-dependent
+  results/uncertainties.
+
+519 DeltaR is the bin width, not the "bins"
+
+521 what is a template fit? what is unfolding? Explain the ideas briefly.
+
+525 TRD likelihood
+
+
+##########################
+## 4.1 Data Selection
+## 21 Comments
+##########################
+
+547-551 remove this, put only the sentence, "A Bartels Rotation is
+exactly 27 days, close to the synodic rotation period of the Sun",
+behind "time bins" in line 553.
+
+559 was "TTCS" discussed before?
+
+565 interaction of what? discuss also digitization of the simulated signals, trigger
+  simulation, etc.
+
+566 move details to acceptance calculation
+
+568/571 be much more specfic, list the version numbers of all MC simulations used,
+  give details about the data/MC ratio, including a plot as a function of p
+
+569 constant in log p means that the spectrum is proportional to -1. So which version
+  was used, -2.7 or -1 or both? Why the difference? Why is it important for your analysis?
+
+582 the word "should" implies that you did not actually do the re-weighting. Is that what
+  you mean?
+
+584 you could show a plot of event counts before and after rewighting and compared to ISS
+  data, which should then match.
+  Be more specific about the reweighting. Which formula did you use? Your thesis should
+  contain every piece of information that is needed to reproduce your results.
+
+594 do not say "should" when you did actually apply the cuts...
+
+Tables 4.1, 4.2, 4.3: the "pass ratio" is very problematic. How is this even defined?
+  In the end, the only thing that matters is the signal efficiency for a cut (and
+  as a function of momentum).
+
+Table 4.1: The "Description" column is not very illuminating. See Niko's thesis or
+  Matthew Behlmann's thesis from MIT for examples on how to explain each quality cut
+  with 2-3 sentences.
+
+612: The cut on beta>0 implies that there even is a TOF beta measurement (l. 609). Why
+  separate the two?
+
+619: The cut on single tracker track is very problematic as a preselection cut.
+  Is the tracking efficiency well reproduced by the MC? Do you show fluxes in the
+  end where this could matter?
+
+622 etc.: do not write "Chi2", but use LaTeX: $\chi^2$
+
+623: you almost certainly mean the chi2/ndf, not the chi2
+
+629: it would be good to see distributions of the quanties that you cut on, e.g. the
+  reconstructed charges, from MC signal and/or tagged ISS signal events.
+
+636 etc: Try to use mathematical notation to make your statements more concise,
+  e.g., "$0.7<Q_\mathrm{TRK}<1.3$ is better than a long sentence. (But you have
+  to define your quantities/notation, of course.)
+
+In your detector chapter, did you describe how the charges that you cut on are reconstructed?
+
+647: Allowing 1000 TRD hits seems excessive.
+
+656: 40 cm?? That's almost as large as AMS.
+
+657: What is the remaining He background after these cuts?
+
+
+##########################
+## 4.2 Charge Confusion Estimator
+## 11 Comments
+##########################
+
+659 which interactions do you mean exactly?
+
+668: it's not so simple. What if the rigidity in an event is wrongly reconstructed,
+  but still positive? Then this event shows the same behavior as charge confusion
+  and should not be used in the signal sample for training. You could define the
+  signal sample to be within a few sigma_R around R_true. There should be a "gap"
+  between the signal and background samples.
+
+678 how is "above around 20 GV" defined? why this cut?
+
+683: unfortunately, I do not have appendix A and cannot comment on it.
+
+Fig. 4.1:
+  - how is "important" defined?
+  - the plot ranges for a,b,d are not chosen well: the distributions extend beyond
+    the axis ranges
+  - don't say "Chi2TrackerYAsymmetry", give it a name/symbol ("\delta_{\chi^2}"?) and define
+    the quantity in the text
+    the same holds for many other quantities ("RigidityInnerL1", RigidityAsymmetry, and so on)
+  - how do you know on ISS data which events are charge-correct and charge-confused?
+    which assumptions/cuts do you make to obtain these samples?
+  - use larger axis labels and titles, and use boldface for them (compare Niko's thesis)
+  
+688 ff: discuss a little bit why the distributions for signal and CC are different
+
+Keep the order of the quantities in the text the same as in the four plots in Fig. 4.1.
+
+692: Can't you simply use the rigidity values from the inner vs all fits directly, instead
+  of the chi2 values?
+
+695/699: What is the difference between "R" and "Rigidity"? In general, you have to define
+  your rigidity scale somewhere: What is the default rigidity that you use?
+
+704: the same should be true for all variables involved
+
+Fig. 4.2:
+  - no grid for histograms!!!
+  - use boldface axis titles/labels
+  - in general (also, e.g. in Fig. 4.1), I would use blue colour for "signal" and
+    red colour for "background".
+  - you should do the same MC-ISS comparison here like in Fig. 4.1
+  - define $\Lambda_\mathrm{CC}$ for Charge Confusion Estimator and used it everywhere
+
+
+##########################
+## 4.3 TRD Estimator
+## 8 Comments
+##########################
+
+727: define $\Lambda_\mathrm{TRD}$ for TRD likelihood estimator and used it everywhere,
+  instead of terms like "TRDLikelihood".
+
+735: p^k usually means "p to the power of k", use p_k.
+
+735 vs Eq. 4.2: p or P?
+
+736: there are not always 20 layers with a hit and there may be layers with two adjacent hits
+
+738: "can" makes no sense here
+
+740: don't introduce A and B, keep things simple and use p,e directly
+
+Fig, 4.3: You should produce a figure like this yourself, from your analysis,
+  and please keep the fonts/style used for the plots in the thesis consistent
+
+Give some numbers for the respective rejection powers of the CC and TRD estimators.
+
+
+##########################
+## 4.4 Template Fit
+## 23 Comments
+##########################
+
+745,752: what is a template fit? You have to discuss the general principle somewhere.
+
+757: independent is not the right word here because the three R ranges overlap (which is good)
+   and you should discuss the overlap as a tool for crosschecks.
+
+765: quote equation for mass, discuss.
+
+768: temple -> template
+
+778,779,819: another inappropriate "should"
+
+783: What do you mean by "These two cuts are the template fit ranges"? How can a cut be
+  a fit range? The two terms are very different things.
+
+Table 4.4: The way these cuts are displayed is very confusing. What does "TOFBetaCut" mean?
+  Quote $... < \beta_\mathrm{TOF} < ...$.
+  What is "Data Selection" used for?
+  What does "beta_RICH in RichAgl" mean?
+  What kind of secondaries are we dealing with? The cut on the RICH mass implies that only
+  pions are selected. What about kaons?
+  Why not use ECAL to get a clean e- template?
+  Why can you use the number of TRD hits? They may be completely unrelated to the tracks in
+  the TRD.
+  Are the same TOF beta and TRD likelihood cuts used for all templates and data? Why? Why
+  list them in the table in the first place?
+  What is the p/He likelihood cut used for? Is there still He in the sample?
+  The cut on positive R for antiproton template, negative R for e- template, is missing.
+
+(similar comments hold for Table 4.5)
+
+Fig. 4.4 should display continuous lines, not data points. How are the lines chosen?
+  You need to show distributions of the relevant variables to motivate your cuts.
+
+Fig. 4.5:
+  - Before Fig. 4.5, you should show the full 2D plot and then explain the projections.
+  - Why does the pbar template not peak at zero?
+  - The maximum in b) is too low, the result histogram is cut off at the top.
+  - It seems that the range of the Lambda_TRD axis in b) is not chosen well. What
+    about the left part of the distribution? Also, the choice for the axis range in a0
+    is strange: The right part is almost empty, but the tail on the left side is cut off.
+  - Write $\beta_\mathrm{TOF}$ instead of TOFBeta.
+  - The fit results for the counts and their uncertainties should also be given in the legend.
+
+Figs 4.5, 4.7: The chi2/ndf that you quote here is probably misleading. You have to quote
+  both the chi2 and the ndf. Since this is a 2D template fit, ndf is probably large. But
+  then a chi2/ndf indicates a very poor fit (calculate the p-value? How do you treat
+  empty bins in this calculation?). This is in line with Fig. 4.5 b), where the data at low
+  Lambda_TRD values are not described well by the fit (the error bars are probably tiny).
+  What does the residual plot look like? What is the chi2 in the projections that you show?
+
+Fig. 4.7: Use "$\chi^2/ndf$" consistently, not "Chi2/dof".
+
+800 ignorable -> negligible
+
+Fig. 4.8.: Use consistent style (marker size?!) compared to Fig. 4.5.
+   The range for the x-axis is very strange. Show the electron component in its entirety.
+   Why not simply plot Lambda_TRD? No need to include the sign here?
+
+Fig. 4.9: zoom into y-axis
+
+In general, a plot like Fig. 1 in the pbar/p paper (PRL 117, 091103
+(2016)) would be good to explain the general analysis strategy.
+
+837: this is not an exact number because it was extracted from template fits
+
+Fig. 4.11:
+  - Use boldface also for axis titles
+  - Why not start the plot at Lambda_CC=0 ? Is Lambda_CC bound to [0,1] by construction?
+    This should be mentioned somewhere.
+  - The number of events given in the legend (3817) does obviously not match the counts
+    in the histograms. Likewise, where are the electrons seen in b) in the upper plot?
+    Are there additional cuts on Lambda_TRD when drawing the Lambda_CC projection and v.v.?
+    This has to be discussed in the text.
+  - Keep marker size etc. consistent across plots.
+
+Fig. 4.12: "fluctuation" is the wrong word here. "jumps"? You did not discuss using
+  different sets of tracker patterns before, did you? Instead of plotting the raw numbers,
+  it would be better to draw, e.g, dN/dR, which should be a smooth curve independent of the
+  binning. Use a logarithmic R axis here?
+
+Fig. 4.13: The chi2 at lower values of R is not really what would be expected for good fits?
+
+Section 4.4.2: Are the templates derived individually for each time bin, or globally once
+  and for all? Are the distribtutions stable in time?
+
+Fig. 4.14: Again, the plot range is very strange·
+
+850: The plot only shows data for an example energy bin.
+
+Fig. 4.15, 4.16:
+  - Plot dN/dt, where dt is livetime, to avoid the enormous jumps.
+  - Keep the fonts / plot style consistent across your thesis.
+
+
+##########################
+## 4.5 Effective Acceptance
+## 10 Comments
+##########################
+
+858, 859: more "should" where you have to say "are applied" etc.
+
+861: Remove "See the eq. 4.4". Make sure A_geo and e_cut are defined
+in the text before using them in an equation.
+
+Use $A_\mathrm{...}$ everywhere ("eff", "geo", "triggered", "true",
+etc., except for single-letter indices)
+
+862 It's impossible...
+
+864/865 It's not an "assumption", and there is no "hypothetical"
+flux. You should instead talk about the start plane for particles and
+the distribution of their directions (so as to mimick an isotropic
+flux, see the Jackson paper [96]).
+
+Eq. (4.5): This is confusing. In AMS, we usually talk about MC
+triggers, i.e. the number of particles generated on the cubic surface
+around AMS, which is the number in the denominator. The number in the
+numerator is the number of _selected_ events after all cuts.
+
+878 If you don't actually apply this, don't talk about it.
+
+884 Don't write "See equation xyz", instead have the equation directly
+follow the description.
+
+Eq. 4.6: None of the terms that appear in this equation has been
+defined in the text. How do you know that delta_p=delta_pbar? Is this
+just an assumption? I don't see how one could determine delta_pbar.
+
+Fig. 4.17:
+
+ - What is "effective acceptance corrector"? Do you mean A_p/A_pbar as
+   given in eq. 4.6? You really really have to make every effort to
+   keep your notation consistent.
+
+ - Why do you have to use different colours and a legend for the three
+   ranges here? Because different cuts are used to get these
+   acceptances? This should be explained in the text. Don't write
+   "LowRange", but "low range", or quote the energy interval. Remove
+   the black lines from the symbols in the legend (option "P", not
+   "LP"). Wasn't there an overlap between the three ranges? Why is
+   that not seen here?
+
+ - Why are the acceptances for p and pbar different in the first
+   place. There is almost no discussion of the physics in the text.
+
+ - Will the ratio be smoothed by a spline or parameterization in the
+   end? Why not do it here? Why are the error bars vastly different?
+   It seems that some of the ups and downs are much larger than the
+   error bars. What is the physics behind this?
+
+ - There should also be a plot of the p and pbar absolute acceptances
+   for the three selections before showing this plot.
+
+ - Lastly: This correction is HUGE. How do you know it is correct? Are
+   there any crosschecks for this in AMS? According to the pbar/p
+   paper (PRL 117, 091103 (2016)), the ratio is 1.15 at 1 GV, in your
+   plot it's closer to 1.30.
+
+
+##########################
+## 4.6 Measuring Time
+## 13 Comments
+##########################
+
+903: I do not understand this sentence.
+
+Fig. 4.18: This is not very printer-friendly and not very
+illuminating. You could simply show the usual colour-coded 2D plot.
+
+905: No need to introduce "LEO", when the term is never used.
+
+Fig. 4.19: There is no reference to the figure in the text, and I
+don't think you need the figure.
+
+Fig. 4.20: How are N_particles and N_trigger defined? What do you need
+this figure for?
+
+912/926: You make it sound as if Størmer and IGRF cutoff were
+essentially the same thing. But the Størner cutoff is valid for the
+approximation of a perfect dipole field, while the IGRF cutoff aims to
+take deformations in the geomagnetic field into account.
+
+915: You could cite the value of M (in meaningful units).
+
+Fig. 4.22: Again I would prefer a 2D plot with colour coding of the
+cutoff. You need to specify the altitude assumed for this plot. And
+the zenith angle.
+
+Figs. 4.23 and 4.24 could be combined into one.
+
+Fig. 4.24: Størmer instead of "Stomer". "Measuring time T(R)", not
+"MeasuringTime" (use the same notation as in eq. 4.1 throughout the
+thesis!)
+
+925 ... above the geomagnetic cutoff.
+
+928: explain the backtracing better, which equation of motion,
+particles can be trapped, or originate in the atmosphere, etc
+
+940: But that is a very poor argument. The Størmer cutoff is based on
+an approximation, so the IGRF cutoff is likely more correct. Also, you
+did not discuss or state the safety factor that you are using.
+
+
+##########################
+## 4.7 Trigger Efficiency
+## 5 Comments
+##########################
+
+
+943 The trigger efficiency is the probability for an incoming proton
+(or antiproton) inside the geometric acceptance to activate the
+trigger system.
+
+966 Explain the purpose of the prescaling events better (allows for
+the calculation of the trigger efficiency on ISS data!)
+
+Eq. 4.9: Again, not all quantities found in this equation have been
+defined in the text. Is f_both from eq. 4.8 equal to f_tof+ecal here?
+Keep the notation consistent, also the capitalization (tof or TOF?).
+
+You have to clarify how the trigger efficiency is treated in the
+analysis. Do you include a cut on the physics trigger in the
+calculation of the acceptance (then, the trigger efficiency determined
+from ISS data will give a correction to the acceptance), or not (then,
+the trigger efficiency has to be multiplied separately in the
+denominator of the flux).
+
+Fig. 4.25:
+
+  - Why is this a continuous curve? It's probably extracted from
+    binned data?
+
+  - You can also get the trigger efficiency from MC and compare.
+
+  - The trigger efficiency seems to be rather low. Do you have a
+    crosscheck for the values?
+
+  - There's something wrong with the aspect ratio of the figure, the
+    labels seem to be compressed.
+
+
+##########################
+## 4.8 Unfolding
+## 3 Comments
+##########################
+
+
+1010: How is a 2D histogram normalized to unity?
+
+Fig. 4.26: Why does the plot start at ~12 GV, not lower?
+
+1024 / Fig. 4.27: Does the figure show the effect of the unfolding on
+the antiproton (or proton) counts? Or on the pbar/p ratio? In line
+1023, you say "counts", in line 1024, you say "ratio". If it's the
+counts, the effect of the unfolding should cancel in the final ratio?
+If the unfolding is important, you should do a toy MC study to show
+that it works as expected on known input data.
+
+##########################
+## 4.9 Antiproton To Proton Flux Ratio Calculation
+## 2 Comments
+##########################
+
+eq. 4.12: parentheses missing in third line
+
+1038: But in your discussion of the unfolding, neither measuring time
+nor trigger efficiency are used or needed?
+
+
+##########################
+## 4.10 Systematic Uncertainty
+## 14 Comments
+##########################
+
+section 4.10: Make a subsection for each individual source of systematic
+uncertainty.
+
+1055: Why 10%? Why not 15%? 5%? This should be related to the
+uncertainties on the cross section data. What does "the cross sections
+are varied" mean? Randomly? Set to nominal +- 10%? I would assume that
+they were varied individually for p and pbar and the two contributions
+are added in quadrature? How does the ratio of acceptances (Fig. 4.17)
+change in these cases? The systematic uncertainty on acceptance should
+also depend on how well the material budget of the detector is
+described in the MC.
+
+Did you produce these MCs yourself? (Discuss in the general data
+overview section.)
+
+Fig. 4.28:
+  - What is the scale on this plot? Absolute error on the pbar/p
+  ratio? Relative error (on what?). It is strange to show the value of
+  an uncertainty when the value of the quantity itself has not been
+  shown yet.
+  - What are the two sets of points visible around 3-4 GV?
+
+Fig. 4.29: Keep the style consistent, use LaTeX notation on the axes
+(not "10^(-5)"), use less white space around the figures to make them
+larger.
+
+You assume that the template shapes are known perfectly, but in
+reality, they also come with some uncertainty / wiggle room, which
+should lead to a systematic uncertainty. E.g., what happens when you
+vary the cuts defining your templates? Or when you vary the templates
+within their statistical uncertainty?
+
+Fig. 4.30 / 1075: But before you show the value of the pbar/p ratio, an absolute
+uncertainty is meaningless.
+
+Fig. 4.30: Do these points have arror bars? How do you smooth the curve?
+
+Fig. 4.31:
+  - First, show the CC level for data and MC, then calculate a
+    ratio.
+  - 67 -> 68%
+  - What is a "prediction limit"? What is the thick brown line?
+  - Keep the style of your plots consistent.
+
+1081: I assume that for the ISS part, the template fit results are
+used to get the number of charged confused events? Explain!
+
+Fig. 4.32: Again I do not understand the y-axis.
+
+1081/1092: use equations with well defined quantities, instead of long
+sentences.
+
+A plot comparing the contributions to the systematic error and the
+statistical error is missing.
+
+Fig. 4.34: What about the statistical error? Adjust the plotting
+style. I think that the systematic error should not fluctuate from
+time bin to bin, but a constant value (average) should be used
+instead.
+
+
+
+
+##########################
+Bibiliography
+## 2 Comments
+##########################
+
+- Check the spelling (sometimes it's AMS, sometimes ams).
+
+- Use consistent style (sometimes you use full first names, sometimes
+first letter with dot, sometimes first letter without dot)
+
+
+
+
+
+

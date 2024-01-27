@@ -1,0 +1,78 @@
+
+General comments
+================
+
+- After reading the entire thesis, I feel that more emphasis should be
+  put on the time-dependent results because they are really new, while
+  the ratio has been published in PRL and Phys.Rep. before. But for
+  this, you need more plots specific for the time-dependent analysis:
+  how do the relevant distributions (CC estimator, charges, etc.;
+  template shapes) evolve over time? Are they stable?
+
+- It strikes me as a strange omission that all ingredients needed to
+  calculate the p and pbar fluxes are given in the thesis, but the
+  fluxes are never shown. The pbar/p ratio matches the published one
+  very well. What about the fluxes? If they do not match, this should
+  at least be mentioned in the thesis. A lot of emphasis is put on the
+  measuring time and trigger efficiency, for example, even though they
+  cancel in the ratio. It might be that the delta_p in Eqs. 4.6 and
+  4.12 is different from one, and determining it would mean a
+  substantial amount of work, but this should be discussed in the
+  thesis.
+
+- There are other sources of systematic error discussed in the PRL
+  pbar paper. Even if the effects are not studies in this thesis, they
+  should be mentioned and briefly discussed and the magnitudes
+  compared to the uncertainties studied here.
+  
+
+Fig. 4.28: systematic error from acceptance is 5e-7 at low R,
+Fig. 5.2: pbar/p is 0.01e-3 at low R
+=> relative syst. uncertainty due to acceptance is 5%, yet the
+correction from A_p/A_pbar is 30%. This appears to be a rather
+aggressive error estimation.
+
+
+
+Chapter 5
+=========
+
+Fig. 5.3:
+  - at low energies, there is a clear systematic deviation. I wonder
+  if the problem might be related to the acceptance correction, which
+  is largest at the lowest energies and whose magnitude is larger in
+  your case than for the AMS analysis.
+
+1128: Please use a residual plot to show the deviation more
+clearly. Probably a logarithmic y scale for Fig. 5.9 would be
+better. It is strange that the two results do not match exactly.
+
+It might be worthwhile to discuss these results with an expert on
+solar modulation (Prof. Heber?), to add more weight to the physics
+discussion.
+
+
+Chapter 6
+=========
+
+1175: Yes, very good idea, and you found a very nice paper [108],
+which even contains model predictions for the pbar/p ratio as a
+function of time for one rigidity bin. So why don't you overlay data
+from your analysis on their model curve (Figs. 19,20 from [108])? This
+would be a huge benefit for your thesis because it would show that your
+data can be used to test models on a level not possible before.
+
+
+
+
+Appendix
+========
+
+1214: It seems that the chi2 from the inner tracker fit do not really
+help.
+
+1242: I don't think it's a good idea to include the TRD likelihood in
+the charge confusion estimator because you also use it for the
+template fit as an independent variable.
+
+

@@ -1,0 +1,19 @@
+结构：
+(Open TFile ratio)
+For number in generate number: 
+    For i in R:    (16次循环)
+      Load Histograms
+      2D Template Fit
+      Fill Template Fit Result into Vector 
+      If ParametrilizedMode == "No":
+          Print fit result  
+          Plot Template and data
+          Plot Fit Result and Projections
+      Clear result_tof，ResultError_tof 
+    Make TGraph and TH1D to hold ratio result 
+    If ParametrilizedMode == "No":
+      Plot Ratio Result
+    Clear v_ratio_results
+    (Save ratio) 
+(Close)
+

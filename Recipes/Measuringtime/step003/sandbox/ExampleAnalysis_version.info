@@ -1,0 +1,658 @@
+Repository /home/bo791269/Software/AntiprotonAnalysis
+SHA1: a13dc2b4d7881439321e2e7dd60aa462e94e15bd, version: a13dc2b-dirty, on branch master
+
+
+output from git diff:
+diff --git a/Programs/Measuringtime/Measuringtime.C b/Programs/Measuringtime/Measuringtime.C
+index 7ff85aa..b590d1a 100644
+--- a/Programs/Measuringtime/Measuringtime.C
++++ b/Programs/Measuringtime/Measuringtime.C
+@@ -21,7 +21,6 @@
+ #include "Selector.hh"
+ #include "SelectionParser.hh"
+ #include "ValueHistograms.hh"
+-
+ // ROOT includes
+ #include <TFile.h>
+ #include <TH1.h>
+@@ -38,25 +37,36 @@
+ 
+ int main(int argc, char** argv) {
+ 
+-  chdir( std::string("/hpcwork/jara0052/sichen/Measuringtime/pass7.8_06_2020_GEOMETRIC35_1.2/").c_str());
+-
+-  // Command line option handling.
++  //// Command line option handling.
+   Utilities::ConfigHandler& config = Utilities::ConfigHandler::GetGlobalInstance();
+   config.ReadCommandLine(argc, argv);
+-
+   config.SetProgramHelpText("Measuringtime",
+                             "Illustrates the calculation of total livetime for a given time period based on MeasuringTime class.");
+-
+   config.AddHelpExample("Case #1): Loop directly over RTI files.", "--startTime 1305853510 --endTime 1432628592");
+   config.AddHelpExample("Case #2): Loop over RTI tree written by rti_writer_example.", "--RTI/TreePattern RTITree*.root --startTime 1305853510 --endTime 1432628592");
+ 
+-  int startTime = -1;
+-  config.GetValue("OPTIONS", "startTime", startTime,
++  int startTime = -1; 
++  int endTime   = -1;
++  std::string cutoffmode   = "";
++  std::string degree       = "";
++  std::string safetyfactor = "";
++  config.GetValue("OPTIONS", "startTime"   , startTime,
+                   "Start time in seconds as Unix time stamp.");
+-
+-  int endTime = -1;
+-  config.GetValue("OPTIONS", "endTime", endTime,
++  config.GetValue("OPTIONS", "endTime"     , endTime,
+                   "End time in seconds as Unix time stamp.");
++  config.GetValue("OPTIONS", "cutoffmode"  , cutoffmode,
++                  "which cutoffmode you use, GEOMETRIC or IGRF.");
++  config.GetValue("OPTIONS", "degree"      , degree,
++                  "Which degree you use.");
++  config.GetValue("OPTIONS", "safetyfactor", safetyfactor,
++                  "Which safetyfactor you use.");
++
++  if (cutoffmode == "GEOMETRIC"){
++      chdir( (std::string("/hpcwork/jara0052/sichen/Measuringtime/05_2021_GEOMETRIC") + degree + std::string("_") + safetyfactor + std::string("/")).c_str());
++  }
++  else if (cutoffmode == "IGRF"){
++     chdir( (std::string("/hpcwork/jara0052/sichen/Measuringtime/05_2021_IGRF") + degree + std::string("_") + safetyfactor + std::string("/")).c_str());
++  }
+ 
+   Utilities::ObjectManager objectManager(&config, "", "");
+   if (!config.PerformChecksAfterOptionParsing())
+@@ -65,10 +75,17 @@ int main(int argc, char** argv) {
+   if (startTime == -1 || endTime == -1)
+     FATAL_OUT << "You have to specify both --startTime X / --endTime Y." << std::endl;
+ 
+-  // Preperations to calculate the measuring time:
++
++  //// Preperations to calculate the measuring time:
++
+   // 1. Select a geomagnetic cut-off cut, the field-of-view (here: 40 degress for both positive/negative particle hypothesis) and a safety factor
+-  //Cuts::Cut* cutOffCut = Cuts::CreateCut("RigidityAboveIGRFCutoff", "35PN", 1.2);
+-  Cuts::Cut* cutOffCut = Cuts::CreateCut("RigidityAboveGeomagneticCutoff",  "35PN", 1.2);
++  Cuts::Cut* cutOffCut;
++  if (cutoffmode == "GEOMETRIC"){
++      cutOffCut = Cuts::CreateCut("RigidityAboveGeomagneticCutoff", (degree + std::string("PN")).c_str(), std::stoi(safetyfactor));
++  }
++  else if (cutoffmode == "IGRF"){
++      cutOffCut = Cuts::CreateCut("RigidityAboveIGRFCutoff"       , (degree + std::string("PN")).c_str(), std::stoi(safetyfactor));
++  }
+ 
+   // 2. Open the cut config file containing at least "BadRuns" / "RTI" selectors, optionally also "TrdCalibration".
+   std::string cutConfigfile = "${MY_ANALYSIS}/Configuration/RTIandBadRuns.cfg";
+@@ -85,7 +102,6 @@ int main(int argc, char** argv) {
+   IO::FileManagerController::Self()->SetRunType(AC::ISSRun);
+   IO::FileManagerController::Self()->SetFirstAndLastEventTimes(startTime, endTime);
+ 
+-
+   const std::vector<std::string>& inputTreeFiles = GlobalOptions::Self()->RTITreeFileName();
+   if (inputTreeFiles.empty())
+     objectManager.SetPrefix("MeasuringTime_from_RTI_Files");
+@@ -97,10 +113,10 @@ int main(int argc, char** argv) {
+ 
+   objectManager.WriteToFile();
+ 
+-#ifdef ENABLE_MPI
++  #ifdef ENABLE_MPI
+   if (IO::MPIEnvironment::IsMPIEnabled())
+     MPI_Finalize();
+-#endif
++  #endif
+ 
+   return EXIT_SUCCESS;
+ }
+diff --git a/Programs/Measuringtime/main_old.C b/Programs/Measuringtime/main_old.C
+deleted file mode 100644
+index f67d499..0000000
+--- a/Programs/Measuringtime/main_old.C
++++ /dev/null
+@@ -1,168 +0,0 @@
+-#include "AntiprotonIntermediateEnergyTree.hh"
+-
+-// ACsoft includes
+-#include "AnalysisEvent.hh"
+-#include "BinningFunctions.hh"
+-#include "BinningTools.hh"
+-#include "ConfigHandler.hh"
+-#include "EventFactory.hh"
+-#include "FileManager.hh"
+-#include "Selector.hh"
+-#include "SelectionParser.hh"
+-#include "Environment.hh"
+-#include "ObjectManager.hh"
+-#include "McSpectrumScaler.hh"
+-#include "PredefinedBinnings.hh"
+-#include "ValueHistograms.hh"
+-#include "CutAttachment.hh"
+-#include "AcceptanceManager.hh"
+-#include "EfficiencyHistograms.hh"
+-#include "CutFactory.hh"
+-#include "MeasuringTime.hh"
+-
+-// ROOT includes
+-#include <TFile.h>
+-#include <TH1.h>
+-#include "TreeFormula.hh"
+-#include "Utilities.hh"
+-#include <TROOT.h>
+-#include "TreeWriter.hh"
+-#include <TApplication.h>
+-#include <TProof.h>
+-
+-#define INFO_OUT_TAG "AntiprotonIntermediateEnergy"
+-#include "debugging.hh"
+-
+-int main(int argc, char** argv) {
+-
+-  // Workaround to avoid ROOT option parsing
+-//  static int sNull = 0;
+-//  TApplication* fApp = new TApplication("Application", &sNull, (char**)0);
+-
+-  // Command line option handling.
+-  Utilities::ConfigHandler& config = Utilities::ConfigHandler::GetGlobalInstance();
+-  config.ReadCommandLine(argc, argv);
+-
+-  config.SetProgramHelpText("Measuringtime",
+-                            "Illustrates the usage of IO::TreeWriter to write ROOT trees from ACQt files.");
+-
+-  config.AddHelpExample("Loop over given filelist.", "--inputlist list.txt");
+-
+-  std::string inputList;
+-  config.GetValue("OPTIONS", "inputlist", inputList,
+-                  "List of ACQt input files (full path).");
+-
+-  std::string resultDirectory;
+-  config.GetValue("OPTIONS", "resultdir", resultDirectory,
+-                  "General directory where result files should be stored. Current directory is used if option is not specified.");
+-
+-  std::string suffix;
+-  config.GetValue("OPTIONS", "suffix", suffix,
+-                  "A string identifier to be used in parallel computing, to uniquely identify result files.");
+-  
+-  unsigned int maxEntries = 0;
+-  config.GetValue("OPTIONS","entries", maxEntries,
+-                  "Number of events to process");
+-
+-  // Load & parse cut configuration file.
+-  std::string cutConfigfile = "${MY_ANALYSIS}/Configuration/RTIandBadRuns.cfg";
+-  Environment::ExpandEnvironmentVariables(cutConfigfile);
+-  config.Read(cutConfigfile);
+-  Cuts::SelectionParser selectionParser(config);
+-
+- 
+-  // Setup file manager to process ACQt data.
+-  IO::FileManager fileManager(&config);
+-  Analysis::EventFactory* eventFactory = Analysis::EventFactory::Create(&config);
+-  Analysis::Event event;
+-
+-
+-  // Load geometry file for the acceptance manager.
+-  Acceptance::AcceptanceManager acceptanceManager;
+-  std::string geometryConfigFile = "${MY_ANALYSIS}/Configuration/AntiprotonGeometry.cfg";
+-  Environment::ExpandEnvironmentVariables(geometryConfigFile);
+-  eventFactory->RegisterAcceptanceManager(&acceptanceManager);
+-
+-  // 'AuxiliaryObjectManager' holds all auxiliary histograms / selectors created while processing the ACQt files.
+-  // NOTE: You should NOT write a TTree together with other histograms etc. in the ROOT file. You most likely
+-  // want to merge your histograms / selectors from batch jobs, but not the trees. That's why it's a good idea
+-  // in general to split up in two files: one for holding the tree, one for the rest.
+-  Utilities::ObjectManager auxiliaryObjectManager("AuxiliaryObjectManager", &config, resultDirectory, suffix);
+-  auxiliaryObjectManager.SetPrefix("Measuringtime_Auxiliary");
+-
+-  Cuts::Cut* cutOffCut = Cuts::CreateCut("RigidityAboveIGRFCutoff", "35PN", 1.2);  
+-
+-if (!config.PerformChecksAfterOptionParsing())
+-    return EXIT_FAIL_CONFIG;
+-
+-  if (!fileManager.ReadFileList(inputList))
+-    return EXIT_FAIL_FILEMANAGER;
+-
+-  // Construct tree manager which will manage the output file to hold the resulting tree.
+-  IO::TreeWriter treeWriter(new AntiprotonIntermediateEnergyTree, IO::TreeOptions::DontWriteInMemoryBranches);
+-  std::string treeFileName = Utilities::ObjectManager::MakeStandardRootFileName(resultDirectory, "Measuringtime_Tree", suffix);
+-  treeWriter.Initialize(treeFileName);
+-
+-  // Load cut selector(s).
+-  Cuts::Selector* badRuns = auxiliaryObjectManager.Add(selectionParser.GetSelector("BadRuns"));
+-  Cuts::Selector* rTI = auxiliaryObjectManager.Add(selectionParser.GetSelector("RTI"));
+-  Cuts::Selector* trdCalibration = auxiliaryObjectManager.Add(selectionParser.GetSelector("TrdCalibration"));
+-
+-
+-  RTI::MeasuringTime timeTool(config, auxiliaryObjectManager, cutOffCut, AntiprotonNewBinning::NewBinning::AntiprotonBinning525_zhili());
+-  timeTool.ComputeMeasuringTime();
+-  double totalMeasuringTime = timeTool.MeasuringTimeVsLiveTime()->Integral();
+-  TH1D* hMeasuringTimeVsLiveTime = timeTool.MeasuringTimeVsLiveTime();
+-  TH1D* hEffectiveMeasuringTime = timeTool.IntegratedMeasuringTimeOverCutOff();
+-  TH1D* hStatistics = timeTool.Statistics();  
+-  TH2D* hParticlesVsTriggers = timeTool.ParticlesVsTriggers();
+-  TH3F* hTriggerRateVsISSPosition = timeTool.TriggerRateVsISSPosition();
+-  TH3F* hCutOffRigidityVsISSPosition = timeTool.CutOffRigidityVsISSPosition();
+-  TH3F* hLiveTimeVsISSPosition = timeTool. LiveTimeVsISSPosition();
+-
+-  // Begin event loop.
+-  INFO_OUT_ON_MASTER << "Looping over " << fileManager.GetEntries() << " events..." << std::endl;
+-
+-  static int sProductionSteps = Analysis::CreateSplineTrack | Analysis::CreateTrdTrack;
+-  unsigned int nEntries=0; 
+-  bool firstEvent = true;
+-
+-  while (fileManager.GetNextEvent()) {
+-    // Initialize the AcceptanceManager, after the DetectorManager received the run type (needed for MPI).
+-    if (firstEvent) {
+-      acceptanceManager.InitSetup(geometryConfigFile);
+-      firstEvent = false;
+-    }
+-    fileManager.DumpEventLoopProgress(20000);
+-    eventFactory->SetupEmptyEvent(event);
+-    eventFactory->CreateParticles(event);
+-
+-    if (!badRuns->Passes(event))
+-      continue;
+-    if (!rTI->Passes(event))
+-      continue;
+-    eventFactory->PerformTrdTracking(event);
+-    eventFactory->FillParticles(event, sProductionSteps);
+-    if (!trdCalibration->Passes(event))
+-      continue;
+-
+-    if (maxEntries>0 && nEntries==maxEntries)
+-      break;
+-    ++nEntries;
+-
+-    treeWriter.Fill(event);
+-  }
+-
+-
+-  // Print Preselection statistics
+-  trdCalibration->PrintSummary();
+-  badRuns->PrintSummary();
+-  rTI->PrintSummary();
+-  // Finish writing tree file.
+-  treeWriter.Finish();
+-
+-  // Write auxiliary output file.
+-  auxiliaryObjectManager.WriteToFile();
+-
+-  return EXIT_SUCCESS;
+-}
+diff --git a/Programs/Unfolding_Bayes_Intermediate/main.C b/Programs/Unfolding_Bayes_Intermediate/main.C
+index edb4881..7bede20 100644
+--- a/Programs/Unfolding_Bayes_Intermediate/main.C
++++ b/Programs/Unfolding_Bayes_Intermediate/main.C
+@@ -161,7 +161,6 @@ int main(int argc, char* argv[]) {
+ 
+ 
+     //// Load MeasuringTime
+-    //TFile *f2 = new TFile("/hpcwork/jara0052/sichen/Measuringtime/MeasuringTime_pass7.8.root");
+     TFile *f2 = new TFile("/hpcwork/jara0052/sichen/Measuringtime/MeasuringTime_pass7.8_06_2020_GEOMETRIC35_1.2.root");
+     TH1D *fIntegratedMeasuringTimeOverCutOff = (TH1D*)f2->Get("MeasuringTime/fIntegratedMeasuringTimeOverCutOff"); 
+     TH1D *hMeasuringTime = new TH1D("", "", 20, subrange_intermediate.data()); 
+diff --git a/Programs/Unfolding_Bayes_Low/main_old.C b/Programs/Unfolding_Bayes_Low/main_old.C
+deleted file mode 100644
+index 39928a6..0000000
+--- a/Programs/Unfolding_Bayes_Low/main_old.C
++++ /dev/null
+@@ -1,293 +0,0 @@
+-#include "AntiprotonLowEnergyTree.hh"
+-#include "BayesUnfoldingWithCutoff.hh"
+-#include "AnalysisSettings.hh"
+-
+-// Binning
+-#include "AntiprotonBinning.hh"
+-#include "BinningDefinition.hh"
+-
+-// ACsoft includes
+-#include "AnalysisEvent.hh"
+-#include "ConfigHandler.hh"
+-#include "EventFactory.hh"
+-#include "FileManager.hh"
+-#include "Selector.hh"
+-#include "SelectionParser.hh"
+-#include "TreeWriter.hh"
+-#include "Environment.hh"
+-#include "ObjectManager.hh"
+-#include "McSpectrumScaler.hh"
+-#include "TemplateFitter.hh"
+-#include <iostream>
+-#include <cassert>
+-#include <TH2.h>
+-#include <TLegend.h>
+-#include <TFile.h>
+-#include <TStyle.h>
+-#include <TAxis.h>
+-#include <TMath.h>
+-#include <TGraph.h>
+-#include <TGraphErrors.h>
+-#include <TGraphAsymmErrors.h>
+-#include <TCollection.h>
+-#include <TTree.h>
+-#include <TText.h>
+-#include "TemplateFitter2D.hh"
+-#include <vector>
+-#include <TCanvas.h>
+-#include <sstream>
+-#include <string>
+-#include <unistd.h>
+-#include "IterativeUnfolding.hh"
+-#include "AcceptanceUnfolding.hh"
+-#include "Utilities.hh"
+-
+-
+-using namespace std;
+-
+-#define INFO_OUT_TAG "Unfolding_Bayes_Low"
+-#include "debugging.hh"
+-
+-int main(int argc, char* argv[]) {
+-
+-  Utilities::ConfigHandler& config = Utilities::ConfigHandler::GetGlobalInstance();
+-  config.ReadCommandLine(argc, argv);
+-
+-  config.SetProgramHelpText("Unfolding_Bayes_Low",
+-                            "Bayes Unfolding method");
+-
+-  config.AddHelpExample("Unfolding_Bayes_Low", "");
+-
+-  std::string issversion = "";
+-  config.GetValue("OPTIONS", "issversion", issversion,
+-                  "The Issversion is");
+-
+-    chdir( (string(getenv("HPCLOWENERGYDIR")) + string("/totalall/") ).c_str());
+-
+-
+-    //// Define binnings
+-    int startindex=1;
+-    int endindex=18;
+-
+-    std::vector<double> subrange_low( AntiprotonNewBinning::AntiprotonAllBinning::AntiprotonBinning_450.begin()+startindex, AntiprotonNewBinning::AntiprotonAllBinning::AntiprotonBinning_450.begin()+endindex); // AntiprotonBinning_450.begin()+1: 1.0-1.16GV;
+-    std::vector<double> subrangepointused( AntiprotonNewBinning::AntiprotonAllBinning::AntiprotonBinningCenter_450.begin()+startindex, AntiprotonNewBinning::AntiprotonAllBinning::AntiprotonBinningCenter_450.begin()+endindex-1); // AntiprotonBinningCenter_450.begin()+1: 1.08GV;    AntiprotonBinningCenter_450.begin()+16: 5.635GV; subrangepointused.size()=16;
+-    std::vector<double> RigidityBinPoint_Published( AntiprotonNewBinning::AntiprotonAllBinning::AntiprotonBinningCenter_450.begin()+1, AntiprotonNewBinning::AntiprotonAllBinning::AntiprotonBinningCenter_450.end());
+-
+-
+-    //// Load files and Root objects.
+-    // Load low result without unfolding 
+-    TFile *f1 = new TFile();
+-    if (issversion == "pass7.8"){
+-        f1 = new TFile("Time_Averaged_ratio_Low/binmerge1/plots/Ratio_pass7.8.root");
+-    }
+-    else if (issversion == "2016paper"){
+-        f1 = new TFile("Time_Averaged_ratio_Low/binmerge1/plots/Ratio_2016paper.root");
+-    }
+-    else if (issversion == "PhysicsReport"){
+-        f1 = new TFile("Time_Averaged_ratio_Low/binmerge1/plots/Ratio_PhysicsReport.root");
+-    }
+-    TGraph *g_antiproton_number = (TGraph*)f1->Get("g_antiproton_number");
+-    TGraph *g_proton_number = (TGraph*)f1->Get("g_proton_number");
+-    //TGraphErrors *ratio_tof_with_effective = (TGraphErrors*)f1->Get("ratio_tof_with_effective");
+-    TGraphErrors *g_error = (TGraphErrors*)f1->Get("g_error");
+-    TGraphErrors *g_chi2_tof = (TGraphErrors*)f1->Get("chi2_tof");
+-
+-    TH1D *hantiproton = new TH1D("", "", subrangepointused.size(), subrange_low.data());
+-    TH1D *hproton = new TH1D("", "", subrangepointused.size(), subrange_low.data());
+-    Utilities::ConvertToHistogram ( g_antiproton_number, *hantiproton);
+-    Utilities::ConvertToHistogram ( g_proton_number, *hproton);
+-
+-    std::vector<double> publishedcenter ( AntiprotonNewBinning::AntiprotonAllBinning::AntiprotonBinningCenter_450.begin()+1, AntiprotonNewBinning::AntiprotonAllBinning::AntiprotonBinningCenter_450.end()); // since first point (0.8-1.0) don't have result, therefore it should be removed.
+-
+-    TGraph *PublishedError = new TGraph(AntiprotonNewBinning::AntiprotonResults::PublishedRatioErrorPRL.size(), publishedcenter.data(), AntiprotonNewBinning::AntiprotonResults::PublishedRatioErrorPRL.data() );
+-    TGraph *PublishedRatioStatisticErrorPRL = new TGraph(AntiprotonNewBinning::AntiprotonResults::PublishedRatioStatisticErrorPRL.size(), publishedcenter.data(), AntiprotonNewBinning::AntiprotonResults::PublishedRatioStatisticErrorPRL.data() );
+-    TGraph *PublishedRatioSystematicErrorPRL = new TGraph(AntiprotonNewBinning::AntiprotonResults::PublishedRatioSystematicErrorPRL.size(), publishedcenter.data(), AntiprotonNewBinning::AntiprotonResults::PublishedRatioSystematicErrorPRL.data() );
+-    TGraph *PublishedRatioStatisticRelativeErrorPRL = new TGraph(AntiprotonNewBinning::AntiprotonResults::PublishedRatioStatisticRelativeErrorPRL.size(), publishedcenter.data(), AntiprotonNewBinning::AntiprotonResults::PublishedRatioStatisticRelativeErrorPRL.data() );
+-    TGraph *PublishedRatioSystematicRelativeErrorPRL = new TGraph(AntiprotonNewBinning::AntiprotonResults::PublishedRatioSystematicRelativeErrorPRL.size(), publishedcenter.data(), AntiprotonNewBinning::AntiprotonResults::PublishedRatioSystematicRelativeErrorPRL.data() );
+-    TGraph *PublishedRatioRelativeErrorPRL = new TGraph(AntiprotonNewBinning::AntiprotonResults::PublishedRatioRelativeErrorPRL.size(), publishedcenter.data(), AntiprotonNewBinning::AntiprotonResults::PublishedRatioRelativeErrorPRL.data() );
+-
+-    std::vector<double> PhysicsReportCenter ( AntiprotonNewBinning::AntiprotonAllBinning::AntiprotonBinningCenter_525.begin()+1, AntiprotonNewBinning::AntiprotonAllBinning::AntiprotonBinningCenter_525.end()); // since first point (0.8-1.0) don't have result, therefore it should be removed.
+-
+-    TGraph *PhysicsReportRatioError = new TGraph(AntiprotonNewBinning::AntiprotonResults::PhysicsReportRatioError.size(), PhysicsReportCenter.data(), AntiprotonNewBinning::AntiprotonResults::PhysicsReportRatioError.data() );
+-    TGraph *PhysicsReportRatioStatisticError = new TGraph(AntiprotonNewBinning::AntiprotonResults::PhysicsReportRatioStatisticError.size(), PhysicsReportCenter.data(), AntiprotonNewBinning::AntiprotonResults::PhysicsReportRatioStatisticError.data() );
+-    TGraph *PhysicsReportRatioSystematicError = new TGraph(AntiprotonNewBinning::AntiprotonResults::PhysicsReportRatioSystematicError.size(), PhysicsReportCenter.data(), AntiprotonNewBinning::AntiprotonResults::PhysicsReportRatioSystematicError.data() );
+-    TGraph *PhysicsReportRatioRelativeError = new TGraph(AntiprotonNewBinning::AntiprotonResults::PhysicsReportRatioRelativeError.size(), PhysicsReportCenter.data(), AntiprotonNewBinning::AntiprotonResults::PhysicsReportRatioRelativeError.data() );
+-    TGraph *PhysicsReportStatisticRatioRelativeError = new TGraph(AntiprotonNewBinning::AntiprotonResults::PhysicsReportStatisticRatioRelativeError.size(), PhysicsReportCenter.data(), AntiprotonNewBinning::AntiprotonResults::PhysicsReportStatisticRatioRelativeError.data() );
+-    TGraph *PhysicsReportSystematicRatioRelativeError = new TGraph(AntiprotonNewBinning::AntiprotonResults::PhysicsReportSystematicRatioRelativeError.size(), PhysicsReportCenter.data(), AntiprotonNewBinning::AntiprotonResults::PhysicsReportSystematicRatioRelativeError.data() );
+-
+-
+-    // Load MeasuringTime
+-    TFile *f2 = new TFile("/hpcwork/jara0052/sichen/Measuringtime/MeasuringTime_pass7.8_06_2020_GEOMETRIC35_1.2.root");
+-    TH1D *fIntegratedMeasuringTimeOverCutOff = (TH1D*)f2->Get("MeasuringTime/fIntegratedMeasuringTimeOverCutOff"); //GetBinLowEdge[2]=1.0;
+-    TH1D *hMeasuringTime = new TH1D("", "", subrangepointused.size(), subrange_low.data());
+-    double MaxMeasuringTime = fIntegratedMeasuringTimeOverCutOff->GetMaximum();
+-
+-
+-    // Load EffectiveAcceptance (not EffectiveAcceptance ratio, because for each unfolding, we need EffectiveAcceptance of proton and antiproton respectively.)
+-    TFile *f3 = new TFile("EffectiveAcceptance_B1042_antipr.pl1.1800_7.6_all.root");
+-    TFile *f4 = new TFile("EffectiveAcceptance_B1042_pr.pl1.1800_7.6_all.root");
+-    TGraphAsymmErrors *Acceptance_antiproton_all = (TGraphAsymmErrors*)f3->Get("QualityCuts/effectiveAcceptanceAfterAllCuts");
+-    TGraphAsymmErrors *Acceptance_proton_all = (TGraphAsymmErrors*)f4->Get("QualityCuts/effectiveAcceptanceAfterAllCuts");
+-    TH1D *hAcceptance_antiproton = new TH1D("", "", subrangepointused.size(), subrange_low.data()); //GetX()[1]=1.08(1.0-1.16)
+-    TH1D *hAcceptance_proton = new TH1D("", "", subrangepointused.size(), subrange_low.data()); //GetX()[1]=1.08(1.0-1.16)
+-
+-
+-    // Load TriggerEfficiency ////FIX ME: Load proton TriggerEff
+-    TFile *f5 = new TFile("TriggerEff_B1042_antipr.pl1.1800_7.6_all.root");
+-    TFile *f6 = new TFile("TriggerEff_B1042_antipr.pl1.1800_7.6_all.root");
+-    TH1F *Trig_antiproton_noprescaling_all = (TH1F*)f5->Get("TriggerEff_noprescaling"); //GetBinLowEdge(2)=1.0
+-    TH1F *Trig_proton_noprescaling_all = (TH1F*)f6->Get("TriggerEff_noprescaling"); //GetBinLowEdge(2)=1.0
+-    TH1D *Trig_antiproton_noprescaling = new TH1D("", "", subrangepointused.size(), subrange_low.data());
+-    TH1D *Trig_proton_noprescaling = new TH1D("", "", subrangepointused.size(), subrange_low.data());
+-
+-    // Fill histogram in intermediate range.
+-    for (long unsigned int k = 1; k <= subrangepointused.size(); ++k){
+-        hAcceptance_antiproton->SetBinContent(k, Acceptance_antiproton_all->GetY()[k+startindex-1]); 
+-        hAcceptance_antiproton->SetBinError(k, Acceptance_antiproton_all->GetErrorY(k+startindex-1));
+-        hAcceptance_proton->SetBinContent(k, Acceptance_proton_all->GetY()[k+startindex-1]);
+-        hAcceptance_proton->SetBinError(k, Acceptance_proton_all->GetErrorY(k+startindex-1));
+-        hMeasuringTime->SetBinContent(k, fIntegratedMeasuringTimeOverCutOff->GetBinContent(k+startindex)); 
+-        Trig_antiproton_noprescaling->SetBinContent(k, Trig_antiproton_noprescaling_all->GetBinContent(k+startindex)); 
+-        Trig_proton_noprescaling->SetBinContent(k,  Trig_proton_noprescaling_all->GetBinContent(k+startindex)); 
+-    }
+-
+-
+-    // Load Unfolding_Matrices
+-    TFile *f7 = new TFile("/hpcwork/jara0052/sichen/Unfolding_Matrices/low/Unfolding_MatricesTH2D_fill.root"); //## reconstructed x, true y.
+-    TH2D *Unfolding_Matrices = (TH2D*)f7->Get("Unfolding_Matrices"); //Unfolding_Matrices->GetX(Y)axis()->GetBinLowEdge(1)=1.00; GetBinContent(0,0)=0, GetBinContent(1,1)!=0;
+-
+-
+-    // Effective_Acceptance ratio
+-    TH1D *hEffective_Acceptance = new TH1D (*hAcceptance_proton);
+-    hEffective_Acceptance->Divide(hAcceptance_antiproton);
+-    TGraphErrors *Effective_Acceptance = new TGraphErrors(hEffective_Acceptance); 
+-
+-    TGraphErrors *g_Effective_Acceptance_all = new TGraphErrors(Acceptance_antiproton_all->GetN()); //up to 18 GV
+-    double ep, Ap, ea, Aa;
+-    for (int acc_index = 0; acc_index < Acceptance_antiproton_all->GetN(); acc_index++){
+-        Aa = Acceptance_antiproton_all->GetY()[acc_index];
+-        Ap = Acceptance_proton_all->GetY()[acc_index];
+-        ea = Acceptance_antiproton_all->GetErrorY(acc_index);
+-        ep = Acceptance_proton_all->GetErrorY(acc_index);
+-        g_Effective_Acceptance_all->SetPoint(acc_index, Acceptance_antiproton_all->GetX()[acc_index], Ap/Aa);
+-        g_Effective_Acceptance_all->SetPointError(acc_index, 0, sqrt(pow(ep,2)/pow(Aa,2)+pow(Ap,2)/pow(Aa,4)*pow(ea,2)) );
+-    }
+-
+-
+-    // Set Effective_Acceptance error
+-    for (long unsigned int k = 1; k <= subrangepointused.size(); ++k){
+-        Aa = hAcceptance_antiproton->GetBinContent(k);
+-        Ap = hAcceptance_proton->GetBinContent(k);
+-        ea = hAcceptance_antiproton->GetBinError(k);
+-        ep = hAcceptance_proton->GetBinError(k);
+-        cout<< "Aa:" << Aa << "  ea:" << ea <<endl;
+-        cout<< "Ap:" << Ap << "  ep:" << ep <<endl;
+-        cout<< "\n" <<endl; 
+-        Effective_Acceptance->SetPointError(k-1, 0.0, sqrt(pow(ep,2)/pow(Aa,2)+pow(Ap,2)/pow(Aa,4)*pow(ea,2)));
+-    }
+-
+-    // Parametrization of ratio of effective acceptance
+-    Effective_Acceptance->RemovePoint(0); // remove 0.8-1.0GV point
+-    TF1  *function1 = new TF1("function1","[0]*log(log(x))+[1]",0,10); //to be fixed
+-    //TF1  *function1 = new TF1("function1","[0]*log(x)+[1]"); // to be fixed
+-    Effective_Acceptance->Fit(function1);
+-    TF1 *fittedfuction1 = Effective_Acceptance->GetFunction("function1");
+-    TGraph *gFitFunction = new TGraph(fittedfuction1);
+-
+-
+-    //// Perform Unfolding
+-    const int bayesIterations = 2;
+-    const int verbosity = 0;
+-    BayesUnfoldingWithCutoff unfolding_antiproton(hantiproton, hMeasuringTime, hAcceptance_antiproton, Trig_antiproton_noprescaling, Unfolding_Matrices, MaxMeasuringTime, bayesIterations, verbosity);
+-    TH1D* hAntiproton_unfolded = unfolding_antiproton.UnfoldedEventCounts();
+-    BayesUnfoldingWithCutoff unfolding_proton(hproton, hMeasuringTime, hAcceptance_proton, Trig_proton_noprescaling, Unfolding_Matrices, MaxMeasuringTime, bayesIterations, verbosity);
+-    TH1D* hProton_unfolded =unfolding_proton.UnfoldedEventCounts();
+-
+-
+-    //// save result in TGraphErrors
+-    TH1D *ratio_raw = new TH1D("", "", subrangepointused.size(), subrange_low.data());
+-    ratio_raw->Divide(hantiproton, hproton, 1, 1);
+-    TH1D *ratio_unfolded = new TH1D("", "", subrangepointused.size(), subrange_low.data());
+-    ratio_unfolded->Divide(hAntiproton_unfolded, hProton_unfolded, 1, 1);
+-
+-    TH1D *ratio_unfolded_with_effective_correction = new TH1D("", "", subrangepointused.size(), subrange_low.data());
+-    TH1D *ratio_raw_with_effective_correction = new TH1D("", "", subrangepointused.size(), subrange_low.data());
+-
+-    for (long unsigned int q = 1; q <= subrangepointused.size(); q++){
+-        ratio_unfolded_with_effective_correction->SetBinContent(q, ratio_unfolded->GetBinContent(q) *  gFitFunction->Eval( subrangepointused.at(q-1) ));
+-        ratio_raw_with_effective_correction->SetBinContent(q, ratio_raw->GetBinContent(q) *  gFitFunction->Eval( subrangepointused.at(q-1) ));
+-    }
+-
+-    TGraphErrors *gRatio_unfolded = new TGraphErrors (ratio_unfolded_with_effective_correction);
+-    TGraphErrors *gRatio_Raw = new TGraphErrors (ratio_raw_with_effective_correction);
+-    TGraphErrors gPublishedRatio = TGraphErrors(57, RigidityBinPoint_Published.data(), AntiprotonNewBinning::AntiprotonResults::PublishedRatioPRL.data(), 0, AntiprotonNewBinning::AntiprotonResults::PublishedRatioErrorPRL.data());
+-
+-    // Set points error and fill StatisticalRelError
+-    TGraphErrors *g_StatisticalRelError = new TGraphErrors(ratio_unfolded_with_effective_correction);
+-    TH1D *h_StatisticalRelError = new TH1D("", "", subrangepointused.size(), subrange_low.data());
+-    for (long unsigned int q = 1; q <= subrangepointused.size(); q++){
+-        gRatio_unfolded->SetPointError( q-1, 0, g_error->GetY()[q-1]/100000 );
+-        gRatio_Raw->SetPointError( q-1, 0, g_error->GetY()[q-1]/100000 );
+-        g_StatisticalRelError->SetPoint (q-1, g_error->GetX()[q-1], g_error->GetY()[q-1]/100000/gRatio_unfolded->GetY()[q-1]*100); //in %.
+-        h_StatisticalRelError->SetBinContent(q, g_error->GetY()[q-1]/100000/gRatio_unfolded->GetY()[q-1]*100); //in %.
+-    }
+-
+-
+-
+-    ////////////////////////////
+-    //// Plot unfolded result //
+-    ////////////////////////////
+-    TCanvas c1("c1","c1",1000,500);
+-    gRatio_unfolded->SetMarkerStyle(15);
+-    gRatio_unfolded->SetMarkerColor(2);
+-
+-    gPublishedRatio.GetXaxis()->SetTitle("Rigidity (GV)");
+-    gPublishedRatio.GetYaxis()->SetTitle("Ratio");
+-    gRatio_unfolded->Draw("AP *"); 
+-    gRatio_unfolded->GetXaxis()->SetLimits(0.5,10);
+-    gRatio_unfolded->GetYaxis()->SetRangeUser(0,0.0002);
+-    gPublishedRatio.Draw("same P");
+-    c1.SaveAs( (string("Time_Averaged_ratio_Low/plots/unfolded_ratio") + issversion + string(".pdf")).c_str() );
+-
+-
+-    TCanvas c2("c2","c2",1000,500);
+-    Effective_Acceptance->Draw("");
+-    c2.SaveAs( (string("Time_Averaged_ratio_Low/plots/Effective_Acceptance") + string(".pdf")).c_str() );
+-
+-
+-    //// Save in Root file
+-    TFile *f = new TFile( (string("Time_Averaged_ratio_Low/plots/unfolded_results") + issversion + string(".root") ).c_str(),"RECREATE");
+-    g_chi2_tof->Write("g_chi2_tof");
+-    g_error->Write("g_StatisticalError");
+-    g_StatisticalRelError->Write("g_StatisticalRelError");
+-    h_StatisticalRelError->Write("h_StatisticalRelError");
+-    PublishedError->Write("g_PublishedError");
+-    PublishedRatioStatisticErrorPRL->Write("g_PublishedRatioStatisticErrorPRL");
+-    PublishedRatioSystematicErrorPRL->Write("g_PublishedRatioSystematicErrorPRL");
+-    PublishedRatioStatisticRelativeErrorPRL->Write("g_PublishedRatioStatisticRelativeErrorPRL");
+-    PublishedRatioSystematicRelativeErrorPRL->Write("g_PublishedRatioSystematicRelativeErrorPRL");
+-    PublishedRatioRelativeErrorPRL->Write("g_PublishedRatioRelativeErrorPRL");
+-    PhysicsReportRatioError->Write("g_PhysicsReportRatioError");
+-    PhysicsReportRatioStatisticError->Write("g_PhysicsReportRatioStatisticError");
+-    PhysicsReportRatioSystematicError->Write("g_PhysicsReportRatioSystematicError");
+-    PhysicsReportRatioRelativeError->Write("g_PhysicsReportRatioRelativeError");
+-    PhysicsReportStatisticRatioRelativeError->Write("g_PhysicsReportStatisticRatioRelativeError");
+-    PhysicsReportSystematicRatioRelativeError->Write("g_PhysicsReportSystematicRatioRelativeError");
+-    g_antiproton_number->Write("g_antiproton_number_raw");
+-    g_proton_number->Write("g_proton_number_raw");
+-    hAntiproton_unfolded->Write("hAntiproton_number_unfolded");
+-    hProton_unfolded->Write("hProton_number_unfolded");
+-    hAcceptance_antiproton->Write("hAcceptance_antiproton");
+-    hAcceptance_proton->Write("hAcceptance_proton");
+-    hEffective_Acceptance->Write("hEffective_Acceptance");
+-    Effective_Acceptance->Write("g_Effective_Acceptance");
+-    g_Effective_Acceptance_all->Write("g_Effective_Acceptance_all");
+-    fittedfuction1->Write("fittedfuction1");
+-    gFitFunction->Write("gFitFunction");
+-    gRatio_unfolded->Write("gRatio_unfolded");
+-    gRatio_Raw->Write("gRatio_Raw");
+-    gPublishedRatio.Write("gPublishedRatio");
+-    f->Close();
+-
+-}
+-
+diff --git a/Recipes/Measuringtime.cbk b/Recipes/Measuringtime.cbk
+index 52a4c73..d349423 100644
+--- a/Recipes/Measuringtime.cbk
++++ b/Recipes/Measuringtime.cbk
+@@ -1,15 +1,39 @@
+ ################################################################
+ ##### make Measuring Time for all three antiproton ranges ######
+ ################################################################
++# Example Usage: cookbook init Measuringtime.cbk --set SafetyFactor=1.2,Degree=35
++SafetyFactor=NONE
++Degree=None
++
++[interactive]
++    Make Dic
++    command: cd /hpcwork/jara0052/sichen/Measuringtime; mkdir -p 05_2021_GEOMETRIC${Degree}_${SafetyFactor}; mkdir -p 05_2021_IGRF${Degree}_${SafetyFactor};
++
+ [generic]
+-    Measuring Time
++    Measuring Time for Stormer Cutoff
++    # 1305800000:Thursday, May 19, 2011 10:13:20 AM; 
++    # 1305853512:Friday  , May 20, 2011 1:05:12 AM;  
++    # 1591446862:Saturday, June 6, 2020 12:34:22 PM; 
++    # 1620024849:Monday  , May 3, 2021 6:54:09 AM.
+     job: Measuringtime
+-    args: --partition c18m --timelimit 23:00 --arguments '--startTime 1305800000 --endTime 1591446862' --mpi  ## Need to update with endtime, current is 06.2020
++    args: --partition c18m --timelimit 23:00 --arguments '--startTime 1305800000 --endTime 1620024849 --cutoffmode GEOMETRIC --degree ${Degree} --safetyfactor ${SafetyFactor}' --mpi  
++    nmin: 0
++    nmax: 0
++
++[generic]
++    Measuring Time for IGRF Cutoff
++    job: Measuringtime
++    args: --partition c18m --timelimit 23:00 --arguments '--startTime 1305800000 --endTime 1620024849 --cutoffmode IGRF --degree ${Degree} --safetyfactor ${SafetyFactor}' --mpi
+     nmin: 0
+     nmax: 0
+ 
+ [interactive]
+-    Merging the Measuring Time files.
+-    command: ac_merge --input /hpcwork/jara0052/sichen/Measuringtime/pass7.8_06_2020_GEOMETRIC35_1.2/MeasuringTime*.root --resultprefix MeasuringTime_pass7.8_06_2020_GEOMETRIC35_1.2 --resultdir /hpcwork/jara0052/sichen/Measuringtime/
++    Merging the Measuring Time files 
++    command: ac_merge --input /hpcwork/jara0052/sichen/Measuringtime/05_2021_GEOMETRIC${Degree}_${SafetyFactor}/MeasuringTime*.root --resultprefix MeasuringTime_pass7.8_05_2021_GEOMETRIC${Degree}_${SafetyFactor} --resultdir /hpcwork/jara0052/sichen/Measuringtime/; ac_merge --input /hpcwork/jara0052/sichen/Measuringtime/05_2021_IGRF${Degree}_${SafetyFactor}/MeasuringTime*.root --resultprefix MeasuringTime_pass7.8_05_2021_IGRF${Degree}_${SafetyFactor} --resultdir /hpcwork/jara0052/sichen/Measuringtime/;
++
+ 
+ 
++[interactive]
++    Plot IGRF and Stormer Cut off comparision, Plot relative plots for measuring time
++    command: $MY_ANALYSIS/Macros/others/plot_IGRF_Geo.C  
++
+
+output from git status:
+# On branch master
+# Changes not staged for commit:
+#   (use "git add/rm <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   ../../../Programs/Measuringtime/Measuringtime.C
+#	deleted:    ../../../Programs/Measuringtime/main_old.C
+#	modified:   ../../../Programs/Unfolding_Bayes_Intermediate/main.C
+#	deleted:    ../../../Programs/Unfolding_Bayes_Low/main_old.C
+#	modified:   ../../Measuringtime.cbk
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	../../../Macros/others/plot_IGRF_Geo.C
+#	../
+no changes added to commit (use "git add" and/or "git commit -a")

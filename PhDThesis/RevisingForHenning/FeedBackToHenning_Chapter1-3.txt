@@ -1,0 +1,66 @@
+ 
+
+p3: deflection does not change E...
+source: Wiebusch p20?
+
+
+p4:Does [10] contains references for all the data?
+What about the inlet? It's not mentioned in the caption.
+The word "different" is not very precise.
+Compare: Fabian:p4. Bastian:p33, Niko:p16
+
+
+p4:Strange Ref. Quote the original source.
+https://www.researchgate.net/figure/Cosmic-ray-spectrum-measured-by-different-experiments-The-knee-and-the-ankle-spectral_fig1_275329291
+Source: PhD thesis
+
+
+p4:no, the figure illustrates the importance of secondary productio1n77 of CRs.
+source: Wiebusch p62
+solution: keep it, and add the comment.
+
+
+p5: discuss the physics, energy output, rate of SNe, acceleration mechanism
+solution: in detail later.
+
+p7:  this can lead to adiabatic energy losses. but this term only describes the convection itself
+Fabian: p6
+
+p7:no, this is the work against the pressure of the interstellar gas
+Fabian: p6
+
+
+
+
+p19: this depends on Z
+soution: for protons and electrons. 
+based on: bastian p60.
+
+
+
+
+-----------------------------------------------------------------------------
+未改的：
+p4: C, Fe, ... Relation to stellar evolution...
+
+p6:but 2nd order Fermi 198 acc. is not really 199 relevant for CRs?
+
+p6:nobody really knows that... 
+too detailed??
+
+p8: Credit: NASA/Walt Feimer; 
+Niko:p19, p20
+
+
+
+
+
+
+
+
+
+
+
+
+
+

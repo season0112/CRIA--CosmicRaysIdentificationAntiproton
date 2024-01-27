@@ -1,0 +1,358 @@
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{upennstyle}[2022/03/22 University of Pennsylvania Dissertation Style]
+
+\RequirePackage[left=1.5in,
+                right=1in,
+                vmargin=1in,
+                nohead,
+                includeheadfoot,
+                letterpaper]{geometry} 
+                
+\RequirePackage[T1]{fontenc}  % 指定字体编码。字体编码是字符编码与字体字形的映射,用于排版你的输出。”T1“: TeX文本扩展。有时被称为Cork编码,因为它是在用户组会议上开发的。提供了对大多数欧洲重音字符的访问。是这个软件包最常见的选项。
+\RequirePackage[american]{babel}
+\RequirePackage{csquotes}
+\RequirePackage{amsthm}
+\RequirePackage{amsmath,amssymb,amsfonts}
+\RequirePackage{amscd}
+\RequirePackage{calc}
+\RequirePackage{graphicx}
+\RequirePackage{float}
+\RequirePackage{caption}
+\RequirePackage{multirow}
+\RequirePackage{blindtext}
+\RequirePackage{verbatim}
+%\RequirePackage{appendix}
+\RequirePackage[titletoc]{appendix}
+\RequirePackage[onehalfspacing]{setspace} % 设置行间距 Sets double/single-spacing for the main document. Ad-hoc commands are required for single space tables, etc. （所謂 ad-hoc 命令是什麼呢?這其實是一個概念性的名字,類似於在命令列敲入shell命令和 寫shell scripts兩者之間的關係, 如果我們敲入一些命令去比較快的完成一些事情,而不需要將這些執行的命令特別儲存下來, 這樣的命令就叫做 ad-hoc 命令.）
+\RequirePackage{array} %  Also for better arrays (eg matrices) in maths
+\RequirePackage{tabularx}
+\RequirePackage{booktabs}
+\RequirePackage{pdflscape}
+%\RequirePackage{subfigure}
+%\RequirePackage{subfig}
+%\RequirePackage{subfigure}
+
+
+%%%% LINKS
+\RequirePackage[hidelinks]{hyperref}
+\hypersetup{
+    breaklinks=true
+}
+\urlstyle{same}
+%\RequirePackage{tocloft}%
+\RequirePackage[subfigure]{tocloft}%
+\RequirePackage{parskip} % To allow for better management of the Dutch paragraph style
+\RequirePackage[compact]{titlesec}
+
+
+%%%% Empty Page
+\newcommand\myemptypage{
+\clearpage  
+\phantom{s}  
+\thispagestyle{empty} 
+}
+
+
+%%%% CHAPTERS AND SECTIONS
+\renewcommand{\beforetitleunit}{0 pt}
+\titleformat{\section}[hang]{\large\bfseries}{\thesection.}{6 pt}{}         %bfseries加粗
+\titleformat{\subsection}[hang]{\normalsize\bfseries}{\thesubsection.}{6 pt}{}
+
+
+%%%% Format chapters (dots, including the word chapter, etc.) in ToC (Table of Contents)
+\renewcommand{\cftchapfont}{\upshape}
+\renewcommand{\cftchapleader}{\upshape\cftdotfill{\cftdotsep}}
+\renewcommand{\cftchappagefont}{\upshape}
+\renewcommand{\cftchappresnum}{ }
+\renewcommand{\cftchapaftersnum}{ :}
+\newlength{\mylen}   % a "scratch" length
+\settowidth{\mylen}{\cftchappresnum \cftchapaftersnum} % extra space
+\addtolength{\cftchapnumwidth}{\mylen} % add the extra space
+\renewcommand{\beforetitleunit}{0 pt}
+\titleformat{\section}[hang]{\large\bfseries}{\thesection.}{6 pt}{}
+\titleformat{\subsection}[hang]{\normalsize\bfseries}{\thesubsection.}{6 pt}{}
+ 
+ 
+%%%% TABLE OF CONTENTS
+\setcounter{tocdepth}{1} % Only show chapters and sections in ToC
+\addto\captionsamerican{\renewcommand{\contentsname}{\hfill CONTENTS \hfill}}%
+\renewcommand{\cfttoctitlefont}{\large\bfseries}%
+\renewcommand{\cftaftertoctitle}{\hfill}%
+\renewcommand{\cftbeforetoctitleskip}{-21 pt} % Key value is -21 pt
+
+
+%%%% LIST OF TABLES
+\addto\captionsamerican{\renewcommand{\listtablename}{LIST OF TABLES}}
+\renewcommand{\cftlottitlefont}{\large\bfseries\hfill}
+\renewcommand{\cftafterlottitle}{\hfill}
+\renewcommand{\cftbeforelottitleskip}{-21 pt} % Key value is -21 pt
+\renewcommand{\cfttableader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cfttabpresnum}{TABLE }
+\newlength{\mylent}   % a "scratch" length
+\settowidth{\mylent}{\cfttabpresnum} % extra space
+\addtolength{\cfttabnumwidth}{\mylent} % add the extra space
+\setlength{\cftbeforetabskip}{-7 pt} % Approximates single-spaced entries
+
+
+%%%% LIST OF ILLUSTRATIONS (figures)
+\addto\captionsamerican{\renewcommand{\listfigurename}{LIST OF ILLUSTRATIONS}}
+\renewcommand{\cftloftitlefont}{\large\bfseries\hfill}
+\renewcommand{\cftafterloftitle}{\hfill}
+\renewcommand{\cftbeforeloftitleskip}{-21 pt} % Key value is -21 pt
+\renewcommand{\cftfigleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftfigpresnum}{FIGURE }
+\newlength{\mylenf}   % a "scratch" length
+\settowidth{\mylenf}{\cftfigpresnum} % extra space
+\addtolength{\cftfignumwidth}{\mylenf} % add the extra space
+\setlength{\cftbeforefigskip}{-7 pt} % Approximates single-spaced entries
+
+
+%%%% TITLE PAGE
+\newcommand{\specialization}[1]{%
+  \expandafter\gdef\csname specialization@\endcsname{#1}}
+  \newcommand{\gradgroup}[1]{%
+  \expandafter\gdef\csname gradgroup@\endcsname{#1}}
+\newcommand{\supervisor}[1]{%
+  \expandafter\gdef\csname supervisor@\endcsname{#1}}
+\newcount\cosup@cnt
+\cosup@cnt=0
+\newcommand{\cosupervisor}[1]{%
+  \expandafter\gdef\csname cosupervisor@\romannumeral\cosup@cnt\endcsname{#1}%
+  \advance\cosup@cnt by 1}
+\newcommand{\supervisortitle}[1]{%
+  \expandafter\gdef\csname supervisortitle@\endcsname{#1}}
+\newcommand{\cosupervisortitle}[1]{%
+  \expandafter\gdef\csname cosupervisortitle@\endcsname{#1}}
+\newcommand{\gradchair}[1]{%
+  \expandafter\gdef\csname gradchair@\endcsname{#1}}
+\newcount\comm@cnt
+\comm@cnt=1
+\newcommand{\committee}[1]{%
+  \expandafter\gdef\csname committee@\romannumeral\comm@cnt\endcsname{#1}%
+  \advance\comm@cnt by 1}
+
+\renewcommand\maketitle{\par
+  \begingroup
+     \singlespace
+      \@maketitle
+      \thispagestyle{empty} 
+      \pagenumbering{roman}
+  \endgroup
+  \setcounter{footnote}{0}%
+  \global\let\maketitle\relax
+  \global\let\@maketitle\relax
+  \global\let\@commitee\@empty
+  \global\let\committee\relax
+  \global\let\and\relax
+}
+
+\newcommand{\@maketitle}{%
+     \hspace{4cm}
+  \begin{center}%
+     \normalsize{
+      \vskip 3em%
+      \@title%
+      \vskip 6em%
+     %{Von der Fakult{\"a}t fur Mathematik, Informatik und Naturwissenschaften der RWTH Aachen University zur Erlangung des akademischen Grades eines Doktors der Naturwissenschaften genehmigte Dissertation} % After PhD defencce.
+    {Der Fakultät für Mathematik, Informatik und Naturwissenschaften der RWTH Aachen University vorgelegte Dissertation zur Erlangung des akademischen Grades eines Doktors der Naturwissenschaften}  % Before PhD defencce.
+      \vskip 2em%
+     {vorgelegt von}%
+      \vskip 2em%
+     {\Large{\textbf{Sichen Li}, M.Sc.}}%
+     \vskip 2em%
+     {aus}%
+     \vskip 0em%
+     {Xi'an}%
+     \vskip 4cm}%
+  \end{center}%
+   \begin{center}% 对齐
+    {Berichter: Univ.-Prof. Dr. rer. nat. Stefan Schael} 
+    \vskip 0em%
+    {\quad \, \,  \, \, \ \ \qquad  \qquad  \, \, Univ.-Prof. Dr. rer. nat. Christopher Wiebusch}
+    \vskip 4em%
+    \begin{center}
+    %{Tag der m{\"u}ndlichen Pr{\"u}fung: 5. April 2023} % After PhD defencce.
+    \vskip 4em%
+    %{Diese Dissertation ist auf den Internetseiten der Universit{\"a}tsbibliothek online verf{\"u}gbar.} % After PhD defencce.
+    \end{center}
+  \end{center}
+  \thispagestyle{empty}
+  \clearpage
+}
+
+\newcommand{\mytitlename}{Measurement of the Antiproton to Proton Flux Ratio with the Alpha Magnetic Spectrometer on the International Space Station}
+
+
+\newcommand{\@makespecializationtitlepage}{%
+  \begin{center}%
+    \singlespace%
+     \normalsize{\MakeUppercase{\@title}%
+    \vskip 0em%
+   {\@author}%
+    \vskip 0em%
+   {A DISSERTATION}%
+    \vskip 0em%
+    {in}%   
+    \vskip 0em%
+    {\csname specialization@\endcsname}%   
+    \vskip 0em%
+    {For the Graduate Group in} {\csname gradgroup@\endcsname}%
+    \vskip 0em%
+   {Presented to the Faculties of the University of Pennsylvania}%
+    \vskip 0em%
+    {in}%
+    \vskip 0em%
+   {Partial Fulfillment of the Requirements for the}%
+    \vskip 0em%
+   {Degree of Doctor of Philosophy}%
+    \vskip 0em%
+    {\@date}%
+    \vskip 2.5cm}%
+  \end{center}%
+   \begin{flushleft}%
+   \ifnum \cosup@cnt=0 {%
+    {Supervisor of Dissertation}\vskip 0em%
+   {\csname supervisor@\endcsname}, %\vskip 0em%
+  {\csname supervisortitle@\endcsname}}%
+  \else {%
+ \begin{tabular*}{\textwidth}{@{\extracolsep{\fill} }l l}%
+   {Supervisor of Dissertation} & {Co-Supervisor of Dissertation}\\ & \\ %\vskip 0em%
+   {\csname supervisor@\endcsname} & {\csname cosupervisor@\endcsname}\\ & \\ %\vskip 0em%
+   {\csname supervisortitle@\endcsname} & {\csname cosupervisortitle@\endcsname} %\vskip 0em%%
+\end{tabular*}%
+}%
+ \fi%  
+  \vskip 1.0cm%
+  {Graduate Group Chairperson} \vskip 0em%
+   {\csname gradchair@\endcsname}%
+  \vskip 1.0cm%
+  {Dissertation Committee}\vskip 0em%
+  \newcount\n%
+  \n=1%
+  \loop {\csname committee@\romannumeral\n\endcsname}%
+  \advance \n by 1%
+  \ifnum\n<\comm@cnt%
+  \\%\vskip 0em 
+  \repeat%
+  \end{flushleft}
+  \thispagestyle{empty}
+  \clearpage
+}
+
+\newcommand{\ifundefined}[1]{\expandafter\ifx\csname#1\endcsname\relax}
+
+
+%%%% COPYRIGHT NOTICE
+\newcommand{\authorlegal}[1]{%
+  \expandafter\gdef\csname authorlegal@\endcsname{#1}}
+\newcommand{\cclicense}[1]{%
+  \expandafter\gdef\csname cclicense@\endcsname{#1}}
+\newcommand{\cclicenseurl}[1]{%
+  \expandafter\gdef\csname cclicenseurl@\endcsname{#1}}
+  
+\newcommand{\makecopyright}{%
+  \vspace*{\fill} 
+  \thispagestyle{empty}
+  \begin{flushleft}%
+  \MakeUppercase{\@title}  \vskip -0.5em%
+  {COPYRIGHT} \vskip -0.5em%
+  \@date \vskip -0.5em%
+  {\csname authorlegal@\endcsname}
+\end{flushleft}%
+\clearpage
+}
+
+\newcommand{\makecreativecommons}{%
+  \vspace*{\fill} 
+  \thispagestyle{empty}
+  \begin{flushleft}%
+  \MakeUppercase{\@title}  \vskip -0.5em%
+  {COPYRIGHT} \vskip -0.5em%
+  \@date \vskip -0.5em%
+  {\csname authorlegal@\endcsname} \vskip 0.6em%
+ {This work is licensed under the} \vskip -1em {Creative Commons} \vskip -1em {\csname cclicense@\endcsname} \vskip -1em {License} \vskip 0.3em%
+ {To view a copy of this license, visit} \vskip -0.5em% 
+ \underline{\url{{\csname cclicenseurl@\endcsname}}} %
+\end{flushleft}%
+\clearpage
+}
+
+
+%%%% ACKNOWLEDGEMENT
+\newcommand{\acknowledgement}[1]{%
+    \expandafter\gdef\csname acknowledgement@\endcsname{#1}}
+\newcommand{\makeacknowledgement}{%
+   \titleformat{\chapter}[hang]{\large\center\bfseries}{\scshape\thechapter}{0 pt}{}%
+   \titlespacing*{\chapter}{0pt}{-33 pt}{6 pt} % Key value is -33 pt   
+   \chapter*{ACKNOWLEDGEMENT}%
+   \addcontentsline{toc}{chapter}{ACKNOWLEDGEMENT} % This is to include this section in the Table of Contents}
+   {\csname acknowledgement@\endcsname}%
+}
+
+
+%%%% PREFACE
+\newcommand{\preface}[1]{%
+    \expandafter\gdef\csname preface@\endcsname{#1}}
+\newcommand{\makepreface}{%
+   \clearpage
+   \titleformat{\chapter}[hang]{\large\center\bfseries}{\scshape\thechapter}{0 pt}{}%
+   \titlespacing*{\chapter}{0pt}{-33 pt}{6 pt} % Key value is -33 pt   
+   \chapter*{PREFACE}%
+   \addcontentsline{toc}{chapter}{PREFACE} % This is to include this section in the Table of Contents}
+   {\csname preface@\endcsname}%
+}
+
+
+%%%% MAIN TEXT
+\newenvironment{mainf}{%
+  \titleformat{\chapter}[display]{\LARGE\scshape\bfseries}{CHAPTER \thechapter}{0pt}{}
+  %\titlespacing*{\chapter}{0pt}{-29 pt}{6 pt} % Key value is -29 pt
+  \newpage%
+  \pagenumbering{arabic}%
+  \pagestyle{plain} % \pagestyle：声明,指定从当前页开始的页眉和页脚的排版方式。 可选的: "plain"页眉是空的。页脚只包含一个页码,居中; "empty":页眉和页脚是空的, "headings": 在每一页上放上行文的页眉和页脚, 文件样式规定了其中的内容; 等等. This has to be repeated here because the lists change the style
+  \setlength{\parskip}{10 pt} %  \parskip为段距， 这里 Same as Word file
+  \setlength{\parindent}{0pt} %  \parindent为段落首行缩进
+}{}
+% Remake "chapter" command
+\newcommand {\chpt}[1] {\chapter[\textsc{\Large{#1}}]{\Huge{#1}}}     % textsc: 一种字体，显示小体大写文本
+
+
+%%%% SINGLE APPENDIX
+\newcommand{\oneappendix}{
+\renewcommand\appendixtocname{APPENDIX}
+\clearpage
+\addappheadtotoc
+\titlespacing*{\chapter}{0pt}{-33 pt}{6 pt}
+\titleformat{\chapter}[display]{\large\center\scshape\bfseries}{APPENDIX}{0pt}{}
+\addtocontents{toc}{\protect\setcounter{tocdepth}{-1}}
+}
+
+
+%%%% MULTIPLE APPENDICES
+\newcommand{\multappendices}{
+\renewcommand \appendixtocname{APPENDIX}   % title of the Appendix 
+%\appendixtocname{B Appendix - yyy}                                % title of the Appendix 
+\clearpage
+\addappheadtotoc    %\addappheadtotoc将会添加附录到目录当中
+\titlespacing*{\chapter}{0pt}{-33 pt}{6 pt}
+\titleformat{\chapter}[display]{\large\center\scshape\bfseries}{APPENDIX \thechapter}{0pt}{}{}
+%\titleformat 用于改变标题，指令用法如下: \titleformat{command}[shape]{format}{label}{sep}{before}[after]
+%command 是要重新定义的各种标题命令,比如 \part，\chapter; shape 是用来设定段落形状的,可选的参数有 hang 、 block 、 display 等; format 用于定义标题外观,比如使标题居中、字体加粗等; label 用于定义标题的标签,就是标题内容前面的标号; sep 定义标题的标签与标题内容之间的间隔距离; before 用于在标题内容前再加些内容; after 用于在标题内容后再加些内容.
+\addtocontents{toc}{\protect\setcounter{tocdepth}{-1}}
+}
+
+
+%%%% BIBLIOGRAPHY
+\newenvironment{bibliof}{%
+\singlespacing%
+\addtocontents{toc}{\protect\setcounter{tocdepth}{1}} % This is to bring things back to normal.  编入目录
+\titleformat{\chapter}[hang]{\large\center\bfseries}{\thechapter}{0 pt}{} %\bfseries:全局字体加粗
+\titlespacing*{\chapter}{0pt}{-25 pt}{6 pt} % Key value is -25 pt
+\renewcommand\bibname{BIBLIOGRAPHY}
+\clearpage
+\phantomsection  %需要该命令来创建指向文档中非图形、方程式、表格、节、小节、章节等位置的链接。
+\addcontentsline{toc}{chapter}{BIBLIOGRAPHY}
+\setlength{\bibsep}{\baselineskip} %bibsep文献项之间的间距更改
+}{}
+

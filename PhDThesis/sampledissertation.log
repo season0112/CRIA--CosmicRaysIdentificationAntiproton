@@ -1,0 +1,2901 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.30)  21 FEB 2023 13:33
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**sampledissertation.tex
+(./sampledissertation.tex
+LaTeX2e <2018-04-01> patch level 2
+Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/report.cls
+Document Class: report 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/size11.clo
+File: size11.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count80
+\c@chapter=\count81
+\c@section=\count82
+\c@subsection=\count83
+\c@subsubsection=\count84
+\c@paragraph=\count85
+\c@subparagraph=\count86
+\c@figure=\count87
+\c@table=\count88
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(./upennstyle.sty
+Package: upennstyle 2022/03/22 University of Pennsylvania Dissertation Style
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2018/03/24 v5.7 Page Geometry
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
+)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count89
+\Gm@cntv=\count90
+\c@Gm@tempcnt=\count91
+\Gm@bindingoffset=\dimen103
+\Gm@wd@mp=\dimen104
+\Gm@odd@mp=\dimen105
+\Gm@even@mp=\dimen106
+\Gm@layoutwidth=\dimen107
+\Gm@layoutheight=\dimen108
+\Gm@layouthoffset=\dimen109
+\Gm@layoutvoffset=\dimen110
+\Gm@dimlist=\toks15
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2017/04/05 v2.0i Standard LaTeX package
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/t1enc.def
+File: t1enc.def 2017/04/05 v2.0i Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
+))
+(/usr/local/texlive/2018/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2018/02/14 3.18 The Babel package
+
+(/usr/local/texlive/2018/texmf-dist/tex/generic/babel/switch.def
+File: switch.def 2018/02/14 3.18 Babel switching mechanism
+)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/babel-english/american.ldf
+Language: american 2017/06/06 v3.3r English support from the babel system
+
+(/usr/local/texlive/2018/texmf-dist/tex/generic/babel-english/english.ldf
+Language: english 2017/06/06 v3.3r English support from the babel system
+
+(/usr/local/texlive/2018/texmf-dist/tex/generic/babel/babel.def
+File: babel.def 2018/02/14 3.18 Babel common definitions
+\babel@savecnt=\count92
+\U@D=\dimen111
+
+(/usr/local/texlive/2018/texmf-dist/tex/generic/babel/txtbabel.def)
+\bbl@dirlevel=\count93
+)
+\l@canadian = a dialect from \language\l@american 
+\l@australian = a dialect from \language\l@british 
+\l@newzealand = a dialect from \language\l@british 
+)))
+(/usr/local/texlive/2018/texmf-dist/tex/latex/csquotes/csquotes.sty
+Package: csquotes 2018/02/11 v5.2c context-sensitive quotations (JAW)
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2018/02/11 v2.5e e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count94
+)
+\csq@reset=\count95
+\csq@gtype=\count96
+\csq@glevel=\count97
+\csq@qlevel=\count98
+\csq@maxlvl=\count99
+\csq@tshold=\count100
+\csq@ltx@everypar=\toks16
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/csquotes/csquotes.def
+File: csquotes.def 2018/02/11 v5.2c csquotes generic definitions (JAW)
+)
+Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
+Package csquotes Info: ... configuration file loaded successfully.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/csquotes/csquotes.cfg
+File: csquotes.cfg 
+))
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2017/10/31 v2.20.4
+\thm@style=\toks17
+\thm@bodyfont=\toks18
+\thm@headfont=\toks19
+\thm@notefont=\toks20
+\thm@headpunct=\toks21
+\thm@preskip=\skip43
+\thm@postskip=\skip44
+\thm@headsep=\skip45
+\dth@everypar=\toks22
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2017/09/02 v2.17a AMS math features
+\@mathmargin=\skip46
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks23
+\ex@=\dimen112
+))
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen113
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count101
+LaTeX Info: Redefining \frac on input line 213.
+\uproot@=\count102
+\leftroot@=\count103
+LaTeX Info: Redefining \overline on input line 375.
+\classnum@=\count104
+\DOTSCASE@=\count105
+LaTeX Info: Redefining \ldots on input line 472.
+LaTeX Info: Redefining \dots on input line 475.
+LaTeX Info: Redefining \cdots on input line 596.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen114
+LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
+\macc@depth=\count106
+\c@MaxMatrixCols=\count107
+\dotsspace@=\muskip10
+\c@parentequation=\count108
+\dspbrk@lvl=\count109
+\tag@help=\toks24
+\row@=\count110
+\column@=\count111
+\maxfields@=\count112
+\andhelp@=\toks25
+\eqnshift@=\dimen115
+\alignsep@=\dimen116
+\tagshift@=\dimen117
+\tagwidth@=\dimen118
+\totwidth@=\dimen119
+\lineht@=\dimen120
+\@envbody=\toks26
+\multlinegap=\skip47
+\multlinetaggap=\skip48
+\mathdisplay@stack=\toks27
+LaTeX Info: Redefining \[ on input line 2817.
+LaTeX Info: Redefining \] on input line 2818.
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amscd.sty
+Package: amscd 2017/04/14 v2.1 AMS Commutative Diagrams
+\athelp@=\toks28
+\minaw@=\dimen121
+\bigaw@=\dimen122
+\minCDarrowwidth=\dimen123
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count113
+\calc@Bcount=\count114
+\calc@Adimen=\dimen124
+\calc@Bdimen=\dimen125
+\calc@Askip=\skip49
+\calc@Bskip=\skip50
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count115
+\calc@Cskip=\skip51
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 99.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen126
+\Gin@req@width=\dimen127
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count116
+\float@exts=\toks29
+\float@box=\box28
+\@float@everytoks=\toks30
+\@floatcapt=\box29
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
+\captionmargin=\dimen128
+\captionmargin@=\dimen129
+\captionwidth=\dimen130
+\caption@tempdima=\dimen131
+\caption@indent=\dimen132
+\caption@parindent=\dimen133
+\caption@hangindent=\dimen134
+)
+\c@ContinuedFloat=\count117
+Package caption Info: float package is loaded.
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/multirow/multirow.sty
+Package: multirow 2016/11/25 v2.2 Span multiple rows of a table
+\multirow@colwidth=\skip52
+\multirow@cntb=\count118
+\multirow@dima=\skip53
+\bigstrutjot=\dimen135
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/blindtext/blindtext.sty
+Package: blindtext 2012/01/06 V2.0 blindtext-Package
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/tools/xspace.sty
+Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
+)
+\c@blindtext=\count119
+\c@Blindtext=\count120
+\c@blind@countparstart=\count121
+\blind@countxx=\count122
+\blindtext@numBlindtext=\count123
+\blind@countyy=\count124
+\c@blindlist=\count125
+\c@blindlistlevel=\count126
+\c@blindlist@level=\count127
+\blind@listitem=\count128
+\c@blind@listcount=\count129
+\c@blind@levelcount=\count130
+\blind@mathformula=\count131
+\blind@Mathformula=\count132
+\c@blind@randomcount=\count133
+\c@blind@randommax=\count134
+\c@blind@pangramcount=\count135
+\c@blind@pangrammax=\count136
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/tools/verbatim.sty
+Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks31
+\verbatim@line=\toks32
+\verbatim@in@stream=\read1
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/appendix/appendix.sty
+Package: appendix 2009/09/02 v1.2b extra appendix facilities
+\c@@pps=\count137
+\c@@ppsavesec=\count138
+\c@@ppsaveapp=\count139
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/setspace/setspace.sty
+Package: setspace 2011/12/19 v6.7a set line spacing
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/tools/array.sty
+Package: array 2018/04/07 v2.4g Tabular extension package (FMi)
+\col@sep=\dimen136
+\ar@mcellbox=\box30
+\extrarowheight=\dimen137
+\NC@list=\toks33
+\extratabsurround=\skip54
+\backup@length=\skip55
+\ar@cellbox=\box31
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/tools/tabularx.sty
+Package: tabularx 2016/02/03 v2.11b `tabularx' package (DPC)
+\TX@col@width=\dimen138
+\TX@old@table=\dimen139
+\TX@old@col=\dimen140
+\TX@target=\dimen141
+\TX@delta=\dimen142
+\TX@cols=\count140
+\TX@ftn=\toks34
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2016/04/27 v1.618033 publication quality tables
+\heavyrulewidth=\dimen143
+\lightrulewidth=\dimen144
+\cmidrulewidth=\dimen145
+\belowrulesep=\dimen146
+\belowbottomsep=\dimen147
+\aboverulesep=\dimen148
+\abovetopsep=\dimen149
+\cmidrulesep=\dimen150
+\cmidrulekern=\dimen151
+\defaultaddspace=\dimen152
+\@cmidla=\count141
+\@cmidlb=\count142
+\@aboverulesep=\dimen153
+\@belowrulesep=\dimen154
+\@thisruleclass=\count143
+\@lastruleclass=\count144
+\@thisrulewidth=\dimen155
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/pdflscape.sty
+Package: pdflscape 2016/05/14 v0.11 Display of landscape pages in PDF (HO)
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/lscape.sty
+Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
+)
+Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2018/02/06 v6.86b Hypertext links for LaTeX
+
+(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
+
+
+(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+Package hobsub Info: Skipping package `ifvtex' (already loaded).
+Package: intcalc 2016/05/16 v1.2 Expandable calculations with integers (HO)
+Package hobsub Info: Skipping package `ifpdf' (already loaded).
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+Package: pdftexcmds 2018/01/30 v0.27 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+Package: pdfescape 2016/05/16 v1.14 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2016/05/16 v1.4 Expandable calculations on big integers (HO
+)
+Package: bitset 2016/05/16 v1.2 Handle bit-vector datatype (HO)
+Package: uniquecounter 2016/05/16 v1.3 Provide unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2016/05/16 v1.5 Let assignment for LaTeX macros (HO)
+Package: hopatch 2016/05/16 v1.3 Wrapper for package hooks (HO)
+Package: xcolor-patch 2016/05/16 xcolor patch
+Package: atveryend 2016/05/16 v1.9 Hooks at the very end of document (HO)
+Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
+Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
+Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/auxhook.sty
+Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+)
+\@linkdim=\dimen156
+\Hy@linkcounter=\count145
+\Hy@pagecounter=\count146
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2018/02/06 v6.86b Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+)
+\Hy@SavedSpaceFactor=\count147
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Hyper figures OFF on input line 4509.
+Package hyperref Info: Link nesting OFF on input line 4514.
+Package hyperref Info: Hyper index ON on input line 4517.
+Package hyperref Info: Plain pages OFF on input line 4524.
+Package hyperref Info: Backreferencing OFF on input line 4529.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4762.
+\c@Hy@tempcnt=\count148
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip11
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 5115.
+\XeTeXLinkMargin=\dimen157
+\Fld@menulength=\count149
+\Field@Width=\dimen158
+\Fld@charsize=\dimen159
+Package hyperref Info: Hyper figures OFF on input line 6369.
+Package hyperref Info: Link nesting OFF on input line 6374.
+Package hyperref Info: Hyper index ON on input line 6377.
+Package hyperref Info: backreferencing OFF on input line 6384.
+Package hyperref Info: Link coloring OFF on input line 6389.
+Package hyperref Info: Link coloring with OCG OFF on input line 6394.
+Package hyperref Info: PDF/A mode OFF on input line 6399.
+LaTeX Info: Redefining \ref on input line 6439.
+LaTeX Info: Redefining \pageref on input line 6443.
+\Hy@abspage=\count150
+\c@Item=\count151
+\c@Hfootnote=\count152
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2018/02/06 v6.86b Hyperref driver for pdfTeX
+\Fld@listcount=\count153
+\c@bookmark@seq@number=\count154
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+82.
+)
+\Hy@SectionHShift=\skip56
+)
+Package hyperref Info: Option `breaklinks' set `true' on input line 41.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/tocloft/tocloft.sty
+Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
+Package tocloft Info: The document has chapter divisions on input line 51.
+\cftparskip=\skip57
+\cftbeforetoctitleskip=\skip58
+\cftaftertoctitleskip=\skip59
+\cftbeforepartskip=\skip60
+\cftpartnumwidth=\skip61
+\cftpartindent=\skip62
+\cftbeforechapskip=\skip63
+\cftchapindent=\skip64
+\cftchapnumwidth=\skip65
+\cftbeforesecskip=\skip66
+\cftsecindent=\skip67
+\cftsecnumwidth=\skip68
+\cftbeforesubsecskip=\skip69
+\cftsubsecindent=\skip70
+\cftsubsecnumwidth=\skip71
+\cftbeforesubsubsecskip=\skip72
+\cftsubsubsecindent=\skip73
+\cftsubsubsecnumwidth=\skip74
+\cftbeforeparaskip=\skip75
+\cftparaindent=\skip76
+\cftparanumwidth=\skip77
+\cftbeforesubparaskip=\skip78
+\cftsubparaindent=\skip79
+\cftsubparanumwidth=\skip80
+\cftbeforeloftitleskip=\skip81
+\cftafterloftitleskip=\skip82
+\cftbeforefigskip=\skip83
+\cftfigindent=\skip84
+\cftfignumwidth=\skip85
+\cftbeforelottitleskip=\skip86
+\cftafterlottitleskip=\skip87
+\cftbeforetabskip=\skip88
+\cfttabindent=\skip89
+\cfttabnumwidth=\skip90
+\cftbeforesubfigskip=\skip91
+\cftsubfigindent=\skip92
+\cftsubfignumwidth=\skip93
+\cftbeforesubtabskip=\skip94
+\cftsubtabindent=\skip95
+\cftsubtabnumwidth=\skip96
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/parskip/parskip.sty
+Package: parskip 2001/04/09 non-zero parskip adjustments
+
+
+LaTeX Warning: Command \@starttoc  has changed.
+               Check if current package is valid.
+
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/titlesec/titlesec.sty
+Package: titlesec 2016/03/21 v2.10.2 Sectioning titles
+\ttl@box=\box32
+\beforetitleunit=\skip97
+\aftertitleunit=\skip98
+\ttl@plus=\dimen160
+\ttl@minus=\dimen161
+\ttl@toksa=\toks35
+\titlewidth=\dimen162
+\titlewidthlast=\dimen163
+\titlewidthfirst=\dimen164
+)
+\mylen=\skip99
+\mylent=\skip100
+\mylenf=\skip101
+\cosup@cnt=\count155
+\comm@cnt=\count156
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/cite/cite.sty
+LaTeX Info: Redefining \cite on input line 302.
+LaTeX Info: Redefining \nocite on input line 332.
+Package: cite 2015/02/27  v 5.5
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/natbib/natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+
+
+Package natbib Warning: The `cite' package should not be used
+(natbib)                with natbib. Use option `sort' instead.
+
+\bibhang=\skip102
+\bibsep=\skip103
+LaTeX Info: Redefining \cite on input line 694.
+LaTeX Info: Redefining \citenum on input line 708.
+\c@NAT@ctr=\count157
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/changepage/changepage.sty
+Package: changepage 2009/10/20 v1.0c check page and change page layout
+\c@cp@cntr=\count158
+\cp@tempcnt=\count159
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 13.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/subfigure/subfigure.sty
+Package: subfigure 2002/03/15 v2.1.5 subfigure package
+\subfigtopskip=\skip104
+\subfigcapskip=\skip105
+\subfigcaptopadj=\dimen165
+\subfigbottomskip=\skip106
+\subfigcapmargin=\dimen166
+\subfiglabelskip=\skip107
+\c@subfigure=\count160
+\c@lofdepth=\count161
+\c@subtable=\count162
+\c@lotdepth=\count163
+
+****************************************
+* Local config file subfigure.cfg used *
+****************************************
+(/usr/local/texlive/2018/texmf-dist/tex/latex/subfigure/subfigure.cfg)
+\subfig@top=\skip108
+\subfig@bottom=\skip109
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/lineno/lineno.sty
+Package: lineno 2005/11/02 line numbers on paragraphs v4.41
+\linenopenalty=\count164
+\output=\toks36
+\linenoprevgraf=\count165
+\linenumbersep=\dimen167
+\linenumberwidth=\dimen168
+\c@linenumber=\count166
+\c@pagewiselinenumber=\count167
+\c@LN@truepage=\count168
+\c@internallinenumber=\count169
+\c@internallinenumbers=\count170
+\quotelinenumbersep=\dimen169
+\bframerule=\dimen170
+\bframesep=\dimen171
+\bframebox=\box33
+
+
+LaTeX Warning: Command \@parboxrestore  has changed.
+               Check if current package is valid.
+
+LaTeX Info: Redefining \\ on input line 3056.
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/was/upgreek.sty
+Package: upgreek 2003/02/12 v2.0 (WaS)
+Package upgreek Info: Using Euler Roman for upright Greek on input line 31.
+\symugrf@m=\mathgroup6
+LaTeX Font Info:    Overwriting symbol font `ugrf@m' in version `bold'
+(Font)                  U/eur/m/n --> U/eur/b/n on input line 38.
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/tools/afterpage.sty
+Package: afterpage 2014/10/28 v1.08 After-Page Package (DPC)
+\AP@output=\toks37
+\AP@partial=\box34
+\AP@footins=\box35
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/acronym/acronym.sty
+Package: acronym 2015/03/21 v1.41 Support for acronyms (Tobias Oetiker)
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/bigfoot/suffix.sty
+Package: suffix 2006/07/15 1.5a Variant command support
+)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/xstring/xstring.sty
+(/usr/local/texlive/2018/texmf-dist/tex/generic/xstring/xstring.tex
+\@xs@message=\write3
+\integerpart=\count171
+\decimalpart=\count172
+)
+Package: xstring 2013/10/13  v1.7c  String manipulations (C Tellechea)
+)
+\AC@clearlist=\toks38
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/tools/bm.sty
+Package: bm 2017/01/16 v1.2c Bold Symbol Support (DPC/FMi)
+\symboldoperators=\mathgroup7
+\symboldletters=\mathgroup8
+\symboldsymbols=\mathgroup9
+\symboldugrf@m=\mathgroup10
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 141.
+LaTeX Info: Redefining \bm on input line 207.
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+(/usr/local/texlive/2018/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+(/usr/local/texlive/2018/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.te
+x
+\pgfutil@everybye=\toks39
+\pgfutil@tempdima=\dimen172
+\pgfutil@tempdimb=\dimen173
+
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-li
+sts.tex))
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box36
+(/usr/local/texlive/2018/texmf-dist/tex/latex/ms/everyshi.sty
+Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
+))
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+Package: pgfrcs 2015/08/07 v3.0.1a (rcs-revision 1.31)
+))
+Package: pgf 2015/08/07 v3.0.1a (rcs-revision 1.15)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(/usr/local/texlive/2018/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2014/07/09 v3.0.1a (rcs-revision 1.48)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks40
+\pgfkeys@temptoks=\toks41
+
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.c
+ode.tex
+\pgfkeys@tmptoks=\toks42
+))
+\pgf@x=\dimen174
+\pgf@y=\dimen175
+\pgf@xa=\dimen176
+\pgf@ya=\dimen177
+\pgf@xb=\dimen178
+\pgf@yb=\dimen179
+\pgf@xc=\dimen180
+\pgf@yc=\dimen181
+\w@pgf@writea=\write4
+\r@pgf@reada=\read2
+\c@pgf@counta=\count173
+\c@pgf@countb=\count174
+\c@pgf@countc=\count175
+\c@pgf@countd=\count176
+\t@pgf@toka=\toks43
+\t@pgf@tokb=\toks44
+\t@pgf@tokc=\toks45
+
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
+)
+Driver file for pgf: pgfsys-pdftex.def
+
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.d
+ef
+File: pgfsys-pdftex.def 2014/10/11  (rcs-revision 1.35)
+
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-p
+df.def
+File: pgfsys-common-pdf.def 2013/10/10  (rcs-revision 1.13)
+)))
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.
+code.tex
+File: pgfsyssoftpath.code.tex 2013/09/09  (rcs-revision 1.9)
+\pgfsyssoftpath@smallbuffer@items=\count177
+\pgfsyssoftpath@bigbuffer@items=\count178
+)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.
+code.tex
+File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
+)) (/usr/local/texlive/2018/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2010/04/11 v3.0.1a (rcs-revision 1.7)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen182
+\pgfmath@count=\count179
+\pgfmath@box=\box37
+\pgfmath@toks=\toks46
+\pgfmath@stack@operand=\toks47
+\pgfmath@stack@operation=\toks48
+)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.
+tex
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic
+.code.tex)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigo
+nometric.code.tex)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.rando
+m.code.tex)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.compa
+rison.code.tex)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.
+code.tex)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round
+.code.tex)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.
+code.tex)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integ
+erarithmetics.code.tex)))
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count180
+))
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.co
+de.tex
+File: pgfcorepoints.code.tex 2013/10/07  (rcs-revision 1.27)
+\pgf@picminx=\dimen183
+\pgf@picmaxx=\dimen184
+\pgf@picminy=\dimen185
+\pgf@picmaxy=\dimen186
+\pgf@pathminx=\dimen187
+\pgf@pathmaxx=\dimen188
+\pgf@pathminy=\dimen189
+\pgf@pathmaxy=\dimen190
+\pgf@xx=\dimen191
+\pgf@xy=\dimen192
+\pgf@yx=\dimen193
+\pgf@yy=\dimen194
+\pgf@zx=\dimen195
+\pgf@zy=\dimen196
+)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconst
+ruct.code.tex
+File: pgfcorepathconstruct.code.tex 2013/10/07  (rcs-revision 1.29)
+\pgf@path@lastx=\dimen197
+\pgf@path@lasty=\dimen198
+)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage
+.code.tex
+File: pgfcorepathusage.code.tex 2014/11/02  (rcs-revision 1.24)
+\pgf@shorten@end@additional=\dimen199
+\pgf@shorten@start@additional=\dimen256
+)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.co
+de.tex
+File: pgfcorescopes.code.tex 2015/05/08  (rcs-revision 1.46)
+\pgfpic=\box38
+\pgf@hbox=\box39
+\pgf@layerbox@main=\box40
+\pgf@picture@serial@count=\count181
+)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicst
+ate.code.tex
+File: pgfcoregraphicstate.code.tex 2014/11/02  (rcs-revision 1.12)
+\pgflinewidth=\dimen257
+)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransform
+ations.code.tex
+File: pgfcoretransformations.code.tex 2015/08/07  (rcs-revision 1.20)
+\pgf@pt@x=\dimen258
+\pgf@pt@y=\dimen259
+\pgf@pt@temp=\dimen260
+)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.cod
+e.tex
+File: pgfcorequick.code.tex 2008/10/09  (rcs-revision 1.3)
+)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.c
+ode.tex
+File: pgfcoreobjects.code.tex 2006/10/11  (rcs-revision 1.2)
+)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathproce
+ssing.code.tex
+File: pgfcorepathprocessing.code.tex 2013/09/09  (rcs-revision 1.9)
+)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.co
+de.tex
+File: pgfcorearrows.code.tex 2015/05/14  (rcs-revision 1.43)
+\pgfarrowsep=\dimen261
+)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.cod
+e.tex
+File: pgfcoreshade.code.tex 2013/07/15  (rcs-revision 1.15)
+\pgf@max=\dimen262
+\pgf@sys@shading@range@num=\count182
+)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.cod
+e.tex
+File: pgfcoreimage.code.tex 2013/07/15  (rcs-revision 1.18)
+
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.
+code.tex
+File: pgfcoreexternal.code.tex 2014/07/09  (rcs-revision 1.21)
+\pgfexternal@startupbox=\box41
+))
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.co
+de.tex
+File: pgfcorelayers.code.tex 2013/07/18  (rcs-revision 1.7)
+)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretranspare
+ncy.code.tex
+File: pgfcoretransparency.code.tex 2013/09/30  (rcs-revision 1.5)
+)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.
+code.tex
+File: pgfcorepatterns.code.tex 2013/11/07  (rcs-revision 1.5)
+)))
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.cod
+e.tex
+File: pgfmoduleshapes.code.tex 2014/03/21  (rcs-revision 1.35)
+\pgfnodeparttextbox=\box42
+)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.
+tex
+File: pgfmoduleplot.code.tex 2015/08/03  (rcs-revision 1.13)
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-0-65.sty
+Package: pgfcomp-version-0-65 2007/07/03 v3.0.1a (rcs-revision 1.7)
+\pgf@nodesepstart=\dimen263
+\pgf@nodesepend=\dimen264
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-1-18.sty
+Package: pgfcomp-version-1-18 2007/07/23 v3.0.1a (rcs-revision 1.1)
+))
+(/usr/local/texlive/2018/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(/usr/local/texlive/2018/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2013/12/13 v3.0.1a (rcs-revision 1.25)
+
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
+\pgffor@iter=\dimen265
+\pgffor@skip=\dimen266
+\pgffor@stack=\toks49
+\pgffor@toks=\toks50
+))
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.cod
+e.tex
+Package: tikz 2015/08/07 v3.0.1a (rcs-revision 1.151)
+
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothan
+dlers.code.tex
+File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
+\pgf@plot@mark@count=\count183
+\pgfplotmarksize=\dimen267
+)
+\tikz@lastx=\dimen268
+\tikz@lasty=\dimen269
+\tikz@lastxsaved=\dimen270
+\tikz@lastysaved=\dimen271
+\tikzleveldistance=\dimen272
+\tikzsiblingdistance=\dimen273
+\tikz@figbox=\box43
+\tikz@figbox@bg=\box44
+\tikz@tempbox=\box45
+\tikz@tempbox@bg=\box46
+\tikztreelevel=\count184
+\tikznumberofchildren=\count185
+\tikznumberofcurrentchild=\count186
+\tikz@fig@count=\count187
+
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.cod
+e.tex
+File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
+\pgfmatrixcurrentrow=\count188
+\pgfmatrixcurrentcolumn=\count189
+\pgf@matrix@numberofcolumns=\count190
+)
+\tikz@expandcount=\count191
+
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.1a (rcs-revision 1.2)
+)))
+Package csquotes Info: Checking for multilingual support...
+Package csquotes Info: ... found 'babel' package.
+Package csquotes Info: Adjusting default style.
+Package csquotes Info: Redefining alias 'default' -> 'american'.
+ (./sampledissertation.aux
+(./EidesstattlicheErklaerung.aux) (./Abstract.aux) (./chapter1.aux)
+(./chapter2.aux) (./chapter3.aux
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `sub@' multiply defined.
+
+) (./chapter4.aux) (./chapter5.aux) (./chapter6.aux)
+(./Acknowledgment/Acknowledgment.aux))
+\openout1 = `sampledissertation.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: letterpaper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: includehead includefoot 
+* h-part:(L,W,R)=(108.405pt, 433.62001pt, 72.26999pt)
+* v-part:(T,H,B)=(72.26999pt, 650.43001pt, 72.26999pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=433.62001pt
+* \textheight=620.43001pt
+* \oddsidemargin=36.13501pt
+* \evensidemargin=36.13501pt
+* \topmargin=0.0pt
+* \headheight=0.0pt
+* \headsep=0.0pt
+* \topskip=11.0pt
+* \footskip=30.0pt
+* \marginparwidth=50.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+(/usr/local/texlive/2018/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count192
+\scratchdimen=\dimen274
+\scratchbox=\box47
+\nofMPsegments=\count193
+\nofMParguments=\count194
+\everyMPshowfont=\toks51
+\MPscratchCnt=\count195
+\MPscratchDim=\dimen275
+\MPnumerator=\count196
+\makeMPintoPDFobject=\count197
+\everyMPtoPDFconversion=\toks52
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: hyperref package is loaded.
+Package caption Info: subfigure package is loaded.
+Package caption Info: End \AtBeginDocument code.
+\AtBeginShipoutBox=\box48
+Package hyperref Info: Link coloring ON on input line 29.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
+
+(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
+)
+\c@section@level=\count198
+)
+LaTeX Info: Redefining \ref on input line 29.
+LaTeX Info: Redefining \pageref on input line 29.
+LaTeX Info: Redefining \nameref on input line 29.
+
+(./sampledissertation.out) (./sampledissertation.out)
+\@outlinefile=\write5
+\openout5 = `sampledissertation.out'.
+
+
+ABD: EveryShipout initializing macros [1
+
+{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
+\openout2 = `EidesstattlicheErklaerung.aux'.
+
+ (./EidesstattlicheErklaerung.tex) [2
+
+
+]
+\openout2 = `Abstract.aux'.
+
+
+(./Abstract.tex
+LaTeX Font Info:    Try loading font information for U+msa on input line 19.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 19.
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)) [3
+
+
+]
+(./sampledissertation.toc [1
+
+])
+\tf@toc=\write6
+\openout6 = `sampledissertation.toc'.
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.48 \clearpage
+                [2]
+\openout2 = `chapter1.aux'.
+
+ (./chapter1.tex (./Charpter1/Introduction.tex
+Chapter 1.
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.16 ...ton to proton flux ratio is observed. \par
+                                                   [1
+
+
+
+]))pdfTeX warning (ext4): destination with the same identifier (name{page.2}) h
+as been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.64 \include{chapter1}
+                        [2]
+\openout2 = `chapter2.aux'.
+
+ (./chapter2.tex
+Chapter 2.
+(./Charpter2/CosmicRays.tex [3
+
+
+
+]
+<Figures/chapter2/Cosmicrays/CosmicRayFluxVersusParticleEnergy.png, id=262, 853
+.1875pt x 1036.87375pt>
+File: Figures/chapter2/Cosmicrays/CosmicRayFluxVersusParticleEnergy.png Graphic
+ file (type png)
+<use Figures/chapter2/Cosmicrays/CosmicRayFluxVersusParticleEnergy.png>
+Package pdftex.def Info: Figures/chapter2/Cosmicrays/CosmicRayFluxVersusParticl
+eEnergy.png  used on input line 25.
+(pdftex.def)             Requested size: 195.12242pt x 248.15865pt.
+<Figures/chapter2/Cosmicrays/CosmicRaysComponentsFlux.png, id=263, 499.8675pt x
+ 608.2725pt>
+File: Figures/chapter2/Cosmicrays/CosmicRaysComponentsFlux.png Graphic file (ty
+pe png)
+<use Figures/chapter2/Cosmicrays/CosmicRaysComponentsFlux.png>
+Package pdftex.def Info: Figures/chapter2/Cosmicrays/CosmicRaysComponentsFlux.p
+ng  used on input line 28.
+(pdftex.def)             Requested size: 195.12296pt x 248.16818pt.
+ [4 <./Figures/chapter2/Cosmicrays/CosmicRayFluxVersusParticleEnergy.png> <./Fi
+gures/chapter2/Cosmicrays/CosmicRaysComponentsFlux.png>]
+<Figures/chapter2/Cosmicrays/Galactic-cosmic-ray-relative-abundances-compared-w
+ith-the-Solar-System-ones-The-curves.png, id=281, 699.61375pt x 574.145pt>
+File: Figures/chapter2/Cosmicrays/Galactic-cosmic-ray-relative-abundances-compa
+red-with-the-Solar-System-ones-The-curves.png Graphic file (type png)
+<use Figures/chapter2/Cosmicrays/Galactic-cosmic-ray-relative-abundances-compar
+ed-with-the-Solar-System-ones-The-curves.png>
+Package pdftex.def Info: Figures/chapter2/Cosmicrays/Galactic-cosmic-ray-relati
+ve-abundances-compared-with-the-Solar-System-ones-The-curves.png  used on input
+ line 48.
+(pdftex.def)             Requested size: 390.26515pt x 279.19589pt.
+) (./Charpter2/SourceOfCosmicRays.tex [5 <./Figures/chapter2/Cosmicrays/Galacti
+c-cosmic-ray-relative-abundances-compared-with-the-Solar-System-ones-The-curves
+.png>]) (./Charpter2/Propagations.tex [6]
+Overfull \hbox (11.85205pt too wide) detected at line 11
+[][] \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 q\OT1/cmr/m/n/10.95 ([]\OML/cmm/m
+/it/10.95 ; p; t\OT1/cmr/m/n/10.95 ) + [] \OMS/cmsy/m/n/10.95 ^^A \OT1/cmr/m/n/
+10.95 (\OML/cmm/m/it/10.95 D[][]  \OMS/cmsy/m/n/10.95 ^^@ []\OML/cmm/m/it/10.95
+  \OT1/cmr/m/n/10.95 ) + []\OML/cmm/m/it/10.95 p[]D[][][]  \OMS/cmsy/m/n/10.95 
+^^@ [] [] ^^@ []\OML/cmm/m/it/10.95   \OMS/cmsy/m/n/10.95 ^^@ []\OML/cmm/m/it/1
+0.95  
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 16.
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 16.
+ [7]
+<Figures/chapter2/Propagations/Heliosphere.jpg, id=355, 1044.90375pt x 704.6325
+pt>
+File: Figures/chapter2/Propagations/Heliosphere.jpg Graphic file (type jpg)
+<use Figures/chapter2/Propagations/Heliosphere.jpg>
+Package pdftex.def Info: Figures/chapter2/Propagations/Heliosphere.jpg  used on
+ input line 48.
+(pdftex.def)             Requested size: 203.79527pt x 161.30943pt.
+<Figures/chapter2/Propagations/Voyager1.png, id=356, 1181.41376pt x 909.3975pt>
+
+File: Figures/chapter2/Propagations/Voyager1.png Graphic file (type png)
+<use Figures/chapter2/Propagations/Voyager1.png>
+Package pdftex.def Info: Figures/chapter2/Propagations/Voyager1.png  used on in
+put line 51.
+(pdftex.def)             Requested size: 203.79408pt x 161.29776pt.
+ [8]
+<Figures/chapter2/Propagations/NeutronMonitor.png, id=382, 709.65125pt x 683.55
+376pt>
+File: Figures/chapter2/Propagations/NeutronMonitor.png Graphic file (type png)
+<use Figures/chapter2/Propagations/NeutronMonitor.png>
+Package pdftex.def Info: Figures/chapter2/Propagations/NeutronMonitor.png  used
+ on input line 71.
+(pdftex.def)             Requested size: 346.9092pt x 310.21432pt.
+ [9 <./Figures/chapter2/Propagations/Heliosphere.jpg> <./Figures/chapter2/Propa
+gations/Voyager1.png>]) (./Charpter2/Cosmicantiprotons.tex [10 <./Figures/chapt
+er2/Propagations/NeutronMonitor.png>]
+<Figures/chapter2/CosmicAntiprotonsMeasurement/PbarFluxForDifferentExperiments.
+pdf, id=421, 569.12625pt x 409.53pt>
+File: Figures/chapter2/CosmicAntiprotonsMeasurement/PbarFluxForDifferentExperim
+ents.pdf Graphic file (type pdf)
+<use Figures/chapter2/CosmicAntiprotonsMeasurement/PbarFluxForDifferentExperime
+nts.pdf>
+Package pdftex.def Info: Figures/chapter2/CosmicAntiprotonsMeasurement/PbarFlux
+ForDifferentExperiments.pdf  used on input line 46.
+(pdftex.def)             Requested size: 433.64334pt x 291.61818pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[11])) [12 <./Figures/chapter2/CosmicAntiprotonsMeasurement/PbarFluxForDifferen
+tExperiments.pdf, page is rotated 90 degrees>]
+\openout2 = `chapter3.aux'.
+
+ (./chapter3.tex
+Chapter 3.
+(./Charpter3/ExperimentOverview.tex
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 10.
+
+<Figures/chapter3/Overview/AMS01Detector.jpg, id=541, 426.59375pt x 257.96375pt
+>
+File: Figures/chapter3/Overview/AMS01Detector.jpg Graphic file (type jpg)
+<use Figures/chapter3/Overview/AMS01Detector.jpg>
+Package pdftex.def Info: Figures/chapter3/Overview/AMS01Detector.jpg  used on i
+nput line 14.
+(pdftex.def)             Requested size: 216.81136pt x 186.13524pt.
+<Figures/chapter3/Overview/AMS-01.jpg, id=542, 602.25pt x 844.65562pt>
+File: Figures/chapter3/Overview/AMS-01.jpg Graphic file (type jpg)
+<use Figures/chapter3/Overview/AMS-01.jpg>
+Package pdftex.def Info: Figures/chapter3/Overview/AMS-01.jpg  used on input li
+ne 17.
+(pdftex.def)             Requested size: 173.44418pt x 229.55511pt.
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 25.
+
+<Figures/chapter3/Overview/AMS02OnISS.pdf, id=548, 1027.84pt x 770.88pt>
+File: Figures/chapter3/Overview/AMS02OnISS.pdf Graphic file (type pdf)
+<use Figures/chapter3/Overview/AMS02OnISS.pdf>
+Package pdftex.def Info: Figures/chapter3/Overview/AMS02OnISS.pdf  used on inpu
+t line 27.
+(pdftex.def)             Requested size: 346.90456pt x 241.95805pt.
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 35.
+
+<Figures/chapter3/Overview/AMS02Geometry.png, id=553, 723.6636pt x 547.8066pt>
+File: Figures/chapter3/Overview/AMS02Geometry.png Graphic file (type png)
+<use Figures/chapter3/Overview/AMS02Geometry.png>
+Package pdftex.def Info: Figures/chapter3/Overview/AMS02Geometry.png  used on i
+nput line 37.
+(pdftex.def)             Requested size: 346.89081pt x 248.16574pt.
+[13
+
+
+
+] [14 <./Figures/chapter3/Overview/AMS01Detector.jpg> <./Figures/chapter3/Overv
+iew/AMS-01.jpg> <./Figures/chapter3/Overview/AMS02OnISS.pdf>])
+(./Charpter3/TRD.tex [15 <./Figures/chapter3/Overview/AMS02Geometry.png>]
+<Figures/chapter3/TRD/TRDConstruction.png, id=603, 344.487pt x 215.8464pt>
+File: Figures/chapter3/TRD/TRDConstruction.png Graphic file (type png)
+<use Figures/chapter3/TRD/TRDConstruction.png>
+Package pdftex.def Info: Figures/chapter3/TRD/TRDConstruction.png  used on inpu
+t line 15.
+(pdftex.def)             Requested size: 346.91461pt x 248.16873pt.
+
+[16 <./Figures/chapter3/TRD/TRDConstruction.png>]
+<Figures/chapter3/TRD/TRDdEdX1.png, id=617, 270.7716pt x 225.4824pt>
+File: Figures/chapter3/TRD/TRDdEdX1.png Graphic file (type png)
+<use Figures/chapter3/TRD/TRDdEdX1.png>
+Package pdftex.def Info: Figures/chapter3/TRD/TRDdEdX1.png  used on input line 
+28.
+(pdftex.def)             Requested size: 203.80536pt x 173.72864pt.
+<Figures/chapter3/TRD/TRDdEdX2.png, id=618, 565.11125pt x 417.56pt>
+File: Figures/chapter3/TRD/TRDdEdX2.png Graphic file (type png)
+<use Figures/chapter3/TRD/TRDdEdX2.png>
+Package pdftex.def Info: Figures/chapter3/TRD/TRDdEdX2.png  used on input line 
+32.
+(pdftex.def)             Requested size: 203.80205pt x 155.10643pt.
+) (./Charpter3/Tracker.tex
+<Figures/chapter3/Magnet/MagnetTest.jpg, id=624, 140.80605pt x 94.6737pt>
+File: Figures/chapter3/Magnet/MagnetTest.jpg Graphic file (type jpg)
+<use Figures/chapter3/Magnet/MagnetTest.jpg>
+Package pdftex.def Info: Figures/chapter3/Magnet/MagnetTest.jpg  used on input 
+line 12.
+(pdftex.def)             Requested size: 346.9566pt x 260.62648pt.
+<Figures/chapter3/Tracker/TrackerPlanePicture.jpg, id=627, 310.1854pt x 232.798
+93pt>
+File: Figures/chapter3/Tracker/TrackerPlanePicture.jpg Graphic file (type jpg)
+<use Figures/chapter3/Tracker/TrackerPlanePicture.jpg>
+Package pdftex.def Info: Figures/chapter3/Tracker/TrackerPlanePicture.jpg  used
+ on input line 28.
+(pdftex.def)             Requested size: 346.92723pt x 260.59802pt.
+
+[17 <./Figures/chapter3/TRD/TRDdEdX1.png> <./Figures/chapter3/TRD/TRDdEdX2.png>
+] [18 <./Figures/chapter3/Magnet/MagnetTest.jpg> <./Figures/chapter3/Tracker/Tr
+ackerPlanePicture.jpg>]
+<Figures/chapter3/Tracker/SiliconLayer.png, id=652, 1224.575pt x 938.50626pt>
+File: Figures/chapter3/Tracker/SiliconLayer.png Graphic file (type png)
+<use Figures/chapter3/Tracker/SiliconLayer.png>
+Package pdftex.def Info: Figures/chapter3/Tracker/SiliconLayer.png  used on inp
+ut line 45.
+(pdftex.def)             Requested size: 346.89604pt x 248.1588pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[19 <./Figures/chapter3/Tracker/SiliconLayer.png>]
+<Figures/chapter3/Tracker/Calibration.png, id=668, 469.2732pt x 304.0158pt>
+File: Figures/chapter3/Tracker/Calibration.png Graphic file (type png)
+<use Figures/chapter3/Tracker/Calibration.png>
+Package pdftex.def Info: Figures/chapter3/Tracker/Calibration.png  used on inpu
+t line 87.
+(pdftex.def)             Requested size: 346.91302pt x 248.17657pt.
+ [20 <./Figures/chapter3/Tracker/Calibration.png>]
+<Figures/chapter3/Tracker/RigidityResolutionProton.png, id=680, 1518.67375pt x 
+929.4725pt>
+File: Figures/chapter3/Tracker/RigidityResolutionProton.png Graphic file (type 
+png)
+<use Figures/chapter3/Tracker/RigidityResolutionProton.png>
+Package pdftex.def Info: Figures/chapter3/Tracker/RigidityResolutionProton.png 
+ used on input line 104.
+(pdftex.def)             Requested size: 390.2576pt x 248.16696pt.
+ [21 <./Figures/chapter3/Tracker/RigidityResolutionProton.png>]) (./Charpter3/T
+OF.tex
+<Figures/chapter3/TOF/Arrangement.png, id=696, 1084.05pt x 581.17125pt>
+File: Figures/chapter3/TOF/Arrangement.png Graphic file (type png)
+<use Figures/chapter3/TOF/Arrangement.png>
+Package pdftex.def Info: Figures/chapter3/TOF/Arrangement.png  used on input li
+ne 8.
+(pdftex.def)             Requested size: 346.88655pt x 223.357pt.
+ [22 <./Figures/chapter3/TOF/Arrangement.png>]
+<Figures/chapter3/TOF/TOFBetaResolution.png, id=712, 1023.825pt x 682.55pt>
+File: Figures/chapter3/TOF/TOFBetaResolution.png Graphic file (type png)
+<use Figures/chapter3/TOF/TOFBetaResolution.png>
+Package pdftex.def Info: Figures/chapter3/TOF/TOFBetaResolution.png  used on in
+put line 34.
+(pdftex.def)             Requested size: 195.1224pt x 139.60078pt.
+<Figures/chapter3/TOF/TOFChargeResolution.png, id=713, 1198.4775pt x 714.67pt>
+File: Figures/chapter3/TOF/TOFChargeResolution.png Graphic file (type png)
+<use Figures/chapter3/TOF/TOFChargeResolution.png>
+Package pdftex.def Info: Figures/chapter3/TOF/TOFChargeResolution.png  used on 
+input line 37.
+(pdftex.def)             Requested size: 195.12517pt x 139.59454pt.
+)
+(./Charpter3/RICH.tex
+<Figures/chapter3/RICH/RICHDetector.png, id=722, 1210.5225pt x 896.34875pt>
+File: Figures/chapter3/RICH/RICHDetector.png Graphic file (type png)
+<use Figures/chapter3/RICH/RICHDetector.png>
+Package pdftex.def Info: Figures/chapter3/RICH/RICHDetector.png  used on input 
+line 12.
+(pdftex.def)             Requested size: 346.88655pt x 248.15845pt.
+ [23 <./Figures/chapter3/TOF/TOFBetaResolution.png> <./Figures/chapter3/TOF/TOF
+ChargeResolution.png>]
+<Figures/chapter3/RICH/BetaResolution.png, id=737, 982.67125pt x 712.6625pt>
+File: Figures/chapter3/RICH/BetaResolution.png Graphic file (type png)
+<use Figures/chapter3/RICH/BetaResolution.png>
+Package pdftex.def Info: Figures/chapter3/RICH/BetaResolution.png  used on inpu
+t line 25.
+(pdftex.def)             Requested size: 195.12767pt x 141.50778pt.
+<Figures/chapter3/RICH/ChargeResolution.png, id=738, 985.6825pt x 681.54625pt>
+File: Figures/chapter3/RICH/ChargeResolution.png Graphic file (type png)
+<use Figures/chapter3/RICH/ChargeResolution.png>
+Package pdftex.def Info: Figures/chapter3/RICH/ChargeResolution.png  used on in
+put line 29.
+(pdftex.def)             Requested size: 195.12767pt x 134.91328pt.
+ [24 <./Figures/chapter3/RICH/RICHDetector.png> <./Figures/chapter3/RICH/BetaRe
+solution.png> <./Figures/chapter3/RICH/ChargeResolution.png>]) (./Charpter3/ECA
+L.tex
+<Figures/chapter3/ECAL/SuperLayer.png, id=762, 1308.89pt x 327.2225pt>
+File: Figures/chapter3/ECAL/SuperLayer.png Graphic file (type png)
+<use Figures/chapter3/ECAL/SuperLayer.png>
+Package pdftex.def Info: Figures/chapter3/ECAL/SuperLayer.png  used on input li
+ne 12.
+(pdftex.def)             Requested size: 433.61269pt x 124.0812pt.
+ [25 <./Figures/chapter3/ECAL/SuperLayer.png>]
+<Figures/chapter3/ECAL/Ecal_Proton_Rejection.png, id=779, 469.2732pt x 317.0244
+pt>
+File: Figures/chapter3/ECAL/Ecal_Proton_Rejection.png Graphic file (type png)
+<use Figures/chapter3/ECAL/Ecal_Proton_Rejection.png>
+Package pdftex.def Info: Figures/chapter3/ECAL/Ecal_Proton_Rejection.png  used 
+on input line 27.
+(pdftex.def)             Requested size: 195.12425pt x 139.60242pt.
+<Figures/chapter3/ECAL/EnergyResolution.png, id=780, 1199.48125pt x 884.30376pt
+>
+File: Figures/chapter3/ECAL/EnergyResolution.png Graphic file (type png)
+<use Figures/chapter3/ECAL/EnergyResolution.png>
+Package pdftex.def Info: Figures/chapter3/ECAL/EnergyResolution.png  used on in
+put line 30.
+(pdftex.def)             Requested size: 195.12387pt x 139.58893pt.
+) (./Charpter3/ACC.tex [26 <./Figures/chapter3/ECAL/Ecal_Proton_Rejection.png> 
+<./Figures/chapter3/ECAL/EnergyResolution.png>]
+<Figures/chapter3/ACC/UpperLeft.png, id=812, 590.205pt x 397.485pt>
+File: Figures/chapter3/ACC/UpperLeft.png Graphic file (type png)
+<use Figures/chapter3/ACC/UpperLeft.png>
+Package pdftex.def Info: Figures/chapter3/ACC/UpperLeft.png  used on input line
+ 15.
+(pdftex.def)             Requested size: 225.478pt x 179.92192pt.
+<Figures/chapter3/ACC/UpperRight.png, id=813, 467.7475pt x 395.4775pt>
+File: Figures/chapter3/ACC/UpperRight.png Graphic file (type png)
+<use Figures/chapter3/ACC/UpperRight.png>
+Package pdftex.def Info: Figures/chapter3/ACC/UpperRight.png  used on input lin
+e 20.
+(pdftex.def)             Requested size: 173.44926pt x 179.9184pt.
+<Figures/chapter3/ACC/Lower.png, id=814, 1059.96pt x 253.94875pt>
+File: Figures/chapter3/ACC/Lower.png Graphic file (type png)
+<use Figures/chapter3/ACC/Lower.png>
+Package pdftex.def Info: Figures/chapter3/ACC/Lower.png  used on input line 25.
+
+(pdftex.def)             Requested size: 433.62001pt x 103.88716pt.
+
+Overfull \hbox (7.26108pt too wide) in paragraph at lines 15--26
+ [][] 
+ []
+
+)) [27 <./Figures/chapter3/ACC/UpperLeft.png> <./Figures/chapter3/ACC/UpperRigh
+t.png> <./Figures/chapter3/ACC/Lower.png>]
+\openout2 = `chapter4.aux'.
+
+ (./chapter4.tex
+Chapter 4.
+[28
+
+
+
+] (./Charpter4/DataSelection.tex [29]
+
+LaTeX Warning: Characters dropped after `\end{comment}' on input line 56.
+
+[30]
+<Figures/chapter4/DataSelection/B1042_antipr.pl1.1800_7.6_all_mc_iss_ratio.pdf,
+ id=875, 569.12625pt x 386.44376pt>
+File: Figures/chapter4/DataSelection/B1042_antipr.pl1.1800_7.6_all_mc_iss_ratio
+.pdf Graphic file (type pdf)
+<use Figures/chapter4/DataSelection/B1042_antipr.pl1.1800_7.6_all_mc_iss_ratio.
+pdf>
+Package pdftex.def Info: Figures/chapter4/DataSelection/B1042_antipr.pl1.1800_7
+.6_all_mc_iss_ratio.pdf  used on input line 72.
+(pdftex.def)             Requested size: 433.62001pt x 294.44917pt.
+ [31 <./Figures/chapter4/DataSelection/B1042_antipr.pl1.1800_7.6_all_mc_iss_rat
+io.pdf, page is rotated 90 degrees>]
+Underfull \hbox (badness 3138) in paragraph at lines 130--130
+[]|\T1/cmr/m/n/10.95 Remove the sec-onds when the ex-ter-nal
+ []
+
+
+Overfull \hbox (28.97636pt too wide) in paragraph at lines 116--136
+[][] 
+ []
+
+
+LaTeX Warning: Characters dropped after `\end{comment}' on input line 187.
+
+[32] [33] [34] [35]
+<Figures/chapter4/DataSelection/Compare_LowerTofCharge_B1042_antipr.pl1.1800_7.
+6_all_Tree_negative_RemoveTOFChargeCut_AllCut.pdf, id=957, 569.12625pt x 441.65
+pt>
+File: Figures/chapter4/DataSelection/Compare_LowerTofCharge_B1042_antipr.pl1.18
+00_7.6_all_Tree_negative_RemoveTOFChargeCut_AllCut.pdf Graphic file (type pdf)
+<use Figures/chapter4/DataSelection/Compare_LowerTofCharge_B1042_antipr.pl1.180
+0_7.6_all_Tree_negative_RemoveTOFChargeCut_AllCut.pdf>
+Package pdftex.def Info: Figures/chapter4/DataSelection/Compare_LowerTofCharge_
+B1042_antipr.pl1.1800_7.6_all_Tree_negative_RemoveTOFChargeCut_AllCut.pdf  used
+ on input line 287.
+(pdftex.def)             Requested size: 433.64334pt x 310.23112pt.
+) (./Charpter4/Chargeconfusionestimator.tex [36 <./Figures/chapter4/DataSelecti
+on/Compare_LowerTofCharge_B1042_antipr.pl1.1800_7.6_all_Tree_negative_RemoveTOF
+ChargeCut_AllCut.pdf, page is rotated 90 degrees>]
+<Figures/appendix/appendixA/proton_330_525_to_330_525_L1L9RigidityMatching_5_Lo
+gy_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0.pdf, id=1011, 569.1262
+5pt x 386.44376pt>
+File: Figures/appendix/appendixA/proton_330_525_to_330_525_L1L9RigidityMatching
+_5_Logy_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0.pdf Graphic file 
+(type pdf)
+<use Figures/appendix/appendixA/proton_330_525_to_330_525_L1L9RigidityMatching_
+5_Logy_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0.pdf>
+Package pdftex.def Info: Figures/appendix/appendixA/proton_330_525_to_330_525_L
+1L9RigidityMatching_5_Logy_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_
+0.pdf  used on input line 31.
+(pdftex.def)             Requested size: 221.14203pt x 148.90808pt.
+<Figures/appendix/appendixA/proton_330_525_to_330_525_RigidityAsymmetry_1_Logy_
+B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0.pdf, id=1012, 569.12625pt
+ x 386.44376pt>
+File: Figures/appendix/appendixA/proton_330_525_to_330_525_RigidityAsymmetry_1_
+Logy_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0.pdf Graphic file (ty
+pe pdf)
+<use Figures/appendix/appendixA/proton_330_525_to_330_525_RigidityAsymmetry_1_L
+ogy_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0.pdf>
+Package pdftex.def Info: Figures/appendix/appendixA/proton_330_525_to_330_525_R
+igidityAsymmetry_1_Logy_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0.p
+df  used on input line 35.
+(pdftex.def)             Requested size: 221.14203pt x 148.90808pt.
+<Figures/appendix/appendixA/proton_330_525_to_330_525_Chi2TrackerYAsymmetry_3_L
+ogy_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0.pdf, id=1013, 569.126
+25pt x 386.44376pt>
+File: Figures/appendix/appendixA/proton_330_525_to_330_525_Chi2TrackerYAsymmetr
+y_3_Logy_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0.pdf Graphic file
+ (type pdf)
+<use Figures/appendix/appendixA/proton_330_525_to_330_525_Chi2TrackerYAsymmetry
+_3_Logy_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0.pdf>
+Package pdftex.def Info: Figures/appendix/appendixA/proton_330_525_to_330_525_C
+hi2TrackerYAsymmetry_3_Logy_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern
+_0.pdf  used on input line 37.
+(pdftex.def)             Requested size: 221.14203pt x 148.90808pt.
+<Figures/appendix/appendixA/proton_330_525_to_330_525_InnerMaxSpanRigidityMatch
+ing_4_Logy_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0.pdf, id=1014, 
+569.12625pt x 386.44376pt>
+File: Figures/appendix/appendixA/proton_330_525_to_330_525_InnerMaxSpanRigidity
+Matching_4_Logy_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0.pdf Graph
+ic file (type pdf)
+<use Figures/appendix/appendixA/proton_330_525_to_330_525_InnerMaxSpanRigidityM
+atching_4_Logy_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0.pdf>
+Package pdftex.def Info: Figures/appendix/appendixA/proton_330_525_to_330_525_I
+nnerMaxSpanRigidityMatching_4_Logy_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_
+Pattern_0.pdf  used on input line 41.
+(pdftex.def)             Requested size: 221.14203pt x 148.90808pt.
+ [37]
+[38 <./Figures/appendix/appendixA/proton_330_525_to_330_525_L1L9RigidityMatchin
+g_5_Logy_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0.pdf, page is rot
+ated 90 degrees> <./Figures/appendix/appendixA/proton_330_525_to_330_525_Rigidi
+tyAsymmetry_1_Logy_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0.pdf, p
+age is rotated 90 degrees> <./Figures/appendix/appendixA/proton_330_525_to_330_
+525_Chi2TrackerYAsymmetry_3_Logy_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pa
+ttern_0.pdf, page is rotated 90 degrees> <./Figures/appendix/appendixA/proton_3
+30_525_to_330_525_InnerMaxSpanRigidityMatching_4_Logy_B1042_pr.pl1.flux.l1a9.20
+16000_7.6_all_Tree_Pattern_0.pdf, page is rotated 90 degrees>]
+<Figures/chapter4/ChargeConfusion/CCEstimator/CorrectAndConfused_1D_Logy_259_33
+0_binnumber_30_CCCut_0.20_CCN_20_TRDN_20_InROOT.pdf, id=1213, 569.12625pt x 408
+.52625pt>
+File: Figures/chapter4/ChargeConfusion/CCEstimator/CorrectAndConfused_1D_Logy_2
+59_330_binnumber_30_CCCut_0.20_CCN_20_TRDN_20_InROOT.pdf Graphic file (type pdf
+)
+<use Figures/chapter4/ChargeConfusion/CCEstimator/CorrectAndConfused_1D_Logy_25
+9_330_binnumber_30_CCCut_0.20_CCN_20_TRDN_20_InROOT.pdf>
+Package pdftex.def Info: Figures/chapter4/ChargeConfusion/CCEstimator/CorrectAn
+dConfused_1D_Logy_259_330_binnumber_30_CCCut_0.20_CCN_20_TRDN_20_InROOT.pdf  us
+ed on input line 91.
+(pdftex.def)             Requested size: 390.27466pt x 260.58943pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Figures/chapter4/ChargeConfusion/RejectionPower/RejectionPower259_330_binnumbe
+r_30_CCCut_0.00_CCN_20_TRDN_20_InROOT.pdf, id=1214, 569.12625pt x 408.52625pt>
+File: Figures/chapter4/ChargeConfusion/RejectionPower/RejectionPower259_330_bin
+number_30_CCCut_0.00_CCN_20_TRDN_20_InROOT.pdf Graphic file (type pdf)
+<use Figures/chapter4/ChargeConfusion/RejectionPower/RejectionPower259_330_binn
+umber_30_CCCut_0.00_CCN_20_TRDN_20_InROOT.pdf>
+Package pdftex.def Info: Figures/chapter4/ChargeConfusion/RejectionPower/Reject
+ionPower259_330_binnumber_30_CCCut_0.00_CCN_20_TRDN_20_InROOT.pdf  used on inpu
+t line 98.
+(pdftex.def)             Requested size: 390.27466pt x 260.58943pt.
+[39]
+Overfull \vbox (4.74886pt too high) has occurred while \output is active []
+
+
+[40 <./Figures/chapter4/ChargeConfusion/CCEstimator/CorrectAndConfused_1D_Logy_
+259_330_binnumber_30_CCCut_0.20_CCN_20_TRDN_20_InROOT.pdf, page is rotated 90 d
+egrees> <./Figures/chapter4/ChargeConfusion/RejectionPower/RejectionPower259_33
+0_binnumber_30_CCCut_0.00_CCN_20_TRDN_20_InROOT.pdf, page is rotated 90 degrees
+>]) (./Charpter4/TRDestimator.tex
+<Figures/chapter4/TRDLikelihood/TRD_ChargeCorrectProtonTemplate_MC_B1042_pr.pl1
+.1800_7.6_all_Tree_positive_rigidity_14.1_15.3_pattern_0_bin_100_LogY_0.50.pdf,
+ id=1315, 569.12625pt x 270.00874pt>
+File: Figures/chapter4/TRDLikelihood/TRD_ChargeCorrectProtonTemplate_MC_B1042_p
+r.pl1.1800_7.6_all_Tree_positive_rigidity_14.1_15.3_pattern_0_bin_100_LogY_0.50
+.pdf Graphic file (type pdf)
+<use Figures/chapter4/TRDLikelihood/TRD_ChargeCorrectProtonTemplate_MC_B1042_pr
+.pl1.1800_7.6_all_Tree_positive_rigidity_14.1_15.3_pattern_0_bin_100_LogY_0.50.
+pdf>
+Package pdftex.def Info: Figures/chapter4/TRDLikelihood/TRD_ChargeCorrectProton
+Template_MC_B1042_pr.pl1.1800_7.6_all_Tree_positive_rigidity_14.1_15.3_pattern_
+0_bin_100_LogY_0.50.pdf  used on input line 28.
+(pdftex.def)             Requested size: 433.62001pt x 205.73201pt.
+) (./Charpter4/TemplateFit.tex [41] [42 <./Figures/chapter4/TRDLikelihood/TRD_C
+hargeCorrectProtonTemplate_MC_B1042_pr.pl1.1800_7.6_all_Tree_positive_rigidity_
+14.1_15.3_pattern_0_bin_100_LogY_0.50.pdf, page is rotated 90 degrees>]
+Overfull \hbox (24.74019pt too wide) in paragraph at lines 38--60
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[43]
+<Figures/chapter4/TemplateFit/TimeAveragedPlot/Low/TemplateFit/fullrange/2DShow
+Data/FitResult_tof_2.97_3.29_pass7.8_TRDeff_1.00_TOFeff_1.00.pdf, id=1392, 569.
+12625pt x 270.00874pt>
+File: Figures/chapter4/TemplateFit/TimeAveragedPlot/Low/TemplateFit/fullrange/2
+DShowData/FitResult_tof_2.97_3.29_pass7.8_TRDeff_1.00_TOFeff_1.00.pdf Graphic f
+ile (type pdf)
+<use Figures/chapter4/TemplateFit/TimeAveragedPlot/Low/TemplateFit/fullrange/2D
+ShowData/FitResult_tof_2.97_3.29_pass7.8_TRDeff_1.00_TOFeff_1.00.pdf>
+Package pdftex.def Info: Figures/chapter4/TemplateFit/TimeAveragedPlot/Low/Temp
+lateFit/fullrange/2DShowData/FitResult_tof_2.97_3.29_pass7.8_TRDeff_1.00_TOFeff
+_1.00.pdf  used on input line 99.
+(pdftex.def)             Requested size: 433.62001pt x 206.96744pt.
+File: Figures/chapter4/TemplateFit/TimeAveragedPlot/Low/TemplateFit/fullrange/2
+DShowData/FitResult_tof_2.97_3.29_pass7.8_TRDeff_1.00_TOFeff_1.00.pdf Graphic f
+ile (type pdf)
+<use Figures/chapter4/TemplateFit/TimeAveragedPlot/Low/TemplateFit/fullrange/2D
+ShowData/FitResult_tof_2.97_3.29_pass7.8_TRDeff_1.00_TOFeff_1.00.pdf>
+Package pdftex.def Info: Figures/chapter4/TemplateFit/TimeAveragedPlot/Low/Temp
+lateFit/fullrange/2DShowData/FitResult_tof_2.97_3.29_pass7.8_TRDeff_1.00_TOFeff
+_1.00.pdf  used on input line 103.
+(pdftex.def)             Requested size: 433.62001pt x 206.96744pt.
+
+Overfull \hbox (7.26108pt too wide) in paragraph at lines 99--104
+ [][] 
+ []
+
+
+Overfull \hbox (7.26108pt too wide) in paragraph at lines 99--104
+ [][] 
+ []
+
+<Figures/chapter4/TemplateFit/TimeAveragedPlot/Low/TemplateFit/fullrange/TOF-0.
+3TRD0.7/TOF-0.1TRD0.9/1_TofBeta_Y_tof_LogY_2.97_3.29_pass7.8_TRDeff_1.00_TOFeff
+_1.00.pdf, id=1395, 569.12625pt x 440.64626pt>
+File: Figures/chapter4/TemplateFit/TimeAveragedPlot/Low/TemplateFit/fullrange/T
+OF-0.3TRD0.7/TOF-0.1TRD0.9/1_TofBeta_Y_tof_LogY_2.97_3.29_pass7.8_TRDeff_1.00_T
+OFeff_1.00.pdf Graphic file (type pdf)
+<use Figures/chapter4/TemplateFit/TimeAveragedPlot/Low/TemplateFit/fullrange/TO
+F-0.3TRD0.7/TOF-0.1TRD0.9/1_TofBeta_Y_tof_LogY_2.97_3.29_pass7.8_TRDeff_1.00_TO
+Feff_1.00.pdf>
+Package pdftex.def Info: Figures/chapter4/TemplateFit/TimeAveragedPlot/Low/Temp
+lateFit/fullrange/TOF-0.3TRD0.7/TOF-0.1TRD0.9/1_TofBeta_Y_tof_LogY_2.97_3.29_pa
+ss7.8_TRDeff_1.00_TOFeff_1.00.pdf  used on input line 112.
+(pdftex.def)             Requested size: 390.27466pt x 266.79015pt.
+<Figures/chapter4/TemplateFit/TimeAveragedPlot/Low/TemplateFit/fullrange/TOF-0.
+3TRD0.7/TOF-0.1TRD0.9/TrdLikelihood_X_tof_LogY_2.97_3.29_pass7.8_TRDeff_1.00_TO
+Feff_1.00.pdf, id=1396, 569.12625pt x 440.64626pt>
+File: Figures/chapter4/TemplateFit/TimeAveragedPlot/Low/TemplateFit/fullrange/T
+OF-0.3TRD0.7/TOF-0.1TRD0.9/TrdLikelihood_X_tof_LogY_2.97_3.29_pass7.8_TRDeff_1.
+00_TOFeff_1.00.pdf Graphic file (type pdf)
+<use Figures/chapter4/TemplateFit/TimeAveragedPlot/Low/TemplateFit/fullrange/TO
+F-0.3TRD0.7/TOF-0.1TRD0.9/TrdLikelihood_X_tof_LogY_2.97_3.29_pass7.8_TRDeff_1.0
+0_TOFeff_1.00.pdf>
+Package pdftex.def Info: Figures/chapter4/TemplateFit/TimeAveragedPlot/Low/Temp
+lateFit/fullrange/TOF-0.3TRD0.7/TOF-0.1TRD0.9/TrdLikelihood_X_tof_LogY_2.97_3.2
+9_pass7.8_TRDeff_1.00_TOFeff_1.00.pdf  used on input line 117.
+(pdftex.def)             Requested size: 390.27466pt x 266.79015pt.
+
+LaTeX Warning: Float too large for page by 5.95874pt on input line 120.
+
+<Figures/chapter4/TemplateFit/TimeAveragedPlot/Low/NumberPbarAndProtonPlot_LowR
+ange_pass78.pdf, id=1403, 569.12625pt x 270.00874pt>
+File: Figures/chapter4/TemplateFit/TimeAveragedPlot/Low/NumberPbarAndProtonPlot
+_LowRange_pass78.pdf Graphic file (type pdf)
+<use Figures/chapter4/TemplateFit/TimeAveragedPlot/Low/NumberPbarAndProtonPlot_
+LowRange_pass78.pdf>
+Package pdftex.def Info: Figures/chapter4/TemplateFit/TimeAveragedPlot/Low/Numb
+erPbarAndProtonPlot_LowRange_pass78.pdf  used on input line 128.
+(pdftex.def)             Requested size: 433.62001pt x 205.73201pt.
+[44] [45 <./Figures/chapter4/TemplateFit/TimeAveragedPlot/Low/TemplateFit/fullr
+ange/2DShowData/FitResult_tof_2.97_3.29_pass7.8_TRDeff_1.00_TOFeff_1.00.pdf, pa
+ge is rotated 90 degrees>] [46 <./Figures/chapter4/TemplateFit/TimeAveragedPlot
+/Low/TemplateFit/fullrange/TOF-0.3TRD0.7/TOF-0.1TRD0.9/1_TofBeta_Y_tof_LogY_2.9
+7_3.29_pass7.8_TRDeff_1.00_TOFeff_1.00.pdf, page is rotated 90 degrees> <./Figu
+res/chapter4/TemplateFit/TimeAveragedPlot/Low/TemplateFit/fullrange/TOF-0.3TRD0
+.7/TOF-0.1TRD0.9/TrdLikelihood_X_tof_LogY_2.97_3.29_pass7.8_TRDeff_1.00_TOFeff_
+1.00.pdf, page is rotated 90 degrees>]
+Overfull \hbox (24.74019pt too wide) in paragraph at lines 153--172
+ [][] 
+ []
+
+<Figures/chapter4/TemplateFit/TimeAveragedPlot/intermediate/TemplateFit_FullRan
+ge/FitResult_LogY_0124_free_pass7.8_5.9_6.47_TRDEff_1.00.pdf, id=1556, 569.1262
+5pt x 408.52625pt>
+File: Figures/chapter4/TemplateFit/TimeAveragedPlot/intermediate/TemplateFit_Fu
+llRange/FitResult_LogY_0124_free_pass7.8_5.9_6.47_TRDEff_1.00.pdf Graphic file 
+(type pdf)
+<use Figures/chapter4/TemplateFit/TimeAveragedPlot/intermediate/TemplateFit_Ful
+lRange/FitResult_LogY_0124_free_pass7.8_5.9_6.47_TRDEff_1.00.pdf>
+Package pdftex.def Info: Figures/chapter4/TemplateFit/TimeAveragedPlot/intermed
+iate/TemplateFit_FullRange/FitResult_LogY_0124_free_pass7.8_5.9_6.47_TRDEff_1.0
+0.pdf  used on input line 177.
+(pdftex.def)             Requested size: 433.62001pt x 311.27484pt.
+[47 <./Figures/chapter4/TemplateFit/TimeAveragedPlot/Low/NumberPbarAndProtonPlo
+t_LowRange_pass78.pdf, page is rotated 90 degrees>] [48 <./Figures/chapter4/Tem
+plateFit/TimeAveragedPlot/intermediate/TemplateFit_FullRange/FitResult_LogY_012
+4_free_pass7.8_5.9_6.47_TRDEff_1.00.pdf, page is rotated 90 degrees>]
+<Figures/chapter4/TemplateFit/TimeAveragedPlot/intermediate/NumberPbarAndProton
+Plot_IntermediateRange_pass78.pdf, id=1658, 569.12625pt x 270.00874pt>
+File: Figures/chapter4/TemplateFit/TimeAveragedPlot/intermediate/NumberPbarAndP
+rotonPlot_IntermediateRange_pass78.pdf Graphic file (type pdf)
+<use Figures/chapter4/TemplateFit/TimeAveragedPlot/intermediate/NumberPbarAndPr
+otonPlot_IntermediateRange_pass78.pdf>
+Package pdftex.def Info: Figures/chapter4/TemplateFit/TimeAveragedPlot/intermed
+iate/NumberPbarAndProtonPlot_IntermediateRange_pass78.pdf  used on input line 1
+93.
+(pdftex.def)             Requested size: 433.62001pt x 205.73201pt.
+<Figures/chapter4/TemplateFit/TimeAveragedPlot/high/TemplateFit/FitResult_Patte
+rn_0_VGG16NN_175_211_cccut_0.20_CCN_20_TRDN_20.pdf, id=1660, 569.12625pt x 408.
+52625pt>
+File: Figures/chapter4/TemplateFit/TimeAveragedPlot/high/TemplateFit/FitResult_
+Pattern_0_VGG16NN_175_211_cccut_0.20_CCN_20_TRDN_20.pdf Graphic file (type pdf)
+
+<use Figures/chapter4/TemplateFit/TimeAveragedPlot/high/TemplateFit/FitResult_P
+attern_0_VGG16NN_175_211_cccut_0.20_CCN_20_TRDN_20.pdf>
+Package pdftex.def Info: Figures/chapter4/TemplateFit/TimeAveragedPlot/high/Tem
+plateFit/FitResult_Pattern_0_VGG16NN_175_211_cccut_0.20_CCN_20_TRDN_20.pdf  use
+d on input line 216.
+(pdftex.def)             Requested size: 390.25536pt x 252.92786pt.
+File: Figures/chapter4/TemplateFit/TimeAveragedPlot/high/TemplateFit/FitResult_
+Pattern_0_VGG16NN_175_211_cccut_0.20_CCN_20_TRDN_20.pdf Graphic file (type pdf)
+
+<use Figures/chapter4/TemplateFit/TimeAveragedPlot/high/TemplateFit/FitResult_P
+attern_0_VGG16NN_175_211_cccut_0.20_CCN_20_TRDN_20.pdf>
+Package pdftex.def Info: Figures/chapter4/TemplateFit/TimeAveragedPlot/high/Tem
+plateFit/FitResult_Pattern_0_VGG16NN_175_211_cccut_0.20_CCN_20_TRDN_20.pdf  use
+d on input line 222.
+(pdftex.def)             Requested size: 390.25536pt x 252.92786pt.
+
+
+LaTeX Warning: Float too large for page by 5.43417pt on input line 224.
+
+<Figures/chapter4/TemplateFit/TimeAveragedPlot/high/TemplateFit/CCprojection_Pa
+ttern_0_VGG16NN_175_211_cccut_0.20_CCN_20_TRDN_20.pdf, id=1663, 569.12625pt x 4
+08.52625pt>
+File: Figures/chapter4/TemplateFit/TimeAveragedPlot/high/TemplateFit/CCprojecti
+on_Pattern_0_VGG16NN_175_211_cccut_0.20_CCN_20_TRDN_20.pdf Graphic file (type p
+df)
+<use Figures/chapter4/TemplateFit/TimeAveragedPlot/high/TemplateFit/CCprojectio
+n_Pattern_0_VGG16NN_175_211_cccut_0.20_CCN_20_TRDN_20.pdf>
+Package pdftex.def Info: Figures/chapter4/TemplateFit/TimeAveragedPlot/high/Tem
+plateFit/CCprojection_Pattern_0_VGG16NN_175_211_cccut_0.20_CCN_20_TRDN_20.pdf  
+used on input line 231.
+(pdftex.def)             Requested size: 390.27466pt x 266.79187pt.
+<Figures/chapter4/TemplateFit/TimeAveragedPlot/high/TemplateFit/TRDprojection_P
+attern_0_VGG16NN_175_211_cccut_0.20_CCN_20_TRDN_20.pdf, id=1664, 569.12625pt x 
+408.52625pt>
+File: Figures/chapter4/TemplateFit/TimeAveragedPlot/high/TemplateFit/TRDproject
+ion_Pattern_0_VGG16NN_175_211_cccut_0.20_CCN_20_TRDN_20.pdf Graphic file (type 
+pdf)
+<use Figures/chapter4/TemplateFit/TimeAveragedPlot/high/TemplateFit/TRDprojecti
+on_Pattern_0_VGG16NN_175_211_cccut_0.20_CCN_20_TRDN_20.pdf>
+Package pdftex.def Info: Figures/chapter4/TemplateFit/TimeAveragedPlot/high/Tem
+plateFit/TRDprojection_Pattern_0_VGG16NN_175_211_cccut_0.20_CCN_20_TRDN_20.pdf 
+ used on input line 236.
+(pdftex.def)             Requested size: 390.27466pt x 266.79187pt.
+
+LaTeX Warning: Float too large for page by 19.5622pt on input line 239.
+
+[49 <./Figures/chapter4/TemplateFit/TimeAveragedPlot/intermediate/NumberPbarAnd
+ProtonPlot_IntermediateRange_pass78.pdf, page is rotated 90 degrees>] [50 <./Fi
+gures/chapter4/TemplateFit/TimeAveragedPlot/high/TemplateFit/FitResult_Pattern_
+0_VGG16NN_175_211_cccut_0.20_CCN_20_TRDN_20.pdf, page is rotated 90 degrees>]
+[51 <./Figures/chapter4/TemplateFit/TimeAveragedPlot/high/TemplateFit/CCproject
+ion_Pattern_0_VGG16NN_175_211_cccut_0.20_CCN_20_TRDN_20.pdf, page is rotated 90
+ degrees> <./Figures/chapter4/TemplateFit/TimeAveragedPlot/high/TemplateFit/TRD
+projection_Pattern_0_VGG16NN_175_211_cccut_0.20_CCN_20_TRDN_20.pdf, page is rot
+ated 90 degrees>]
+<Figures/chapter4/TemplateFit/TimeAveragedPlot/high/NumberPlot_AllPatternsOverR
+igidityBinWidthpass78.pdf, id=1866, 569.12625pt x 270.00874pt>
+File: Figures/chapter4/TemplateFit/TimeAveragedPlot/high/NumberPlot_AllPatterns
+OverRigidityBinWidthpass78.pdf Graphic file (type pdf)
+<use Figures/chapter4/TemplateFit/TimeAveragedPlot/high/NumberPlot_AllPatternsO
+verRigidityBinWidthpass78.pdf>
+Package pdftex.def Info: Figures/chapter4/TemplateFit/TimeAveragedPlot/high/Num
+berPlot_AllPatternsOverRigidityBinWidthpass78.pdf  used on input line 278.
+(pdftex.def)             Requested size: 433.62001pt x 205.73201pt.
+ [52 <./Figures/chapter4/TemplateFit/TimeAveragedPlot/high/NumberPlot_AllPatter
+nsOverRigidityBinWidthpass78.pdf, page is rotated 90 degrees>]
+<Figures/chapter4/TemplateFit/TimeDependentPlot/TimeDependentTemplate/TRD/Templ
+ateFit_TRD_6.47_7.76_78.pdf, id=1917, 2168.1pt x 1300.86pt>
+File: Figures/chapter4/TemplateFit/TimeDependentPlot/TimeDependentTemplate/TRD/
+TemplateFit_TRD_6.47_7.76_78.pdf Graphic file (type pdf)
+<use Figures/chapter4/TemplateFit/TimeDependentPlot/TimeDependentTemplate/TRD/T
+emplateFit_TRD_6.47_7.76_78.pdf>
+Package pdftex.def Info: Figures/chapter4/TemplateFit/TimeDependentPlot/TimeDep
+endentTemplate/TRD/TemplateFit_TRD_6.47_7.76_78.pdf  used on input line 315.
+(pdftex.def)             Requested size: 433.62001pt x 260.16739pt.
+[53 <./Figures/chapter4/TemplateFit/TimeDependentPlot/TimeDependentTemplate/TRD
+/TemplateFit_TRD_6.47_7.76_78.pdf>]
+<Figures/chapter4/TemplateFit/TimeDependentPlot/TimeDependentTemplate/TRD/Antip
+roton/Antiproton_TRD_6.47_7.76_miu.pdf, id=1975, 2168.1pt x 1300.86pt>
+File: Figures/chapter4/TemplateFit/TimeDependentPlot/TimeDependentTemplate/TRD/
+Antiproton/Antiproton_TRD_6.47_7.76_miu.pdf Graphic file (type pdf)
+<use Figures/chapter4/TemplateFit/TimeDependentPlot/TimeDependentTemplate/TRD/A
+ntiproton/Antiproton_TRD_6.47_7.76_miu.pdf>
+Package pdftex.def Info: Figures/chapter4/TemplateFit/TimeDependentPlot/TimeDep
+endentTemplate/TRD/Antiproton/Antiproton_TRD_6.47_7.76_miu.pdf  used on input l
+ine 335.
+(pdftex.def)             Requested size: 212.45581pt x 142.67819pt.
+<Figures/chapter4/TemplateFit/TimeDependentPlot/TimeDependentTemplate/TRD/Antip
+roton/Antiproton_TRD6.47_7.76_sigma.pdf, id=1976, 2168.1pt x 1300.86pt>
+File: Figures/chapter4/TemplateFit/TimeDependentPlot/TimeDependentTemplate/TRD/
+Antiproton/Antiproton_TRD6.47_7.76_sigma.pdf Graphic file (type pdf)
+<use Figures/chapter4/TemplateFit/TimeDependentPlot/TimeDependentTemplate/TRD/A
+ntiproton/Antiproton_TRD6.47_7.76_sigma.pdf>
+Package pdftex.def Info: Figures/chapter4/TemplateFit/TimeDependentPlot/TimeDep
+endentTemplate/TRD/Antiproton/Antiproton_TRD6.47_7.76_sigma.pdf  used on input 
+line 339.
+(pdftex.def)             Requested size: 212.45581pt x 142.67819pt.
+<Figures/chapter4/TemplateFit/TimeDependentPlot/TimeDependentTemplate/TRD/Elect
+ron/Electron_TRD_6.47_7.76_miu.pdf, id=1977, 2168.1pt x 1300.86pt>
+File: Figures/chapter4/TemplateFit/TimeDependentPlot/TimeDependentTemplate/TRD/
+Electron/Electron_TRD_6.47_7.76_miu.pdf Graphic file (type pdf)
+<use Figures/chapter4/TemplateFit/TimeDependentPlot/TimeDependentTemplate/TRD/E
+lectron/Electron_TRD_6.47_7.76_miu.pdf>
+Package pdftex.def Info: Figures/chapter4/TemplateFit/TimeDependentPlot/TimeDep
+endentTemplate/TRD/Electron/Electron_TRD_6.47_7.76_miu.pdf  used on input line 
+342.
+(pdftex.def)             Requested size: 212.45581pt x 142.67819pt.
+<Figures/chapter4/TemplateFit/TimeDependentPlot/TimeDependentTemplate/TRD/Elect
+ron/Electron_TRD6.47_7.76_sigma.pdf, id=1978, 2168.1pt x 1300.86pt>
+File: Figures/chapter4/TemplateFit/TimeDependentPlot/TimeDependentTemplate/TRD/
+Electron/Electron_TRD6.47_7.76_sigma.pdf Graphic file (type pdf)
+<use Figures/chapter4/TemplateFit/TimeDependentPlot/TimeDependentTemplate/TRD/E
+lectron/Electron_TRD6.47_7.76_sigma.pdf>
+Package pdftex.def Info: Figures/chapter4/TemplateFit/TimeDependentPlot/TimeDep
+endentTemplate/TRD/Electron/Electron_TRD6.47_7.76_sigma.pdf  used on input line
+ 346.
+(pdftex.def)             Requested size: 212.45581pt x 142.67819pt.
+<Figures/chapter4/TemplateFit/TimeDependentPlot/TimeDependentTemplate/TOF/Antip
+roton/Antiproton_TOF_3.64_4.43_miu.pdf, id=1979, 2168.1pt x 1300.86pt>
+File: Figures/chapter4/TemplateFit/TimeDependentPlot/TimeDependentTemplate/TOF/
+Antiproton/Antiproton_TOF_3.64_4.43_miu.pdf Graphic file (type pdf)
+<use Figures/chapter4/TemplateFit/TimeDependentPlot/TimeDependentTemplate/TOF/A
+ntiproton/Antiproton_TOF_3.64_4.43_miu.pdf>
+Package pdftex.def Info: Figures/chapter4/TemplateFit/TimeDependentPlot/TimeDep
+endentTemplate/TOF/Antiproton/Antiproton_TOF_3.64_4.43_miu.pdf  used on input l
+ine 356.
+(pdftex.def)             Requested size: 212.45581pt x 142.67819pt.
+<Figures/chapter4/TemplateFit/TimeDependentPlot/TimeDependentTemplate/TOF/Antip
+roton/Antiproton_TOF3.64_4.43_sigma.pdf, id=1980, 2168.1pt x 1300.86pt>
+File: Figures/chapter4/TemplateFit/TimeDependentPlot/TimeDependentTemplate/TOF/
+Antiproton/Antiproton_TOF3.64_4.43_sigma.pdf Graphic file (type pdf)
+<use Figures/chapter4/TemplateFit/TimeDependentPlot/TimeDependentTemplate/TOF/A
+ntiproton/Antiproton_TOF3.64_4.43_sigma.pdf>
+Package pdftex.def Info: Figures/chapter4/TemplateFit/TimeDependentPlot/TimeDep
+endentTemplate/TOF/Antiproton/Antiproton_TOF3.64_4.43_sigma.pdf  used on input 
+line 360.
+(pdftex.def)             Requested size: 212.45581pt x 142.67819pt.
+<Figures/chapter4/TemplateFit/TimeDependentPlot/TimeDependentTemplate/TOF/Elect
+ron/Electron_TOF_3.64_4.43_miu.pdf, id=1981, 2168.1pt x 1300.86pt>
+File: Figures/chapter4/TemplateFit/TimeDependentPlot/TimeDependentTemplate/TOF/
+Electron/Electron_TOF_3.64_4.43_miu.pdf Graphic file (type pdf)
+<use Figures/chapter4/TemplateFit/TimeDependentPlot/TimeDependentTemplate/TOF/E
+lectron/Electron_TOF_3.64_4.43_miu.pdf>
+Package pdftex.def Info: Figures/chapter4/TemplateFit/TimeDependentPlot/TimeDep
+endentTemplate/TOF/Electron/Electron_TOF_3.64_4.43_miu.pdf  used on input line 
+363.
+(pdftex.def)             Requested size: 212.45581pt x 142.67819pt.
+<Figures/chapter4/TemplateFit/TimeDependentPlot/TimeDependentTemplate/TOF/Elect
+ron/Electron_TOF3.64_4.43_sigma.pdf, id=1982, 2168.1pt x 1300.86pt>
+File: Figures/chapter4/TemplateFit/TimeDependentPlot/TimeDependentTemplate/TOF/
+Electron/Electron_TOF3.64_4.43_sigma.pdf Graphic file (type pdf)
+<use Figures/chapter4/TemplateFit/TimeDependentPlot/TimeDependentTemplate/TOF/E
+lectron/Electron_TOF3.64_4.43_sigma.pdf>
+Package pdftex.def Info: Figures/chapter4/TemplateFit/TimeDependentPlot/TimeDep
+endentTemplate/TOF/Electron/Electron_TOF3.64_4.43_sigma.pdf  used on input line
+ 367.
+(pdftex.def)             Requested size: 212.45581pt x 142.67819pt.
+<Figures/chapter4/TemplateFit/TimeDependentPlot/TimeDependentTemplate/TOF/Pion/
+Pion_TOF_3.64_4.43_miu.pdf, id=1983, 2168.1pt x 1300.86pt>
+File: Figures/chapter4/TemplateFit/TimeDependentPlot/TimeDependentTemplate/TOF/
+Pion/Pion_TOF_3.64_4.43_miu.pdf Graphic file (type pdf)
+<use Figures/chapter4/TemplateFit/TimeDependentPlot/TimeDependentTemplate/TOF/P
+ion/Pion_TOF_3.64_4.43_miu.pdf>
+Package pdftex.def Info: Figures/chapter4/TemplateFit/TimeDependentPlot/TimeDep
+endentTemplate/TOF/Pion/Pion_TOF_3.64_4.43_miu.pdf  used on input line 370.
+(pdftex.def)             Requested size: 212.45581pt x 142.67819pt.
+<Figures/chapter4/TemplateFit/TimeDependentPlot/TimeDependentTemplate/TOF/Pion/
+Pion_TOF3.64_4.43_sigma.pdf, id=1984, 2168.1pt x 1300.86pt>
+File: Figures/chapter4/TemplateFit/TimeDependentPlot/TimeDependentTemplate/TOF/
+Pion/Pion_TOF3.64_4.43_sigma.pdf Graphic file (type pdf)
+<use Figures/chapter4/TemplateFit/TimeDependentPlot/TimeDependentTemplate/TOF/P
+ion/Pion_TOF3.64_4.43_sigma.pdf>
+Package pdftex.def Info: Figures/chapter4/TemplateFit/TimeDependentPlot/TimeDep
+endentTemplate/TOF/Pion/Pion_TOF3.64_4.43_sigma.pdf  used on input line 374.
+(pdftex.def)             Requested size: 212.45581pt x 142.67819pt.
+ [54 <./Figures/chapter4/TemplateFit/TimeDependentPlot/TimeDependentTemplate/TR
+D/Antiproton/Antiproton_TRD_6.47_7.76_miu.pdf> <./Figures/chapter4/TemplateFit/
+TimeDependentPlot/TimeDependentTemplate/TRD/Antiproton/Antiproton_TRD6.47_7.76_
+sigma.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./Figures/chapter4/TemplateF
+it/TimeDependentPlot/TimeDependentTemplate/TRD/Antiproton/Antiproton_TRD6.47_7.
+76_sigma.pdf): PDF inclusion: multiple pdfs with page group included in a singl
+e page
+> <./Figures/chapter4/TemplateFit/TimeDependentPlot/TimeDependentTemplate/TRD/E
+lectron/Electron_TRD_6.47_7.76_miu.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./Figures/chapter4/TemplateF
+it/TimeDependentPlot/TimeDependentTemplate/TRD/Electron/Electron_TRD_6.47_7.76_
+miu.pdf): PDF inclusion: multiple pdfs with page group included in a single pag
+e
+> <./Figures/chapter4/TemplateFit/TimeDependentPlot/TimeDependentTemplate/TRD/E
+lectron/Electron_TRD6.47_7.76_sigma.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./Figures/chapter4/TemplateF
+it/TimeDependentPlot/TimeDependentTemplate/TRD/Electron/Electron_TRD6.47_7.76_s
+igma.pdf): PDF inclusion: multiple pdfs with page group included in a single pa
+ge
+>] [55 <./Figures/chapter4/TemplateFit/TimeDependentPlot/TimeDependentTemplate/
+TOF/Antiproton/Antiproton_TOF_3.64_4.43_miu.pdf> <./Figures/chapter4/TemplateFi
+t/TimeDependentPlot/TimeDependentTemplate/TOF/Antiproton/Antiproton_TOF3.64_4.4
+3_sigma.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./Figures/chapter4/TemplateF
+it/TimeDependentPlot/TimeDependentTemplate/TOF/Antiproton/Antiproton_TOF3.64_4.
+43_sigma.pdf): PDF inclusion: multiple pdfs with page group included in a singl
+e page
+> <./Figures/chapter4/TemplateFit/TimeDependentPlot/TimeDependentTemplate/TOF/E
+lectron/Electron_TOF_3.64_4.43_miu.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./Figures/chapter4/TemplateF
+it/TimeDependentPlot/TimeDependentTemplate/TOF/Electron/Electron_TOF_3.64_4.43_
+miu.pdf): PDF inclusion: multiple pdfs with page group included in a single pag
+e
+> <./Figures/chapter4/TemplateFit/TimeDependentPlot/TimeDependentTemplate/TOF/E
+lectron/Electron_TOF3.64_4.43_sigma.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./Figures/chapter4/TemplateF
+it/TimeDependentPlot/TimeDependentTemplate/TOF/Electron/Electron_TOF3.64_4.43_s
+igma.pdf): PDF inclusion: multiple pdfs with page group included in a single pa
+ge
+> <./Figures/chapter4/TemplateFit/TimeDependentPlot/TimeDependentTemplate/TOF/P
+ion/Pion_TOF_3.64_4.43_miu.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./Figures/chapter4/TemplateF
+it/TimeDependentPlot/TimeDependentTemplate/TOF/Pion/Pion_TOF_3.64_4.43_miu.pdf)
+: PDF inclusion: multiple pdfs with page group included in a single page
+> <./Figures/chapter4/TemplateFit/TimeDependentPlot/TimeDependentTemplate/TOF/P
+ion/Pion_TOF3.64_4.43_sigma.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./Figures/chapter4/TemplateF
+it/TimeDependentPlot/TimeDependentTemplate/TOF/Pion/Pion_TOF3.64_4.43_sigma.pdf
+): PDF inclusion: multiple pdfs with page group included in a single page
+>]
+<Figures/chapter4/TemplateFit/TimeDependentPlot/intermediate/FitPlot_FullRange/
+FitResult_0124_free_6.47_7.76_index_78_TRDEff_1.00_LogY.pdf, id=2401, 569.12625
+pt x 408.52625pt>
+File: Figures/chapter4/TemplateFit/TimeDependentPlot/intermediate/FitPlot_FullR
+ange/FitResult_0124_free_6.47_7.76_index_78_TRDEff_1.00_LogY.pdf Graphic file (
+type pdf)
+<use Figures/chapter4/TemplateFit/TimeDependentPlot/intermediate/FitPlot_FullRa
+nge/FitResult_0124_free_6.47_7.76_index_78_TRDEff_1.00_LogY.pdf>
+Package pdftex.def Info: Figures/chapter4/TemplateFit/TimeDependentPlot/interme
+diate/FitPlot_FullRange/FitResult_0124_free_6.47_7.76_index_78_TRDEff_1.00_LogY
+.pdf  used on input line 397.
+(pdftex.def)             Requested size: 433.62001pt x 311.27484pt.
+<Figures/chapter4/TemplateFit/TimeDependentPlot/intermediate/FitResult/Antiprot
+onNumber_6BartalRotation_0124_free_binmerge2_6.47_7.76.pdf, id=2404, 2168.1pt x
+ 1300.86pt>
+File: Figures/chapter4/TemplateFit/TimeDependentPlot/intermediate/FitResult/Ant
+iprotonNumber_6BartalRotation_0124_free_binmerge2_6.47_7.76.pdf Graphic file (t
+ype pdf)
+<use Figures/chapter4/TemplateFit/TimeDependentPlot/intermediate/FitResult/Anti
+protonNumber_6BartalRotation_0124_free_binmerge2_6.47_7.76.pdf>
+Package pdftex.def Info: Figures/chapter4/TemplateFit/TimeDependentPlot/interme
+diate/FitResult/AntiprotonNumber_6BartalRotation_0124_free_binmerge2_6.47_7.76.
+pdf  used on input line 407.
+(pdftex.def)             Requested size: 433.61232pt x 248.15845pt.
+<Figures/chapter4/TemplateFit/TimeDependentPlot/intermediate/FitResult/Chi2dof_
+6BartalRotation_0124_free_binmerge2_6.47_7.76.pdf, id=2407, 2168.1pt x 1300.86p
+t>
+File: Figures/chapter4/TemplateFit/TimeDependentPlot/intermediate/FitResult/Chi
+2dof_6BartalRotation_0124_free_binmerge2_6.47_7.76.pdf Graphic file (type pdf)
+<use Figures/chapter4/TemplateFit/TimeDependentPlot/intermediate/FitResult/Chi2
+dof_6BartalRotation_0124_free_binmerge2_6.47_7.76.pdf>
+Package pdftex.def Info: Figures/chapter4/TemplateFit/TimeDependentPlot/interme
+diate/FitResult/Chi2dof_6BartalRotation_0124_free_binmerge2_6.47_7.76.pdf  used
+ on input line 414.
+(pdftex.def)             Requested size: 433.61232pt x 248.15845pt.
+) (./Charpter4/EffectiveAcceptance.tex [56 <./Figures/chapter4/TemplateFit/Time
+DependentPlot/intermediate/FitPlot_FullRange/FitResult_0124_free_6.47_7.76_inde
+x_78_TRDEff_1.00_LogY.pdf, page is rotated 90 degrees>] [57 <./Figures/chapter4
+/TemplateFit/TimeDependentPlot/intermediate/FitResult/AntiprotonNumber_6BartalR
+otation_0124_free_binmerge2_6.47_7.76.pdf> <./Figures/chapter4/TemplateFit/Time
+DependentPlot/intermediate/FitResult/Chi2dof_6BartalRotation_0124_free_binmerge
+2_6.47_7.76.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./Figures/chapter4/TemplateF
+it/TimeDependentPlot/intermediate/FitResult/Chi2dof_6BartalRotation_0124_free_b
+inmerge2_6.47_7.76.pdf): PDF inclusion: multiple pdfs with page group included 
+in a single page
+>]
+<Figures/chapter4/Acceptance/EffectiveAcceptance/Acceptance_Proton.pdf, id=2531
+, 569.12625pt x 555.07375pt>
+File: Figures/chapter4/Acceptance/EffectiveAcceptance/Acceptance_Proton.pdf Gra
+phic file (type pdf)
+<use Figures/chapter4/Acceptance/EffectiveAcceptance/Acceptance_Proton.pdf>
+Package pdftex.def Info: Figures/chapter4/Acceptance/EffectiveAcceptance/Accept
+ance_Proton.pdf  used on input line 35.
+(pdftex.def)             Requested size: 218.98021pt x 221.3141pt.
+<Figures/chapter4/Acceptance/EffectiveAcceptance/Acceptance_Antiproton.pdf, id=
+2533, 569.12625pt x 555.07375pt>
+File: Figures/chapter4/Acceptance/EffectiveAcceptance/Acceptance_Antiproton.pdf
+ Graphic file (type pdf)
+<use Figures/chapter4/Acceptance/EffectiveAcceptance/Acceptance_Antiproton.pdf>
+
+Package pdftex.def Info: Figures/chapter4/Acceptance/EffectiveAcceptance/Accept
+ance_Antiproton.pdf  used on input line 39.
+(pdftex.def)             Requested size: 218.98021pt x 221.3141pt.
+<Figures/chapter4/Acceptance/EffectiveAcceptanceRatio/AcceptancePlot.pdf, id=25
+35, 569.12625pt x 270.00874pt>
+File: Figures/chapter4/Acceptance/EffectiveAcceptanceRatio/AcceptancePlot.pdf G
+raphic file (type pdf)
+<use Figures/chapter4/Acceptance/EffectiveAcceptanceRatio/AcceptancePlot.pdf>
+Package pdftex.def Info: Figures/chapter4/Acceptance/EffectiveAcceptanceRatio/A
+cceptancePlot.pdf  used on input line 48.
+(pdftex.def)             Requested size: 433.62001pt x 205.73201pt.
+ [58] [59 <./Figures/chapter4/Acceptance/EffectiveAcceptance/Acceptance_Proton.
+pdf, page is rotated 90 degrees> <./Figures/chapter4/Acceptance/EffectiveAccept
+ance/Acceptance_Antiproton.pdf, page is rotated 90 degrees> <./Figures/chapter4
+/Acceptance/EffectiveAcceptanceRatio/AcceptancePlot.pdf, page is rotated 90 deg
+rees>]) (./Charpter4/MeasuringTime.tex
+<Figures/chapter4/MeasuringTime/LiveTimeFractionVsISSPosition.pdf, id=2691, 569
+.12625pt x 347.2975pt>
+File: Figures/chapter4/MeasuringTime/LiveTimeFractionVsISSPosition.pdf Graphic 
+file (type pdf)
+<use Figures/chapter4/MeasuringTime/LiveTimeFractionVsISSPosition.pdf>
+Package pdftex.def Info: Figures/chapter4/MeasuringTime/LiveTimeFractionVsISSPo
+sition.pdf  used on input line 14.
+(pdftex.def)             Requested size: 433.62001pt x 264.62186pt.
+<Figures/chapter4/MeasuringTime/MeasuringTimeVsLiveTime.pdf, id=2694, 569.12625
+pt x 347.2975pt>
+File: Figures/chapter4/MeasuringTime/MeasuringTimeVsLiveTime.pdf Graphic file (
+type pdf)
+<use Figures/chapter4/MeasuringTime/MeasuringTimeVsLiveTime.pdf>
+Package pdftex.def Info: Figures/chapter4/MeasuringTime/MeasuringTimeVsLiveTime
+.pdf  used on input line 42.
+(pdftex.def)             Requested size: 433.62001pt x 264.62186pt.
+<Figures/chapter4/MeasuringTime/Earths-Magnetic-Field-Schematic-Illustration.jp
+g, id=2695, 779.91376pt x 591.20876pt>
+File: Figures/chapter4/MeasuringTime/Earths-Magnetic-Field-Schematic-Illustrati
+on.jpg Graphic file (type jpg)
+<use Figures/chapter4/MeasuringTime/Earths-Magnetic-Field-Schematic-Illustratio
+n.jpg>
+Package pdftex.def Info: Figures/chapter4/MeasuringTime/Earths-Magnetic-Field-S
+chematic-Illustration.jpg  used on input line 61.
+(pdftex.def)             Requested size: 390.25343pt x 229.5511pt.
+ [60] [61 <./Figures/chapter4/MeasuringTime/LiveTimeFractionVsISSPosition.pdf, 
+page is rotated 90 degrees> <./Figures/chapter4/MeasuringTime/MeasuringTimeVsLi
+veTime.pdf, page is rotated 90 degrees>] [62 <./Figures/chapter4/MeasuringTime/
+Earths-Magnetic-Field-Schematic-Illustration.jpg>]
+<Figures/chapter4/MeasuringTime/CutOffRigidityVsISSPosition.pdf, id=2808, 569.1
+2625pt x 347.2975pt>
+File: Figures/chapter4/MeasuringTime/CutOffRigidityVsISSPosition.pdf Graphic fi
+le (type pdf)
+<use Figures/chapter4/MeasuringTime/CutOffRigidityVsISSPosition.pdf>
+Package pdftex.def Info: Figures/chapter4/MeasuringTime/CutOffRigidityVsISSPosi
+tion.pdf  used on input line 99.
+(pdftex.def)             Requested size: 433.64334pt x 254.38885pt.
+<Figures/chapter4/MeasuringTime/Measuringtime.pdf, id=2809, 569.12625pt x 347.2
+975pt>
+File: Figures/chapter4/MeasuringTime/Measuringtime.pdf Graphic file (type pdf)
+<use Figures/chapter4/MeasuringTime/Measuringtime.pdf>
+Package pdftex.def Info: Figures/chapter4/MeasuringTime/Measuringtime.pdf  used
+ on input line 107.
+(pdftex.def)             Requested size: 433.64334pt x 254.38885pt.
+<Figures/chapter4/MeasuringTime/IGRFvsStomer.pdf, id=2810, 569.12625pt x 347.29
+75pt>
+File: Figures/chapter4/MeasuringTime/IGRFvsStomer.pdf Graphic file (type pdf)
+<use Figures/chapter4/MeasuringTime/IGRFvsStomer.pdf>
+Package pdftex.def Info: Figures/chapter4/MeasuringTime/IGRFvsStomer.pdf  used 
+on input line 114.
+(pdftex.def)             Requested size: 433.64334pt x 254.38885pt.
+ [63 <./Figures/chapter4/MeasuringTime/CutOffRigidityVsISSPosition.pdf, page is
+ rotated 90 degrees>] [64 <./Figures/chapter4/MeasuringTime/Measuringtime.pdf, 
+page is rotated 90 degrees> <./Figures/chapter4/MeasuringTime/IGRFvsStomer.pdf,
+ page is rotated 90 degrees>]
+<Figures/chapter4/MeasuringTime/TimeDependent/TimeDependentMeasuringTime.pdf, i
+d=2956, 2168.1pt x 1300.86pt>
+File: Figures/chapter4/MeasuringTime/TimeDependent/TimeDependentMeasuringTime.p
+df Graphic file (type pdf)
+<use Figures/chapter4/MeasuringTime/TimeDependent/TimeDependentMeasuringTime.pd
+f>
+Package pdftex.def Info: Figures/chapter4/MeasuringTime/TimeDependent/TimeDepen
+dentMeasuringTime.pdf  used on input line 136.
+(pdftex.def)             Requested size: 433.61232pt x 248.15845pt.
+) (./Charpter4/Unfolding.tex [65 <./Figures/chapter4/MeasuringTime/TimeDependen
+t/TimeDependentMeasuringTime.pdf>]
+<Figures/chapter4/Unfolding/MM/MM_Pattern_0.pdf, id=2994, 569.12625pt x 440.646
+26pt>
+File: Figures/chapter4/Unfolding/MM/MM_Pattern_0.pdf Graphic file (type pdf)
+<use Figures/chapter4/Unfolding/MM/MM_Pattern_0.pdf>
+Package pdftex.def Info: Figures/chapter4/Unfolding/MM/MM_Pattern_0.pdf  used o
+n input line 17.
+(pdftex.def)             Requested size: 433.62001pt x 335.74854pt.
+
+[66 <./Figures/chapter4/Unfolding/MM/MM_Pattern_0.pdf, page is rotated 90 degre
+es>]
+<Figures/chapter4/Unfolding/RawUnfoldCompare/NumberPlot_pass78.pdf, id=3051, 56
+9.12625pt x 270.00874pt>
+File: Figures/chapter4/Unfolding/RawUnfoldCompare/NumberPlot_pass78.pdf Graphic
+ file (type pdf)
+<use Figures/chapter4/Unfolding/RawUnfoldCompare/NumberPlot_pass78.pdf>
+Package pdftex.def Info: Figures/chapter4/Unfolding/RawUnfoldCompare/NumberPlot
+_pass78.pdf  used on input line 46.
+(pdftex.def)             Requested size: 433.64334pt x 217.15675pt.
+<Figures/chapter4/Unfolding/RawUnfoldCompare/ProtonNumberPlot_pass78.pdf, id=30
+52, 569.12625pt x 270.00874pt>
+File: Figures/chapter4/Unfolding/RawUnfoldCompare/ProtonNumberPlot_pass78.pdf G
+raphic file (type pdf)
+<use Figures/chapter4/Unfolding/RawUnfoldCompare/ProtonNumberPlot_pass78.pdf>
+Package pdftex.def Info: Figures/chapter4/Unfolding/RawUnfoldCompare/ProtonNumb
+erPlot_pass78.pdf  used on input line 50.
+(pdftex.def)             Requested size: 433.64334pt x 217.15675pt.
+
+Overfull \hbox (7.28441pt too wide) in paragraph at lines 46--51
+ [][] 
+ []
+
+
+Overfull \hbox (7.28441pt too wide) in paragraph at lines 46--51
+ [][] 
+ []
+
+) (./Charpter4/AntiprotonToProtonRatio.tex
+<Figures/chapter4/AntiprotonToProtonFluxRatioCalculation/TimeAveraged/fullratio
+_StaErrOnly_ThisAnallysisOnly_pass78.pdf, id=3057, 569.12625pt x 270.00874pt>
+File: Figures/chapter4/AntiprotonToProtonFluxRatioCalculation/TimeAveraged/full
+ratio_StaErrOnly_ThisAnallysisOnly_pass78.pdf Graphic file (type pdf)
+<use Figures/chapter4/AntiprotonToProtonFluxRatioCalculation/TimeAveraged/fullr
+atio_StaErrOnly_ThisAnallysisOnly_pass78.pdf>
+Package pdftex.def Info: Figures/chapter4/AntiprotonToProtonFluxRatioCalculatio
+n/TimeAveraged/fullratio_StaErrOnly_ThisAnallysisOnly_pass78.pdf  used on input
+ line 12.
+(pdftex.def)             Requested size: 433.64334pt x 223.36147pt.
+ [67] [68 <./Figures/chapter4/Unfolding/RawUnfoldCompare/NumberPlot_pass78.pdf,
+ page is rotated 90 degrees> <./Figures/chapter4/Unfolding/RawUnfoldCompare/Pro
+tonNumberPlot_pass78.pdf, page is rotated 90 degrees>]
+<Figures/chapter4/AntiprotonToProtonFluxRatioCalculation/TimeAveraged/fullratio
+_StaErrOnly_NotOverlapped_ThisAnallysisOnly_pass78.pdf, id=3162, 569.12625pt x 
+270.00874pt>
+File: Figures/chapter4/AntiprotonToProtonFluxRatioCalculation/TimeAveraged/full
+ratio_StaErrOnly_NotOverlapped_ThisAnallysisOnly_pass78.pdf Graphic file (type 
+pdf)
+<use Figures/chapter4/AntiprotonToProtonFluxRatioCalculation/TimeAveraged/fullr
+atio_StaErrOnly_NotOverlapped_ThisAnallysisOnly_pass78.pdf>
+Package pdftex.def Info: Figures/chapter4/AntiprotonToProtonFluxRatioCalculatio
+n/TimeAveraged/fullratio_StaErrOnly_NotOverlapped_ThisAnallysisOnly_pass78.pdf 
+ used on input line 19.
+(pdftex.def)             Requested size: 433.64334pt x 223.36147pt.
+<Figures/chapter4/AntiprotonToProtonFluxRatioCalculation/TimeAveraged/StaRelErr
+_pass78.pdf, id=3163, 569.12625pt x 270.00874pt>
+File: Figures/chapter4/AntiprotonToProtonFluxRatioCalculation/TimeAveraged/StaR
+elErr_pass78.pdf Graphic file (type pdf)
+<use Figures/chapter4/AntiprotonToProtonFluxRatioCalculation/TimeAveraged/StaRe
+lErr_pass78.pdf>
+Package pdftex.def Info: Figures/chapter4/AntiprotonToProtonFluxRatioCalculatio
+n/TimeAveraged/StaRelErr_pass78.pdf  used on input line 26.
+(pdftex.def)             Requested size: 433.62001pt x 205.73201pt.
+ [69 <./Figures/chapter4/AntiprotonToProtonFluxRatioCalculation/TimeAveraged/fu
+llratio_StaErrOnly_ThisAnallysisOnly_pass78.pdf, page is rotated 90 degrees> <.
+/Figures/chapter4/AntiprotonToProtonFluxRatioCalculation/TimeAveraged/fullratio
+_StaErrOnly_NotOverlapped_ThisAnallysisOnly_pass78.pdf, page is rotated 90 degr
+ees>]
+<Figures/chapter4/AntiprotonToProtonFluxRatioCalculation/TimeDependent/6Bartels
+_binmerge2_1.92_2.4_StaErrOnly.pdf, id=3257, 2168.1pt x 1300.86pt>
+File: Figures/chapter4/AntiprotonToProtonFluxRatioCalculation/TimeDependent/6Ba
+rtels_binmerge2_1.92_2.4_StaErrOnly.pdf Graphic file (type pdf)
+<use Figures/chapter4/AntiprotonToProtonFluxRatioCalculation/TimeDependent/6Bar
+tels_binmerge2_1.92_2.4_StaErrOnly.pdf>
+Package pdftex.def Info: Figures/chapter4/AntiprotonToProtonFluxRatioCalculatio
+n/TimeDependent/6Bartels_binmerge2_1.92_2.4_StaErrOnly.pdf  used on input line 
+37.
+(pdftex.def)             Requested size: 433.61232pt x 248.15845pt.
+<Figures/chapter4/AntiprotonToProtonFluxRatioCalculation/TimeDependent/Statisti
+calRelativeError_6Bartels_binmerge_2_1.92_2.4.pdf, id=3258, 2168.1pt x 1300.86p
+t>
+File: Figures/chapter4/AntiprotonToProtonFluxRatioCalculation/TimeDependent/Sta
+tisticalRelativeError_6Bartels_binmerge_2_1.92_2.4.pdf Graphic file (type pdf)
+<use Figures/chapter4/AntiprotonToProtonFluxRatioCalculation/TimeDependent/Stat
+isticalRelativeError_6Bartels_binmerge_2_1.92_2.4.pdf>
+Package pdftex.def Info: Figures/chapter4/AntiprotonToProtonFluxRatioCalculatio
+n/TimeDependent/StatisticalRelativeError_6Bartels_binmerge_2_1.92_2.4.pdf  used
+ on input line 44.
+(pdftex.def)             Requested size: 433.61232pt x 248.15845pt.
+ [70 <./Figures/chapter4/AntiprotonToProtonFluxRatioCalculation/TimeAveraged/St
+aRelErr_pass78.pdf, page is rotated 90 degrees> <./Figures/chapter4/AntiprotonT
+oProtonFluxRatioCalculation/TimeDependent/6Bartels_binmerge2_1.92_2.4_StaErrOnl
+y.pdf>]) (./Charpter4/SystematicUncertainty.tex [71 <./Figures/chapter4/Antipro
+tonToProtonFluxRatioCalculation/TimeDependent/StatisticalRelativeError_6Bartels
+_binmerge_2_1.92_2.4.pdf>]
+<Figures/chapter4/SystematicError/Acceptance_SystemError/EffectiveAcceptanceRat
+io_B1042.pdf, id=3394, 569.12625pt x 270.00874pt>
+File: Figures/chapter4/SystematicError/Acceptance_SystemError/EffectiveAcceptan
+ceRatio_B1042.pdf Graphic file (type pdf)
+<use Figures/chapter4/SystematicError/Acceptance_SystemError/EffectiveAcceptanc
+eRatio_B1042.pdf>
+Package pdftex.def Info: Figures/chapter4/SystematicError/Acceptance_SystemErro
+r/EffectiveAcceptanceRatio_B1042.pdf  used on input line 15.
+(pdftex.def)             Requested size: 433.64334pt x 210.94792pt.
+<Figures/chapter4/SystematicError/Acceptance_SystemError/SysRelErr_ACC_pass78.p
+df, id=3395, 569.12625pt x 270.00874pt>
+File: Figures/chapter4/SystematicError/Acceptance_SystemError/SysRelErr_ACC_pas
+s78.pdf Graphic file (type pdf)
+<use Figures/chapter4/SystematicError/Acceptance_SystemError/SysRelErr_ACC_pass
+78.pdf>
+Package pdftex.def Info: Figures/chapter4/SystematicError/Acceptance_SystemErro
+r/SysRelErr_ACC_pass78.pdf  used on input line 21.
+(pdftex.def)             Requested size: 433.64334pt x 210.94792pt.
+ [72 <./Figures/chapter4/SystematicError/Acceptance_SystemError/EffectiveAccept
+anceRatio_B1042.pdf, page is rotated 90 degrees>]
+<Figures/chapter4/SystematicError/FitRange_SystemError/Ratio_vs_SignalEff_low_2
+.15_2.4_TimeAveraged_None_0.pdf, id=3447, 2168.1pt x 1300.86pt>
+File: Figures/chapter4/SystematicError/FitRange_SystemError/Ratio_vs_SignalEff_
+low_2.15_2.4_TimeAveraged_None_0.pdf Graphic file (type pdf)
+<use Figures/chapter4/SystematicError/FitRange_SystemError/Ratio_vs_SignalEff_l
+ow_2.15_2.4_TimeAveraged_None_0.pdf>
+Package pdftex.def Info: Figures/chapter4/SystematicError/FitRange_SystemError/
+Ratio_vs_SignalEff_low_2.15_2.4_TimeAveraged_None_0.pdf  used on input line 40.
+
+(pdftex.def)             Requested size: 212.4639pt x 155.10399pt.
+<Figures/chapter4/SystematicError/FitRange_SystemError/RMS_low_2.15_2.4_TimeAve
+raged_None_0_LogY.pdf, id=3449, 569.12625pt x 441.65pt>
+File: Figures/chapter4/SystematicError/FitRange_SystemError/RMS_low_2.15_2.4_Ti
+meAveraged_None_0_LogY.pdf Graphic file (type pdf)
+<use Figures/chapter4/SystematicError/FitRange_SystemError/RMS_low_2.15_2.4_Tim
+eAveraged_None_0_LogY.pdf>
+Package pdftex.def Info: Figures/chapter4/SystematicError/FitRange_SystemError/
+RMS_low_2.15_2.4_TimeAveraged_None_0_LogY.pdf  used on input line 44.
+(pdftex.def)             Requested size: 212.47285pt x 155.10904pt.
+<Figures/chapter4/SystematicError/FitRange_SystemError/SysRelErr_FitRange_pass7
+8.pdf, id=3451, 569.12625pt x 270.00874pt>
+File: Figures/chapter4/SystematicError/FitRange_SystemError/SysRelErr_FitRange_
+pass78.pdf Graphic file (type pdf)
+<use Figures/chapter4/SystematicError/FitRange_SystemError/SysRelErr_FitRange_p
+ass78.pdf>
+Package pdftex.def Info: Figures/chapter4/SystematicError/FitRange_SystemError/
+SysRelErr_FitRange_pass78.pdf  used on input line 50.
+(pdftex.def)             Requested size: 433.64334pt x 210.94792pt.
+ [73 <./Figures/chapter4/SystematicError/Acceptance_SystemError/SysRelErr_ACC_p
+ass78.pdf, page is rotated 90 degrees>] [74 <./Figures/chapter4/SystematicError
+/FitRange_SystemError/Ratio_vs_SignalEff_low_2.15_2.4_TimeAveraged_None_0.pdf> 
+<./Figures/chapter4/SystematicError/FitRange_SystemError/RMS_low_2.15_2.4_TimeA
+veraged_None_0_LogY.pdf, page is rotated 90 degrees> <./Figures/chapter4/System
+aticError/FitRange_SystemError/SysRelErr_FitRange_pass78.pdf, page is rotated 9
+0 degrees>]
+<Figures/chapter4/SystematicError/CC_SystemError/CCLevel_Pattern_0_VGG16NN_CCcu
+t_TF_0.20_525version_LogY.pdf, id=3639, 2168.1pt x 1300.86pt>
+File: Figures/chapter4/SystematicError/CC_SystemError/CCLevel_Pattern_0_VGG16NN
+_CCcut_TF_0.20_525version_LogY.pdf Graphic file (type pdf)
+<use Figures/chapter4/SystematicError/CC_SystemError/CCLevel_Pattern_0_VGG16NN_
+CCcut_TF_0.20_525version_LogY.pdf>
+Package pdftex.def Info: Figures/chapter4/SystematicError/CC_SystemError/CCLeve
+l_Pattern_0_VGG16NN_CCcut_TF_0.20_525version_LogY.pdf  used on input line 77.
+(pdftex.def)             Requested size: 433.61232pt x 248.15845pt.
+<Figures/chapter4/SystematicError/CC_SystemError/UncertaintyBand_CCLevel_Option
+4.3_Pattern_0_VGG16NN_CCcut_TF_0.20_525version_LinearX_ScalerBoolForPlot_True.p
+df, id=3640, 2168.1pt x 1300.86pt>
+File: Figures/chapter4/SystematicError/CC_SystemError/UncertaintyBand_CCLevel_O
+ption4.3_Pattern_0_VGG16NN_CCcut_TF_0.20_525version_LinearX_ScalerBoolForPlot_T
+rue.pdf Graphic file (type pdf)
+<use Figures/chapter4/SystematicError/CC_SystemError/UncertaintyBand_CCLevel_Op
+tion4.3_Pattern_0_VGG16NN_CCcut_TF_0.20_525version_LinearX_ScalerBoolForPlot_Tr
+ue.pdf>
+Package pdftex.def Info: Figures/chapter4/SystematicError/CC_SystemError/Uncert
+aintyBand_CCLevel_Option4.3_Pattern_0_VGG16NN_CCcut_TF_0.20_525version_LinearX_
+ScalerBoolForPlot_True.pdf  used on input line 83.
+(pdftex.def)             Requested size: 433.61232pt x 248.15845pt.
+<Figures/chapter4/SystematicError/CC_SystemError/SysRelErr_CC_pass78_LogX.pdf, 
+id=3642, 569.12625pt x 270.00874pt>
+File: Figures/chapter4/SystematicError/CC_SystemError/SysRelErr_CC_pass78_LogX.
+pdf Graphic file (type pdf)
+<use Figures/chapter4/SystematicError/CC_SystemError/SysRelErr_CC_pass78_LogX.p
+df>
+Package pdftex.def Info: Figures/chapter4/SystematicError/CC_SystemError/SysRel
+Err_CC_pass78_LogX.pdf  used on input line 93.
+(pdftex.def)             Requested size: 433.64334pt x 210.94792pt.
+<Figures/chapter4/SystematicError/TotalSystemError/SysRelErr_pass78.pdf, id=364
+4, 569.12625pt x 270.00874pt>
+File: Figures/chapter4/SystematicError/TotalSystemError/SysRelErr_pass78.pdf Gr
+aphic file (type pdf)
+<use Figures/chapter4/SystematicError/TotalSystemError/SysRelErr_pass78.pdf>
+Package pdftex.def Info: Figures/chapter4/SystematicError/TotalSystemError/SysR
+elErr_pass78.pdf  used on input line 102.
+(pdftex.def)             Requested size: 433.64334pt x 210.94792pt.
+ [75 <./Figures/chapter4/SystematicError/CC_SystemError/CCLevel_Pattern_0_VGG16
+NN_CCcut_TF_0.20_525version_LogY.pdf>] [76 <./Figures/chapter4/SystematicError/
+CC_SystemError/UncertaintyBand_CCLevel_Option4.3_Pattern_0_VGG16NN_CCcut_TF_0.2
+0_525version_LinearX_ScalerBoolForPlot_True.pdf> <./Figures/chapter4/Systematic
+Error/CC_SystemError/SysRelErr_CC_pass78_LogX.pdf, page is rotated 90 degrees>]
+<Figures/chapter4/SystematicError/TimeDependent/RelativeBreakDownOfTotalSysErro
+r_6Bartels_binmerge_2_1.92_2.4.pdf, id=3768, 2168.1pt x 1300.86pt>
+File: Figures/chapter4/SystematicError/TimeDependent/RelativeBreakDownOfTotalSy
+sError_6Bartels_binmerge_2_1.92_2.4.pdf Graphic file (type pdf)
+<use Figures/chapter4/SystematicError/TimeDependent/RelativeBreakDownOfTotalSys
+Error_6Bartels_binmerge_2_1.92_2.4.pdf>
+Package pdftex.def Info: Figures/chapter4/SystematicError/TimeDependent/Relativ
+eBreakDownOfTotalSysError_6Bartels_binmerge_2_1.92_2.4.pdf  used on input line 
+121.
+(pdftex.def)             Requested size: 433.61232pt x 248.15845pt.
+)) [77 <./Figures/chapter4/SystematicError/TotalSystemError/SysRelErr_pass78.pd
+f, page is rotated 90 degrees>] [78 <./Figures/chapter4/SystematicError/TimeDep
+endent/RelativeBreakDownOfTotalSysError_6Bartels_binmerge_2_1.92_2.4.pdf>]
+\openout2 = `chapter5.aux'.
+
+ (./chapter5.tex
+Chapter 5.
+(./Charpter5/TimeAveragedResult.tex
+<Figures/chapter5/timeaveraged/fullratio_ThisAnallysisOnly_pass78.pdf, id=3871,
+ 569.12625pt x 270.00874pt>
+File: Figures/chapter5/timeaveraged/fullratio_ThisAnallysisOnly_pass78.pdf Grap
+hic file (type pdf)
+<use Figures/chapter5/timeaveraged/fullratio_ThisAnallysisOnly_pass78.pdf>
+Package pdftex.def Info: Figures/chapter5/timeaveraged/fullratio_ThisAnallysisO
+nly_pass78.pdf  used on input line 19.
+(pdftex.def)             Requested size: 433.64334pt x 217.15675pt.
+<Figures/chapter5/timeaveraged/Scaled_CorrelatedOnly/fullratio_ThisAnallysisOnl
+y_pass78_LogXLinearY.pdf, id=3872, 569.12625pt x 270.00874pt>
+File: Figures/chapter5/timeaveraged/Scaled_CorrelatedOnly/fullratio_ThisAnallys
+isOnly_pass78_LogXLinearY.pdf Graphic file (type pdf)
+<use Figures/chapter5/timeaveraged/Scaled_CorrelatedOnly/fullratio_ThisAnallysi
+sOnly_pass78_LogXLinearY.pdf>
+Package pdftex.def Info: Figures/chapter5/timeaveraged/Scaled_CorrelatedOnly/fu
+llratio_ThisAnallysisOnly_pass78_LogXLinearY.pdf  used on input line 23.
+(pdftex.def)             Requested size: 433.64334pt x 217.15675pt.
+
+Overfull \hbox (7.28441pt too wide) in paragraph at lines 19--24
+ [][] 
+ []
+
+
+Overfull \hbox (7.28441pt too wide) in paragraph at lines 19--24
+ [][] 
+ []
+
+[79
+
+
+
+] [80 <./Figures/chapter5/timeaveraged/fullratio_ThisAnallysisOnly_pass78.pdf, 
+page is rotated 90 degrees> <./Figures/chapter5/timeaveraged/Scaled_CorrelatedO
+nly/fullratio_ThisAnallysisOnly_pass78_LogXLinearY.pdf, page is rotated 90 degr
+ees>]
+<Figures/chapter5/timeaveraged/fullratio_NOT_overlapped_PhysicsReport2021_PhyRe
+p2021.pdf, id=3977, 569.12625pt x 270.00874pt>
+File: Figures/chapter5/timeaveraged/fullratio_NOT_overlapped_PhysicsReport2021_
+PhyRep2021.pdf Graphic file (type pdf)
+<use Figures/chapter5/timeaveraged/fullratio_NOT_overlapped_PhysicsReport2021_P
+hyRep2021.pdf>
+Package pdftex.def Info: Figures/chapter5/timeaveraged/fullratio_NOT_overlapped
+_PhysicsReport2021_PhyRep2021.pdf  used on input line 40.
+(pdftex.def)             Requested size: 433.64334pt x 223.36147pt.
+<Figures/chapter5/timeaveraged/TotalRelErr_BreakDown_pass78.pdf, id=3982, 569.1
+2625pt x 270.00874pt>
+File: Figures/chapter5/timeaveraged/TotalRelErr_BreakDown_pass78.pdf Graphic fi
+le (type pdf)
+<use Figures/chapter5/timeaveraged/TotalRelErr_BreakDown_pass78.pdf>
+Package pdftex.def Info: Figures/chapter5/timeaveraged/TotalRelErr_BreakDown_pa
+ss78.pdf  used on input line 48.
+(pdftex.def)             Requested size: 433.64334pt x 204.74733pt.
+<Figures/chapter5/timeaveraged/StaSysRelErrCompare_pass78.pdf, id=3986, 569.126
+25pt x 270.00874pt>
+File: Figures/chapter5/timeaveraged/StaSysRelErrCompare_pass78.pdf Graphic file
+ (type pdf)
+<use Figures/chapter5/timeaveraged/StaSysRelErrCompare_pass78.pdf>
+Package pdftex.def Info: Figures/chapter5/timeaveraged/StaSysRelErrCompare_pass
+78.pdf  used on input line 61.
+(pdftex.def)             Requested size: 433.64334pt x 204.74733pt.
+) (./Charpter5/TimeDependentResult.tex
+<Figures/chapter5/timedependent/low/PbarRatioInAllRigidityBins6Bartels.pdf, id=
+3989, 1445.4pt x 2890.8pt>
+File: Figures/chapter5/timedependent/low/PbarRatioInAllRigidityBins6Bartels.pdf
+ Graphic file (type pdf)
+<use Figures/chapter5/timedependent/low/PbarRatioInAllRigidityBins6Bartels.pdf>
+
+Package pdftex.def Info: Figures/chapter5/timedependent/low/PbarRatioInAllRigid
+ityBins6Bartels.pdf  used on input line 9.
+(pdftex.def)             Requested size: 346.88103pt x 589.39781pt.
+ [81 <./Figures/chapter5/timeaveraged/fullratio_NOT_overlapped_PhysicsReport202
+1_PhyRep2021.pdf, page is rotated 90 degrees>] [82 <./Figures/chapter5/timeaver
+aged/TotalRelErr_BreakDown_pass78.pdf, page is rotated 90 degrees> <./Figures/c
+hapter5/timeaveraged/StaSysRelErrCompare_pass78.pdf, page is rotated 90 degrees
+>]
+<Figures/chapter5/timedependent/model/CompareWithPbarOverProAslamModel1.92_2.4.
+pdf, id=4135, 2168.1pt x 1300.86pt>
+File: Figures/chapter5/timedependent/model/CompareWithPbarOverProAslamModel1.92
+_2.4.pdf Graphic file (type pdf)
+<use Figures/chapter5/timedependent/model/CompareWithPbarOverProAslamModel1.92_
+2.4.pdf>
+Package pdftex.def Info: Figures/chapter5/timedependent/model/CompareWithPbarOv
+erProAslamModel1.92_2.4.pdf  used on input line 32.
+(pdftex.def)             Requested size: 390.25536pt x 234.1447pt.
+<Figures/chapter5/timedependent/low/RelativeErrorvsRigidity_6Bartels.pdf, id=41
+38, 2168.1pt x 1300.86pt>
+File: Figures/chapter5/timedependent/low/RelativeErrorvsRigidity_6Bartels.pdf G
+raphic file (type pdf)
+<use Figures/chapter5/timedependent/low/RelativeErrorvsRigidity_6Bartels.pdf>
+Package pdftex.def Info: Figures/chapter5/timedependent/low/RelativeErrorvsRigi
+dity_6Bartels.pdf  used on input line 41.
+(pdftex.def)             Requested size: 390.25536pt x 234.1447pt.
+ [83] [84 <./Figures/chapter5/timedependent/low/PbarRatioInAllRigidityBins6Bart
+els.pdf>] [85 <./Figures/chapter5/timedependent/model/CompareWithPbarOverProAsl
+amModel1.92_2.4.pdf> <./Figures/chapter5/timedependent/low/RelativeErrorvsRigid
+ity_6Bartels.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./Figures/chapter5/timedepen
+dent/low/RelativeErrorvsRigidity_6Bartels.pdf): PDF inclusion: multiple pdfs wi
+th page group included in a single page
+>]
+<Figures/chapter5/timedependent/low/RelativeBreakDownOfTotalError_6Bartels_binm
+erge_2_1.92_2.4.pdf, id=4296, 2168.1pt x 1300.86pt>
+File: Figures/chapter5/timedependent/low/RelativeBreakDownOfTotalError_6Bartels
+_binmerge_2_1.92_2.4.pdf Graphic file (type pdf)
+<use Figures/chapter5/timedependent/low/RelativeBreakDownOfTotalError_6Bartels_
+binmerge_2_1.92_2.4.pdf>
+Package pdftex.def Info: Figures/chapter5/timedependent/low/RelativeBreakDownOf
+TotalError_6Bartels_binmerge_2_1.92_2.4.pdf  used on input line 89.
+(pdftex.def)             Requested size: 433.62001pt x 260.16739pt.
+ [86 <./Figures/chapter5/timedependent/low/RelativeBreakDownOfTotalError_6Barte
+ls_binmerge_2_1.92_2.4.pdf>]
+<Figures/chapter5/timedependent/low/Antiproton_Electron_Aachen_1.92_2.4_6Bartel
+s.pdf, id=4346, 2890.8pt x 1445.4pt>
+File: Figures/chapter5/timedependent/low/Antiproton_Electron_Aachen_1.92_2.4_6B
+artels.pdf Graphic file (type pdf)
+<use Figures/chapter5/timedependent/low/Antiproton_Electron_Aachen_1.92_2.4_6Ba
+rtels.pdf>
+Package pdftex.def Info: Figures/chapter5/timedependent/low/Antiproton_Electron
+_Aachen_1.92_2.4_6Bartels.pdf  used on input line 106.
+(pdftex.def)             Requested size: 433.6013pt x 186.12213pt.
+<Figures/chapter5/timedependent/low/Antiproton_Electron_Aachen_2.4_2.97_6Bartel
+s.pdf, id=4347, 2890.8pt x 1445.4pt>
+File: Figures/chapter5/timedependent/low/Antiproton_Electron_Aachen_2.4_2.97_6B
+artels.pdf Graphic file (type pdf)
+<use Figures/chapter5/timedependent/low/Antiproton_Electron_Aachen_2.4_2.97_6Ba
+rtels.pdf>
+Package pdftex.def Info: Figures/chapter5/timedependent/low/Antiproton_Electron
+_Aachen_2.4_2.97_6Bartels.pdf  used on input line 109.
+(pdftex.def)             Requested size: 433.6013pt x 186.12213pt.
+
+Overfull \hbox (7.24237pt too wide) in paragraph at lines 106--110
+[][]
+ []
+
+
+Overfull \hbox (7.24237pt too wide) in paragraph at lines 106--110
+[][]
+ []
+
+<Figures/chapter5/timedependent/intermediate/Antiproton_Electron_Aachen_4.43_5.
+37_6Bartels.pdf, id=4348, 2890.8pt x 1445.4pt>
+File: Figures/chapter5/timedependent/intermediate/Antiproton_Electron_Aachen_4.
+43_5.37_6Bartels.pdf Graphic file (type pdf)
+<use Figures/chapter5/timedependent/intermediate/Antiproton_Electron_Aachen_4.4
+3_5.37_6Bartels.pdf>
+Package pdftex.def Info: Figures/chapter5/timedependent/intermediate/Antiproton
+_Electron_Aachen_4.43_5.37_6Bartels.pdf  used on input line 115.
+(pdftex.def)             Requested size: 433.6013pt x 186.12213pt.
+<Figures/chapter5/timedependent/intermediate/Antiproton_Electron_Aachen_6.47_7.
+76_6Bartels.pdf, id=4349, 2890.8pt x 1445.4pt>
+File: Figures/chapter5/timedependent/intermediate/Antiproton_Electron_Aachen_6.
+47_7.76_6Bartels.pdf Graphic file (type pdf)
+<use Figures/chapter5/timedependent/intermediate/Antiproton_Electron_Aachen_6.4
+7_7.76_6Bartels.pdf>
+Package pdftex.def Info: Figures/chapter5/timedependent/intermediate/Antiproton
+_Electron_Aachen_6.47_7.76_6Bartels.pdf  used on input line 118.
+(pdftex.def)             Requested size: 433.6013pt x 186.12213pt.
+
+Overfull \hbox (7.24237pt too wide) in paragraph at lines 115--119
+[][]
+ []
+
+
+Overfull \hbox (7.24237pt too wide) in paragraph at lines 115--119
+[][] 
+ []
+
+)) [87 <./Figures/chapter5/timedependent/low/Antiproton_Electron_Aachen_1.92_2.
+4_6Bartels.pdf> <./Figures/chapter5/timedependent/low/Antiproton_Electron_Aache
+n_2.4_2.97_6Bartels.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./Figures/chapter5/timedepen
+dent/low/Antiproton_Electron_Aachen_2.4_2.97_6Bartels.pdf): PDF inclusion: mult
+iple pdfs with page group included in a single page
+>] [88 <./Figures/chapter5/timedependent/intermediate/Antiproton_Electron_Aache
+n_4.43_5.37_6Bartels.pdf> <./Figures/chapter5/timedependent/intermediate/Antipr
+oton_Electron_Aachen_6.47_7.76_6Bartels.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./Figures/chapter5/timedepen
+dent/intermediate/Antiproton_Electron_Aachen_6.47_7.76_6Bartels.pdf): PDF inclu
+sion: multiple pdfs with page group included in a single page
+>]
+\openout2 = `chapter6.aux'.
+
+ (./chapter6.tex
+Chapter 6.
+(./Charpter6/Summary.tex [89
+
+
+
+])) [90]
+Appendix A.
+(./APPENDICES/APPENDICES_CC.tex
+Overfull \hbox (2.90503pt too wide) in paragraph at lines 13--14
+[]\T1/cmr/m/n/10.95 For the TOF sub-de-tec-tor, the charge mea-sure-ments are u
+sed for the train-ing. $\OML/cmm/b/it/10.95 Q[]$
+ []
+
+<Figures/appendix/appendixA/proton_330_525_to_330_525_LowerTofCharge_15_Logy_B1
+042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0.pdf, id=4524, 569.12625pt x
+ 386.44376pt>
+File: Figures/appendix/appendixA/proton_330_525_to_330_525_LowerTofCharge_15_Lo
+gy_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0.pdf Graphic file (type
+ pdf)
+<use Figures/appendix/appendixA/proton_330_525_to_330_525_LowerTofCharge_15_Log
+y_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0.pdf>
+Package pdftex.def Info: Figures/appendix/appendixA/proton_330_525_to_330_525_L
+owerTofCharge_15_Logy_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0.pdf
+  used on input line 19.
+(pdftex.def)             Requested size: 203.79977pt x 155.10545pt.
+<Figures/appendix/appendixA/proton_330_525_to_330_525_UpperTofCharge_14_Logy_B1
+042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0.pdf, id=4525, 569.12625pt x
+ 386.44376pt>
+File: Figures/appendix/appendixA/proton_330_525_to_330_525_UpperTofCharge_14_Lo
+gy_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0.pdf Graphic file (type
+ pdf)
+<use Figures/appendix/appendixA/proton_330_525_to_330_525_UpperTofCharge_14_Log
+y_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0.pdf>
+Package pdftex.def Info: Figures/appendix/appendixA/proton_330_525_to_330_525_U
+pperTofCharge_14_Logy_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0.pdf
+  used on input line 23.
+(pdftex.def)             Requested size: 203.79977pt x 155.10545pt.
+[91
+
+
+ <./Figures/appendix/appendixA/proton_330_525_to_330_525_LowerTofCharge_15_Logy
+_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0.pdf, page is rotated 90 
+degrees> <./Figures/appendix/appendixA/proton_330_525_to_330_525_UpperTofCharge
+_14_Logy_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0.pdf, page is rot
+ated 90 degrees>]
+<Figures/appendix/appendixA/proton_330_525_to_330_525_RigidityAsymmetryL9_2_Log
+y_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0.pdf, id=4623, 569.12625
+pt x 386.44376pt>
+File: Figures/appendix/appendixA/proton_330_525_to_330_525_RigidityAsymmetryL9_
+2_Logy_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0.pdf Graphic file (
+type pdf)
+<use Figures/appendix/appendixA/proton_330_525_to_330_525_RigidityAsymmetryL9_2
+_Logy_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0.pdf>
+Package pdftex.def Info: Figures/appendix/appendixA/proton_330_525_to_330_525_R
+igidityAsymmetryL9_2_Logy_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0
+.pdf  used on input line 49.
+(pdftex.def)             Requested size: 203.79977pt x 155.10545pt.
+<Figures/appendix/appendixA/proton_330_525_to_330_525_InnerRigidityMatch_6_Logy
+_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0.pdf, id=4624, 569.12625p
+t x 386.44376pt>
+File: Figures/appendix/appendixA/proton_330_525_to_330_525_InnerRigidityMatch_6
+_Logy_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0.pdf Graphic file (t
+ype pdf)
+<use Figures/appendix/appendixA/proton_330_525_to_330_525_InnerRigidityMatch_6_
+Logy_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0.pdf>
+Package pdftex.def Info: Figures/appendix/appendixA/proton_330_525_to_330_525_I
+nnerRigidityMatch_6_Logy_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0.
+pdf  used on input line 52.
+(pdftex.def)             Requested size: 203.79977pt x 155.10545pt.
+ [92
+
+ <./Figures/appendix/appendixA/proton_330_525_to_330_525_RigidityAsymmetryL9_2_
+Logy_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0.pdf, page is rotated
+ 90 degrees> <./Figures/appendix/appendixA/proton_330_525_to_330_525_InnerRigid
+ityMatch_6_Logy_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0.pdf, page
+ is rotated 90 degrees>]
+<Figures/appendix/appendixA/proton_330_525_to_330_525_TrackerChi2X_9_Logy_B1042
+_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0.pdf, id=4721, 569.12625pt x 38
+6.44376pt>
+File: Figures/appendix/appendixA/proton_330_525_to_330_525_TrackerChi2X_9_Logy_
+B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0.pdf Graphic file (type pd
+f)
+<use Figures/appendix/appendixA/proton_330_525_to_330_525_TrackerChi2X_9_Logy_B
+1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0.pdf>
+Package pdftex.def Info: Figures/appendix/appendixA/proton_330_525_to_330_525_T
+rackerChi2X_9_Logy_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0.pdf  u
+sed on input line 70.
+(pdftex.def)             Requested size: 203.79977pt x 155.10545pt.
+<Figures/appendix/appendixA/proton_330_525_to_330_525_TrackerChi2Y_10_Logy_B104
+2_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0.pdf, id=4722, 569.12625pt x 3
+86.44376pt>
+File: Figures/appendix/appendixA/proton_330_525_to_330_525_TrackerChi2Y_10_Logy
+_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0.pdf Graphic file (type p
+df)
+<use Figures/appendix/appendixA/proton_330_525_to_330_525_TrackerChi2Y_10_Logy_
+B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0.pdf>
+Package pdftex.def Info: Figures/appendix/appendixA/proton_330_525_to_330_525_T
+rackerChi2Y_10_Logy_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0.pdf  
+used on input line 74.
+(pdftex.def)             Requested size: 203.79977pt x 155.10545pt.
+<Figures/appendix/appendixA/proton_330_525_to_330_525_InnerTrackerChi2X_7_Logy_
+B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0.pdf, id=4723, 569.12625pt
+ x 386.44376pt>
+File: Figures/appendix/appendixA/proton_330_525_to_330_525_InnerTrackerChi2X_7_
+Logy_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0.pdf Graphic file (ty
+pe pdf)
+<use Figures/appendix/appendixA/proton_330_525_to_330_525_InnerTrackerChi2X_7_L
+ogy_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0.pdf>
+Package pdftex.def Info: Figures/appendix/appendixA/proton_330_525_to_330_525_I
+nnerTrackerChi2X_7_Logy_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0.p
+df  used on input line 78.
+(pdftex.def)             Requested size: 203.79977pt x 155.10545pt.
+<Figures/appendix/appendixA/proton_330_525_to_330_525_InnerTrackerChi2Y_8_Logy_
+B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0.pdf, id=4724, 569.12625pt
+ x 386.44376pt>
+File: Figures/appendix/appendixA/proton_330_525_to_330_525_InnerTrackerChi2Y_8_
+Logy_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0.pdf Graphic file (ty
+pe pdf)
+<use Figures/appendix/appendixA/proton_330_525_to_330_525_InnerTrackerChi2Y_8_L
+ogy_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0.pdf>
+Package pdftex.def Info: Figures/appendix/appendixA/proton_330_525_to_330_525_I
+nnerTrackerChi2Y_8_Logy_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0.p
+df  used on input line 82.
+(pdftex.def)             Requested size: 203.79977pt x 155.10545pt.
+ [93
+
+ <./Figures/appendix/appendixA/proton_330_525_to_330_525_TrackerChi2X_9_Logy_B1
+042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0.pdf, page is rotated 90 deg
+rees> <./Figures/appendix/appendixA/proton_330_525_to_330_525_TrackerChi2Y_10_L
+ogy_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0.pdf, page is rotated 
+90 degrees> <./Figures/appendix/appendixA/proton_330_525_to_330_525_InnerTracke
+rChi2X_7_Logy_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0.pdf, page i
+s rotated 90 degrees> <./Figures/appendix/appendixA/proton_330_525_to_330_525_I
+nnerTrackerChi2Y_8_Logy_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0.p
+df, page is rotated 90 degrees>]
+<Figures/appendix/appendixA/proton_330_525_to_330_525_TrackerL9Charge_12_Logy_B
+1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0.pdf, id=4909, 569.12625pt 
+x 386.44376pt>
+File: Figures/appendix/appendixA/proton_330_525_to_330_525_TrackerL9Charge_12_L
+ogy_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0.pdf Graphic file (typ
+e pdf)
+<use Figures/appendix/appendixA/proton_330_525_to_330_525_TrackerL9Charge_12_Lo
+gy_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0.pdf>
+Package pdftex.def Info: Figures/appendix/appendixA/proton_330_525_to_330_525_T
+rackerL9Charge_12_Logy_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0.pd
+f  used on input line 98.
+(pdftex.def)             Requested size: 203.79977pt x 155.10545pt.
+<Figures/appendix/appendixA/proton_330_525_to_330_525_TrackerL78Charge_13_Logy_
+B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0.pdf, id=4910, 569.12625pt
+ x 386.44376pt>
+File: Figures/appendix/appendixA/proton_330_525_to_330_525_TrackerL78Charge_13_
+Logy_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0.pdf Graphic file (ty
+pe pdf)
+<use Figures/appendix/appendixA/proton_330_525_to_330_525_TrackerL78Charge_13_L
+ogy_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0.pdf>
+Package pdftex.def Info: Figures/appendix/appendixA/proton_330_525_to_330_525_T
+rackerL78Charge_13_Logy_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0.p
+df  used on input line 101.
+(pdftex.def)             Requested size: 203.79977pt x 155.10545pt.
+ [94
+
+ <./Figures/appendix/appendixA/proton_330_525_to_330_525_TrackerL9Charge_12_Log
+y_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0.pdf, page is rotated 90
+ degrees> <./Figures/appendix/appendixA/proton_330_525_to_330_525_TrackerL78Cha
+rge_13_Logy_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0.pdf, page is 
+rotated 90 degrees>]
+<Figures/appendix/appendixA/proton_330_525_to_330_525_TrackerChargeAsymmetry_11
+_Logy_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_1.pdf, id=5006, 569.1
+2625pt x 386.44376pt>
+File: Figures/appendix/appendixA/proton_330_525_to_330_525_TrackerChargeAsymmet
+ry_11_Logy_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_1.pdf Graphic fi
+le (type pdf)
+<use Figures/appendix/appendixA/proton_330_525_to_330_525_TrackerChargeAsymmetr
+y_11_Logy_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_1.pdf>
+Package pdftex.def Info: Figures/appendix/appendixA/proton_330_525_to_330_525_T
+rackerChargeAsymmetry_11_Logy_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Patte
+rn_1.pdf  used on input line 125.
+(pdftex.def)             Requested size: 203.79977pt x 155.10545pt.
+ [95
+
+ <./Figures/appendix/appendixA/proton_330_525_to_330_525_TrackerChargeAsymmetry
+_11_Logy_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_1.pdf, page is rot
+ated 90 degrees>]
+<Figures/appendix/appendixA/proton_330_525_to_330_525_TRDLikelihood_0_Logy_B104
+2_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0.pdf, id=5057, 569.12625pt x 3
+86.44376pt>
+File: Figures/appendix/appendixA/proton_330_525_to_330_525_TRDLikelihood_0_Logy
+_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0.pdf Graphic file (type p
+df)
+<use Figures/appendix/appendixA/proton_330_525_to_330_525_TRDLikelihood_0_Logy_
+B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0.pdf>
+Package pdftex.def Info: Figures/appendix/appendixA/proton_330_525_to_330_525_T
+RDLikelihood_0_Logy_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0.pdf  
+used on input line 140.
+(pdftex.def)             Requested size: 203.79977pt x 155.10545pt.
+) [96
+
+ <./Figures/appendix/appendixA/proton_330_525_to_330_525_TRDLikelihood_0_Logy_B
+1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0.pdf, page is rotated 90 de
+grees>]
+Appendix B.
+(./APPENDICES/APPENDICES_TableOfResult.tex
+Overfull \hbox (26.53053pt too wide) in paragraph at lines 17--53
+ [][] 
+ []
+
+[97
+
+] [98]
+Overfull \hbox (14.44267pt too wide) in paragraph at lines 85--98
+ [][] 
+ []
+
+
+Overfull \hbox (14.44267pt too wide) in paragraph at lines 107--120
+ [][] 
+ []
+
+
+Overfull \hbox (14.44267pt too wide) in paragraph at lines 129--142
+ [][] 
+ []
+
+
+Overfull \hbox (14.44267pt too wide) in paragraph at lines 151--164
+ [][] 
+ []
+
+
+Overfull \hbox (14.44267pt too wide) in paragraph at lines 173--186
+ [][] 
+ []
+
+
+Overfull \hbox (14.44267pt too wide) in paragraph at lines 195--208
+ [][] 
+ []
+
+
+Overfull \hbox (14.44267pt too wide) in paragraph at lines 217--230
+ [][] 
+ []
+
+
+Overfull \hbox (3.5548pt too wide) in paragraph at lines 239--252
+ [][] 
+ []
+
+
+Overfull \hbox (14.44267pt too wide) in paragraph at lines 261--274
+ [][] 
+ []
+
+
+Overfull \hbox (14.44267pt too wide) in paragraph at lines 283--296
+ [][] 
+ []
+
+
+Overfull \hbox (14.44267pt too wide) in paragraph at lines 305--318
+ [][] 
+ []
+
+
+Overfull \hbox (14.44267pt too wide) in paragraph at lines 327--340
+ [][] 
+ []
+
+
+Overfull \hbox (14.44267pt too wide) in paragraph at lines 349--362
+ [][] 
+ []
+
+
+Overfull \hbox (14.44267pt too wide) in paragraph at lines 371--384
+ [][] 
+ []
+
+
+Overfull \hbox (14.44267pt too wide) in paragraph at lines 393--406
+ [][] 
+ []
+
+
+Overfull \hbox (14.44267pt too wide) in paragraph at lines 415--428
+ [][] 
+ []
+
+
+Overfull \hbox (3.5548pt too wide) in paragraph at lines 437--450
+ [][] 
+ []
+
+
+Overfull \hbox (3.5548pt too wide) in paragraph at lines 459--472
+ [][] 
+ []
+
+
+Overfull \hbox (3.5548pt too wide) in paragraph at lines 481--494
+ [][] 
+ []
+
+
+Overfull \hbox (3.5548pt too wide) in paragraph at lines 503--516
+ [][] 
+ []
+
+
+Overfull \hbox (3.5548pt too wide) in paragraph at lines 525--538
+ [][] 
+ []
+
+
+Overfull \hbox (8.99873pt too wide) in paragraph at lines 547--560
+ [][] 
+ []
+
+
+Overfull \hbox (3.5548pt too wide) in paragraph at lines 569--582
+ [][] 
+ []
+
+) [99] [100] [101] [102] [103] [104] [105] [106]
+Appendix C.
+(./APPENDICES/APPENDICES_Acronyms.tex
+Overfull \hbox (52.48096pt too wide) in paragraph at lines 6--23
+[][] 
+ []
+
+
+Overfull \hbox (4.42406pt too wide) in paragraph at lines 28--53
+[][] 
+ []
+
+[107
+
+
+]) [108] (./sampledissertation.lof [109
+
+] [110] [111])
+\tf@lof=\write7
+\openout7 = `sampledissertation.lof'.
+
+ [112]
+(./sampledissertation.lot [113
+
+])
+\tf@lot=\write8
+\openout8 = `sampledissertation.lot'.
+
+ [114] (./sampledissertation.bbl [115
+
+
+] [116]
+[117] [118] [119] [120]
+Underfull \hbox (badness 2326) in paragraph at lines 664--670
+[]\T1/cmr/m/n/10.95 T. Sieden-burg.  The AMS TRD. A gas-de-tec-tor de-signed fo
+r op-er-a-tion in
+ []
+
+[121] [122] [123] [124]) [125]
+\openout2 = `Acknowledgment/Acknowledgment.aux'.
+
+ (./Acknowledgment/Acknowledgment.tex [126
+
+
+])
+[127]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 122.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 122.
+ (./sampledissertation.aux (./EidesstattlicheErklaerung.aux)
+(./Abstract.aux) (./chapter1.aux) (./chapter2.aux) (./chapter3.aux)
+(./chapter4.aux) (./chapter5.aux) (./chapter6.aux)
+(./Acknowledgment/Acknowledgment.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 122.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 122.
+Package rerunfilecheck Info: File `sampledissertation.out' has not changed.
+(rerunfilecheck)             Checksum: E7DAEF1BAB582EDB2097D2BCFA994C9F;2177.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 23366 strings out of 492649
+ 459906 string characters out of 6129622
+ 615163 words of memory out of 5000000
+ 25952 multiletter control sequences out of 15000+600000
+ 31817 words of font info for 78 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 55i,15n,54p,1458b,1090s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
+</usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><
+/usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb></u
+sr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr
+/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/
+local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/l
+ocal/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/loc
+al/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local
+/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local
+/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb></usr/l
+ocal/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/loc
+al/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/
+texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/tex
+live/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texl
+ive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texliv
+e/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/
+2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texl
+ive/2018/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texliv
+e/2018/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/
+2018/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/20
+18/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/local/texlive/2018
+/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/2018/t
+exmf-dist/fonts/type1/public/cm-super/sfcc1440.pfb></usr/local/texlive/2018/tex
+mf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2018/texmf
+-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2018/texmf-d
+ist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2018/texmf-dis
+t/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2018/texmf-dist/
+fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2018/texmf-dist/fo
+nts/type1/public/cm-super/sfti2074.pfb></usr/local/texlive/2018/texmf-dist/font
+s/type1/public/cm-super/sfxc1728.pfb></usr/local/texlive/2018/texmf-dist/fonts/
+type1/public/cm-super/sfxc2488.pfb>
+Output written on sampledissertation.pdf (133 pages, 15457876 bytes).
+PDF statistics:
+ 5773 PDF objects out of 6186 (max. 8388607)
+ 3132 compressed objects within 32 object streams
+ 511 named destinations out of 1000 (max. 500000)
+ 926 words of extra memory for PDF output out of 10000 (max. 10000000)
+

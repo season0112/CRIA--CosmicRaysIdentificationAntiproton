@@ -1,0 +1,46 @@
+\babel@toc {american}{}
+\contentsline {chapter}{\numberline {1}\textsc {\relax \fontsize {14.4}{18}\selectfont {Introduction}}}{1}{chapter.1}
+\contentsline {chapter}{\numberline {2}\textsc {\relax \fontsize {14.4}{18}\selectfont {Cosmic rays}}}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}Cosmic Rays}{3}{section.2.1}
+\contentsline {section}{\numberline {2.2}Sources of cosmic rays}{5}{section.2.2}
+\contentsline {section}{\numberline {2.3}Propagation}{7}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Cosmic rays propagating in the galaxy}{7}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Cosmic ray propagating in the heliosphere}{8}{subsection.2.3.2}
+\contentsline {section}{\numberline {2.4}Cosmic antiprotons measurement}{11}{section.2.4}
+\contentsline {chapter}{\numberline {3}\textsc {\relax \fontsize {14.4}{18}\selectfont {AMS-02 Experiment}}}{13}{chapter.3}
+\contentsline {section}{\numberline {3.1}Experiment Overview}{13}{section.3.1}
+\contentsline {section}{\numberline {3.2}Transition Radiation Detector}{15}{section.3.2}
+\contentsline {section}{\numberline {3.3}Silicon Tracker}{17}{section.3.3}
+\contentsline {section}{\numberline {3.4}Time Of Flight}{22}{section.3.4}
+\contentsline {section}{\numberline {3.5}Ring-Imaging Cherenkov Detector}{23}{section.3.5}
+\contentsline {section}{\numberline {3.6}Electromagnetic Calorimeter}{25}{section.3.6}
+\contentsline {section}{\numberline {3.7}Anti-Coincidence Counter}{26}{section.3.7}
+\contentsline {chapter}{\numberline {4}\textsc {\relax \fontsize {14.4}{18}\selectfont {Analysis}}}{28}{chapter.4}
+\contentsline {section}{\numberline {4.1}Data Selection}{30}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}AMS-02 Data and Monte Carlo Simulation}{30}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Preselection Cuts}{32}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.3}Selection Cuts}{34}{subsection.4.1.3}
+\contentsline {section}{\numberline {4.2}Charge Confusion Estimator}{36}{section.4.2}
+\contentsline {section}{\numberline {4.3}TRD Estimator}{41}{section.4.3}
+\contentsline {section}{\numberline {4.4}Template Fit}{41}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Time-averaged analysis}{43}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}Time-dependent analysis}{53}{subsection.4.4.2}
+\contentsline {section}{\numberline {4.5}Effective Acceptance}{58}{section.4.5}
+\contentsline {section}{\numberline {4.6}Measuring Time}{60}{section.4.6}
+\contentsline {section}{\numberline {4.7}Unfolding}{65}{section.4.7}
+\contentsline {section}{\numberline {4.8}Antiproton To Proton Flux Ratio}{67}{section.4.8}
+\contentsline {section}{\numberline {4.9}Systematic Uncertainties}{71}{section.4.9}
+\contentsline {subsection}{\numberline {4.9.1}Time-averaged analysis}{71}{subsection.4.9.1}
+\contentsline {subsection}{\numberline {4.9.2}Time-dependent analysis}{77}{subsection.4.9.2}
+\contentsline {chapter}{\numberline {5}\textsc {\relax \fontsize {14.4}{18}\selectfont {Results}}}{79}{chapter.5}
+\contentsline {section}{\numberline {5.1}Time Averaged Result}{79}{section.5.1}
+\contentsline {section}{\numberline {5.2}Time Dependent Result}{83}{section.5.2}
+\contentsline {chapter}{\numberline {6}\textsc {\relax \fontsize {14.4}{18}\selectfont {Summary}}}{89}{chapter.6}
+\contentsline {chapter}{Appendix \numberline {A}Input variables for charge confusion estimator}{91}{Appendix.a.A}
+\contentsline {chapter}{Appendix \numberline {B}Table of Results}{97}{Appendix.a.B}
+\contentsline {chapter}{Appendix \numberline {C}Acronyms}{107}{Appendix.a.C}
+\contentsline {chapter}{LIST OF FIGURES}{109}{table.caption.115}
+\contentsline {chapter}{LIST OF TABLES}{113}{table.caption.115}
+\setcounter {tocdepth}{1}
+\contentsline {chapter}{BIBLIOGRAPHY}{115}{section*.116}
+\contentsline {chapter}{ACKNOWLEDGEMENTS}{126}{chapter*.118}

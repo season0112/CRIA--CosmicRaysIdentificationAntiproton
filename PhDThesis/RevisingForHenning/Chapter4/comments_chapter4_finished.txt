@@ -1,0 +1,233 @@
+Chapter 4
+
+612: The cut on beta>0 implies that there even is a TOF beta measurement (l. 609). Why
+  separate the two?
+
+REGISTER_CUT(HasTofBeta,
+             "Has TOF beta",
+             
+             [](const Analysis::Event& ev, double& valueForHistograms) -> bool {
+               const Analysis::Particle* p = ev.PrimaryParticle();
+               if (!p)
+                 return true;
+               valueForHistograms = p->HasTofBeta();                 %Particle::TofBeta
+               return valueForHistograms;
+             })
+
+REGISTER_CUT(IsDowngoing,
+             "Downgoing (#beta > 0)",
+             
+             [](const Analysis::Event& ev, double& valueForHistograms) -> bool {
+               const Analysis::Particle* p = ev.PrimaryParticle();
+               if (!p)
+                 return true;
+               if (!p->HasTofBeta())
+                 return true;
+               valueForHistograms = p->BetaTof();
+               return p->BetaTof() > 0;
+             },
+             MakeEquidistantBinning(400, -2, 2))
+
+/** Make sure the selected event indicates a downgoing particle.
+ * Using |1/beta - 1| < 0.2 as decided in AMS-A preselection meeting on Sep 29, 2012.
+ */
+ 
+Answer: based on ß/hpcwork/jara0052/sichen/AntiprotonLowEnergy_v11.0/B1130_pass7_7.8_all/positive/output/output_00028.txt  
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+656: 40 cm?? That's almost as large as AMS.
+
+REGISTER_CUT(TrdTofTrackMatchXY,
+             "TRD-TOF matching XY",
+             [](const Analysis::Event& ev, double& valueForHistograms, double min, double max) -> bool {
+               const Analysis::Particle* particle = ev.PrimaryParticle();
+               if (!particle)
+                 return true;
+               const Analysis::TrdTrack* tr = particle->GetTrdTrack();
+               if (!tr)
+                 return true;
+               if (!particle->HasTofBeta())
+                 return true;
+
+               Analysis::StraightLineTrack toftrack = particle->TofTrack();
+               float dx = toftrack.X(tr->ReferenceZ()) - tr->OffsetXZ();
+               float dy = toftrack.Y(tr->ReferenceZ()) - tr->OffsetYZ();
+               float maxD = std::max(std::abs(dx), std::abs(dy));
+               valueForHistograms = maxD;
+               return Cuts::TwoSidedCut::IsInRange(valueForHistograms, min, max);
+             },
+             MakeEquidistantBinning(200, 0, 20))
+
+
+/home/bo791269/Software/ACsoft/analysis/StraightLineTrack.hh
+  StraightLineTrack(const Vector3& position, const Vector3& direction);
+
+  virtual void Clear();
+
+  /** Dump to console. */
+  virtual void Dump() const;
+
+  virtual double X(double z) const { return fOffsetXZ + fSlopeXZ * (z - fReferenceZ); }
+  virtual double Y(double z) const { return fOffsetYZ + fSlopeYZ * (z - fReferenceZ); }
+  virtual double DerivativeXZ(double) const { return fSlopeXZ; }
+  virtual double DerivativeYZ(double) const { return fSlopeYZ; }
+
+  /** Returns the reference in Z direction */
+  double ReferenceZ() const { return fReferenceZ; }
+
+Fabian论文里有，但是似乎定义不一样。
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+668: it's not so simple. What if the rigidity in an event is wrongly reconstructed,
+  but still positive? Then this event shows the same behavior as charge confusion
+  and should not be used in the signal sample for training. You could define the
+  signal sample to be within a few sigma_R around R_true. There should be a "gap"
+  between the signal and background samples.
+Answer: Good suggestion, but wrongly reconstructed events with positive rigidity can be mostly removed by quality cuts like chi2. Also, it's not easy to change this since it is the first step: training->template fit->Pbar ratio. Last, Nico and fabian also simply use sign of rigidity to select sig/back events.  
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+692: Can't you simply use the rigidity values from the inner vs all fits directly, instead
+  of the chi2 values?
+Answer: Other input variables contain the differences between rigidity values from the inner vs all fits, like rigidity asymmetry and match. Here is just the tracker track reconstruction quality (chi2) information is used.
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+1010: How is a 2D histogram normalized to unity?
+Answer: miximum bincontent is 1.
+hMigrationMatrix->SetBinContent(q, hMigrationMatrix->GetBinContent(q) / hMigrationMatrix->GetMaximum());
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+915: You could cite the value of M (in meaningful units).
+Answer: When this equation is used in normalized units, where r is expressed in earth radii and the unit of cutoff rigidity is in GV, the magnitude of the dipole moment has a value 􏰂58 for the IGRF 2000 mag- netic field model. Many texts still quote the original 1930 value derived by Sto ̈rmer which ignores the evolu- tion of the geomagnetic field. See Smart and Shea (1994) for further details.
+(See: https://www.sciencedirect.com/science/article/abs/pii/S0273117705001997?via%3Dihub)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Fig. 4.26: Why does the plot start at ~12 GV, not lower?
+Answer:it is just the example unfolding in high rigidity range. so it is start at ~12 GV.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+1024 / Fig. 4.27: If it's the counts, the effect of the unfolding should cancel in the final ratio?
+Answer: It's not strictly canceled, since the raw number histogram for Pbar and P are different, event the used magration matrix is same, the effect of unfolding for Pbar raw number and P raw number are different.
+BayesUnfoldingWithCutoff unfolding_antiproton(hantiproton, hMeasuringTime, hAcceptance_antiproton, Trig_antiproton_noprescaling, Unfolding_Matrices, MaxMeasuringTime, bayesIterations, verbosity);
+BayesUnfoldingWithCutoff unfolding_proton    (hproton    , hMeasuringTime, hAcceptance_proton    , Trig_proton_noprescaling    , Unfolding_Matrices, MaxMeasuringTime, bayesIterations, verbosity); 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Fig. 4.17:
+ - Lastly: This correction is HUGE. How do you know it is correct? Are
+   there any crosschecks for this in AMS? According to the pbar/p
+   paper (PRL 117, 091103 (2016)), the ratio is 1.15 at 1 GV, in your
+   plot it's closer to 1.30.
+Answer: time_dependent_materials/general_meeting_05.2020/203_HChang_Taiwan.pdf
+See:https://indico.cern.ch/event/924391/attachments/2047390/3432081/203_HChang_Taiwan.pdf page:35
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+657: What is the remaining He background after these cuts?
+Answer:They are removed by TRDHePorotnLikelihood later.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+Fig. 4.25:
+  - The trigger efficiency seems to be rather low. Do you have a
+    crosscheck for the values?
+  See:Proton trigger efficiency: https://arxiv.org/pdf/1402.0467.pdf
+                                 https://indico.cern.ch/event/381134/contributions/900598/attachments/759361/1041628/Choutko_amsdays-2015-proton-a.pdf
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Table 4.4:
+  What kind of secondaries are we dealing with? The cut on the RICH mass implies that only
+  pions are selected. What about kaons?
+  Answer: By showing the mass distribution,  (See:Aachen group meeting PPT:14102020)
+
+  Why not use ECAL to get a clean e- template?
+  Answer: Not only in full span but in Inner tracker. The TRD shape for full span is slightly different from other patterns.
+
+  Why can you use the number of TRD hits? They may be completely unrelated to the tracks in
+  the TRD.
+  Answer:To select the secondaries template, the TRD hits are very useful since the secondaries have different shape with antiprotons and electrons.  
+
+  What is the p/He likelihood cut used for? Is there still He in the sample?
+  Answer:Not very useful but that's what i did, harmless neither.
+
+  Are the same TOF beta and TRD likelihood cuts used for all templates and data? Why? Why
+  list them in the table in the first place?
+  Answer: yes, they are template fit range.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Fig. 4.30: Do these points have arror bars? How do you smooth the curve?
+Answer:No, not smoothed.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Fig. 4.34: I think that the systematic error should not fluctuate from time bin to bin, but a constant value (average) should be used instead.
+Answer: (1).The statistical error is in chapter5.(2).data and templates are time-dependent. Dependent on the data taking, the systematic error due to template fit range should not be constant. 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Bibiliography:
+文章具体格式：
+1. 作者
+2. 标题
+3. 杂志 (斜体)
+4. volume
+5. pages
+6. 月
+7. 年
+8. DOI或者URL
+
+会议具体格式：
+1. 作者
+2. 标题
+3. In(正体) + 杂志 (斜体)
+4. volume + 数字
+5. pages + 数字
+6. 年
+7. DOI或者URL
+
+book具体格式：
+1.作者
+2.书名
+3.页码+数字
+4.出版社
+5.地址
+6.年份
+7.DOI
+
+
+
+待查待修正，非典型格式：
+2,
+3,
+4，
+42,
+76,
+77,
+78,
+84,
+
+
+
+

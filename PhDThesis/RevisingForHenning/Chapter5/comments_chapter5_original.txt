@@ -1,0 +1,149 @@
+
+General comments
+================
+
+- After reading the entire thesis, I feel that more emphasis should be
+  put on the time-dependent results because they are really new, while
+  the ratio has been published in PRL and Phys.Rep. before. But for
+  this, you need more plots specific for the time-dependent analysis:
+  how do the relevant distributions (CC estimator, charges, etc.;
+  template shapes) evolve over time? Are they stable?
+
+- It strikes me as a strange omission that all ingredients needed to
+  calculate the p and pbar fluxes are given in the thesis, but the
+  fluxes are never shown. The pbar/p ratio matches the published one
+  very well. What about the fluxes? If they do not match, this should
+  at least be mentioned in the thesis. A lot of emphasis is put on the
+  measuring time and trigger efficiency, for example, even though they
+  cancel in the ratio. It might be that the delta_p in Eqs. 4.6 and
+  4.12 is different from one, and determining it would mean a
+  substantial amount of work, but this should be discussed in the
+  thesis.
+
+- There are other sources of systematic error discussed in the PRL
+  pbar paper. Even if the effects are not studies in this thesis, they
+  should be mentioned and briefly discussed and the magnitudes
+  compared to the uncertainties studied here.
+  
+
+Fig. 4.28: systematic error from acceptance is 5e-7 at low R,
+Fig. 5.2: pbar/p is 0.01e-3 at low R
+=> relative syst. uncertainty due to acceptance is 5%, yet the
+correction from A_p/A_pbar is 30%. This appears to be a rather
+aggressive error estimation.
+
+
+
+Chapter 5
+=========
+
+1071: cite references
+
+1086: quote period explicitly
+
+I would label the y-axes of the relevant figures in this chapter as
+$\bar{p}/p$, not "Antiproton to Proton ratio" or "Antiproton to Proton
+flux ratio", both to avoid the inconsistency and to keep the labels
+more concise.
+
+Show the pbar/p ratio on a logarithmic scale, too.
+
+Fig. 5.1:
+
+ - remove the lines from the points in the legend
+ - contrary to what you write in the text, there is a difference
+   between the results from the low and intermediate range in the
+   overlap region
+
+Fig. 5.3:
+  - remove the lines from the points in the legend
+  - use the full textwidth for the figure
+  - at low energies, there is a clear systematic deviation. I wonder
+  if the problem might be related to the acceptance correction, which
+  is largest at the lowest energies and whose magnitude is larger in
+  your case than for the AMS analysis.
+
+Fig. 5.4: Also compare to the total stat. and syst. errors from the
+AMS publication.
+
+
+
+Section 5.2: Use the same style (fonts!) for the figures as for section 5.1.
+
+1106: Re-write: "Above 15 GV, no significant modulation effect is
+observed." But you should show some data for >15 GV in Fig. 5.5!
+
+1007-1110: I don't recognize the trends and effect that you describe
+in your plots. Maybe you have to show more energy bins. Or rebin a few
+low-energy bins.
+
+1111: How would you go about that? It seems that your time binning is
+already pushing the limit.
+
+Figs. 5.6, 5.7: These plots make no sense to me: The systematic
+uncertainty should be a constant in time (or a slowly changing curves,
+possibly with jumps due to changes in the detector configuration), but
+they should not fluctuate randomly. Likewise, the statistical error
+may seem to flucutate because it depends on fluctuating event counts,
+but more meaningful is the average level of the (relative!)
+stat. error. So instead of the two figures, you could plot the level
+of the (relatvive!) stat. and syst. errors for the time-dependent
+ratio as a function of rigidity.
+
+Fig. 5.8: This plot serves no purpose, Fig. 5.9. is much more
+relevant. But this is a cross-check of the analysis that belongs to
+Chapter 4. Instead of "merged" you mean "averaged".
+
+1128: Please use a residual plot to show the deviation more
+clearly. Probably a logarithmic y scale for Fig. 5.9 would be
+better. It is strange that the two results do not match exactly.
+
+1146: I don't recognize that the e-/e+ below 3 GV goes up with time,
+only the pbar/p ratio shows this trend.
+
+Fig. 5.10: Keep the style consistent with the other Figures. Remove
+the blue circle around the e-/e+ data points.
+
+It might be worthwhile to discuss these results with an expert on
+solar modulation (Prof. Heber?), to add more weight to the physics
+discussion.
+
+I think you should tabulate your results on pbar/p vs time and
+rigidity in the appendix.
+
+
+Chapter 6
+=========
+
+1160 what is a "high" measurement?
+
+1175: Yes, very good idea, and you found a very nice paper [108],
+which even contains model predictions for the pbar/p ratio as a
+function of time for one rigidity bin. So why don't you overlay data
+from your analysis on their model curve (Figs. 19,20 from [108])? This
+would be a huge benefit for your thesis because it would show that your
+data can be used to test models on a level not possible before.
+
+1185: This is not convincing because, according to Fig. 5.4, the systematic
+uncertainty dominates the total uncertainty at the highest energies.
+
+
+Appendix
+========
+
+This sections also needs careful notation, and do not use technical
+slang like "Log10Chi2TrackerXInner" or "L24L58RigidityMatching".
+
+It would be nice to have on section (variable) per page, with the
+description and the corresponding plot on the same page.
+
+1214: It seems that the chi2 from the inner tracker fit do not really
+help.
+
+1242: I don't think it's a good idea to include the TRD likelihood in
+the charge confusion estimator because you also use it for the
+template fit as an independent variable.
+
+
+Remove list of tables and list of figures. This is a waste of paper.
+

@@ -1,0 +1,68 @@
+\section{Unfolding} \label{unfoldingsection}
+
+%% Reason and Definition of unfolding 
+To calculate the antiproton to proton flux ratio, the number of events should be determined based on the true particle’s rigidity. However, the number of events from the template fits is determined based on the reconstructed rigidity. There are differences between these two rigidities because of the limited tracker resolution. Some events may end up in different rigidity bins, and this effect is called "bin to bin migration". To correct this effect, a procedure called $\textit{unfolding}$ is applied. Due to the different distributions of the number of events for antiproton and proton, this effect is not canceled out in the calculation of antiproton to proton flux ratio. \par
+
+There are several methods to correct this effect and the easiest way is by matrix inversion of the migration matrix:
+
+\begin{equation}
+\label{unfoldingequation}
+\hat{n} = \rm{M} \cdot n
+\end{equation}
+
+where $\hat{n}$ is the unfolded event number which is counted in the true rigidity bin, $n$ is the raw event number which is counted in the measured rigidity bin, and $\rm{M}$ is the migration matrix. The migration matrix is a 2D histogram that is obtained by filling the events in the MC simulation directly. The X axis is the reconstructed rigidity, and the Y axis is the true rigidity generated in the MC.  \par
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.0\textwidth]{Figures/chapter4/Unfolding/MM/{MM_Pattern_0}.pdf}
+\caption[The migration matrix for full span at the high rigidity range for proton MC.]{The migration matrix for full span at the high rigidity range for proton MC events. The X axis is the reconstructed rigidity from the tracker and the Y axis is the true rigidity from the generated momentum in MC.}
+\label{MigrationMatrix}
+\end{figure}
+
+This simple inversion method works but it is not recommended, since it gives large bin-bin correlations and magnifies statistical fluctuations. Therefore, a more complicated method called "Bayesian unfolding" is used in this work. The Bayesian unfolding method is implemented in the "RooUnfold" package in ROOT \cite{UnfoldingInRooUnfold} and is also used in the AMS-02 electron and positron analysis \cite{ZimmermannPhDThesis}. This method applies Bayes’ theorem repeatedly to invert the migration matrix and it gives more reliable results \cite{BayersUnfolding}.
+
+
+%% Migration matrix
+In this analysis, the signals are determined with different selections for different rigidity ranges. Also, for the different tracker patterns, the migration matrices are different due to the different tracker pattern resolutions. In figure \ref{MigrationMatrix}, the migration matrix for full span at the high rigidity range using proton simulated events is given as an example. For illustration, the histogram is normalized by ensuring the sum of probabilities in every projection along the Y axis is 1. From the figure, the diagonal elements of the matrix are the events whose true rigidity matches the reconstructed rigidity, which is the dominant part of the total events. As the rigidity increases, the bin contents of the non-diagonal elements increase too. This is due to the tracker resolution becoming worse in higher rigidity.   \par
+%The migration matrix must be filled using the MC event weights to describe the migration effects of a realistic flux. 
+
+%% MC has no rigidity cutoff. Use the shape of measuring time to correct this.
+As explained in Section \ref{MeasuringTimeSection}, the collected data fulfill the rigidity cut off condition. This cutoff effect is not simulated in the MC simulation process, so it must be taken into account before we use the migration matrix. Therefore, the shape of the measuring time in figure \ref{Measuringtime} is used as a weight for the events under the rigidity cutoff.  \par
+
+%% Underflow and overflow
+%In this analysis, the template fits are performed from 0.8 GV to 525 GV. Due to the overflow and underflow of the migration matrix, the first and last bins are dropped. 
+
+
+%% Compare Raw and unfolded
+In this analysis, the focus is placed on the antiproton to proton ratio. Therefore, the unfolding process has to be performed for the antiproton raw event counts and the proton raw event counts respectively. The antiproton raw event counts are taken from the template fit results, and the proton raw event counts are the event counts after the cuts and selections. In figure \ref{RawUnfoldedNumbersPlot}, the raw and unfolded event counts are given for protons and antiprotons respectively.
+%In figure \ref{RawUnfoldedCom}, the difference between the raw and the unfolded antiproton to proton flux ratio over the unfolded antiproton to proton flux ratio at the high rigidity range is given. The overall correction effect is less than 10\%.
+%  The flux of cosmic rays is steeply falling with energy, which results in much more events at lower rigidities
+% The unfolding process is performed for different tracker patterns individually.
+
+\begin{figure}[htbp]
+    \centering
+    \subfigure[]{
+        \includegraphics[width=1.0\textwidth, height=0.35\textheight ]{Figures/chapter4/Unfolding/RawUnfoldCompare/{NumberPlot_pass78}.pdf} 
+    }
+    %\hspace{-0.9cm}
+    \subfigure[]{
+	\includegraphics[width=1.0\textwidth, height=0.35\textheight ]{Figures/chapter4/Unfolding/RawUnfoldCompare/{ProtonNumberPlot_pass78}.pdf}
+    }
+    \caption[The raw and unfolded events for antiproton and proton.]{The raw and unfolded events for a) antiproton b) proton over rigidity bin width. Different migration matrices are used for different tracker patterns. Due to the different shapes of the raw event distributions for antiproton and proton, this unfolding effect can not cancel strictly.}
+    \label{RawUnfoldedNumbersPlot}
+\end{figure}
+%The first bin is unreliable due to the underflow, therefore it is not included in the time-dependent analysis.
+
+%\begin{figure}[H]
+%\centering
+%\includegraphics[width=1.0\textwidth]{Figures/chapter4/Unfolding/RawUnfoldCompare/{RawUnfoldedRatioCompare_pass7.8}.pdf}
+%\caption{The difference between the raw and the unfolded antiproton to proton flux ratio over the unfolded antiproton to proton flux ratio for full span at the high rigidity range.} 
+%\label{RawUnfoldedCom}
+%\end{figure}
+
+
+
+
+
+
+

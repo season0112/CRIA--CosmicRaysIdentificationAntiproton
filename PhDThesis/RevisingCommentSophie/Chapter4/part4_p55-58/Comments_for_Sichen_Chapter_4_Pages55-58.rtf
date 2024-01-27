@@ -1,0 +1,162 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf610
+{\fonttbl\f0\fnil\fcharset0 Tahoma;\f1\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\csgenericrgb\c0\c0\c100000;\cssrgb\c0\c0\c0;}
+\margl1440\margr1440\vieww12960\viewh12620\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs36 \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf0 4.8. Unfolding
+\f0\b0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+l 986: * Which flux? Maybe you want to say \'93In order to calculate the proton and antiproton cosmic flux\'94?\
+\
+l 986-987: * This \'93Top Of Instrument\'94 is not well defined. You should better not use it because not all the particles reach the detector from the top.\
+ You should either explain it more or better just rewrite the sentence as: \'93
+\f1 the number of events should be determined based on the true particle\'92s rigidity.
+\f0 \'94\
+\
+l 987: 
+\f1 template fit is \'97> the template fits is\
+\
+l 988: \
+- in \'97> based on the\
+-  Remove the word \'93some\'94\
+\
+l 989: other \'97> different\
+\
+l 991: should be \'97> is\
+\
+l 992: estimate \'97> correct for\
+\
+l 993: method is used. The "Bayesian unfolding" [\cf2 99\cf0 ] is provided  by\'97\'97> method [\cf2 99\cf0 ] is used and it is implemented in\
+\
+l 994: * Do not place a gap between a word and the comma and do not place a comma before the word \'93and\'94. \
+PLEASE check and correct all the instances of this mistake.\
+Moreover here you should re-write the sentence as:\
+\pard\pardeftab720\partightenfactor0
+\cf0 in ROOT [\cf2 100\cf0 ] , and the method is also used in AMS-02 electron and positron analysis [\cf2 97\cf0 ] . \'97\'97> in ROOT [\cf2 100\cf0 ] . This method is also used in the AMS-02 electron and positron analysis [\cf2 97\cf0 ] .\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+l 996 - 997: count \'97> counts  (* Correct this in all four instances of the word)\
+\
+l 1001: \
+- the iteration process \'97>  an iterative procedure\
+- migration \'97> the migration\
+\
+l 1004: taken \'97> obtained\
+\
+l 1004: shown in a 2D histogram \'97>  represented as a 2D histogram.\
+\
+l 1005: by the tracker \'97> measured by the tracker\
+\
+l 1005 - 1006: the true generated rigidity simulated in the MC  \'97>   the true rigidity generated in the MC.\
+\
+Figure 4.26: \
+- in high rigidity range \'97\'97> at the high rigidity range for proton MC events.\
+- Tracker, the Y axis\'97> tracker and the Y axis\
+\
+l 1009: \
+- of \'97> for\
+- in high \'97> at the high\
+* You have to define what you mean by \'93high rigidity range\'94. Is it  > 10 GV? And why you do not show the matrix for the whole rigidity range? \
+\
+l 1009 - 1010: is given\'85..MC simulation \'97\'97>  using proton simulated events is given as an example.\
+\
+l 1010: * Define better how you normalize this 2D histogram to unity. You must have used its slices.\
+\
+l 1012 -1013: rewrite as: \'93As the rigidity increases, the bin contents of the non-diagonal elements increase too. \'94  \
+\
+l 1015: Rewrite as: \'93As explained in Section 4.6, the collected data fulfill the rigidity cut off condition.\'94\
+\
+l 1016: fixed \'97> taken into account \
+\
+l 1017: \
+- To consider this, \'97> Therefore,\
+- measuring \'97> the measuring\
+\
+l 1017 -1018: * It is not clear what this weight/shape of the measuring time is. Explain better.\
+\
+l 1019: the focus is  \'97\'97> the focus is placed on \
+\
+l 1020:\
+- done \'97> performed\
+- numbers \'97> event counts  \
+- antiproton \'97 the antiproton\
+- proton \'97> the proton\
+\
+l 1021: template \'97> the template\
+\
+l 1022: \
+* Specify this \'93shown before\'94. Give the section they were shown.\
+- Do not use the word \'93residual\'94. Say that you show the ratio of the difference between the raw and the unfolded event counts over the unfolded event counts. \
+\
+\
+l 1023: \
+- in \'97> at\
+- * What raw and unfolded event counts are shown in Figure 4.27? Are these for proton events, antiproton events or of their ratio? Explain better.\
+\
+l 1024: \'93in the unfolded ratio\'94? What do you mean here? Are you talking about the unfolded antirpoton to proton ratio? It is not clear what events you show in this figure.\
+\
+Figure 4.27:\
+- in high rigidity range \'97> at the high rigidity range\
+* Add a fullstop at the end of the sentence.\
+* Fix the caption based on my earlier comments.\
+\
+\pard\pardeftab720\partightenfactor0
+
+\b \cf0 4.9. Antiproton To Proton Flux Ratio Calculation\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\b0 \cf0 \
+l 1026 -1032: Rewrite as: \'93In this section, the formula used for the calculation of the antiproton to proton flux ratio, which is the objective of this thesis, is given. This formula is based on equation 4.1 that is used for the calculation of cosmic ray fluxes, as well as the equation 4.6 that defines the ratio between the proton and antiproton effective acceptances. All the ingredients needed have been described already in the previous sections. Given the antiproton (\uc0\u934 p_bar(|R|))
+\fs22  
+\fs36 and proton (\uc0\u934 p(|R|)) flux definitions,\
+\
+(Equation 4.11)\
+\
+\pard\pardeftab720\partightenfactor0
+\cf0 the antiproton to proton flux ratio is defined as the antiproton flux divided by the proton flux.\'94\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+l 1032: the procedure of \'97> in the \
+\
+l 1033: \
+- Remove the word \'93in\'94\
+- * Again remove the gap between [97] and the fullstop.\
+\
+Equation 4.12: * You should write the lines 2,3 and 4 of the formula better. Use one continuous line to define the ratio (like you do on the 1st line of the formula), and use \'93dots\'94 to indicate the multiplication between the different terms.\
+Then place in parethensis the (1+ delta_p) terms.\
+\
+l 1035 - 1037: Rewrite as: \'93As shown in equation 4.12 the terms that cancel out in the antirpoton to proton flux ratio are the rigidity bin width, the measuring time, the trigger efficiency and the data/MC corrections of the effective acceptance. These cancellations simplify the calculation of  the antirpoton to proton flux ratio.\'94\
+\
+l 1038: \
+- \cf3 \expnd0\expndtw0\kerning0
+trigger  \'97> the trigger\cf0 \kerning1\expnd0\expndtw0 \
+- \cf3 \expnd0\expndtw0\kerning0
+is canceled out  \'97> cancel out\uc0\u8232 \
+\cf0 \kerning1\expnd0\expndtw0 l 1039: * You did not explain at all how these two are used in the unfolding procedure. \
+\
+l 1041 -1042: Rewrite as: \'93The only difference is that the number of events is obtained from the individual template fits in every Six Bartels Rotation bins\'94.\
+\
+l 1043 \cf3 	
+\b \expnd0\expndtw0\kerning0
+4.10. Systematic Uncertainty
+\b0   \'97\'97> \kerning1\expnd0\expndtw0 	
+\b \expnd0\expndtw0\kerning0
+4.10. Systematic Uncertainties
+\b0 \
+\
+\uc0\u8232 \
+\cf0 \kerning1\expnd0\expndtw0 \
+\
+\
+\
+\
+\
+\
+\
+}

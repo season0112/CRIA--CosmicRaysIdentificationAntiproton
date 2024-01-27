@@ -1,0 +1,8 @@
+# ASDC Cosmic rays database, created 2021-03-16 20:14:10
+#Filename ; Particle ; Mission ; Reference ; Start Date ; Stop Date ; Notes
+pbar_p_AMS_PRL2016_000.xml ; pbar/p ; AMS-02 ; Phys. Rev. Lett. 117 (2016) 091103 ; 2011-05-19T00:00:00 ; 2015-05-26T23:59:59 ;  ; Rigidity__time_min=2011-05-19 00:00:00.0 ; time_max=2015-05-26 23:59:59.9
+pbar_p_PAM_ApJL2011_000.xml ; pbar/p ; PAMELA ; ApJ Letters 737 (2011) L29 ; 2006-07-07T00:00:00 ; 2008-12-31T23:59:59 ; Antiprotons trapped in the inner radiation belt. ; Rigidity__time_min=2006-07-07 00:00:00.0 ; time_max=2008-12-31 23:59:59.9 ; lshell_min=1.1 ; lshell_max=1.3 ; b_min=0.0 ; b_max=0.216
+pbar_p_PAM_JETPlett2013_R_000.xml ; pbar/p ; PAMELA ; JETP Letters 96 (2013) 621-627 ; 2006-06-15T00:00:00 ; 2010-01-27T23:59:59 ;  ; Rigidity__time_min=2006-06-15 00:00:00.0 ; time_max=2010-01-27 23:59:59.9
+pbar_p_PAM_PRL2009_R_000.xml ; pbar/p ; PAMELA ; PRL 102 (2009) 051101 ; 2006-07-07T00:00:00 ; 2008-03-02T23:59:59 ;  ; Rigidity__time_min=2006-07-07 00:00:00.0 ; time_max=2008-03-02 23:59:59.9
+pbar_p_PAM_PRL2010_000.xml ; pbar/p ; PAMELA ; PRL 105 (2010) 121101 ; 2006-07-07T00:00:00 ; 2008-12-31T23:59:59 ;  ; Rigidity__time_min=2006-07-07 00:00:00.0 ; time_max=2008-12-31 23:59:59.9
+T6b_AMS_rev_000.xml ; pbar/p ; AMS-02 ; xxx 0 (2020) 000 ; 2011-05-19T00:00:00 ; 2018-05-28T00:00:00 ;  ; Rigidity__time_min=2011-05-19 00:00:00.0 ; time_max=2018-05-28 00:00:00.0

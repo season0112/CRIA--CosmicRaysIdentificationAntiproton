@@ -1,0 +1,118 @@
+#Example: cookbook init ../AntiprotonHighenergy_MoreMCForCCLevel.cbk --set binningversion=525version,cluster=HPC
+binningversion=NONE
+cluster=NONE
+
+
+[interactive]
+    some set up.
+    command:cd $HPCHIGHENERGYDATADIR; mkdir -p B1220_pr.pl1ph.021000_7.8_all_525version/positive; mkdir -p B1220_pr.pl1ph.021000_7.8_all_525version/negative; mkdir -p B1220_pr.pl1phpsa.l19.5016000.4_00_7.8_all_525version/positive/reduced_root; mkdir -p B1220_pr.pl1phpsa.l19.5016000.4_00_7.8_all_525version/positive/finebinroot; mkdir -p B1220_pr.pl1phpsa.l19.5016000.4_00_7.8_all_525version/negative;
+
+
+#### Write Tree
+## Set one: B1220_pr.pl1ph.021000_7.8
+[acqt]
+    Write MC B1220_pr.pl1ph.021000_7.8 proton (Positive) for CCLevel (525version) 
+    job:ExampleAnalysisTreeWriter
+    filelist:$MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1220_pr.pl1ph.021000_7.8_all/B1220_pr.pl1ph.021000_7.8_all.list
+    args:--partition c18m --mpi --mpi_nodes 1 --njobs 1000 --timelimit 23:00 --arguments '--McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1220_pr.pl1ph.021000_7.8_all/mcScalingWeights.root --particleID Proton --SignOfRigidity Positive --BinningVersion 525version'
+    directory: $HPCHIGHENERGYDATADIR/B1220_pr.pl1ph.021000_7.8_all_525version/positive
+    nexpected_per_process: 2
+
+[acqt]
+    Write MC B1220_pr.pl1ph.021000_7.8 proton (Negative) for CCLevel (525version)
+    job:ExampleAnalysisTreeWriter
+    filelist:$MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1220_pr.pl1ph.021000_7.8_all/B1220_pr.pl1ph.021000_7.8_all.list
+    args:--partition c18m --mpi --mpi_nodes 1 --njobs 1000 --timelimit 23:00 --arguments '--McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1220_pr.pl1ph.021000_7.8_all/mcScalingWeights.root --particleID Proton --SignOfRigidity Negative --BinningVersion 525version'
+    directory: $HPCHIGHENERGYDATADIR/B1220_pr.pl1ph.021000_7.8_all_525version/negative
+    nexpected_per_process: 2
+
+## Set two: B1220_pr.pl1phpsa.l19.5016000.4_00_7.8_merged
+[acqt]
+    Write MC B1220_pr.pl1phpsa.l19.5016000.4_00_7.8_merged proton (Positive) for CCLevel (525version)
+    job:ExampleAnalysisTreeWriter
+    filelist:$MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1220_pr.pl1phpsa.l19.5016000.4_00_7.8_merged/B1220_pr.pl1phpsa.l19.5016000.4_00_7.8_merged.list
+    args:--partition c18m --mpi --mpi_nodes 1 --njobs 1000 --timelimit 23:00 --arguments '--McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1220_pr.pl1phpsa.l19.5016000.4_00_7.8_merged/mcScalingWeights.root --particleID Proton --SignOfRigidity Positive --BinningVersion 525version'
+    directory: $HPCHIGHENERGYDATADIR/B1220_pr.pl1phpsa.l19.5016000.4_00_7.8_all_525version/positive
+    nexpected_per_process: 2
+
+[acqt]
+    Write MC B1220_pr.pl1phpsa.l19.5016000.4_00_7.8_merged proton (Negative) for CCLevel (525version)
+    job:ExampleAnalysisTreeWriter
+    filelist:$MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1220_pr.pl1phpsa.l19.5016000.4_00_7.8_merged/B1220_pr.pl1phpsa.l19.5016000.4_00_7.8_merged.list
+    args:--partition c18m --mpi --mpi_nodes 1 --njobs 1000 --timelimit 23:00 --arguments '--McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/${cluster}/B1220_pr.pl1phpsa.l19.5016000.4_00_7.8_merged/mcScalingWeights.root --particleID Proton --SignOfRigidity Negative --BinningVersion 525version'
+    directory: $HPCHIGHENERGYDATADIR/B1220_pr.pl1phpsa.l19.5016000.4_00_7.8_all_525version/negative
+    nexpected_per_process: 2
+
+
+#### Merge 
+[interactive]
+    Merge MC B1220_pr.pl1ph.021000_7.8 proton positive result ROOT files
+    command:ac_merge --input $HPCHIGHENERGYDATADIR/B1220_pr.pl1ph.021000_7.8_all_525version/positive/results/ExampleAnalysis_Tree_*.root --resultprefix B1220_pr.pl1ph.021000_7.8_all_Tree_positive --resultdir $HPCHIGHENERGYDATADIR
+
+[interactive]
+    Merge MC B1220_pr.pl1ph.021000_7.8 proton negative result ROOT files
+    command:ac_merge --input $HPCHIGHENERGYDATADIR/B1220_pr.pl1ph.021000_7.8_all_525version/negative/results/ExampleAnalysis_Tree_*.root --resultprefix B1220_pr.pl1ph.021000_7.8_all_Tree_negative --resultdir $HPCHIGHENERGYDATADIR
+
+[generic]
+    Merge MC B1220_pr.pl1phpsa.l19.5016000.4_00_7.8 proton positive result ROOT files
+    job: ac_merge
+    args: --partition c18m --argument "--input $HPCHIGHENERGYDATADIR/B1220_pr.pl1phpsa.l19.5016000.4_00_7.8_all_525version/positive/results/ExampleAnalysis_Tree_*.root --resultprefix B1220_pr.pl1phpsa.l19.5016000.4_00_7.8_all_Tree_positive --resultdir $HPCHIGHENERGYDATADIR"
+    nmin: 0
+    nmax: 0
+
+[generic]
+    Merge MC B1220_pr.pl1phpsa.l19.5016000.4_00_7.8 proton negative result ROOT files
+    job: ac_merge
+    args: --partition c18m --argument "--input $HPCHIGHENERGYDATADIR/B1220_pr.pl1phpsa.l19.5016000.4_00_7.8_all_525version/negative/results/ExampleAnalysis_Tree_*.root --resultprefix B1220_pr.pl1phpsa.l19.5016000.4_00_7.8_all_Tree_negative --resultdir $HPCHIGHENERGYDATADIR"
+    nmin: 0
+    nmax: 0
+
+
+#### Split
+[generic]
+    Split B1220_pr.pl1ph.021000_7.8 proton positive data in Rigidity
+    job: $MY_ANALYSIS/Scripts/HPC/others/PositiveData_Split_NoMPIMerge.py
+    args: --partition c18m --arguments '--path $HPCHIGHENERGYDATADIR/ --rigidityrange highrange --rigiditystart 27 --rigidityend 58 --inputfile B1220_pr.pl1ph.021000_7.8_all_Tree_positive.root --datamode MC --rigiditysign positive' --timelimit 23:00
+    nmin: 0
+    nmax: 0
+
+[generic]
+    Split B1220_pr.pl1ph.021000_7.8 proton negative data in Rigidity.
+    job: $MY_ANALYSIS/Scripts/HPC/others/NegativeData_Split_NoMPIMerge.py
+    args: --partition c18m --arguments '--cluster ${cluster} --rigidityrange highrange --datamode MC --data B1220_pr.pl1ph.021000_7.8_all_Tree_negative --Rigidity_start 26 --Rigidity_end 57' --timelimit 23:00
+    nmin: 0
+    nmax: 0
+
+[generic]
+    Merge mpi split index of B1220_pr.pl1phpsa.l19.5016000.4_00_7.8 Proton Tree
+    job: ac_merge
+    args: --partition c18m --arguments '--input $HPCHIGHENERGYDATADIR/B1220_pr.pl1phpsa.l19.5016000.4_00_7.8_all_525version/positive/results/ExampleAnalysis_Tree_%05d_* --resultdir $HPCHIGHENERGYDATADIR/B1220_pr.pl1phpsa.l19.5016000.4_00_7.8_all_525version/positive/results/reduced_root/ --resultprefix ExampleAnalysis_Tree_%05d'
+    nmin: 0
+    nmax: 73
+
+[joblist]
+    Split B1042 Proton positive data in Rigidity
+    job: $MY_ANALYSIS/Scripts/HPC/others/PositiveData_Split_WithMPIMerge.py
+    args: --partition c18m --arguments '--path $HPCHIGHENERGYDATADIR/B1220_pr.pl1phpsa.l19.5016000.4_00_7.8_all_525version/positive/results/reduced_root --rigidityrange highrange --rigiditystart 27 --rigidityend 58 --inputfile %s --datamode MC --rigiditysign positive'
+    jobs_from: $HPCHIGHENERGYDATADIR/B1220_pr.pl1phpsa.l19.5016000.4_00_7.8_all_525version/positive/results/reduced_root/
+
+[generic]
+    Final merge for B1042 Proton positive data
+    job: $MY_ANALYSIS/Scripts/HPC/others/Finalmerge.sh
+    args: --partition c18m --memory 100 --timelimit 23:00 --arguments '$HPCHIGHENERGYDATADIR highrange 27 58 B1220_pr.pl1phpsa.l19.5016000.4_00_7.8_all_525version positive'
+    nmin: 0
+    nmax: 0
+
+[interactive]
+    Rename B1220_pr.pl1ph.021000_7.8 proton positive 
+    command: cd $HPCHIGHENERGYDATADIR; rename B1220_pr.pl1phpsa.l19.5016000.4_00_7.8_all_525version_Tree_positive_ B1220_pr.pl1phpsa.l19.5016000.4_00_7.8_all_Tree_positive_ *
+
+
+[generic]
+    Split B1220_pr.pl1phpsa.l19.5016000.4_00_7.8 proton negative data in Rigidity.
+    job: $MY_ANALYSIS/Scripts/HPC/others/NegativeData_Split_NoMPIMerge.py
+    args: --partition c18m --arguments '--cluster ${cluster} --rigidityrange highrange --datamode MC --data B1220_pr.pl1phpsa.l19.5016000.4_00_7.8_all_Tree_negative --Rigidity_start 26 --Rigidity_end 57' --timelimit 23:00
+    nmin: 0
+    nmax: 0
+
+

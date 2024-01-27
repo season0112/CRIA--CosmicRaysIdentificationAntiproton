@@ -1,0 +1,110 @@
+
+\section{Charge Confusion Estimator} \label{chargeconfusion}
+
+%% CCprotons (CC reason: see https://s3.cern.ch/inspire-prod-files-7/71c48c76263c1f7bee2621c779ba3320)
+"Charge Confused Protons" is defined as protons that are misconstructed with opposite rigidity signs. The first reason for it is the finite rigidity resolution. In figure \ref{TrackerResolutions}, the AMS-02 tracker resolution is shown. With the resolution getting worse, the more likely rigidity sign to be constructed wrongly. The second reason is the interactions with the AMS sub-detectors: the particle scattering can produce kinks in the trajectory and spurious hits close to the particle track, which confuse the tracker fit and result in an opposite rigidity sign. The charge confused protons can mimic the behavior of charge correct antiprotons. Therefore, the charge confused protons can go into the antiproton signal ranges when determining the antiprotons. With the rigidity going up, the number of events of wrongly reconstructed protons increases dramatically. In the high rigidity range, the largest background for the antiproton signal is the charge confused protons. \par    
+
+%747: noise/spurious hits close to the particle track ...
+
+%To estimate the background of antiprotons in the high rigidity range, the figure \ref{Background Composition} shows the percentage of antiprotons in the ISS data. In the high rigidity range, we could see that charge confused protons mostly dominate the ISS negative rigidity data.
+%\begin{figure}[h]   
+%\centering
+%\%includegraphics[width=1.00\textwidth]{Figures/chapter4/ChargeConfusion/BackgroundComposition.pdf}
+%\caption{Background Composition}
+%\label{Background Composition}
+%\end{figure}
+
+%% Supervised Training 
+To solve this problem, the machine learning technique is used. The separation of antiproton signals and charge confused protons depends on the sign of rigidity. Since there are only two possible categories: positive rigidity and negative rigidity, the case falls into a binary classification. After checking the data/MC matching, the proton MC simulation data can be used in this learning process. Therefore, it is a supervised binary classification process. \par   
+
+%% CC variables And Training Templates
+To train the charge confusion classifier estimator, variables containing relevant information should be used. In this analysis, 16 variables from the sub-detectors are used for training. Most variables are from the tracker, and the others are from the TOF and the TRD. These variables are constructed by summarising the characteristics of charge confused proton events and have also been used in previous AMS-02  antiproton analyses \cite{AMS02AntiprotonPRL2016}. \par
+
+The training samples are taken from proton MC simulation. By selecting the negative rigidity events from proton MC data in the absolute rigidity range above 14 GV, the charge confused protons can be obtained. Below 14 GV the dominant background is secondary interactions and the contribution of charge confused proton is small. Since the antiproton and proton have only different charges, the antiproton's behavior in sub-detectors is assumed to be the same as the proton's, but only the rigidity sign is opposite. The charge correct antiproton samples can be replaced by charge correct proton samples but with opposite rigidity signs. \par
+
+In figure \ref{mostimportantCCvariables}, the four most important variables and their responses are given as examples to illustrate the information provided in order to separate the charge correct signal and the charge confused background. The importance of variables is identified by TMVA \cite{TMVA2009} during training. In the appendix, the complete list of the rest 12 variables and their definitions are shown. \par
+% variables for the example energy bin 17.98 – 18.99 GeV - identified by TMVA [TMVA2007] during training - out of the 15 relevant for the single-track sample are presented - the remaining nine variables are described in Appendix A.2. ----Niko
+
+\begin{figure}[hp]
+    \centering
+    \subfigure[]{
+    	\includegraphics[width=0.51\textwidth, height=0.24\textheight]{Figures/appendix/appendixA/{proton_330_525_to_330_525_L1L9RigidityMatching_5_Logy_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0}.pdf}}
+	\hspace{-1cm}    
+	\vspace{-0.3cm}   
+    \subfigure[]{
+	\includegraphics[width=0.51\textwidth, height=0.24\textheight]{Figures/appendix/appendixA/{proton_330_525_to_330_525_RigidityAsymmetry_1_Logy_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0}.pdf}}
+    \subfigure[]{
+        \includegraphics[width=0.51\textwidth, height=0.24\textheight]{Figures/appendix/appendixA/{proton_330_525_to_330_525_Chi2TrackerYAsymmetry_3_Logy_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0}.pdf}}
+	\hspace{-1cm}    
+	\vspace{-0.3cm}   
+    \subfigure[]{
+	\includegraphics[width=0.51\textwidth, height=0.24\textheight]{Figures/appendix/appendixA/{proton_330_525_to_330_525_InnerMaxSpanRigidityMatching_4_Logy_B1042_pr.pl1.flux.l1a9.2016000_7.6_all_Tree_Pattern_0}.pdf}}
+    \caption[Four most important input variables for charge confusion.]{Four most important input variables used for training $\Lambda_{\rm{CC}}$: a) $\bm{\Gamma_{\rm{L1L9}}}$ b) $\bm{\delta_{R}}$ c) $\bm{\delta_{\chi^2\rm{y}}}$ d) $\bm{\Gamma_{\rm{Inner}}}$ in the reconstructed rigidity bin of 330 to 525 GV in fullspan tracker pattern. The histograms are taken from proton MC simulation, the points are taken from ISS data. Charge correct samples are obtained by selecting positive rigidity. Since in this rigidity range, the ISS negative rigidity data is overwhelmingly dominant by charge confused protons, charge confused sample can simply be obtained by selecting negative rigidity. The distribution for the charge correct antiprotons is shown in blue while the distribution for the charge confused protons in red. Slight difference between MC and ISS data is observed in $\bm{\Gamma_{\rm{Inner}}}$, but since the output shapes of the MVA match well as we can see later, this impact is small.}
+    \label{mostimportantCCvariables}
+\end{figure}
+
+The definitions of the four variables are given here: 
+
+% Start: comment out
+\begin{comment}
+\begin{itemize}
+\item[1] 
+\textbf{L1L9RigidityMatching} = $\rm 100 \cdot \left [ \left ( \frac{1.0}{RigidityInnerL1}  \right )- \left (\frac{1.0}{RigidityInnerL9} \right ) \right] \cdot \frac{R}{|R|}$. The RigidityInnerL1 and RigidityInnerL9 have been defined in the previous value. 
+\item[2]
+\textbf{RigidityAsymmetry} = $\rm { \frac{RigidityInnerL1-RigidityInnerL9}{RigidityInnerL1+RigidityInnerL9}} $. The RigidityInnerL1 is the rigidity reconstructed with only the hits in the inner tracker layers and tracker layer 1. The RigidityInnerL9 is the rigidity reconstructed with only the hits in the inner tracker layers and tracker layer 9.                    
+\item[3]
+\textbf{Chi2TrackerYAsymmetry} = $\rm \frac{Chi2TrackerYInner-Chi2TrackerY}{Chi2TrackerYInner+Chi2TrackerY}$. The Chi2TrackerYInner is the Chi2 of the Y side tracker track fitting only from the inner tracker layers. The Chi2TrackerY is the Chi2 of the Y side tracker track fitting from all the tracker layers.     
+\item[4]
+\textbf{InnerMaxSpanRigidityMatching} = $\rm 100 \cdot \left [ \left ( \frac{1.0}{RigidityInner}  \right )- \left (\frac{1.0}{Rigidity} \right ) \right] \cdot \frac{R}{|R|}$. The RigidityInner is the rigidity reconstructed only with the hits in the inner tracker layers. The Rigidity is the rigidity reconstructed with the hits in all the tracker layers.      
+\end{itemize}
+\end{comment}
+% End: comment out  
+
+\begin{itemize}
+\item[1] % L1L9RigidityMatching
+$\bm{\Gamma_{\rm{L1L9}}}$ = $100 \cdot  \left ( \frac{1}{R_{\rm{Inner+L1}}}  - \frac{1}{R_{\rm{Inner+L9}}} \right )  \cdot \frac{R}{|R|}$. $R_{\rm{Inner+L1}}$ is the rigidity reconstructed using only the hits in the inner tracker layers and tracker layer 1. $R_{\rm{Inner+L9}}$ is the rigidity reconstructed using only the hits in the inner tracker layers and tracker layer 9. $R$ is the rigidity reconstructed with the hits in all the tracker layers.  
+\item[2] % RigidityAsymmetry
+$\bm{\delta_{R}}$ = $\frac{R_{\rm{Inner+L1}} - R_{\rm{Inner+L9}}}{R_{\rm{Inner+L1}} + R_{\rm{Inner+L9}}}$. $R_{\rm{Inner+L1}}$, $R_{\rm{Inner+L9}}$ and $R$ have been defined in previous item.
+\item[3] % Chi2TrackerYAsymmetry
+$\bm{\delta_{\chi^2\rm{y}}}$ = $\rm \frac{\chi^2_{\rm{y}_{Inner}} - \chi^2_{\rm{y}}}{\chi^2_{\rm{y}_{Inner}} + \chi^2_{\rm{y}}}$. The $\chi^2_{\rm{y}_{Inner}}$ is the $\chi^2$ of the Y side tracker track fitting only from the inner tracker layers. The $\chi^2_{\rm{y}}$ is the $\chi^2$ of the Y side tracker track fitting from all the tracker layers.                    
+\item[4] % InnerMaxSpanRigidityMatching
+$\bm{\Gamma_{\rm{Inner}}}$ = $ 100 \cdot  \left ( \frac{1}{R_{\rm{Inner}}}  - \frac{1}{R} \right )  \cdot \frac{R}{|R|}$. $R_{\rm{Inner}}$ is the rigidity reconstructed only with the hits in the inner tracker layers. $R$ has been already defined earlier.
+\end{itemize}
+
+%% Data MC agreement
+As we see in Figure \ref{mostimportantCCvariables}, the data and MC have similar distributions. This is important for further steps. The estimator training process is based on MC data. In order to make sure the trained estimator is applicable to data, the distributions of MC and data have to match each other.  \par 
+
+%% Charge correct and charge confused events different response.
+All the input variables contain information about the differences between the signal and background. From the figure, the differences between signal distribution and background distribution are easy to observe. Due to the particle interaction with the AMS detector, the produced kinks in certain layers may confuse the tracker fit and lead to different rigidity values from the different tracker fits, also the $\chi^2$/ndf is worse. These are the reasons for the differences in the figure. These differences are used for the further training process. \par
+
+%%  TMVA && Neural Network Training 
+In the TMVA framework, there are different training methods provided, like Boosted Decision Tree (BDT), Support Vector Machine (SVM), Gradient Tree Boosting (GTB), or the Likelihood method. To achieve the best separation performance, all the methods have been tried to get the best separation power. In this analysis, the Boosted Decision Tree (BDT) is used as the default method since it provides the best separation between signal and background. \par
+
+The proton MC data is divided into positive rigidity sign and negative rigidity sign parts with the same amount of events. Each part is divided into a training sample, a validation sample and a test sample with a ratio of 6:3:1. The training is done in the same rigidity binning as the one used for antiproton to proton flux ratio, but only above 14.1 GV, since charge confusion protons are only dominant in the high rigidity range. To avoid overtraining, the training process requires that the response to the training sample should be the same as the response to the validation sample. \par       
+
+
+%% CC Estimator Separation And Rejection Power
+After training, the $\textit{charge confusion estimator}$ ${\Lambda_{\rm{CC}}}$ is obtained. In figure \ref{MLSeperation}, the separation between the charge correct antiproton signal and the charge confused proton background in an example rigidity bin of 259-330 GV can be seen. The peak at 1 indicates the charge correct events and the peak at 0 the charge confused events. By setting a cut on $\Lambda_{\rm{CC}}$, the charge correct antiproton sample can be obtained. But in this way, a part of the antiproton signal will be lost and some background events will contaminate the signal. Therefore, a template fit method is required to obtain the signal numbers precisely. This will be shown in Section \ref{TempalteFitSection}. In figure \ref{CCRejectionPower}, the rejection power in this rigidity bin is shown. The rejection power is defined as the inverse ratio of charge confused events at different charge correct event efficiency ranges.   
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.9\textwidth, height=0.42\textheight]{Figures/chapter4/ChargeConfusion/CCEstimator/{CorrectAndConfused_1D_Logy_259_330_binnumber_30_CCCut_0.20_CCN_20_TRDN_20_InROOT}.pdf}
+\caption[The charge confusion estimator.]{The charge confusion estimator ${\Lambda_{\rm{CC}}}$ for charge correct antiprotons (blue) and charge confused protons (red) in rigidity bin of 259 to 330 GV, histograms are taken from MC and points are taken from ISS data. MC and Data distributions match well.}
+\label{MLSeperation}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth, height=0.42\textheight]{Figures/chapter4/ChargeConfusion/RejectionPower/{RejectionPower259_330_binnumber_30_CCCut_0.00_CCN_20_TRDN_20_InROOT}.pdf}
+\caption[The background rejection power of charge confusion estimator.]{The background rejection power of charge confusion estimator ${\Lambda_{\rm{CC}}}$ in the rigidity bin of 259 to 330 GV.}
+\label{CCRejectionPower}
+\end{figure}
+
+
+
+
+
+
+
+
+

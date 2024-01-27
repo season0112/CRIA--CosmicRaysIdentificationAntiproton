@@ -1,0 +1,564 @@
+#Example: cookbook init AntiprotonLowrange.cbk --set TRDEfficiency=0.90
+TRDEfficiency=NONE # default: TRDEfficiency=0.90, could try 0.8, 0.95
+
+##########################################################################################
+
+
+#### 1. Tree Writer
+[interactive]
+    Some set up
+    command: mkdir -p $HPCLOWENERGYDIR; cd $HPCLOWENERGYDIR; mkdir -p B1042_antipr.pl1.1800_7.6_all/negative; mkdir -p B1042_pr.pl1.1800_7.6_all/positive; mkdir -p B1042_pr.pl1.1800_7.6_all/negative; mkdir -p B1091_el.pl1.0_25200_7.6_all/negative/results/reduced_root; mkdir -p B1091_el.pl1.0_25200_7.6_all/negative/results/finebinroot; mkdir -p B1128_d.pl1ph.021000_7.6_all/positive; mkdir -p B1130_pass7_7.8_all/positive; mkdir -p B1130_pass7_7.8_all/positive/results/reduced_root; mkdir -p B1130_pass7_7.8_all/positive/results/finebinroot; mkdir -p B1130_pass7_7.8_all/negative/results/reduced_root; mkdir -p B1130_pass7_7.8_all/negative/results/finebinroot; mkdir -p B1220_pr.pl1phpsa.0550.4_00_7.8_all/negative; mkdir -p B1220_pr.pl1phpsa.0550.4_00_7.8_all/positive; mkdir -p totalall/Time_Averaged_ratio_Low/plots; mkdir -p totalall/Time_Averaged_ratio_Low/binmerge1/plots; mkdir -p totalall/Time_Averaged_ratio_Low/binmerge2/plots; mkdir -p totalall/Time_Averaged_ratio_Low/binmerge1/tof; mkdir -p totalall/Time_Averaged_ratio_Low/binmerge2/tof; mkdir -p totalall/Trd_RichBeta_Cut; mkdir -p totalall/Unfolding_Matrices; mkdir -p totalall/numpyfiles/negative; mkdir -p totalall/numpyfiles/positive; mkdir -p totalall/numpyfiles_6months/positive; mkdir -p totalall/numpyfiles_6months/negative; mkdir -p totalall/rootfiles/negative; mkdir -p totalall/rootfiles/positive; mkdir -p totalall/rootfiles_6months/positive; mkdir -p totalall/rootfiles_6months/negative; mkdir -p totalall/results/plot/Polarplot; 
+
+[acqt]
+    Write B1042 Antiproton tree for the analysis
+    job: AntiprotonLowEnergyTreeWriter
+    filelist:$MY_ANALYSIS/ReferenceFiles/ACQTfile/HPC/B1042_antipr.pl1.1800_7.6_all/B1042_antipr.pl1.1800_7.6_all.list
+    args:--partition c18m --mpi --mpi_nodes 1 --njobs 1000 --timelimit 3:00 --mpi_cores_per_node 24 --arguments '--McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/HPC/B1042_antipr.pl1.1800_7.6_all/mcScalingWeights.root --particleID Antiproton --SignOfRigidity Negative --BinningVersion 525version' 
+    directory: $HPCLOWENERGYDIR/B1042_antipr.pl1.1800_7.6_all/negative/
+    nexpected_per_process: 2
+
+[acqt]
+    Write B1042 Proton tree (Positive) for the analysis
+    job: AntiprotonLowEnergyTreeWriter
+    filelist:$MY_ANALYSIS/ReferenceFiles/ACQTfile/HPC/B1042_pr.pl1.1800_7.6_all/B1042_pr.pl1.1800_7.6_all.list
+    args:--partition c18m --mpi --mpi_nodes 1 --njobs 1000 --timelimit 3:00 --mpi_cores_per_node 12 --arguments '--McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/HPC/B1042_pr.pl1.1800_7.6_all/mcScalingWeights.root --particleID Proton --SignOfRigidity Positive --BinningVersion 525version' 
+    directory: $HPCLOWENERGYDIR/B1042_pr.pl1.1800_7.6_all/positive/
+    nexpected_per_process: 2
+
+[acqt]
+    Write B1042 Proton tree (Negative) for the analysis
+    job: AntiprotonLowEnergyTreeWriter
+    filelist:$MY_ANALYSIS/ReferenceFiles/ACQTfile/HPC/B1042_pr.pl1.1800_7.6_all/B1042_pr.pl1.1800_7.6_all.list
+    args:--partition c18m --mpi --mpi_nodes 1 --njobs 1000 --timelimit 3:00 --mpi_cores_per_node 12 --arguments '--McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/HPC/B1042_pr.pl1.1800_7.6_all/mcScalingWeights.root --particleID Proton --SignOfRigidity Negative --BinningVersion 525version'
+    directory: $HPCLOWENERGYDIR/B1042_pr.pl1.1800_7.6_all/negative/
+    nexpected_per_process: 2
+
+[acqt]
+    Write Electron tree for the analysis
+    job: AntiprotonLowEnergyTreeWriter
+    filelist:$MY_ANALYSIS/ReferenceFiles/ACQTfile/HPC/B1091_el.pl1.0_25200_7.6_all/B1091_el.pl1.0_25200_7.6_all.list
+    args:--partition c18m --mpi --mpi_nodes 1 --njobs 1000 --timelimit 23:00 --mpi_cores_per_node 24 --arguments '--McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/HPC/B1091_el.pl1.0_25200_7.6_all/mcScalingWeights.root --particleID Electron --SignOfRigidity Negative --BinningVersion 525version'
+    directory: $HPCLOWENERGYDIR/B1091_el.pl1.0_25200_7.6_all/negative/
+    nexpected_per_process: 2
+
+[acqt]
+    Write B1220 Proton Negative tree (Pion) for the analysis
+    job: AntiprotonLowEnergyTreeWriter
+    filelist:$MY_ANALYSIS/ReferenceFiles/ACQTfile/HPC/B1220_pr.pl1phpsa.0550.4_00_7.8_all/B1220_pr.pl1phpsa.0550.4_00_7.8_all.list
+    args:--partition c18m --mpi --mpi_nodes 1 --njobs 1000 --timelimit 23:00 --mpi_cores_per_node 12 --arguments '--McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/HPC/B1220_pr.pl1phpsa.0550.4_00_7.8_all/mcScalingWeights.root --particleID Proton --SignOfRigidity Negative --BinningVersion 525version' 
+    directory: $HPCLOWENERGYDIR/B1220_pr.pl1phpsa.0550.4_00_7.8_all/negative/
+    nexpected_per_process: 2
+
+[acqt]
+    Write B1220 Proton Positive tree for the analysis
+    job: AntiprotonLowEnergyTreeWriter
+    filelist:$MY_ANALYSIS/ReferenceFiles/ACQTfile/HPC/B1220_pr.pl1phpsa.0550.4_00_7.8_all/B1220_pr.pl1phpsa.0550.4_00_7.8_all.list
+    args:--partition c18m --mpi --mpi_nodes 1 --njobs 1000 --timelimit 23:00 --mpi_cores_per_node 12 --arguments '--McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/HPC/B1220_pr.pl1phpsa.0550.4_00_7.8_all/mcScalingWeights.root --particleID Proton --SignOfRigidity Positive --BinningVersion 525version'
+    directory: $HPCLOWENERGYDIR/B1220_pr.pl1phpsa.0550.4_00_7.8_all/positive/
+    nexpected_per_process: 2
+
+[acqt]
+    Write ISS negaitve tree for the analysis
+    job: AntiprotonLowEnergyTreeWriter
+    filelist:$MY_ANALYSIS/ReferenceFiles/ACQTfile/HPC/B1130_pass7_7.8_all/B1130_pass7_7.8_all.list
+    args:--partition c18m --mpi --mpi_nodes 1 --njobs 1000 --timelimit 23:00 --mpi_cores_per_node 38 --arguments '--particleID ISS --SignOfRigidity Negative --BinningVersion 525version' 
+    directory: $HPCLOWENERGYDIR/B1130_pass7_7.8_all/negative/
+    nexpected_per_process: 2
+
+[acqt]
+    Write ISS positive tree for the analysis
+    job: AntiprotonLowEnergyTreeWriter
+    filelist:$MY_ANALYSIS/ReferenceFiles/ACQTfile/HPC/B1130_pass7_7.8_all/B1130_pass7_7.8_all.list
+    args:--partition c18m --mpi --mpi_nodes 1 --njobs 1000 --timelimit 23:00 --mpi_cores_per_node 38 --arguments '--particleID ISS --SignOfRigidity Positive --BinningVersion 525version' 
+    directory: $HPCLOWENERGYDIR/B1130_pass7_7.8_all/positive/
+    nexpected_per_process: 2
+
+
+#### 2. Merge Tree
+[generic]
+    Merge B1042 Antiproton NegativeTree
+    job: ac_merge
+    args: --partition c18m --argument "--input $HPCLOWENERGYDIR/B1042_antipr.pl1.1800_7.6_all/negative/results/AntiprotonLowEnergy_Tree_* --resultprefix B1042_antipr.pl1.1800_7.6_all_Tree --resultdir $HPCLOWENERGYDIR/"
+    nmin: 0
+    nmax: 0
+
+[generic]
+    Merge B1042 Proton Positive Tree
+    job: ac_merge
+    args: --partition c18m --argument "--input $HPCLOWENERGYDIR/B1042_pr.pl1.1800_7.6_all/positive/results/AntiprotonLowEnergy_Tree_* --resultprefix B1042_pr.pl1.1800_7.6_all_Tree_positive --resultdir $HPCLOWENERGYDIR/"
+    nmin: 0
+    nmax: 0
+
+[generic]
+    Merge B1042 Proton Negative Tree
+    job: ac_merge
+    args: --partition c18m --argument "--input $HPCLOWENERGYDIR/B1042_pr.pl1.1800_7.6_all/negative/results/AntiprotonLowEnergy_Tree_* --resultprefix B1042_pr.pl1.1800_7.6_all_Tree_negative --resultdir $HPCLOWENERGYDIR/"
+    nmin: 0
+    nmax: 0
+
+[generic]
+    Merge Electron Negative Tree
+    job: ac_merge
+    args: --partition c18m --argument "--input $HPCLOWENERGYDIR/B1091_el.pl1.0_25200_7.6_all/negative/results/AntiprotonLowEnergy_Tree_* --resultprefix B1091_el.pl1.0_25200_7.6_all_Tree --resultdir $HPCLOWENERGYDIR/" --timelimit 23:00
+    nmin: 0
+    nmax: 0
+
+[generic]
+    Merge ISS negative Tree part1
+    job: ac_merge
+    args: --partition c18m --argument "--input $HPCLOWENERGYDIR/B1130_pass7_7.8_all/negative/results/AntiprotonLowEnergy_Tree_00[0-4]*.root --resultprefix B1130_pass7_7.8_all_Tree_negative_part1 --resultdir $HPCLOWENERGYDIR/" --timelimit 23:00
+    nmin: 0
+    nmax: 0
+
+[generic]
+    Merge ISS negative Tree part2
+    job: ac_merge
+    args: --partition c18m --argument "--input $HPCLOWENERGYDIR/B1130_pass7_7.8_all/negative/results/AntiprotonLowEnergy_Tree_00[5-9]*.root --resultprefix B1130_pass7_7.8_all_Tree_negative_part2 --resultdir $HPCLOWENERGYDIR/" --timelimit 23:00
+    nmin: 0
+    nmax: 0
+
+[interactive]
+    Merge all ISS data negative tree.
+    command: ac_merge --input $HPCLOWENERGYDIR/B1130_pass7_7.8_all_Tree_negative_part1.root $HPCLOWENERGYDIR/B1130_pass7_7.8_all_Tree_negative_part2.root --resultprefix B1130_pass7_7.8_all_Tree_negative --resultdir $HPCLOWENERGYDIR
+
+[generic]
+    Merge B1220 Negative (Pion) Tree
+    job: ac_merge
+    args: --partition c18m --argument "--input $HPCLOWENERGYDIR/B1220_pr.pl1phpsa.0550.4_00_7.8_all/negative/results/AntiprotonLowEnergy_Tree_* --resultprefix B1220_pr.pl1phpsa.0550.4_00_7.8_all_Tree_negative --resultdir $HPCLOWENERGYDIR"
+    nmin: 0
+    nmax: 0
+
+[generic]
+    Merge B1220 Positive Tree
+    job: ac_merge
+    args: --partition c18m --argument "--input $HPCLOWENERGYDIR/B1220_pr.pl1phpsa.0550.4_00_7.8_all/positive/results/AntiprotonLowEnergy_Tree_* --resultprefix B1220_pr.pl1phpsa.0550.4_00_7.8_all_Tree_positive --resultdir $HPCLOWENERGYDIR"
+    nmin: 0
+    nmax: 0
+
+[generic]
+    Merge mpi split index of ISS Positive Tree
+    job: ac_merge
+    args: --partition c18m --arguments '--input $HPCLOWENERGYDIR/B1130_pass7_7.8_all/positive/results/AntiprotonLowEnergy_Tree_%05d_* --resultdir $HPCLOWENERGYDIR/B1130_pass7_7.8_all/positive/results/reduced_root/ --resultprefix AntiprotonLowEnergy_Tree_%05d'
+    nmin: 0
+    nmax: 999
+
+[joblist]
+    Split ISS positive data in Rigidity and timestamp(published range)
+    job: $MY_ANALYSIS/Scripts/HPC/others/PositiveData_Split_WithMPIMerge.py
+    args: --partition c18m --arguments '--path $HPCLOWENERGYDIR/B1130_pass7_7.8_all/positive/results/reduced_root --rigidityrange lowrange --rigiditystart 0 --rigidityend 30 --inputfile %s --datamode ISSdata --rigiditysign positive' #index0-17:0.8-5.9, index0-30:0.8-18.0
+    jobs_from: $HPCLOWENERGYDIR/B1130_pass7_7.8_all/positive/results/reduced_root/
+
+[generic]
+    Final merge for ISS positvie data
+    job: $MY_ANALYSIS/Scripts/HPC/others/Finalmerge.sh
+    args: --partition c18m --memory 100 --timelimit 23:00 --arguments '$HPCLOWENERGYDIR lowrange 0 30 B1130_pass7_7.8_all positive' ## For HPC interactively: 0-17 is from 0.8-5.9, 0-30:0.8-18.0
+    nmin: 0
+    nmax: 0
+
+
+#### 3. Split
+[generic]
+    Split Negative B1042 antiproton
+    job: $MY_ANALYSIS/Scripts/HPC/others/NegativeData_Split_NoMPIMerge.py
+    args: --partition c18m --arguments '--cluster HPC --rigidityrange lowrange --datamode MC --data B1042_antipr.pl1.1800_7.6_all_Tree --Rigidity_start 0 --Rigidity_end 30' --memory 100 --timelimit 23:00
+    nmin: 0
+    nmax: 0
+
+[generic]
+    Split Negative B1220 proton (Pion)
+    job: $MY_ANALYSIS/Scripts/HPC/others/NegativeData_Split_NoMPIMerge.py
+    args: --partition c18m --arguments '--cluster HPC --rigidityrange lowrange --datamode MC --data B1220_pr.pl1phpsa.0550.4_00_7.8_all_Tree_negative --Rigidity_start 0 --Rigidity_end 30' --memory 100 --timelimit 23:00
+    nmin: 0
+    nmax: 0
+
+[generic]
+    Split Negative B1042 Proton
+    job: $MY_ANALYSIS/Scripts/HPC/others/NegativeData_Split_NoMPIMerge.py
+    args: --partition c18m --arguments '--cluster HPC --rigidityrange lowrange --datamode MC --data B1042_pr.pl1.1800_7.6_all_Tree_negative --Rigidity_start 0 --Rigidity_end 30' --memory 100 --timelimit 23:00
+    nmin: 0
+    nmax: 0
+
+#[generic]
+#    Split Positive B1220 Proton (Too large)
+#    job: $MY_ANALYSIS/Scripts/HPC/others/PositiveData_Split_NoMPIMerge.py
+#    args: --timelimit 18:00 --memory 100 --timelimit 23:00 --arguments '--path $HPCLOWENERGYDIR --rigidityrange lowrange --rigiditystart 0 --rigidityend 30 --inputfile B1220_pr.pl1phpsa.0550.4_00_7.8_all_Tree_positive.root --datamode MC --rigiditysign positive'
+#    nmin: 0
+#    nmax: 0
+
+[generic]
+    Split Positive B1042 Proton
+    job: $MY_ANALYSIS/Scripts/HPC/others/PositiveData_Split_NoMPIMerge.py
+    args: --partition c18m --timelimit 18:00 --memory 100 --timelimit 23:00 --arguments '--path $HPCLOWENERGYDIR --rigidityrange lowrange --rigiditystart 0 --rigidityend 30 --inputfile B1042_pr.pl1.1800_7.6_all_Tree_positive.root --datamode MC --rigiditysign positive'
+    nmin: 0
+    nmax: 0
+
+[generic]
+    Merge mpi split index of ISS Negative data
+    job: ac_merge
+    args: --partition c18m --arguments '--input $HPCLOWENERGYDIR/B1130_pass7_7.8_all/negative/results/AntiprotonLowEnergy_Tree_%05d_* --resultdir $HPCLOWENERGYDIR/B1130_pass7_7.8_all/negative/results/reduced_root/ --resultprefix AntiprotonLowEnergy_Tree_%05d'
+    nmin: 0
+    nmax: 999
+
+[joblist]
+    Split ISS Negative data in Rigidity.
+    job: $MY_ANALYSIS/Scripts/HPC/others/PositiveData_Split_WithMPIMerge.py
+    args: --partition c18m --arguments '--path $HPCLOWENERGYDIR/B1130_pass7_7.8_all/negative/results/reduced_root --rigidityrange lowrange --rigiditystart 0 --rigidityend 30 --inputfile %s --datamode ISSdata --rigiditysign negative' #index0-17:0.8-5.9, index0-30:0.8-18.0
+    jobs_from: $HPCLOWENERGYDIR/B1130_pass7_7.8_all/negative/results/reduced_root/
+
+[generic]
+    Final merge for ISS Negative data
+    job: $MY_ANALYSIS/Scripts/HPC/others/Finalmerge.sh
+    args: --partition c18m --memory 100 --timelimit 23:00 --arguments '$HPCLOWENERGYDIR lowrange 0 30 B1130_pass7_7.8_all negative'
+    nmin: 0
+    nmax: 0
+
+
+[generic]
+    Merge mpi split index of Electron Tree
+    job: ac_merge
+    args: --partition c18m --arguments '--input $HPCLOWENERGYDIR/B1091_el.pl1.0_25200_7.6_all/negative/results/AntiprotonLowEnergy_Tree_%05d_* --resultdir $HPCLOWENERGYDIR/B1091_el.pl1.0_25200_7.6_all/negative/results/reduced_root/ --resultprefix AntiprotonLowEnergy_Tree_%05d'
+    nmin: 0
+    nmax: 237
+
+[joblist]
+    Split Electron data in Rigidity.
+    job: $MY_ANALYSIS/Scripts/HPC/others/PositiveData_Split_WithMPIMerge.py
+    args: --partition c18m --arguments '--path $HPCLOWENERGYDIR/B1091_el.pl1.0_25200_7.6_all/negative/results/reduced_root --rigidityrange lowrange --rigiditystart 0 --rigidityend 30 --inputfile %s --datamode MC --rigiditysign negative' #index0-17:0.8-5.9, index0-30:0.8-18.0
+    jobs_from: $HPCLOWENERGYDIR/B1091_el.pl1.0_25200_7.6_all/negative/results/reduced_root/
+
+[generic]
+    Final merge for Electron data
+    job: $MY_ANALYSIS/Scripts/HPC/others/Finalmerge.sh 
+    args: --partition c18m --memory 100 --timelimit 23:00 --arguments '$HPCLOWENERGYDIR lowrange 0 30 B1091_el.pl1.0_25200_7.6_all negative' 
+    nmin: 0
+    nmax: 0
+
+
+#### 4. Effective acceptance
+[generic]
+    Merge B1042_antiproton ROOT Auxiliary files
+    job: ac_merge
+    args: --partition c18m --argument "--input $HPCLOWENERGYDIR/B1042_antipr.pl1.1800_7.6_all/negative/results/AntiprotonLowEnergy_Auxiliary_*.root --resultprefix B1042_antipr.pl1.1800_7.6_all_Auxiliary --resultdir $HPCLOWENERGYDIR"
+    nmin: 0
+    nmax: 0
+
+[generic]
+    Merge B1042_proton ROOT Auxiliary files
+    job: ac_merge
+    args: --partition c18m --argument "--input $HPCLOWENERGYDIR/B1042_pr.pl1.1800_7.6_all/positive/results/AntiprotonLowEnergy_Auxiliary_*.root --resultprefix B1042_pr.pl1.1800_7.6_all_Auxiliary --resultdir $HPCLOWENERGYDIR"
+    nmin: 0
+    nmax: 0
+
+[interactive]
+    Compute effective acceptance for antiproton
+    command: calculate_effective_acceptance
+    args: --McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/HPC/B1042_antipr.pl1.1800_7.6_all/mcScalingWeights.root --inputfile $HPCLOWENERGYDIR/B1042_antipr.pl1.1800_7.6_all_Auxiliary.root --outputFileName $HPCLOWENERGYDIR/EffectiveAcceptance_B1042_antipr.pl1.1800_7.6_all --selectors QualityCuts --kinematicVariable momentum --xmin 0.8 --xmax 18.0 --species Antiproton --mcComparisionCanvas
+
+[interactive]
+    Compute effective acceptance for proton
+    command: calculate_effective_acceptance
+    args: --McSpectrumScaler/inputfile $MY_ANALYSIS/ReferenceFiles/ACQTfile/HPC/B1042_pr.pl1.1800_7.6_all/mcScalingWeights.root --inputfile $HPCLOWENERGYDIR/B1042_pr.pl1.1800_7.6_all_Auxiliary.root --outputFileName $HPCLOWENERGYDIR/EffectiveAcceptance_B1042_pr.pl1.1800_7.6_all --selectors QualityCuts --kinematicVariable momentum --xmin 0.8 --xmax 18.0 --species Proton --mcComparisionCanvas
+
+[interactive]
+    Calculate Triggerefficiency from Auxiliary file.
+    command: TriggerEfficiency --RigidityRange LOWRANGE
+
+
+#### 5. Template Fit
+[interactive]
+    Move root files.
+    command:mv $HPCLOWENERGYDIR/*.root $HPCLOWENERGYDIR/totalall/;
+
+[generic]
+    Produce Unfolding_Matrices.
+    job: $MY_ANALYSIS/Scripts/HPC/others/MigrationMatrix_fill.py
+    args: --partition c18m --arguments '--dataset B1042_antipr.pl1.1800_7.6_all --energy LOWENERGYRANGE --ecalBDTCut --trdProtonHeliumCut --physicstriggerCut --cluster HPC' --timelimit 23:00 --memory 100
+    nmin: 0
+    nmax: 0
+
+#[generic]
+#    Training Pion MVA.
+#    job:  $MY_ANALYSIS/Macros/LowRange/Pion_MVA_submit.sh
+#    args: --timelimit 23:00 --memory 100
+#    nmin: 0
+#    nmax: 0
+
+#[generic]
+#    Apply Pion MVA (negative ISS data).
+#    job:  $MY_ANALYSIS/Macros/LowRange/Pion_MVA_apply.sh
+#    args: --timelimit 23:00 --memory 100
+#    nmin: 0
+#    nmax: 0
+
+#[generic]
+#    Calculate Richbeta cut with different efficiency, default is 80%.
+#    job:$MY_ANALYSIS/Scripts/HPC/LowRange/RichBeta_Efficiency.py
+#    args:--arguments "--cluster HPC --efficiency ${TRDEfficiency} --binmerge ${BINMERGE}" --timelimit 23:00 --memory 100
+#    nmin: 0
+#    nmax: 0
+
+
+[interactive]
+    Calculate TRDLikelihood cut with different efficiency
+    command: $MY_ANALYSIS/Scripts/HPC/LowRange/CalculateCutValue_WithSignalEfficiency.py --efficiencyType TRD
+
+[interactive]
+    Calculate TOFBeta cut with different efficiency
+    command: $MY_ANALYSIS/Scripts/HPC/LowRange/CalculateCutValue_WithSignalEfficiency.py --efficiencyType TOF
+
+#[interactive]
+#    Plot Lower Edge for TRDLikelihood and TOFBeta
+#    command: $MY_ANALYSIS/Scripts/HPC/LowRange/Plot_LowerEdgeOfTRDAndTOFBeta.py
+
+# Check template histograms 
+# root -L /home/bo791269/Software/antiprotonanalysis/Libraries/AntiprotonBinning/AntiprotonBinning.C -x $MY_ANALYSIS/Macros/LowRange/PionTemplate.C
+
+#[interactive]
+#    Make and Save Original Templates and Data Histograms (May2015)
+#    command: Antiproton_LowMakeTemplate --issversion 2016paper --rigidity_start 1 --rigidity_end 17 --binmerge ${BINMERGE} --Testmode Yes --FullRange No
+#[interactive]
+#    Make and Save Original Templates and Data Histograms (Nov2017)
+#    command: Antiproton_LowMakeTemplate --issversion PhysicsReport --rigidity_start 1 --rigidity_end 17 --binmerge ${BINMERGE} --Testmode Yes --FullRange No
+#[interactive]
+#    Make and Save Original Templates and Data Histograms (Full Time Range)
+#    command: Antiproton_LowMakeTemplate --issversion pass7.8 --rigidity_start 1 --rigidity_end 17 --binmerge ${BINMERGE} --Testmode Yes --FullRange No
+#Helper: /home/bo791269/Software/AntiprotonAnalysis/Scripts/SubmitScript/MakeHistogram_TimeAveraged_Low.sh
+[interactive]
+    Make and Save Original Templates and Data Histograms
+    command: /home/bo791269/Software/AntiprotonAnalysis/Scripts/SubmitScript/MakeHistogram_TimeAveraged_Low.sh
+
+
+#[interactive]
+#    Parameterization of Templates (May2015)
+#    command: $MY_ANALYSIS/Scripts/HPC/IntermediateRange/ParameterizationTemplates.py --Range low --issversion 2016paper --GenerateNumber 1500 --ErrorParametrizationMode No --TimeMode TimeAveraged 
+
+#[interactive]
+#    Parameterization of Templates (Nov2017)
+#    command: $MY_ANALYSIS/Scripts/HPC/IntermediateRange/ParameterizationTemplates.py --Range low --issversion PhysicsReport --GenerateNumber 1500 --ErrorParametrizationMode No --TimeMode TimeAveraged
+
+#[interactive]
+#    Parameterization of Templates (Full Time Range)
+#    command: $MY_ANALYSIS/Scripts/HPC/IntermediateRange/ParameterizationTemplates.py --Range low --issversion pass7.8 --GenerateNumber 1500 --ErrorParametrizationMode No --TimeMode TimeAveraged
+
+
+#[interactive]
+#    Error Parametrization (May2015)
+#    command: $MY_ANALYSIS/Scripts/HPC/IntermediateRange/ErrorParametrization.py --Range low --issversion 2016paper
+
+#[interactive]
+#    Error Parametrization (Nov2017)
+#    command: $MY_ANALYSIS/Scripts/HPC/IntermediateRange/ErrorParametrization.py --Range low --issversion PhysicsReport
+
+#[interactive]
+#    Error Parametrization (Full Time Range)
+#    command: $MY_ANALYSIS/Scripts/HPC/IntermediateRange/ErrorParametrization.py --Range low --issversion pass7.8
+
+#[interactive]
+#    Template Fit in 2016 Time range (Parameterized Template)
+#    command: Antiproton_LowTF1D --issversion 2016paper --rigidity_start 1 --rigidity_end 17 --binmerge ${BINMERGE} --Testmode Yes --ParametrilizedMode Yes --GenerateNumbers 1500
+
+#[interactive]
+#    Template Fit in PhysicsReport Time range (Parameterized Template)
+#    command: Antiproton_LowTF1D --issversion PhysicsReport --rigidity_start 1 --rigidity_end 17 --binmerge ${BINMERGE} --Testmode Yes --ParametrilizedMode Yes --GenerateNumbers 1500
+
+#[interactive]
+#    Template Fit in Full time range (Parameterized Template)
+#    command: Antiproton_LowTF1D --issversion pass7.8 --rigidity_start 1 --rigidity_end 17 --binmerge ${BINMERGE} --Testmode Yes --ParametrilizedMode Yes --GenerateNumbers 1500
+
+#[interactive]
+#    Template Fit in 2016 Time range (Original Template)
+#    command: Antiproton_LowTF1D --issversion 2016paper --rigidity_start 1 --rigidity_end 17 --binmerge ${BINMERGE} --Testmode Yes --ParametrilizedMode No --GenerateNumbers 1
+#[interactive]
+#    Template Fit in PhysicsReport Time range (Original Template)
+#    command: Antiproton_LowTF1D --issversion PhysicsReport --rigidity_start 1 --rigidity_end 17 --binmerge ${BINMERGE} --Testmode Yes --ParametrilizedMode No --GenerateNumbers 1
+#[interactive]
+#    Template Fit in Full time range (Original Template)
+#    command: Antiproton_LowTF1D --issversion pass7.8 --rigidity_start 1 --rigidity_end 17 --binmerge ${BINMERGE} --Testmode Yes --ParametrilizedMode No --GenerateNumbers 1
+
+[interactive]
+    Template Fit (Original Template)
+    command: Antiproton_LowTF1D --issversion 2016paper --rigidity_start 1 --rigidity_end 17 --binmerge 1 --Testmode Yes --ParametrilizedMode No --GenerateNumbers 1; Antiproton_LowTF1D --issversion 2016paper --rigidity_start 1 --rigidity_end 17 --binmerge 2 --Testmode Yes --ParametrilizedMode No --GenerateNumbers 1; Antiproton_LowTF1D --issversion PhysicsReport --rigidity_start 1 --rigidity_end 17 --binmerge 1 --Testmode Yes --ParametrilizedMode No --GenerateNumbers 1; Antiproton_LowTF1D --issversion PhysicsReport --rigidity_start 1 --rigidity_end 17 --binmerge 2 --Testmode Yes --ParametrilizedMode No --GenerateNumbers 1; Antiproton_LowTF1D --issversion pass7.8 --rigidity_start 1 --rigidity_end 17 --binmerge 1 --Testmode Yes --ParametrilizedMode No --GenerateNumbers 1; Antiproton_LowTF1D --issversion pass7.8 --rigidity_start 1 --rigidity_end 17 --binmerge 2 --Testmode Yes --ParametrilizedMode No --GenerateNumbers 1
+
+#[interactive]
+#    Calculate System Error due to Shape (2016 Time range)
+#    command: $MY_ANALYSIS/Scripts/HPC/IntermediateRange/CalculateSysErrorFromShape.py --Range low --issversion 2016paper --GenerateNumber 1500
+
+#[interactive]
+#    Calculate System Error due to Shape (PhysicsReport Time range)
+#    command: $MY_ANALYSIS/Scripts/HPC/IntermediateRange/CalculateSysErrorFromShape.py --Range low --issversion PhysicsReport --GenerateNumber 1500
+
+#[interactive]
+#    Calculate System Error due to Shape (Full time range)
+#    command: $MY_ANALYSIS/Scripts/HPC/IntermediateRange/CalculateSysErrorFromShape.py --Range low --issversion pass7.8 --GenerateNumber 1500
+
+[interactive]
+    Calculate System Error due to Signal Efficiency (2016 Time range)
+    command: $MY_ANALYSIS/Scripts/HPC/LowRange/CalculateSystematicError_FromSigEff.py --Range low --issversion 2016paper --TimeMode TimeAveraged
+
+[interactive]
+    Calculate System Error due to Signal Efficiency (PhysicsReport Time range)
+    command: $MY_ANALYSIS/Scripts/HPC/LowRange/CalculateSystematicError_FromSigEff.py --Range low --issversion PhysicsReport --TimeMode TimeAveraged
+
+[interactive]
+    Calculate System Error due to Signal Efficiency (Full time range)
+    command: $MY_ANALYSIS/Scripts/HPC/LowRange/CalculateSystematicError_FromSigEff.py --Range low --issversion pass7.8 --TimeMode TimeAveraged
+
+[interactive]
+    Unfolding in Low energy range.
+    command: Unfolding_Bayes_Low --issversion 2016paper; Unfolding_Bayes_Low --issversion PhysicsReport; Unfolding_Bayes_Low --issversion pass7.8;
+
+#[interactive]
+#    LowRangePlot.
+#    command: $MY_ANALYSIS/Scripts/AntiprotonLowRange/LowRangePlot.C;
+
+[generic]
+    6 Months split.
+    job: $MY_ANALYSIS/Scripts/HPC/others/split_Bartel.py
+    args: --partition c18m --timelimit 23:00 --memory 180 --arguments '--mode 6months --cluster HPC --issversion pass7ext3 --Rigidity_start 0 --Rigidity_end 29 --rigidityrange LowRange' # index0: 1.0 index16: 5.9
+    nmin: 0
+    nmax: 0
+
+[generic]
+    Bartel split.
+    job: $MY_ANALYSIS/Scripts/HPC/others/split_Bartel.py
+    args: --partition c18m --timelimit 23:00 --memory 180 --arguments '--mode Bartel --cluster HPC --issversion pass7ext3 --Rigidity_start 0 --Rigidity_end 29 --rigidityrange LowRange' # index0: 1.0 index16: 5.9
+    nmin: 0
+    nmax: 0
+
+[generic]
+    Make and Save Time Dependent Templates (6 months)
+    job: Antiproton_LowMakeTimeDependentTemplate 
+    args: --partition c18m --timelimit 23:00 --memory 100 --arguments '--timemode 6months --rigidity_start 1 --rigidity_end 17 --binmerge 2 --StartTimeIndex 0'
+    nmin: 0
+    nmax: 0
+#Helper: /home/bo791269/Software/AntiprotonAnalysis/Scripts/SubmitScript/MakeHistogram_TimeDependent_Low.sh
+
+[generic]
+    Make and Save Time Dependent Templates (3 Bartels)(TimeIndex=123 is empty, need to rrun second time from 126)
+    job: Antiproton_LowMakeTimeDependentTemplate
+    args: --partition c18m --timelimit 23:00 --memory 100 --arguments '--timemode 3BartalRotation --rigidity_start 1 --rigidity_end 17 --binmerge 2 --StartTimeIndex 0'
+    nmin: 0
+    nmax: 0
+
+[generic]
+    Make and Save Time Dependent Templates (6 Bartels)
+    job: Antiproton_LowMakeTimeDependentTemplate
+    args: --partition c18m --timelimit 23:00 --memory 100 --arguments '--timemode 6BartalRotation --rigidity_start 1 --rigidity_end 17 --binmerge 2 --StartTimeIndex 0'
+    nmin: 0
+    nmax: 0
+
+#[interactive]
+#    Parameterization of Templates (3Bartels)
+#    command: $MY_ANALYSIS/Scripts/HPC/IntermediateRange/ParameterizationTemplates.py --Range low --issversion pass7.8 --GenerateNumber 150 --ErrorParametrizationMode No --TimeMode TimeDependent --TimeSplitMode 3BartalRotation
+
+#[interactive]
+#    Parameterization of Templates (6Bartels)
+#    command: $MY_ANALYSIS/Scripts/HPC/IntermediateRange/ParameterizationTemplates.py --Range low --issversion pass7.8 --GenerateNumber 150 --ErrorParametrizationMode No --TimeMode TimeDependent --TimeSplitMode 6BartalRotation
+
+#[interactive]
+#    Parameterization of Templates (6months)
+#    command: $MY_ANALYSIS/Scripts/HPC/IntermediateRange/ParameterizationTemplates.py --Range low --issversion pass7.8 --GenerateNumber 150 --ErrorParametrizationMode No --TimeMode TimeDependent --TimeSplitMode 6Months
+
+
+#[generic]
+#   Time Variation 6 months Rotations Template Fit (Parameterized Template)
+#   job: Antiproton_LowTF1D_TimeStamp_3and6_BartalRotations
+#   args: --partition c18m --timelimit 23:00 --memory 100 --arguments '--timemode 6months --rigidity_start 2 --rigidity_end 17 --binmerge 2 --ParametrilizedMode Yes --GenerateNumbers 1500'
+#   nmin: 0
+#   nmax: 0
+
+#[generic]
+#    Time Variation 3 Bartels Template Fit (Parameterized Template)
+#    job: Antiproton_LowTF1D_TimeStamp_3and6_BartalRotations
+#    args: --partition c18m --timelimit 23:00 --memory 100 --arguments '--timemode 3BartalRotation --rigidity_start 2 --rigidity_end 17 --binmerge 2 --ParametrilizedMode Yes --GenerateNumbers 1500'
+#    nmin: 0
+#    nmax: 0
+
+#[generic]
+#    Time Variation 6 Bartels Template Fit (Parameterized Template)
+#    job: Antiproton_LowTF1D_TimeStamp_3and6_BartalRotations
+#    args: --partition c18m --timelimit 23:00 --memory 100 --arguments '--timemode 6BartalRotation --rigidity_start 2 --rigidity_end 17 --binmerge 2 --ParametrilizedMode Yes --GenerateNumbers 1500'
+#    nmin: 0
+#    nmax: 0
+
+
+[interactive]
+    Time Variation 6 months Rotations Template Fit (Original Template)
+    command: Antiproton_LowTF1D_TimeStamp_3and6_BartalRotations --timemode 6months --rigidity_start 2 --rigidity_end 17 --binmerge 2 --ParametrilizedMode No --GenerateNumbers 1 --SysErrEffStudyMode No --StartTimeIndex 0
+
+[interactive]
+    Time Variation 3 Bartels Template Fit (Original Template)
+    command: Antiproton_LowTF1D_TimeStamp_3and6_BartalRotations --timemode 3BartalRotation --rigidity_start 2 --rigidity_end 17 --binmerge 2 --ParametrilizedMode No --GenerateNumbers 1 --SysErrEffStudyMode No --StartTimeIndex 0
+
+[interactive]
+    Time Variation 6 Bartels Template Fit (Original Template)
+    command: Antiproton_LowTF1D_TimeStamp_3and6_BartalRotations --timemode 6BartalRotation --rigidity_start 2 --rigidity_end 17 --binmerge 2 --ParametrilizedMode No --GenerateNumbers 1 --SysErrEffStudyMode No --StartTimeIndex 0
+
+[generic]
+    Time Variation 6 months Rotations Template Fit (SysErrEff Study)
+    job:Antiproton_LowTF1D_TimeStamp_3and6_BartalRotations
+    args: --partition c18m --timelimit 23:00 --memory 100 --arguments '--timemode 6months --rigidity_start 2 --rigidity_end 17 --binmerge 2 --ParametrilizedMode No --GenerateNumbers 1 --SysErrEffStudyMode Yes --StartTimeIndex 0'
+    nmin: 0
+    nmax: 0
+
+[generic]
+    Time Variation 3 Bartels Template Fit (SysErrEff Study)
+    job:Antiproton_LowTF1D_TimeStamp_3and6_BartalRotations
+    args: --partition c18m --timelimit 23:00 --memory 100 --arguments '--timemode 3BartalRotation --rigidity_start 2 --rigidity_end 17 --binmerge 2 --ParametrilizedMode No --GenerateNumbers 1 --SysErrEffStudyMode Yes --StartTimeIndex 0'
+    nmin: 0
+    nmax: 0
+
+[generic]
+    Time Variation 6 Bartels Template Fit (SysErrEff Study)
+    job:Antiproton_LowTF1D_TimeStamp_3and6_BartalRotations
+    args: --partition c18m --timelimit 23:00 --memory 100 --arguments '--timemode 6BartalRotation --rigidity_start 2 --rigidity_end 17 --binmerge 2 --ParametrilizedMode No --GenerateNumbers 1 --SysErrEffStudyMode Yes --StartTimeIndex 0'
+    nmin: 0
+    nmax: 0
+
+#[interactive]
+#    Calculate Time Dependent System Error due to Shape (6 months)
+#    command: $MY_ANALYSIS/Scripts/HPC/IntermediateRange/CalculateSysErrorFromShape.py --Range low --issversion 2016paper --GenerateNumber 1500 --Timemode TimeDependent --TimeSplitMode 6Months
+
+#[interactive]
+#    Calculate Time Dependent System Error due to Shape (3 Bartels)
+#    command: $MY_ANALYSIS/Scripts/HPC/IntermediateRange/CalculateSysErrorFromShape.py --Range low --issversion PhysicsReport --GenerateNumber 1500 --Timemode TimeDependent --TimeSplitMode 3BartalRotation
+
+#[interactive]
+#    Calculate Time Dependent System Error due to Shape (6 Bartels)
+#    command: $MY_ANALYSIS/Scripts/HPC/IntermediateRange/CalculateSysErrorFromShape.py --Range low --issversion pass7.8 --GenerateNumber 1500 --Timemode TimeDependent --TimeSplitMode 6BartalRotation
+
+[interactive]
+    Calculate System Error due to Signal Efficiency (6 months)
+    command:$MY_ANALYSIS/Scripts/HPC/LowRange/CalculateSystematicError_FromSigEff.py --Range low --TimeMode TimeDependent --TimeSplitMode 6months
+
+[interactive]
+    Calculate System Error due to Signal Efficiency (3 Bartels)
+    command:$MY_ANALYSIS/Scripts/HPC/LowRange/CalculateSystematicError_FromSigEff.py --Range low --TimeMode TimeDependent --TimeSplitMode 3BartalRotation
+
+[interactive]
+    Calculate System Error due to Signal Efficiency (6 Bartels)
+    command:$MY_ANALYSIS/Scripts/HPC/LowRange/CalculateSystematicError_FromSigEff.py --Range low --TimeMode TimeDependent --TimeSplitMode 6BartalRotation
+
+[interactive]
+    Plot for 6months Time variations
+    command:$MY_ANALYSIS/Scripts/HPC/others/TimeDependentPlot/plot_variation_result_low.py --cluster HPC --timemode 6months --binmerge 2 --ratiopattern antiproton_to_proton --rigidityrange low
+
+[interactive]
+    Plot for 3BartalRotation Time variations
+    command:$MY_ANALYSIS/Scripts/HPC/others/TimeDependentPlot/plot_variation_result_low.py --cluster HPC --timemode 3Bartels --binmerge 2 --ratiopattern antiproton_to_proton --rigidityrange low
+
+[interactive]
+    Plot for 6BartalRotation Time variations
+    command:$MY_ANALYSIS/Scripts/HPC/others/TimeDependentPlot/plot_variation_result_low.py --cluster HPC --timemode 6Bartels --binmerge 2 --ratiopattern antiproton_to_proton --rigidityrange low
+
+[interactive]
+    PolarPlot for Antiproton result
+    command:$MY_ANALYSIS/Scripts/HPC/others/TimeDependentPlot/plotAntiprotonratioPolar.py --cluster HPC
+
+#[interactive]
+#    Efficiency_Correction
+#    command:$MY_ANALYSIS/Macros/LowRange/efficiency_correction.C
+
+
+
+

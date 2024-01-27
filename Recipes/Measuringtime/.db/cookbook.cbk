@@ -1,0 +1,58 @@
+[interactive]
+  Make Dic
+
+  depends: none
+  status: OK
+  jobtag: Measuringtime_001
+  directory: step001
+  copy_targets: False
+  command: cd /hpcwork/jara0052/sichen/Measuringtime; mkdir -p 05_2021_GEOMETRIC35_1.2; mkdir -p 05_2021_IGRF35_1.2;
+
+[generic]
+  Measuring Time for Stormer Cutoff
+
+  depends: 1
+  status: OK
+  jobtag: Measuringtime_002
+  directory: step002
+  job: Measuringtime
+  nmin: 0
+  nmax: 0
+  args: --partition c18m --timelimit 23:00 --arguments '--startTime 1305800000 --endTime 1620024849 --cutoffmode GEOMETRIC --degree 35 --safetyfactor 1.2' --mpi
+  nexpected_per_job: 0
+  nexpected_per_process: 0
+
+[generic]
+  Measuring Time for IGRF Cutoff
+
+  depends: 2
+  status: OK
+  jobtag: Measuringtime_003
+  directory: step003
+  job: Measuringtime
+  nmin: 0
+  nmax: 0
+  args: --partition c18m --timelimit 23:00 --arguments '--startTime 1305800000 --endTime 1620024849 --cutoffmode IGRF --degree 35 --safetyfactor 1.2' --mpi
+  nexpected_per_job: 0
+  nexpected_per_process: 0
+
+[interactive]
+  Merging the Measuring Time files
+
+  depends: 3
+  status: OK
+  jobtag: Measuringtime_004
+  directory: step004
+  copy_targets: False
+  command: ac_merge --input /hpcwork/jara0052/sichen/Measuringtime/05_2021_GEOMETRIC35_1.2/MeasuringTime*.root --resultprefix MeasuringTime_pass7.8_05_2021_GEOMETRIC35_1.2 --resultdir /hpcwork/jara0052/sichen/Measuringtime/; ac_merge --input /hpcwork/jara0052/sichen/Measuringtime/05_2021_IGRF35_1.2/MeasuringTime*.root --resultprefix MeasuringTime_pass7.8_05_2021_IGRF35_1.2 --resultdir /hpcwork/jara0052/sichen/Measuringtime/;
+
+[interactive]
+  Plot IGRF and Stormer Cut off comparision, Plot relative plots for measuring time
+
+  depends: 4
+  status: open
+  jobtag: Measuringtime_005
+  directory: step005
+  copy_targets: False
+  command: /home/bo791269/Software/AntiprotonAnalysis/Macros/others/plot_IGRF_Geo.C
+

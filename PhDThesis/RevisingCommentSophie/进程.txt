@@ -1,0 +1,158 @@
+
+
+
+Done:
+Abstracts
+Chapter1
+Chapter2
+Chapter3
+Chapter4 Analysis
+Chapter5
+Chapter6 Summary
+Appendix
+Acknowledgments
+
+
+To be done:
+
+
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Chapter3:
+l 386 -387: * You have to explain better what you’re saying here about the solutions of the Maxwell equation. You do not mention the different dielectric constants of the two mediums, the Maxwell equations are relevant to the electric and magnetic filed of the moving particle etc…Your explanation is not complete and clear.
+
+l 413:
+* BUT this explanation is not enough. You should try to explain better this additional contribution from the transition radiation photons on the electron energy spectrum.
+
+l 444: 
+- * You could have explained better the TAS system here.
+l 454: * Explain more the “equidistant measurements”.
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Appendix:
+l 1237: * As you use more than one appendices you have to name them differently. So this one should be Appendix A, then you have Appendix B etc.
+
+Figure 1: 
+* Add y-axis labels in all the figures of the Appendix! 
+* Moreover the text size of the legends inside the figures is very small.
+* Please correct accordingly ALL the captions of the figures in the Appendix.
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Chapter5:
+l 1078: range. —> ranges.
+* Define/give the values of the two overlaping ranges.
+
+l 1079: 
+*You have to explain how you deal with the overlaping area in order to obtain the final plot. 
+
+Figure 5.3: 
+* I dont find it nice to use for the AMS published result this legend: “Physics Report 2021”. You could use for example AMS-02 [107] or something else that contains “AMS” inside. 
+*Also its not good practice to write such details in the legends: “(Physics Report Time Range)”; such details go to the captions of the Figures and the text.
+* Moreover you do not comment about the larger discrepancies observed at low and higher rigidities. Even if the reason is not known, you should still comment on this. For example in the higher rigidity range the statistics might play a role and more data is needed for further studies….  discrepancies in the lower range need more investigation bla bla….
+
+l 1094 -1095:
+* You have to explain a bit and give the numbers of the uncertainties for that publication. Moreover what about the newer AMS publication that used 6,5 years of data? You have to talk about this too.
+
+Figure 5.6: 
+添加 (%) 
+
+1122:
+* Explain how you average them (weighted mean? these 23 points do not have the same uncertainties). But I do not see any error bars on the green points in Figure 5.9. For the comparison, you have to take into account also the errors of the values you compare.
+
+l 1125 - 1128: * You have to justify with numbers the comparison. Using only words “match well” and “deviates a little” is not enough. You could show for example underneath the existing plot in Figure 5.9 the ratio A/B plot for each bin.
+好主意，用A/B来画下图。
+
+Figure 10: 
+- *It is not nice to present one figure spanning over two pages. Either make the sub-figures smaller or break the figure in two.
+- * You have to explain the scaling of the electron/positron flux that is shown in each Figure in red. Say for example that this flux is scaled by the amount indicated in red in order to make the comparison easier.
+
+l 1151: 
+* You have to explain briefly what are the LIS.
+
+l 1155 -1156: 
+*Explain why this mass difference has higher impact in the low rigidity range.
+
+
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Chapter4:
+l 566 - 569: Rewrite as: “The AMS-02 MC events are generated at the top of the detector within a 3.9m x 3.9m plane and a solid angle of π sr, while the generated momentum spectrum follows either a power law with a spectral index equal to -2.7 or  it is constant as a function of log(p)”
+
+Figure 4.1: 
+- * There are no y-axis lables in all these figures.
+* The distributions do not really match to each other; they just have similarities. You have to explain this in a better way.
+
+Figure 4.5:
+- * I think instead of “Counts” on the y-axis is better to use “Events”. Cross check with Henning.
+
+Figure 4.7:
+* You have to give more explanations for all the Figures/results that you give in the text and the Figure captions. For example are your fits good or bad? what about the error bars (uncertainties) of your points? etc
+
+
+l 893: * You have to explain briefly what “trigger dead time” is.
+l 895: * Explain when the trigger rate goes up and what is this “threshold that is surpassed”? 
+l 895 -897:  Sorry but this definition of the live time fraction is not correct/complete. You present it as if the live time fraction is measured only when the trigger goes up. The live time fraction is a part of every second of data taking. Try to explain better. See how Fabian explains it.
+
+Fig 4.28:
+Remove from the axis label the “(From Acceptance)”; such details should be mentioned in the caption and not here.
+
+l 1065: 
+- * This “342 times” seems very random; explain more why so many times? 
+
+Fig. 4.29: 
+- * Give the value of the RMS in the caption.
+这个在文本中解释一下？ RMS=Std Dev？？？？？
+
+Figure 4.30: 
+* Fix again the y-axis label. And remove the “From Acceptance”.
+把overlap range去掉
+
+Figure 4.32: * Again explain what is shown; is this a relative uncertainty (of what)? Remove the “From charge confusion” from the y-axis label.
+*Find a way to show in more detail the upper and lower limits of the rigidity points; at least write them in the caption.
+
+Figure 4.33: * Again the y-axis is not defined well 
+
+Figure 4.34: * Again as in all your previous figures, specify what you show and fix accordingly the y-axis label. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

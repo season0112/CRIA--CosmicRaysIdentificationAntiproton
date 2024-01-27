@@ -1,0 +1,69 @@
+################################################################
+##### make Measuring Time for all three antiproton ranges ######
+################################################################
+# Example Usage: cookbook init Measuringtime.cbk --set SafetyFactor=1.2,Degree=35
+SafetyFactor=NONE
+Degree=None
+
+[interactive]
+    Make Dic for TimeAveraged
+    command: cd /hpcwork/jara0052/sichen/Measuringtime; mkdir -p 05_2021_GEOMETRIC${Degree}_${SafetyFactor}; mkdir -p 05_2021_IGRF${Degree}_${SafetyFactor};
+
+[generic]
+    Measuring Time for Stormer Cutoff
+    # 1305800000:Thursday, May 19, 2011 10:13:20 AM; 
+    # 1305853512:Friday  , May 20, 2011 1:05:12 AM;  
+    # 1591446862:Saturday, June 6, 2020 12:34:22 PM; 
+    # 1620024849:Monday  , May 3, 2021 6:54:09 AM.
+    job: Measuringtime
+    args: --partition c18m --timelimit 23:00 --arguments '--startTime 1305800000 --endTime 1620024849 --cutoffmode GEOMETRIC --degree ${Degree} --safetyfactor ${SafetyFactor}' --mpi  
+    nmin: 0
+    nmax: 0
+
+[generic]
+    Measuring Time for IGRF Cutoff
+    job: Measuringtime
+    args: --partition c18m --timelimit 23:00 --arguments '--startTime 1305800000 --endTime 1620024849 --cutoffmode IGRF --degree ${Degree} --safetyfactor ${SafetyFactor}' --mpi
+    nmin: 0
+    nmax: 0
+
+[interactive]
+    Merging the Measuring Time files 
+    command: ac_merge --input /hpcwork/jara0052/sichen/Measuringtime/05_2021_GEOMETRIC${Degree}_${SafetyFactor}/MeasuringTime*.root --resultprefix MeasuringTime_pass7.8_05_2021_GEOMETRIC${Degree}_${SafetyFactor} --resultdir /hpcwork/jara0052/sichen/Measuringtime/; ac_merge --input /hpcwork/jara0052/sichen/Measuringtime/05_2021_IGRF${Degree}_${SafetyFactor}/MeasuringTime*.root --resultprefix MeasuringTime_pass7.8_05_2021_IGRF${Degree}_${SafetyFactor} --resultdir /hpcwork/jara0052/sichen/Measuringtime/;
+
+[interactive]
+    Plot IGRF and Stormer Cut off comparision, Plot relative plots for measuring time
+    command: $MY_ANALYSIS/Macros/others/plot_IGRF_Geo.C  
+
+#### TimeDependent
+[interactive]
+    Make Dic for TimeDependent
+    command: mkdir /hpcwork/jara0052/sichen/Measuringtime/TimeDependent; cd /hpcwork/jara0052/sichen/Measuringtime/TimeDependent
+
+[interactive]
+    Measuring Time for Stormer Cutoff for TimeDependent
+    command: source /home/bo791269/Software/AntiprotonAnalysis/Scripts/SubmitScript/MeasuringTime.sh
+
+[interactive]
+    Merging TimeDependent Measuring Time
+    command: source /home/bo791269/Software/AntiprotonAnalysis/Scripts/SubmitScript/MeasuringTime_Merge.sh
+
+[interactive]
+    Plot TimeDependent Measuring Time
+    command: python /home/bo791269/Software/AntiprotonAnalysis/Scripts/HPC/others/TimeDependentMeasuringTime/TimeDependentMeasuringTime.py
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

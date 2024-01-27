@@ -1,0 +1,440 @@
+  
+\section{Template Fit} \label{TempalteFitSection}
+
+In this section, the template fits are shown in detail for the time-averaged analysis and the time-dependent analysis. The template fit is a method to extract signal and background events from the total event distribution. If the data distribution is $D(x)$ and it has $k$ components, then the goal of the template fit is to extract the event number of different components from the data distribution. In this analysis, the binned maximum likelihood fit is used. The fit is performed by minimizing the negative log-likelihood function $L$:
+
+\begin{equation}
+L = - \left ( \sum_{x}^{} D(x) \cdot {\rm{log}}(P(x)) - N_{{\rm{total}}} \right )
+\end{equation}
+
+where $N_{\rm{total}}$ is the total number of event, $P$ is the normalized likelihood, which is defined as the sum of the product of the number of events $N_{i}$ and the PDF of the template $P_i$:
+
+\begin{equation}
+P(x) = \sum_{i=1}^{k} N_{i} \cdot P_{i}(x)
+\end{equation}
+
+The minimization is achieved using the Minuit minimizer \cite{MinuitPaper}. The PDFs of templates are constructed before the template fit and the numbers of events are free parameters. By minimizing the negative log-likelihood function, the best-fit parameters, namely the number of events for signals and backgrounds, can be extracted.  \par
+
+For different rigidity ranges, the template fit methods are different due to the sub-detector resolutions and background contributions. The selections used to obtain the signal and background templates will be discussed, and then the template fit result will be shown. In the time-dependent analysis, the template fit and the result in six Bartels Rotations will be given.   
+ 
+%%%% Time averaged analysis
+\subsection{Time-averaged analysis}
+The first ingredient to construct the antiproton to proton flux ratio is the number of events. As the background levels can not be ignored, cut-based analysis is not enough to get clean signals. Therefore, in order to extract clean antiproton signals, the template fit method is used in this analysis. \par
+
+In different rigidity ranges, the detector resolutions and background components are different, and the whole analysis is divided into three parts: low rigidity range (1.0 GV to 6.5 GV), intermediate rigidity range (3.0 to 19.5 GV), and high rigidity range (14.1 to 525 GV). The rigidity ranges are the same with the ones used in the previous AMS-02 antiproton analysis \cite{AMS02AntiprotonPRL2016}. In each range, a dedicated template fit method is used to get the antiproton signals, and the results in the overlappings from different template fit methods are used for crosschecks. \par
+
+%% Low Range
+\subsection*{Low Rigidity Range}
+% 2D Template Fit method in TOF&TRD
+In the low rigidity range, the dominant background sources are light particles. Except the electrons, the interaction between the incoming particles with the AMS-02 materials can produce secondary interaction particles like pions. These background components have to be separated from the antiproton signals. Since the particle's mass is calculated from rigidity and $\beta$ as given in equation \ref{MassEquation}, and the mass of the antiproton is much heavier than the background components in this range, the $\beta$ measurements of antiproton signal is different from the backgrounds in a specific rigidity bin. In this rigidity range, the TOF can be used to separate antiprotons and backgrounds by measuring the $\beta$. With the rigidity going up, the separation power from $\beta_{\rm{TOF}}$ decreases, and at the same time, the TRD separation power increases, so the $\Lambda_\mathrm{TRD}$ can take over afterwards in the intermediate rigidity range. A 2D template fit in $\Lambda_\mathrm{TRD}$ and $\beta_{\rm{TOF}}$ ($1/{\beta_{\rm{TOF}}}$) is used in the low rigidity range to have a smooth and stable separation power. The range in low rigidity is from 1.0 GV to 6.5 GV. The lower limit is due to the low statistics after the geometrical cutoff, and the higher limit is due to the $\beta_{\rm{TOF}}$ resolution. \par
+% Templates
+After the cuts and selections are applied, there are three major components in the data: antiprotons, electrons, and secondaries. The three templates must be constructed first to do the template fit. The antiproton template is taken from the ISS positive rigidity data since the clean proton data sample is easy to extract from it, and the rigidity sign does not impact the absolute value of the $\beta_{\rm{TOF}}$ and the $\Lambda_\mathrm{TRD}$. The electron and the secondaries templates are taken from the ISS negative rigidity data. To get the clean electron and secondaries samples from it, dedicated selections are applied for each sample respectively. Furthermore, after the preselection and selection introduced in Section \ref{DataSelectionSection}, the ISS data to be fitted should fulfill additional selection requirements in the low rigidity range. In table \ref{LowRigiditySelectionsForTemplates} the full list of selections is shown.  \par 
+
+\begin{table}[h]
+\setlength\tabcolsep{15pt}
+\centering
+\caption{List of selections to get all the templates and select further for the ISS data in the low rigidity range.} 
+\label{LowRigiditySelectionsForTemplates}
+\begin{tabular}{cc}
+\hline \textbf{Antiproton Template}                                                                                                                             &  \textbf{Electron Template}                                                                                                                            \\
+%\hline $\frac{1}{\beta_\mathrm{LowEdge}(R)} < \frac{1}{\beta_\mathrm{TOF}}-\frac{1}{\beta(R,m_{{\rm{p}}})}<0.2$    &  $\frac{1}{\beta_\mathrm{LowEdge}(R)}< \frac{1}{\beta_\mathrm{TOF}}-\frac{1}{\beta(R,m_{{\rm{p}}})}<0.2$  \\
+%\hline $ \mathrm{\Lambda}_\mathrm{LowEdge}(R) < \Lambda_{\mathrm{TRD}} <  1.6 $                                                 &  $ \mathrm{\Lambda}_\mathrm{LowEdge}(R) < \Lambda_{\mathrm{TRD}} <  1.6 $                                                \\
+\hline $ \Lambda_{\mathrm{TRD}_{\mathrm{P/He}}} < 0.1$                                                                                     &   Has $\beta$ measurement in RichAgl                                                                                                           \\
+\hline TRD Number of tracks = 1                   &   | $ \beta_\mathrm{RICH} - \beta(R,m_{{\rm{e}}}) | <  0.002 $         \\
+\hline TRD Number of hits < 40                     &   TRD Number of segments in XZ side = 1                                                     \\
+\hline R > 0                                                    &   TRD Number of segments in YZ side = 1                                                     \\
+\hline                                                              &   TRD Number of hits < 35                                                                             \\
+\hline                                                              &    R < 0                                                                                                           \\
+\hline       
+\hline \textbf{Secondaries Template}                                                                   & \textbf{Further selections for ISS Data}               \\
+%\hline $\frac{1}{\beta_\mathrm{LowEdge}(R)}< \frac{1}{\beta_\mathrm{TOF}}-\frac{1}{\beta(R,m_{{\rm{p}}})}<0.2$         & $\frac{1}{\beta_\mathrm{LowEdge}(R)}< \frac{1}{\beta_\mathrm{TOF}}-\frac{1}{ \beta(R,m_{{\rm{p}}}) }<0.2$  \\
+%\hline $ \mathrm{\Lambda}_\mathrm{LowEdge}(R) < \Lambda_{\mathrm{TRD}} <  1.6 $                                                      & $ \mathrm{\Lambda}_\mathrm{LowEdge}(R) < \Lambda_{\mathrm{TRD}} <  1.6 $                                                \\
+\hline Has $\beta$ measurement in RichAgl                                                                                                                 & $ \Lambda_{\mathrm{TRD}_{\mathrm{P/He}}} < 0.1$                                                                                     \\
+\hline $ | \beta_\mathrm{RICH} - \beta(R,m_{{\rm{\pi}}}) | < 0.002 $   & TRD Number of segments in XZ = 1        \\
+\hline TRD Number of segments in XZ side > 1                                                  & TRD Number of segments in YZ = 1       \\
+\hline TRD Number of segments in YZ side > 1                                                  &  R < 0                                                       \\
+\hline TRD Number of hits > 50                                                                           &                                                                  \\
+\hline R < 0                                                                                                          &                                                                  \\  
+\hline
+\end{tabular}
+\end{table}
+
+%\begin{figure}[h]
+%    \centering
+%    \subfigure[]{
+%        \includegraphics[width=0.51\textwidth, height=0.20\textheight ]{Figures/chapter4/TemplateFit/TimeAveragedPlot/Low/LowerEdge/{LowerEdge_TOF}.pdf} 
+%    }\hspace{-0.9cm}
+%    \subfigure[]{
+%	\includegraphics[width=0.51\textwidth, height=0.20\textheight ]{Figures/chapter4/TemplateFit/TimeAveragedPlot/Low/LowerEdge/{LowerEdge_TRD}.pdf}
+%    }
+%    \caption[The rigidity dependence of a) 1/$\beta_{\rm{low}}$ and b) $\Lambda_{\mathrm{low}}$.]{The rigidity dependence of a) 1/$\beta_{\rm{LowEdge}}$ and b) $\Lambda_{\mathrm{LowEdge}}$ at the lower edge of the template fit range for 90\% signal efficiency. The red points correspond to the rigidity bin centers.}
+%    \label{LowerEdgeOfLowTemplateFit}
+%\end{figure}
+
+
+In table \ref{LowRigiditySelectionsForTemplates}, $\beta_{\rm{RICH}}$ is the $\beta$ measurement from the RICH, $\beta(R,m)=\sqrt{\frac{R^2}{m^2+R^2}}$ is the $\beta$ value constructed with rigidity $R$ and mass $m$. Except for the cuts shown in the table, to remove most backgrounds before performing the template fit, additional template fit range cuts on $\beta_\mathrm{TOF}$ and $\Lambda_{\mathrm{TRD}}$ are applied to all the templates and ISS data to be fitted: $\frac{1}{\beta_\mathrm{LowEdge}(R)} < \frac{1}{\beta_\mathrm{TOF}}-\frac{1}{\beta(R,m_{{\rm{p}}})}<0.2$ and $ \mathrm{\Lambda}_\mathrm{LowEdge}(R) < \Lambda_{\mathrm{TRD}} <  1.6 $. $\beta_{\rm{LowEdge}}(R)$ and $\Lambda_{\mathrm{LowEdge}}(R)$ denote the low edge of the template fit range. By varying the low edges, the systematic uncertainty of the template fit can be evaluated. This will be discussed further later in Section \ref{SystematicUncertaintiesSection}. For the final time-averaged antiproton to proton flux ratio, the template fit result at 90\% signal efficiency is used. \par
+
+%The rigidity dependence of $1/\beta_{\rm{LowEdge}}(R)$ and $\Lambda_{\mathrm{LowEdge}}(R)$ at the lower edge of the template fit range is shown in figure \ref{LowerEdgeOfLowTemplateFit}. \par
+
+%Most cuts and selections are set using a fixed value except for the $1/\beta_{\rm{LowEdge}}(R)$ and $\Lambda_{\mathrm{LowEdge}}(R)$. These two cuts are the lower edge values of the template fit ranges and are rigidity-dependent. 
+%$\beta(R,m_{{\rm{p}}})=\sqrt{\frac{R^2}{m_{{\rm{p}}}^2+R^2}}$ is the $\beta$ value constructed with rigidity and proton mass $m_{\rm{p}}$, 
+%$\beta(R,m_{{\rm{e}}})=\sqrt{\frac{R^2}{m_{{\rm{e}}}^2+R^2}}$ is the $\beta$ value constructed with rigidity and electron mass $m_{\rm{e}}$, 
+%$\beta(R,m_{{\rm{\pi}}})=\sqrt{\frac{R^2}{m_{{\rm{\pi}}}^2+R^2}}$ is the $\beta$ value constructed with rigidity and pion mass $m_{\rm{\pi}}$. \par
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Template Fit (Old)
+%Once the templates are obtained, the template fit can be performed. In this analysis, the binned maximum likelihood fit is used. For example, in the low rigidity range, the likelihood function is written as:
+%\begin{equation}
+%f(\mathcal{L})=N_{\bar{p}} \cdot T_{\bar{p}}(\mathcal{L}) + N_{e^{-}} \cdot T_{e^{-}}(\mathcal{L}) + N_{s} \cdot T_{s}(\mathcal{L})
+%\end{equation}
+%where the $T_{\bar{p}}(\mathcal{L})$, $T_{e^{-}}(\mathcal{L})$ and $T_{s}(\mathcal{L})$ are the normalized antiproton, electron and secondaries templates respectively, and the $N_{\bar{p}}$, $N_{e^{-}}$ and $N_{s}$ are the free parameters in the fit, which are correspondent to the event numbers of these components. \par
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{figure}[htbp]
+    \centering
+    \subfigure[]{
+         \includegraphics[width=1.0\textwidth,  trim=0.7cm 4.6cm 10cm 0.45cm, clip]{Figures/chapter4/TemplateFit/TimeAveragedPlot/Low/TemplateFit/fullrange/2DShowData/{FitResult_tof_2.97_3.29_pass7.8_TRDeff_1.00_TOFeff_1.00}.pdf} %xleftupper, yleftbottom, xrightbottom, yrightupper
+         \label{LowRangeDataPlot}
+    }
+    \subfigure[]{
+         \includegraphics[width=1.0\textwidth, trim=10.7cm 4.6cm 0 0.45cm, clip]{Figures/chapter4/TemplateFit/TimeAveragedPlot/Low/TemplateFit/fullrange/2DShowData/{FitResult_tof_2.97_3.29_pass7.8_TRDeff_1.00_TOFeff_1.00}.pdf}
+         \label{LowRangeFitPlot}
+    }
+    \caption[Negative ISS data and Fit result in 2.97 to 3.29 GV]{a) Negative rigidity ISS data in the rigidity range of 2.97 to 3.29 GV in 1/$\beta_\mathrm{TOF}$ and $\Lambda_\mathrm{TRD}$ space. In the Y axis, 1/$\beta$ calculated with rigidity and antiproton mass is subtracted from the value of 1/$\beta_\mathrm{TOF}$, so the distribution of antiproton can be normalized to be around 0. Antiproton signal, electron and secondaries background components are seen in this plot. To remove the most backgrounds, $\Lambda_\mathrm{TRD}$ cut of 0.7 is applied in this plot. b) The 2D template fit result in the same rigidity bin of 2.97 to 3.29 GV in 1/$\beta_\mathrm{TOF}$ and $\Lambda_\mathrm{TRD}$ space.} 
+\end{figure}
+
+
+\begin{figure}[htbp]
+    \centering
+    \subfigure[]{
+         \includegraphics[width=0.9\textwidth, height=0.43\textheight]{Figures/chapter4/TemplateFit/TimeAveragedPlot/Low/TemplateFit/fullrange/TOF-0.3TRD0.7/TOF-0.1TRD0.9/{1_TofBeta_Y_tof_LogY_2.97_3.29_pass7.8_TRDeff_1.00_TOFeff_1.00}.pdf}
+    }
+    \vspace{-0.2cm}
+    \par 
+    \subfigure[]{
+	\includegraphics[width=0.9\textwidth, height=0.43\textheight]{Figures/chapter4/TemplateFit/TimeAveragedPlot/Low/TemplateFit/fullrange/TOF-0.3TRD0.7/TOF-0.1TRD0.9/{TrdLikelihood_X_tof_LogY_2.97_3.29_pass7.8_TRDeff_1.00_TOFeff_1.00}.pdf}	
+    }
+    \caption[Example template fit in the low rigidity range of 2.97 to 3.29 GV.]{Example template fit in the low rigidity range of 2.97 to 3.29 GV. a) 1/$\beta_\mathrm{TOF}$ projection. In this projection, 1/$\beta$ calculated with rigidity and antiproton mass is subtracted from the value of 1/$\beta_\mathrm{TOF}$. b) $\Lambda_\mathrm{TRD}$ projection.}
+    \label{LowRigidityExampleTemplateFitProjections}
+\end{figure}
+
+In figure \ref{LowRangeDataPlot}, the negative rigidity ISS data in the rigidity range of 2.97 to 3.29 GV is shown in 1/$\beta_\mathrm{TOF}$ and $\Lambda_\mathrm{TRD}$ space. The three components are antiprotons, electrons and interaction secondaries. $\Lambda_\mathrm{TRD}$ cut of 0.7 is applied in this plot to remove the most backgrounds of electrons and interaction secondaries. In figure \ref{LowRangeFitPlot}, an example template fit in this rigidity range is shown. To illustrate the separation, the 2D template fit is shown in two projections in figure \ref{LowRigidityExampleTemplateFitProjections}. In 1/$\beta_\mathrm{TOF}$ projection, further cut of $\Lambda_{\rm{TRD}}>0.9$ is applied to reduce the backgrounds; similarly in $\Lambda_\mathrm{TRD}$ projection, further cut of 1/$\beta_\mathrm{TOF}$-1/$\beta(R,m_{p})$>-0.1 is applied. Since it is a 2D template fit, the $\chi^2$/ndf is calculated individually in the two projections. \par
+
+The template fits give the number of antiproton events in the low rigidity range. The proton number is obtained after selections introduced in Section \ref{DataSelectionSection} and further selections for ISS data in table \ref{LowRigiditySelectionsForTemplates} but $R>0$. In figure \ref{PbarNumbersInLowRigidityRange} the number of antiproton and proton events as a function of the rigidity obtained is given. 
+%The corresponding $\chi^2$/ndf values of the template fits are given in figure \ref{Chi2OfFitInLowRigidityRange}.  \par
+
+\begin{figure}[H]
+\includegraphics[width=1.00\textwidth]{Figures/chapter4/TemplateFit/TimeAveragedPlot/Low/{NumberPbarAndProtonPlot_LowRange_pass78}.pdf}
+\caption[The number of antiproton and proton events obtained in the low rigidity range.]{The numbers of antiproton and proton events as function of the rigidity obtained in the low rigidity range.}
+\label{PbarNumbersInLowRigidityRange}
+\end{figure}
+
+%\begin{figure}[H]
+%\includegraphics[width=1.00\textwidth]{Figures/chapter4/TemplateFit/TimeAveragedPlot/Low/FitResult/{chi2_tof_pass7.8_TRDEff_0.94_TOFEff_0.95}.pdf}
+%\caption{The $\chi^2$/ndf of the template fits in the low rigidity range.}
+%\label{Chi2OfFitInLowRigidityRange}
+%\end{figure}
+
+
+%% Intermediate Range
+\subsection*{Intermediate Rigidity Range}
+% Template Fit method in TRD
+In the intermediate rigidity range, the 2D template fit in $\beta_{\rm{TOF}}$ and $\Lambda_\mathrm{TRD}$ is replaced by a 1D template fit in $\Lambda_\mathrm{TRD}$ since the separation power of $\beta_{\rm{TOF}}$ decreases with the rigidity going up and provides little power in this rigidity range. Above 20 GV, the component of charge confused protons gradually increases, so it has to be added as an additional template. Therefore the 1D template fit can only be implemented up to around 20 GV. \par
+
+% Templates
+In the intermediate rigidity range, the interaction secondaries component is negligible. Therefore, the templates in this rigidity range are only formed for antiprotons and electrons. Like the template fit in the low rigidity range, the templates are also taken from the ISS data. The antiproton template is taken from positive rigidity data, and the electron template is taken from negative rigidity data. The dedicated selections for ISS data in the intermediate rigidity range are applied before the template fit. In table \ref{IntermediateRigiditySelectionsForTemplates}, the full list of selections that are used for the ISS data and in order to form the templates is given.  \par
+
+\begin{table}[htbp]
+\setlength\tabcolsep{15pt}
+\centering
+\caption{List of selections to get all the templates and select further for the ISS data in the intermediate rigidity range.} 
+\label{IntermediateRigiditySelectionsForTemplates}
+\begin{tabular}{cc}
+\hline \textbf{Antiproton Template}      &  \textbf{Electron Template}           \\
+%\hline PatternCut                             &  PatternCut                                    \\
+%\hline $ \mathrm{\Lambda}_\mathrm{LowEdge}(R) < \Lambda_{\mathrm{TRD}} < 2 $  &  $ \mathrm{\Lambda}_\mathrm{LowEdge}(R) < \Lambda_{\mathrm{TRD}} < 2 $  \\
+\hline $\beta_\mathrm{RICH}<\beta_\mathrm{high}(R)$                                             &   TRD Number of hits < 35                          \\
+\hline TRD Number of segments in XZ side = 1                                                                  &   ECALBDT > 0.5                                         \\
+\hline TRD Number of segments in YZ side = 1                                                                  &   TRD Number of segments in XZ side = 1         \\
+\hline R > 0                                                                                                                   &   TRD Number of segments in YZ side = 1        \\
+\hline                                                                                                                            & R < 0                                                           \\
+%\hline                                                                                                                         &  $TRDLogLikelihood>-1.5$                         \\
+\hline \textbf{Further selections for ISS Data}                                                                            &        \\
+%\hline PatternCut                                                                                                      &        \\
+%\hline  $ \mathrm{\Lambda}_\mathrm{LowEdge}(R) < \Lambda_{\mathrm{TRD}} < 2 $ &        \\
+\hline  $\beta_\mathrm{RICH}<\beta_\mathrm{high}(R)$                                            &        \\
+\hline  TRD Number of segments in XZ side = 1                                                                 &        \\
+\hline  TRD Number of segments in YZ side = 1                                                                  &        \\
+\hline  R < 0                                                                                                                   &        \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{figure}[htbp]
+\centering
+%\includegraphics[width=1.00\textwidth]{Figures/chapter4/TemplateFit/TimeAveragedPlot/intermediate/TemplateFit/{FitResult_0124_free_pass7.8_10.1_11_TRDEff_0.90}.pdf}
+\includegraphics[width=1.00\textwidth]{Figures/chapter4/TemplateFit/TimeAveragedPlot/intermediate/TemplateFit_FullRange/{FitResult_LogY_0124_free_pass7.8_5.9_6.47_TRDEff_1.00}.pdf}
+%\caption{Example template fit in the intermediate rigidity range of 10.1 to 11.0 GV.}
+\caption[Example template fit in the intermediate rigidity range of 5.9 to 6.47 GV.]{Example template fit in the intermediate rigidity range of 5.9 to 6.47 GV. To reduce the most electrons, the template fit is performed on the right side of the dashed line, which corresponds to around 99\% antiproton signal efficiency.}
+\label{ExampleTemplateFitInIntermediateRange}
+\end{figure}
+
+In table \ref{IntermediateRigiditySelectionsForTemplates}, the ECALBDT estimator is a value trained with ECAL response variables and can provide separation power between protons and electrons. If the particles go through the ECAL, a clean electron sample can be obtained by applying a cut of 0.5 on ECALBDT. To avoid the light particles background, if there is a $\beta_{\rm{RICH}}$ measurement then the value has to be less than $\beta_\mathrm{high}(R)$ to restrict the signal range. The $\beta_\mathrm{high}(R)$ is determined by 90\% antiproton signal efficiency. Except for the cuts in this table, to remove most backgrounds before performing the template fit, an additional template fit range cut on $\Lambda_{\mathrm{TRD}}$ is applied to all the templates and ISS data to be fitted like described in the low rigidity range.  \par 
+
+
+% Example Fit
+In figure \ref{ExampleTemplateFitInIntermediateRange}, an example template fit in the rigidity range of 5.9 to 6.47 GV is shown. The antiproton signal can be separated well from the electron background. To reduce the most background of electrons, the template fit range is set to around 99\% antiproton signal efficiency (the dashed line).
+
+The template fits give the number of antiproton events in the intermediate rigidity range. The proton number is obtained after selections introduced in Section \ref{DataSelectionSection} and further selections for ISS data in table \ref{IntermediateRigiditySelectionsForTemplates} but $R>0$. The obtained antiproton and proton numbers are shown in figure \ref{PbarNumbersInIntermediateRigidityRange}. 
+%The corresponding $\chi^2$/ndf values of the template fits in the intermediate rigidity range are given in Figure \ref{Chi2OfFitInIntermediateRigidityRange}. \par
+
+\begin{figure}[H]
+\includegraphics[width=1.00\textwidth]{Figures/chapter4/TemplateFit/TimeAveragedPlot/intermediate/{NumberPbarAndProtonPlot_IntermediateRange_pass78}.pdf}
+\caption[The number of antiproton and proton events obtained in the intermediate rigidity range.]{The numbers of antiproton and proton events as function of the rigidity obtained in the intermediate rigidity range.}
+\label{PbarNumbersInIntermediateRigidityRange}
+\end{figure}
+
+%\begin{figure}[t]
+%\includegraphics[width=1.00\textwidth]{Figures/chapter4/TemplateFit/TimeAveragedPlot/intermediate/TemplateFit/{chi2dof_0124_free_pass7.8binmerge1_TRDEff_0.90}.pdf}
+%\caption{The $\chi^2$/ndf of the template fits in the intermediate rigidity range.}
+%\label{Chi2OfFitInIntermediateRigidityRange}
+%\end{figure}
+
+%% High Range
+\subsection*{High Rigidity Range}
+
+% Template Fit method in CC vs. TRD
+In the high rigidity range, the contribution of charge confused protons increases. Therefore, the $\Lambda_{\rm{CC}}$ trained in Section \ref{chargeconfusion} is used to separate antiprotons and charge confused protons. For electron separation, the TRD provides separation power, like in the low and intermediate rigidity ranges. In summary, a 2D template fit in $\Lambda_{\rm{CC}}$ and $\Lambda_\mathrm{TRD}$ is performed in this range to get the antiproton signal. \par
+
+\begin{figure}[tph]
+    \centering
+    
+    \subfigure[]{
+         \includegraphics[width=0.90\textwidth,  trim=0.5cm 7.5cm 10cm 0.7cm, clip]{Figures/chapter4/TemplateFit/TimeAveragedPlot/high/TemplateFit/{FitResult_Pattern_0_VGG16NN_175_211_cccut_0.20_CCN_20_TRDN_20}.pdf} %xleftupper, yleftbottom, xrightbottom, yrightupper
+         \label{HighRangeDataPlot} 
+    }
+    \vspace{-0.2cm}
+    \par
+    \subfigure[]{
+         \includegraphics[width=0.9\textwidth, trim=10.5cm 7.5cm 0 0.7cm, clip]{Figures/chapter4/TemplateFit/TimeAveragedPlot/high/TemplateFit/{FitResult_Pattern_0_VGG16NN_175_211_cccut_0.20_CCN_20_TRDN_20}.pdf}
+         \label{HighRangeFitPlot}
+    }
+    \caption[Negative rigidity ISS data and fit result in the rigidity range of 175 to 211 GV in $\Lambda_{\rm{CC}}$ and $\Lambda_\mathrm{TRD}$ space.]{a) Negative rigidity ISS data in the rigidity range of 175 to 211 GV in $\Lambda_{\rm{CC}}$ and $\Lambda_\mathrm{TRD}$ space. Three components of antiprotons, electrons and charge confused protons are seen in this plot. To remove most backgrounds of charge confused protons, $\Lambda_{\rm{CC}}$ cut of 0.2 is applied. b) The 2D template fit result in the same rigidity bin of 175 to 211 GV in $\Lambda_{\rm{CC}}$ and $\Lambda_\mathrm{TRD}$ space.}    
+\end{figure}
+
+
+\begin{figure}[htbp]
+    \centering
+    \subfigure[]{
+        \includegraphics[width=0.9\textwidth, height=0.43\textheight]{Figures/chapter4/TemplateFit/TimeAveragedPlot/high/TemplateFit/{CCprojection_Pattern_0_VGG16NN_175_211_cccut_0.20_CCN_20_TRDN_20}.pdf} 
+    }
+     \vspace{-0.2cm}
+    \par
+    \subfigure[]{
+	\includegraphics[width=0.9\textwidth, height=0.43\textheight]{Figures/chapter4/TemplateFit/TimeAveragedPlot/high/TemplateFit/{TRDprojection_Pattern_0_VGG16NN_175_211_cccut_0.20_CCN_20_TRDN_20}.pdf} 
+    }
+    \caption[Example template fit in the high rigidity range of 175 to 211 GV.]{Example template fit in the high rigidity range of 175 to 211 GV. a) In the $\Lambda_{\rm{CC}}$ projection, $\Lambda_{\rm{TRD}}$>0.7 is applied and antiproton and charge confused proton can be separated well in this projection.  b) In the $\Lambda_\mathrm{TRD}$ projection, $\Lambda_{\rm{CC}}$>0.75 is applied and antiproton and electron can be separated well.}
+    \label{ExampleTemplateFitInHighRigidityRange}
+\end{figure}
+
+% Tracker Pattern usage in Rigidity ranges 
+As shown in figure \ref{TrackerResolutions}, different tracker patterns have different rigidity resolutions. To maximize the statistics and maintain the accuracy of rigidity measurement, the requirement of tracker patterns changes as rigidity goes up: No hit in tracker layers 1 and 9 is required below 38.9 GV; hit in either layer 1 and 9 is required from 38.9 to 147 GV; hit in layer 9 is required from 147 to 175 GV. Above 175 GV, hits in layers 1 and 9 are required. This selection requirement is the same as the one used in the previous AMS-02 publication \cite{AMS02AntiprotonPRL2016}. From 80.5 GV, every two rigidity bins are merged to increase the statistics. \par
+
+% Templates
+In the 2D template fit, the three templates are antiprotons, electrons, and charge confused protons. The antiproton template is taken from the ISS positive rigidity data, and the electron template is taken from the ISS negative rigidity data by ECALBDT. Finally, the charge confused proton template is formed by using proton MC simulation samples by selecting events with negative rigidity. To avoid the contamination of helium, the $\Lambda_{\mathrm{TRD}_{\mathrm{P/He}}} < 0.3$ cut is applied for the negative rigidity data before the template fit. \par      %%--trd low 0.0 --trd high 1.6
+%the electron template is taken from the ISS negative rigidity data by ECALBDT to be larger than zero
+
+% Table of selection (Commented Out)
+\begin{comment}
+\begin{table}[h]
+\setlength\tabcolsep{15pt}
+\centering
+\caption{List of selections for templates}
+\label{HighRigiditySelectionsForTemplates}
+\begin{tabular}{cc}
+\hline \textbf{Antiproton template}                         &  \textbf{Electron Template}                         \\
+\hline         $-1<ECALBDT<0$                                 &  $0<ECALBDT$                                       \\
+\hline         $\rm{TRDLikelihood_{P/He}} < 0.3$      &   $\rm{TRDLikelihood_{P/He}} < 0.3$      \\
+\hline \textbf{Charge confused proton Template}  &  \textbf{Negative Rigidity Data}                  \\
+\hline         $-1<ECALBDT<0$                                 &   $-2<ECALBDT<0$                                 \\
+\hline         $\rm{TRDLikelihood_{P/He}} < 0.3$,     &   $\rm{TRDLikelihood_{P/He}} < 0.3$      \\
+\hline
+\end{tabular}
+\end{table}
+\end{comment}
+
+% Example Fit
+To cut away the most background of charge confused protons, the template fit is performed in $\Lambda_{\rm{CC}}>0.2$ range. In figure \ref{HighRangeDataPlot}, the negative rigidity ISS data in the rigidity range of 175 to 211 GV is shown in $\Lambda_{\rm{CC}}$ and $\Lambda_\mathrm{TRD}$ space. The three components of antiprotons, electrons and charge confused protons are indicated in this figure. In figure \ref{HighRangeFitPlot}, an example template fit in this rigidity range is shown. To illustrate the separation, the 2D template fit is shown in two projections in figure \ref{ExampleTemplateFitInHighRigidityRange}. In $\Lambda_{\rm{CC}}$ projection, $\Lambda_{\rm{TRD}}$>0.7 is applied to show the separation between antiprotons and charge confused protons. In $\Lambda_\mathrm{TRD}$ projection, $\Lambda_{\rm{CC}}$>0.75 is applied to show the separation between antiprotons and electrons. Since it is a 2D template fit, the $\chi^2$/ndf is calculated individually in the two projections. \par
+%In $\Lambda_{\rm{CC}}$ projection, further cut of $\Lambda_{\rm{TRD}}>0.5$ is applied to show the separation between antiprotons and charge confused protons. In $\Lambda_\mathrm{TRD}$ projection, further cut of  $\Lambda_{\rm{CC}}>0.4$ is applied to show the separation between antiprotons and electrons. \par
+
+%The number of antiprotons obtained from the 2D template fit and the number of protons after the selections introduced in Section \ref{DataSelectionSection} are given in figure \ref{PbarNumbersInHighRigidityRange}.  
+The numbers of antiprotons and protons obtained in the high rigidity range are given in figure \ref{PbarNumbersInHighRigidityRange}.  
+
+
+%For example, the corresponding $\chi^2$/ndf in the full span is given in \ref{Chi2OfFitInHighRigidityRange}. \par 
+
+\begin{figure}[hptb]
+\includegraphics[width=1.00\textwidth]{Figures/chapter4/TemplateFit/TimeAveragedPlot/high/{NumberPlot_AllPatternsOverRigidityBinWidthpass78}.pdf}
+\caption[The antiproton and proton numbers obtained in the high rigidity range.]{The antiproton and proton numbers obtained in the high rigidity range. The dashed vertical lines are the boundary of the usage of different tracker patterns. To avoid the jump due to the merge of rigidity bins from 80.5 GV, the antiproton and proton numbers are divided by the rigidity bin width to have a smooth curve.}
+\label{PbarNumbersInHighRigidityRange}
+\end{figure}
+
+Once the template fits in the three rigidity ranges are performed, the antiproton numbers from 1.0 to 525 GV can be obtained. In total, 481959 antiprotons are selected from the template fits. \par
+
+%\begin{figure}[H]
+%\includegraphics[width=1.00\textwidth]{Figures/chapter4/TemplateFit/TimeAveragedPlot/high/FitResult/{Chi2dof_Pattern_0_pass7.8_VGG16NN}.pdf}
+%\caption{The $\chi^2$/ndf of template fit in full span in the high rigidity range.}
+%\label{Chi2OfFitInHighRigidityRange}
+%\end{figure}
+
+
+
+%In figure \ref{PbarTimeAveragedNumbers}, the antiproton number plot is shown. 
+%\begin{figure}[H]
+%\centering
+%\includegraphics[width=1.00\textwidth]{Figures/chapter4/TemplateFit/TimeAveragedPlot/{NumberPlot_pass78_AllRange}.pdf}
+%\caption{The antiproton numbers get from the template fit result.}
+%\label{PbarTimeAveragedNumbers}
+%\end{figure}
+
+
+%%%% Time-dependent analysis
+\subsection{Time-dependent analysis}
+
+% Template Fit method
+For the time-dependent analysis, the template fit strategy is the same as the one used in the time-averaged analysis. The data is divided into time bins with a width equal to the duration of six Bartels Rotations each. In each time bin, a template fit is performed to get the antiproton to proton ratio. Due to the limited statistics in each time bin, the rigidity binning is altered in the following way: every two original neighboring rigidity bins are now merged to form a new bin. In this way, an increase in statistics in each new bin is accomplished. \par
+
+% Time Dependent Template
+The template selections are the same as the ones used in the time-averaged analysis. The only difference is the template fit range. To increase the statistics, the signal efficiency is increased from 90\% to 95\% in the low rigidity range and from 90\% to 98\% in the intermediate rigidity range. \par
+
+Since the templates are taken from the ISS data, the shapes of the templates are time-dependent. To visualize the time dependence, all the templates are parameterized in the distribution core range in the following way: In the $\Lambda_\mathrm{TRD}$ dimension, the antiproton, electron and secondaries are parameterized by a Novosibirsk function $N(x;\mu,\sigma,\tau)$, and in the 1/$\beta_\mathrm{TOF}$ dimension, the antiproton, electron and secondaries are parameterized by a Gaussian function $G(x; \mu,\sigma)$: \par
+
+\begin{figure}[hptb]
+\centering
+\includegraphics[width=1.00\textwidth]{Figures/chapter4/TemplateFit/TimeDependentPlot/TimeDependentTemplate/TRD/{TemplateFit_TRD_6.47_7.76_78}.pdf}
+\caption[The parameterizations of the normalized antiproton and electron templates.]{The parameterizations of the normalized antiproton and electron templates by Novosibirsk functions in the rigidity range of 6.47 to 7.76 GV with data collected from Feb.18.2017 to Jul.30.2017.}
+\label{PparameterizationsTemplate}
+\end{figure}
+
+\begin{equation}
+\begin{aligned}
+G(x; \mu,\sigma) &= \frac{1}{\sqrt{2 \pi \sigma^2}}{\rm{exp}} \left(-\frac{(x-\mu)^2}{2\sigma^2} \right), \\
+N(x;\mu,\sigma,\tau)&={\rm{exp}}\left( -\frac{1}{2} \left( \frac{({\rm{ln}}(\lambda(x; \mu,\sigma,\tau)))^2}{\tau^2}+\tau^2  \right)  \right), {\rm{where}}\\
+\lambda(x; \mu,\sigma,\tau)&=1+\tau(x-\mu)\frac{{\rm{sinh}}(\tau\sqrt{{\rm{ln}}4})}{\sigma\tau\sqrt{{\rm{ln}}4}}
+\end{aligned}
+\end{equation}
+
+% TRD side:
+For an illustration of parameterization in the $\Lambda_\mathrm{TRD}$ dimension, the parameterizations of the normalized antiproton and electron templates in the rigidity range of 6.47 to 7.76 GV with data collected from Feb.18.2017 to Jul.30.2017 is shown as an example in figure \ref{PparameterizationsTemplate}. 
+
+\begin{figure}[hptb]
+    \centering
+    \subfigure[]{
+        \includegraphics[width=0.49\textwidth, height=0.23\textheight]{Figures/chapter4/TemplateFit/TimeDependentPlot/TimeDependentTemplate/TRD/Antiproton/{Antiproton_TRD_6.47_7.76_miu}.pdf} 
+    }
+    \hspace{-0.7cm}
+    \subfigure[]{
+	\includegraphics[width=0.49\textwidth, height=0.23\textheight]{Figures/chapter4/TemplateFit/TimeDependentPlot/TimeDependentTemplate/TRD/Antiproton/{Antiproton_TRD6.47_7.76_sigma}.pdf} 
+    } 
+    \subfigure[]{
+        \includegraphics[width=0.49\textwidth, height=0.23\textheight]{Figures/chapter4/TemplateFit/TimeDependentPlot/TimeDependentTemplate/TRD/Electron/{Electron_TRD_6.47_7.76_miu}.pdf} 
+    } 
+    \hspace{-0.7cm}
+    \subfigure[]{
+	\includegraphics[width=0.49\textwidth, height=0.23\textheight]{Figures/chapter4/TemplateFit/TimeDependentPlot/TimeDependentTemplate/TRD/Electron/{Electron_TRD6.47_7.76_sigma}.pdf} 
+    }
+    %\vspace{-10mm}        
+    \caption[Time-dependence of the a) $\mu_{\rm{\bar{p},TRD}}$ b) $\sigma_{\rm{\bar{p},TRD}}$ c) $\mu_{\rm{e^{-},TRD}}$ d) $\sigma_{\rm{e^{-},TRD}}$ in 6.47 to 7.76 GV.]{Time-dependence of the a) $\mu_{\rm{\bar{p},TRD}}$ b) $\sigma_{\rm{\bar{p},TRD}}$ c) $\mu_{\rm{e^{-},TRD}}$ d) $\sigma_{\rm{e^{-},TRD}}$ in the rigidity range of 6.47 to 7.76 GV. The parameters of the electron template show significant structures up to the end of 2012, where the TRD gas parameters were being optimized. After that, both parameters of antiproton and electron templates are changing due to the decrease of the Xe partial pressure in the TRD.}
+    \label{TimeDependenceParameters}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \subfigure[]{
+        \includegraphics[width=0.49\textwidth, height=0.23\textheight]{Figures/chapter4/TemplateFit/TimeDependentPlot/TimeDependentTemplate/TOF/Antiproton/{Antiproton_TOF_3.64_4.43_miu}.pdf} 
+    }
+    \hspace{-0.7cm}
+    \subfigure[]{
+	\includegraphics[width=0.49\textwidth, height=0.23\textheight]{Figures/chapter4/TemplateFit/TimeDependentPlot/TimeDependentTemplate/TOF/Antiproton/{Antiproton_TOF3.64_4.43_sigma}.pdf} 
+    } 
+    \subfigure[]{
+        \includegraphics[width=0.49\textwidth, height=0.23\textheight]{Figures/chapter4/TemplateFit/TimeDependentPlot/TimeDependentTemplate/TOF/Electron/{Electron_TOF_3.64_4.43_miu}.pdf} 
+    } 
+    \hspace{-0.7cm}
+    \subfigure[]{
+	\includegraphics[width=0.49\textwidth, height=0.23\textheight]{Figures/chapter4/TemplateFit/TimeDependentPlot/TimeDependentTemplate/TOF/Electron/{Electron_TOF3.64_4.43_sigma}.pdf} 
+    }  
+    \subfigure[]{
+        \includegraphics[width=0.49\textwidth, height=0.23\textheight]{Figures/chapter4/TemplateFit/TimeDependentPlot/TimeDependentTemplate/TOF/Pion/{Pion_TOF_3.64_4.43_miu}.pdf} 
+    } 
+    \hspace{-0.7cm}
+    \subfigure[]{
+	\includegraphics[width=0.49\textwidth, height=0.23\textheight]{Figures/chapter4/TemplateFit/TimeDependentPlot/TimeDependentTemplate/TOF/Pion/{Pion_TOF3.64_4.43_sigma}.pdf}  
+    }
+    \caption[Time-dependence of the a) $\mu_{\rm{\bar{p}},TOF}$ b) $\sigma_{\rm{\bar{p}},TOF}$ c) $\mu_{\rm{e^{-}},TOF}$ d) $\sigma_{\rm{e^{-}},TOF}$ e) $\mu_{\rm{secondaries},TOF}$ f) $\sigma_{\rm{secondaries},TOF}$ in 3.64 to 4.43 GV.]{Time-dependence of the a) $\mu_{\rm{\bar{p}},TOF}$ b) $\sigma_{\rm{\bar{p}},TOF}$ c) $\mu_{\rm{e^{-}},TOF}$ d) $\sigma_{\rm{e^{-}},TOF}$ e) $\mu_{\rm{secondaries},TOF}$ f) $\sigma_{\rm{secondaries},TOF}$ in the rigidity range of 3.64 to 4.43 GV. No obvious trend is observed in the mean values but the distributions of sigma show rising trends in all three components, this could be due to the aging of the scintillators.}
+    \label{TimeDependenceTOFPara}
+\end{figure}
+
+
+For the antiproton template, the time dependence can be described by the mean value $\mu_{\rm{\bar{p},TRD}}$ and width $\sigma_{\rm{\bar{p}},TRD}$. For the electron template, the time dependence can be described by the mean value $\mu_{\rm{e^{-}},TRD}$ and width $\sigma_{\rm{e^{-}},TRD}$. The time dependence of the four parameters in the rigidity range of 6.47 to 7.76 GV is shown in figure \ref{TimeDependenceParameters}.
+
+
+% TOF side:
+%For an illustration of parameterization in the 1/$\beta_\mathrm{TOF}$ dimension, the parameterizations of the normalized antiproton, electron and secondaries templates in the rigidity range of X.XX to X.XX GV with data collected from Feb.18.2017 to Jul.30.2017 is shown as an example in figure \ref{XXX}.
+
+For the 1/$\beta_\mathrm{TOF}$ dimension, the cores of the normalized antiproton, electron and secondaries templates are parametrized by Gaussian functions. The time dependence of the antiproton template can be described by the mean value $\mu_{\rm{\bar{p}},TOF}$ and width $\sigma_{\rm{\bar{p}},TOF}$, the time dependence of the electron template can be described by the mean value $\mu_{\rm{e^{-}},TOF}$ and width $\sigma_{\rm{e^{-}},TOF}$, the time dependence of the secondaries can be described by the mean value $\mu_{\rm{secondaries},TOF}$ and width $\sigma_{\rm{secondaries},TOF}$. The six parameters in an example rigidity range of 3.64 to 4.43 GV are shown in figure \ref{TimeDependenceTOFPara}.\par
+
+
+
+% Example Template Fit
+An example template fit in the rigidity range of 6.47 to 7.76 GV is given in figure \ref{TimeDependentTemplateFitInInermediate}. The fitted data is six Bartels Rotations data taken from Feb.18.2017 to Jul.30.2017. \par
+
+\begin{figure}[htpb]
+\centering
+%\includegraphics[width=1.00\textwidth]{Figures/chapter4/TemplateFit/TimeDependentPlot/intermediate/FitPlot/{FitResult_0124_free_6.47_7.76_index_114_LogY}.pdf}
+%\caption{Example template fit in the rigidity range of 6.47 to 7.76 GV with data collected from Jan.07.2020 to June.17.2020.}  % 1578355200 to 1592352000
+\includegraphics[width=1.00\textwidth]{Figures/chapter4/TemplateFit/TimeDependentPlot/intermediate/FitPlot_FullRange/{FitResult_0124_free_6.47_7.76_index_78_TRDEff_1.00_LogY}.pdf}
+\caption[Example template fit in 6.47 to 7.76 GV with data from Feb.2017 to Jul.2017.]{Example template fit in the rigidity range of 6.47 to 7.76 GV with data collected from Feb.18.2017 to Jul.30.2017.}  % 1494374400 to 1508371200
+%To collect the most statistics of antiproton signal, no cut on the $\Lambda_\mathrm{TRD}$ is applied.
+\label{TimeDependentTemplateFitInInermediate}
+\end{figure}
+
+The obtained antiproton numbers in 6.47 to 7.76 GV for the 23 groups containing data of six Bartels Rotations each is shown in figure \ref{PbarNumbersInTimeDependentIntermediateRange}. The corresponding values of the $\chi^2$/ndf are given in figure \ref{Chi2dofOfTimeDependentIntermediateRange}.  
+
+\begin{figure}[htpb]
+\centering
+\includegraphics[width=1.00\textwidth, height=0.4\textheight]{Figures/chapter4/TemplateFit/TimeDependentPlot/intermediate/FitResult/{AntiprotonNumber_6BartalRotation_0124_free_binmerge2_6.47_7.76}.pdf}
+\caption[Antiproton numbers in 6.47 to 7.76 GV with six Bartels' Rotation.]{The antiproton numbers obtained from the template fit results in the rigidity range of 6.47 to 7.76 GV with six Bartels' Rotation time resolution. To avoid jumps due to the measuring time (see Section \ref{MeasuringTimeSection}), the numbers are divided by the measuring time in each six Bartels' Rotation time bin.}
+\label{PbarNumbersInTimeDependentIntermediateRange}
+\end{figure}
+
+\begin{figure}[htpb]
+\centering
+\includegraphics[width=1.00\textwidth, height=0.4\textheight]{Figures/chapter4/TemplateFit/TimeDependentPlot/intermediate/FitResult/{Chi2dof_6BartalRotation_0124_free_binmerge2_6.47_7.76}.pdf}
+\caption[$\chi^2$/ndf of the fits in 6.47 to 7.76 GV with six Bartel's Rotation.]{$\chi^2$/ndf of the template fits in the rigidity range of 6.47 to 7.76 GV with six Bartel's Rotation time resolution.}
+\label{Chi2dofOfTimeDependentIntermediateRange}
+\end{figure}
+
+
+
+
+%\subsection*{Low Rigidity Range}
+% Template Fit method 
+%In the low rigidity range, the 2D template fit in TRDLikelihood vs. TOF beta is performed from 1.16 to 6.47 GV.  \par
+% Templates
+% TOFBetaCut和TrdLikelihoodCut 是在fit时候补上了边界的。
+% Pabr      : PositiveCut(TRD_{low}<TrdLikelihoodCut && TrdLikelihoodHeProton<0.1 && TRDVTracksSize=1 && TrdNumberOfHitsCut_P<40; )  %比averaged少了TOFBetaCut
+% Electron: ElectronTemplateDataCut ("RichIsNaF==0 && RichBeta-(-Rigidity)/sqrt(0.000511^2+Rigidity^2)>-0.002 && TrdSegmentsXZNumber==1 && TrdSegmentsYZNumber==1 && TrdNumberOfHits<35")  %比averaged少了TOFBetaCut 和 TRDLikelihoodCut
+% Pion      : PionTemplateDataCut (  (std::string("RichIsNaF==0 && abs(RichBeta-(-Rigidity)/sqrt(0.139^2+Rigidity^2))<0.002 && TrdLogLikelihoodRatioElectronProtonTracker>") + std::to_string(TrdLOW) + std::string("&& TrdSegmentsXZNumber>1 && TrdSegmentsYZNumber>1 && TrdNumberOfHits>50")).c_str(); )    %比averaged少了TOFBetaCut
+% Data      : NegativeCut   ( TrdLikelihoodCut && TrdLikelihoodHeProtonCut && TrdSegmentsXZNumberCut && TrdSegmentsYZNumberCut;) 
+% Example Fit
+
+
+
+%\subsection*{Intermediate Rigidity Range}
+% Template Fit method 
+% Templates
+% Example Fit
+
+

@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<MethodSetup Method="Fisher::Fisher">
+  <GeneralInfo>
+    <Info name="TMVA Release" value="4.2.1 [262657]"/>
+    <Info name="ROOT Release" value="6.14/08 [396808]"/>
+    <Info name="Creator" value="bo791269"/>
+    <Info name="Date" value="Tue Mar 12 20:37:54 2019"/>
+    <Info name="Host" value="Linux lxplus001.cern.ch 3.10.0-862.14.4.el7.x86_64 #1 SMP Wed Sep 26 15:12:11 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux"/>
+    <Info name="Dir" value="/rwthfs/rz/cluster/home/bo791269/TMVA/12.03.2019"/>
+    <Info name="Training events" value="20304"/>
+    <Info name="TrainingTime" value="8.65139961e-02"/>
+    <Info name="AnalysisType" value="Classification"/>
+  </GeneralInfo>
+  <Options>
+    <Option name="V" modified="Yes">False</Option>
+    <Option name="VerbosityLevel" modified="No">Default</Option>
+    <Option name="VarTransform" modified="Yes">None</Option>
+    <Option name="H" modified="Yes">True</Option>
+    <Option name="CreateMVAPdfs" modified="Yes">True</Option>
+    <Option name="IgnoreNegWeightsInTraining" modified="No">False</Option>
+    <Option name="Method" modified="Yes">Fisher</Option>
+  </Options>
+  <Variables NVar="16">
+    <Variable VarIndex="0" Expression="a1" Label="a1" Title="a1" Unit="" Internal="a1" Type="F" Min="-3.68934881e+19" Max="3.68934881e+19"/>
+    <Variable VarIndex="1" Expression="a2" Label="a2" Title="a2" Unit="" Internal="a2" Type="F" Min="1.65215945e+00" Max="1.91371751e+00"/>
+    <Variable VarIndex="2" Expression="a3" Label="a3" Title="a3" Unit="" Internal="a3" Type="F" Min="-3.68934881e+19" Max="3.68934881e+19"/>
+    <Variable VarIndex="3" Expression="a4" Label="a4" Title="a4" Unit="" Internal="a4" Type="F" Min="-2.72248077e+00" Max="2.22087693e+00"/>
+    <Variable VarIndex="4" Expression="a5" Label="a5" Title="a5" Unit="" Internal="a5" Type="F" Min="-3.68934881e+19" Max="3.68934881e+19"/>
+    <Variable VarIndex="5" Expression="a6" Label="a6" Title="a6" Unit="" Internal="a6" Type="F" Min="-4.69478512e+00" Max="4.92631340e+00"/>
+    <Variable VarIndex="6" Expression="a7" Label="a7" Title="a7" Unit="" Internal="a7" Type="F" Min="-3.68934881e+19" Max="3.68934881e+19"/>
+    <Variable VarIndex="7" Expression="a8" Label="a8" Title="a8" Unit="" Internal="a8" Type="F" Min="-1.87496316e+00" Max="1.73675537e+00"/>
+    <Variable VarIndex="8" Expression="a9" Label="a9" Title="a9" Unit="" Internal="a9" Type="F" Min="-3.68934881e+19" Max="3.68934881e+19"/>
+    <Variable VarIndex="9" Expression="a10" Label="a10" Title="a10" Unit="" Internal="a10" Type="F" Min="-2.29549670e+00" Max="2.13668108e+00"/>
+    <Variable VarIndex="10" Expression="a11" Label="a11" Title="a11" Unit="" Internal="a11" Type="F" Min="-3.68934881e+19" Max="3.68934881e+19"/>
+    <Variable VarIndex="11" Expression="a12" Label="a12" Title="a12" Unit="" Internal="a12" Type="F" Min="-2.01901650e+00" Max="2.02343869e+00"/>
+    <Variable VarIndex="12" Expression="a13" Label="a13" Title="a13" Unit="" Internal="a13" Type="F" Min="-3.68934881e+19" Max="3.68934881e+19"/>
+    <Variable VarIndex="13" Expression="a14" Label="a14" Title="a14" Unit="" Internal="a14" Type="F" Min="-3.05427694e+00" Max="3.04666376e+00"/>
+    <Variable VarIndex="14" Expression="a15" Label="a15" Title="a15" Unit="" Internal="a15" Type="F" Min="-3.68934881e+19" Max="3.68934881e+19"/>
+    <Variable VarIndex="15" Expression="a16" Label="a16" Title="a16" Unit="" Internal="a16" Type="F" Min="-2.15273094e+00" Max="1.92299926e+00"/>
+  </Variables>
+  <Spectators NSpec="0"/>
+  <Classes NClass="2">
+    <Class Name="Signal" Index="0"/>
+    <Class Name="Background" Index="1"/>
+  </Classes>
+  <Transformations NTransformations="0"/>
+  <MVAPdfs>
+    <PDF Name="Fisher_PDFSig" MinNSmooth="10" MaxNSmooth="10" InterpolMethod="2" KDE_type="1" KDE_iter="1" KDE_border="1" KDE_finefactor="1.0000000000000000e+00">
+      <Histogram Name="Fisher_tr_S_original" NBins="50" XMin="-1.0420038700103760e+00" XMax="1.0752094984054565e+00" HasEquidistantBins="1">
+        0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00 2.32623597e-03 4.18722475e-02 1.27942979e-01 2.88453261e-01 6.18778769e-01 1.06774231e+00 1.48879102e+00 1.83772642e+00 1.76328687e+00 1.78422299e+00 1.39341535e+00 1.03982748e+00 6.11800061e-01 2.30297362e-01 9.30494390e-02 3.48935396e-02 2.55885957e-02 7.44395512e-02 1.97730058e-01 5.21076858e-01 8.93274614e-01 1.33060698e+00 1.65860625e+00 1.89355608e+00 1.76328687e+00 1.33525945e+00 9.49104278e-01 4.21048711e-01 1.20964271e-01 6.97870792e-03 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00 
+      </Histogram>
+    </PDF>
+    <PDF Name="Fisher_PDFBkg" MinNSmooth="10" MaxNSmooth="10" InterpolMethod="2" KDE_type="1" KDE_iter="1" KDE_border="1" KDE_finefactor="1.0000000000000000e+00">
+      <Histogram Name="Fisher_tr_B_original" NBins="50" XMin="-1.0420038700103760e+00" XMax="1.0752094984054565e+00" HasEquidistantBins="1">
+        6.97939541e-03 1.62852560e-02 1.39587908e-02 3.02440468e-02 4.65293028e-02 6.04880936e-02 1.13996792e-01 3.04766933e-01 4.39701911e-01 7.18877728e-01 1.29584108e+00 1.91468081e+00 2.33577100e+00 2.51490881e+00 2.27528290e+00 1.58664922e+00 8.67771496e-01 6.37451448e-01 4.25743120e-01 3.76887352e-01 2.14034793e-01 1.97749537e-01 1.76811350e-01 1.58199629e-01 2.67543491e-01 4.14110795e-01 5.42066377e-01 6.70021960e-01 6.81654285e-01 8.02630473e-01 7.21204193e-01 7.56101170e-01 6.11860331e-01 4.14110795e-01 1.95423072e-01 1.07017396e-01 7.44468844e-02 2.32646514e-02 1.39587908e-02 2.32646514e-03 2.55911165e-02 4.18763725e-02 7.44468844e-02 7.21204193e-02 6.04880936e-02 1.23302652e-01 7.21204193e-02 7.21204193e-02 3.25705119e-02 1.39587908e-02 
+      </Histogram>
+    </PDF>
+  </MVAPdfs>
+  <Weights NCoeff="17">
+    <Coefficient Index="0" Value="-4.9125670483483699e+00"/>
+    <Coefficient Index="1" Value="-2.7992655794142243e-22"/>
+    <Coefficient Index="2" Value="2.8068699312081939e+00"/>
+    <Coefficient Index="3" Value="-1.7505995072583925e-22"/>
+    <Coefficient Index="4" Value="-8.8680269417014984e-02"/>
+    <Coefficient Index="5" Value="3.2090746086435581e-22"/>
+    <Coefficient Index="6" Value="4.1693418457213662e-03"/>
+    <Coefficient Index="7" Value="-3.4188584651917253e-22"/>
+    <Coefficient Index="8" Value="2.0848568032980436e-01"/>
+    <Coefficient Index="9" Value="-8.4896994848788776e-24"/>
+    <Coefficient Index="10" Value="-4.1109305222492322e-02"/>
+    <Coefficient Index="11" Value="-3.0159461757540528e-22"/>
+    <Coefficient Index="12" Value="-7.0604074860897870e-02"/>
+    <Coefficient Index="13" Value="4.2670290095211610e-22"/>
+    <Coefficient Index="14" Value="2.7875772972404986e-03"/>
+    <Coefficient Index="15" Value="1.4215706053334852e-22"/>
+    <Coefficient Index="16" Value="-1.3053147447639092e-02"/>
+  </Weights>
+</MethodSetup>

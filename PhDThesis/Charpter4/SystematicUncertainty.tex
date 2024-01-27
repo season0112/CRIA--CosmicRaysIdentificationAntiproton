@@ -1,0 +1,128 @@
+
+\section{Systematic Uncertainties} \label{SystematicUncertaintiesSection}
+
+%% 4.10 The systematic uncertainty 
+In this section, the systematic uncertainties are discussed. Due to the different template fit methods used in the three different rigidity ranges (low, intermediate, high), the systematic uncertainties are discussed separately for each rigidity range. \par
+
+The antiproton to proton flux ratio is calculated according to equation \ref{PbarOverProtonRatioEquation}. There are two components in this equation: Number of events $N$ and effective acceptance $A$. These components consist the sources of the systematic uncertainties on the flux ratio. \par
+
+\subsection{Time-averaged analysis}
+%% 4.10.1. Due to Acceptance
+\subsection*{Systematic uncertainty from Effective Acceptance}
+The first source of systematic uncertainty is the effective acceptance. Since the effective acceptance data/MC correction cancels out, this systematic uncertainty is determined completely by the MC simulation. As the interaction cross sections of proton and antiproton are different, their effective acceptances differ too. Since the antiproton cross section measurement has much more uncertainty than proton cross section measurement, therefore is the dominant impact factor in the effective acceptance systematic uncertainty. Two dedicated antiproton MC simulation samples are generated to estimate the asymmetry of the effective acceptances. In these two antiproton MC samples, the antiproton interaction cross sections are set to nominal $\pm10\%$,  which is determined by the antiproton cross section measurements data. In figure \ref{EffectiveAcceptanceRatioWithCrossSectionVariation}, the uncertainty band shows how the effective acceptance ratio changed by varying $10\%$ of the antiproton cross section. This is the systematic uncertainty of effective acceptance. In figure \ref{SysErrFromAcceptance}, the obtained systematic uncertainty as a function of the rigidity is shown.  \par  
+
+\begin{figure}[htpb]
+\includegraphics[width=1.0\textwidth, height=0.34\textheight]{Figures/chapter4/SystematicError/Acceptance_SystemError/{EffectiveAcceptanceRatio_B1042}.pdf}
+\caption[Effective acceptance ratio with antiproton cross sections varied by $\pm10\%$. ]{Proton over antiproton effective acceptance ratio with antiproton cross sections varied by $\pm10\%$. The red points are the effective acceptance ratio obtained with nominal antiproton cross section, the yellow band shows the uncertainty due to the antiproton cross section uncertainty of $10\%$.}   
+\label{EffectiveAcceptanceRatioWithCrossSectionVariation}
+\end{figure}
+
+\begin{figure}[htpb]
+\includegraphics[width=1.0\textwidth, height=0.34\textheight]{Figures/chapter4/SystematicError/Acceptance_SystemError/{SysRelErr_ACC_pass78}.pdf}
+\caption[The systematic uncertainty from acceptance.]{The relative systematic uncertainty of the antiproton to proton flux ratio from acceptance.}
+\label{SysErrFromAcceptance}
+\end{figure}
+
+%% 4.10.2. Due to event number
+\subsection*{Systematic uncertainty from Event Numbers}
+The second source of systematic uncertainty is the number of events. In the different rigidity ranges, the antiproton number of signal events is determined by different template fit methods given the different kinds of backgrounds relevant to each range. Therefore, the systematic uncertainty on the number of events has to be calculated separately for each rigidity range. \par
+
+% 4.10.2.1 Low And Intermediate Range
+In the low rigidity range, the antiproton signal is derived from a 2D template fit in 1/$\beta_{\rm{TOF}}$ and $\Lambda_\mathrm{TRD}$ as shown in figure \ref{LowRangeFitPlot}. A variation of the template fit range is used to estimate the template fit result. As introduced in Section \ref{TempalteFitSection}, the template fit result at 90\% signal efficiency is used in the final antiproton to proton flux ratio. To estimate the systematic uncertainty, the template fit is performed 342 times with signal efficiency from 40\% to 95\%. For the first five rigidity bins, the signal efficiency range starts from 65\% due to low statistics. Then the RMS of the results distribution is chosen as the systematic error in each rigidity bin. \par
+
+In the intermediate rigidity range, the same logic to calculate the systematic uncertainty is used, but the difference is that the template fit in this range is a 1D template fit in $\Lambda_\mathrm{TRD}$. So in this range, the template fit is performed while varying the signal efficiency from 60\% to 100\%. \par
+
+\begin{figure}[hptb]
+    \centering
+    \subfigure[]{
+        \includegraphics[width=0.49\textwidth, height=0.25\textheight, trim=0cm 0cm 1.2cm 0cm, clip]{Figures/chapter4/SystematicError/FitRange_SystemError/{Ratio_vs_SignalEff_low_2.15_2.4_TimeAveraged_None_0}.pdf} 
+        \label{RatoDistributions_SysErr}
+    }\hspace{-10mm} 
+    \subfigure[]{
+	\includegraphics[width=0.49\textwidth, height=0.25\textheight, trim=0.7cm 0.6cm 0 0, clip]{Figures/chapter4/SystematicError/FitRange_SystemError/{RMS_low_2.15_2.4_TimeAveraged_None_0_LogY}.pdf}
+	\label{RMS_SysErr} 
+    }
+    \caption[The template fit results in 2.15 to 2.4 GV while varying the signal efficiency.]{The template fit results for the antiproton to proton ratio in the rigidity bin from 2.15 to 2.4 GV while varying the signal efficiency from 40\% to 95\%. a) The template fit result distribution as a function of signal efficiency. b) The template fit result histogram. The RMS of the histogram is used as the systematic uncertainty.}      
+    \label{ExampleSysErrDuetoFitRange}
+\end{figure}
+
+\begin{figure}[hptb]
+\includegraphics[width=1.0\textwidth, height=0.34\textheight]{Figures/chapter4/SystematicError/FitRange_SystemError/{SysRelErr_FitRange_pass78}.pdf}
+\caption[The systematic uncertainty of the antiproton to proton flux ratio from the template fit range.]{The relative systematic uncertainty of the antiproton to proton flux ratio from the template fit range.}
+\label{SysErrFromTemplateFitRange}
+\end{figure}
+
+In figure \ref{ExampleSysErrDuetoFitRange}, an example of the template fit results while varying the signal efficiency is shown. The rigidity bin is from 2.15 to 2.4 GV at the low rigidity range, and the RMS of the results is used as the systematic error in this bin.
+
+In figure \ref{SysErrFromTemplateFitRange}, the systematic uncertainty from the template fit range is shown.  \par
+
+
+% 4.10.2.2 High Range
+In the high rigidity range, the charge confused proton background rises dramatically with increasing rigidity. The template of the charge confused protons, which is obtained from proton MC, becomes the primary source of systematic uncertainty. \par
+
+To estimate the systematic uncertainty due to the charge confused protons, the charge confusion level (CCLevel) between MC and ISS data is used. The CCLevel is defined as follow: 
+
+\begin{equation}
+{\rm{CCLevel}} = \frac{N_{\rm{CC Protons}}}{N_{\rm{CC Protons}}+N_{\rm{Protons}}} 
+\end{equation}
+where $N_{\rm{Protons}}$ is the number of charge correct protons and $N_{\rm{CC Protons}}$ is the number of charge confused protons. 
+
+In figure \ref{CCLevelInMCandData}, the calculated CCLevels in the MC and the data are given. Similar to performed template fit, an additional cut on $\Lambda_\mathrm{CC}$ = 0.2 is applied in this plot. The CCLevel in the MC can be calculated directly by selecting the positive and negative rigidity. For CCLevel in the data, since it is impossible to extract charge confused protons from data directly, the number of charge confused protons from the template fit result is used to calculate the CCLevel.  \par
+
+In figure \ref{chargeconfusionlevelratio}, the ISS data/MC CCLevel ratio is shown. The uncertainty band is 68\% confidence interval with a bump below 240 GV to include more points. According to the definition of the CCLevel and considering that the number of protons is much larger than the number of charge confused protons, the uncertainty in CCLevel can transfer to the uncertainty of the number of charge confused protons. For the template fit at the high rigidity range described in Section \ref{TempalteFitSection}, the number of charge confused protons can be obtained. Then the template fit is repeated again with the fixed number of charge confused protons from the first template fit result plus its uncertainty. The difference between the first template fit result and the second repeated template fit results is used as the systematic uncertainty from the charge confusion.  \par
+%The uncertainty band is derived with 68\% C.L. and used as the variation of the CCLevel. 
+
+
+\begin{figure}[htpb]
+\includegraphics[width=1.0\textwidth, height=0.40\textheight]{Figures/chapter4/SystematicError/CC_SystemError/{CCLevel_Pattern_0_VGG16NN_CCcut_TF_0.20_525version_LogY}.pdf}
+\caption[Charge confusion level in MC and data.]{Charge confusion level in MC and data. $\Lambda_\mathrm{CC}=0.2$ is applied for this plot.}
+\label{CCLevelInMCandData}
+\end{figure}
+
+\begin{figure}[htpb]
+\includegraphics[width=1.0\textwidth, height=0.40\textheight]{Figures/chapter4/SystematicError/CC_SystemError/{UncertaintyBand_CCLevel_Option4.3_Pattern_0_VGG16NN_CCcut_TF_0.20_525version_LinearX_ScalerBoolForPlot_True}.pdf}
+%\caption[Data/MC charge confusion level ratio.]{ISS data/MC charge confusion level ratio. The yellow band indicates the 68\% confidence interval and the red dashed line is the average of the ratio points, which is very close to one.}
+%\caption[Data/MC charge confusion level ratio.]{ISS data/MC charge confusion level ratio. The yellow band includes at least 67\% points and the red dashed line is the average of the ratio points, which is very close to one.}
+\caption[Data/MC charge confusion level ratio.]{ISS data/MC charge confusion level ratio. The uncertainty band is 68\% confidence interval with a bump below 240 GV to include more points.}
+\label{chargeconfusionlevelratio}
+\end{figure}
+
+In figure \ref{SysErrFromChargeConfusion} the systematic error due to the charge confusion is shown.
+
+\begin{figure}[htpb]
+\includegraphics[width=1.0\textwidth, height=0.34\textheight]{Figures/chapter4/SystematicError/CC_SystemError/{SysRelErr_CC_pass78_LogX}.pdf}
+\caption[The relative systematic uncertainty from the charge confusion.]{The relative systematic uncertainty of the antiproton to proton flux ratio from the charge confusion.}
+\label{SysErrFromChargeConfusion}
+\end{figure}
+
+% 2.3 Total systematic error
+The different systematic uncertainties are added quadratically to arrive at the total systematic uncertainty. In figure \ref{SysErrTotal}, the total systematic uncertainty of the antiproton to proton flux ratio is presented.
+
+\begin{figure}[htpb]
+\includegraphics[width=1.0\textwidth, height=0.34\textheight]{Figures/chapter4/SystematicError/TotalSystemError/{SysRelErr_pass78}.pdf}
+\caption[The relative total systematic error of the antiproton to proton flux ratio.]{The relative total systematic uncertainty of the antiproton to proton flux ratio.}
+\label{SysErrTotal}
+\end{figure}
+
+%% Other systematic errors in PRL but not in this work.
+There are some other systematic uncertainties studied in previous AMS-02 antiproton publication \cite{AMS02AntiprotonPRL2016} but not mentioned in this work, because they only contribute small uncertainties compared to the sources studied in this work. For example, the geomagnetic cutoff safe factor is set to be 1.2 in this work, and varying this value leads to a systematic uncertainty. This effect has been studied in the previous publication and contributes only 1\% at 1 GV and becomes negligible above 2 GV. Another systematic uncertainty is from the absolute rigidity scale. Due to the residual misalignment of the tracker planes, the measured rigidity could be shifted. This effect is negligible below 10 GV and gradually up to 2\% at the highest rigidity bin.
+
+%% Total error
+The statistical uncertainty is directly taken from template fit in different rigidity ranges. The total uncertainty of the antiproton to proton flux ratio is calculated by adding in quadrature the statistical and the total systematic error. \par 
+
+
+%% Time-dependent Error
+\subsection{Time-dependent analysis}
+For the time-dependent analysis, the same procedure is followed. Since the time-dependent analysis is only performed in the rigidity range below 20 GV, the systematic uncertainties are calculated only in the low and intermediate rigidity ranges. \par
+
+In the low and intermediate rigidity range, the systematic uncertainties are from the acceptance and fit range. Since the acceptance is taken from MC, therefore it is time-independent. The template fit is performed in each six Bartels Rotation time bin so it is time-dependent. In figure \ref{TimeDependentSystematicError}, the systematic error in the rigidity bin from 1.92 to 2.4 GV in six Bartels Rotation time bin is shown as an example. \par 
+
+\begin{figure}[t]
+\includegraphics[width=1.0\textwidth, height=0.40\textheight]{Figures/chapter4/SystematicError/TimeDependent/{RelativeBreakDownOfTotalSysError_6Bartels_binmerge_2_1.92_2.4}.pdf}
+\caption[The systematic uncertainty in 1.92 to 2.4 GV in six Bartels Rotation.]{The contributions of different sources of the systematic uncertainty and the relative total systematic uncertainty of the antiproton to proton flux ratio in the rigidity bin of 1.92 to 2.4 GV in six Bartels Rotation time bin.}  
+\label{TimeDependentSystematicError}
+\end{figure}
+
+
+
+

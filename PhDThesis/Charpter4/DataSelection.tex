@@ -1,0 +1,293 @@
+
+\section{Data Selection} \label{DataSelectionSection}
+
+% SubSection 1: General Description 
+\subsection{AMS-02 Data and Monte Carlo Simulation}
+
+%% ISS data
+This section provides information on the data used in this analysis and presents the complete list of cuts and selections. In this analysis, the AMS-02 experiment data has been collected from May 20th 2011 to May 3rd 2021. Collected raw data need some calibration and alignment work and then can be reconstructed via the AMS-02 official software (named gbatch), resulting in the analysis data stored in ROOT files. The ROOT data analysis format is developed at CERN and it is dedicated for High energy particle physics analysis \cite{CERNROOTPaper}. Furthermore, a software package developed in Aachen called ACSoft is used to further process and store the data in a higher-level structure called ACQT \cite{BastianPhDPaper}. The analysis in this thesis is based on the so-called pass7 version of data (reconstructed via gbatch in version B1130). \par
+
+%% Rigidity Bins 
+The rigidity binning used in this analysis is the same as the one used in the previous AMS-02 proton analysis \cite{AMS02ProtonPaper}, which is determined by the rigidity resolution. At the rigidity regions higher than 80.5 GV, the rigidity bins are merged in every two bins to increase antiproton statistics.  \par
+
+%% ISS data for Time Dependent Analysis  (Bartels Rotations)
+%The sun is not a solid body but is made of gas plasma. Due to the solar rotations, different latitudes would show different rotation periods. From the view of the Earth, the solar rotations can be quantified with the Bartels Rotation Numbers. One Bartels Rotation Number is equal to exactly 27 days, close to the synodic rotation period \cite{BartelsRotationBook}. The counting of the Bartels Rotations started on February 8th 1832, a day that was arbitrarily assigned by Julius Bartels.   \par
+
+For the time-dependent analysis, the collected ISS data is divided into six Bartels Rotations time bins. A Bartels Rotation is exactly 27 days, close to the synodic rotation period of the Sun. Because of the rigidity cutoff, the statistics in the low rigidity range in each time interval is limited. Therefore, the rigidity bins are also merged in every two original time-averaged rigidity bins in time-dependent antiproton analysis. The data collection used in this thesis started in May 2011, which corresponds to the Bartels Rotation 2426, and ended in May 2021, at the Bartels Rotation 2561. In total, the data can be divided into 23 intervals of six Bartels Rotations each though the last time bin has less data than the full six Bartels Rotations.  \par
+
+%% TTCS 
+Due to the upgrade of the cooling system of the AMS silicon tracker that took place from Nov 2019 to Jan 2020, the operation mode frequently changed during some periods as the cooling system pump had to be switched off. The data collected during these time periods is excluded and not used in this analysis. \par
+
+%% MC data 
+To validate the sub-detector's performance and study the detector's operation, an extensive set of MC simulations has been produced by the AMS-02 collaboration with the help of the Geant4 framework \cite{GEANT4Paper1, GEANT4Paper2}. The Geant4 is a software toolkit that simulates the passage of particles through matter. The interactions of the cosmic ray particles with all the AMS-02 sub-detectors and their support structure can be studied with this toolkit. By comparing the data distributions for different variables between MC and ISS data, the sub-detector's response to different cosmic rays can be systematically studied. \par   
+
+
+%% comment: all the MC datasets used in this analysis. 
+\begin{comment}  	
+
+1. For CC training and CCProton Template:
+B1042_pr.pl1.flux.l1a9.2016000_7.6_all
+B1042_pr.pl1.flux.l1o9.2016000_7.6_all
+
+2. For acceptance:
+Proton:
+B1042_pr.pl1.1800_7.6_all
+Antiproton:
+B1042_antipr.pl1.1800_7.6_all
+B1220_antipr.pl1ph.021000.qgsp_bic_ams.plus10_7.8_all
+B1220_antipr.pl1ph.021000.qgsp_bic_ams_7.8_all		
+B1220_antipr.pl1ph.021000.qgsp_bic_ams.minus10_7.8_all	
+
+3. Electron:
+B1091_el.pl1.0_25_2000_7.6_all_merged	
+B1091_el.pl1.0_25200_7.6_all		
+B1091_el.pl1.2002000_7.6_all	
+
+4. Data:
+B1130_pass7	
+
+others:	
+B1220_pr.pl1ph.021000_7.8_all	
+B1220_pr.pl1phpsa.0550.4_00_7.8_all	
+B1220_pr.pl1phpsa.l19.5016000.4_00_7.8_merged 
+B1220_pr.pl1phpsa.l1o9.flux.2016000.4_00_7.8_all
+B1200_el.pl1.120_7.8_all	
+
+\end{comment}		
+	
+%% MC data Usage: 1. CC estimator.  2. systematic error of acceptance 3. acceptance
+%In this thesis, the MC datasets used are for protons, antiprotons, and electrons. 
+In this thesis, the used MC datasets are:
+\begin{itemize}
+\item B1042 Protons MC with generated momentum from 20 to 16000 GeV
+\item B1042 Protons MC with generated momentum from 1 to 800 GeV
+\item B1042 Antiprotons MC with generated momentum from 1 to 800 GeV
+\item B1220 Antiprotons MC with generated momentum from 0.2 to 1000 GeV 
+\item B1091 Electrons MC with generated momentum from 0.25 to 200 GeV
+\item B1091 Electrons MC with generated momentum from 200 to 2000 GeV
+\end{itemize}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.0\textwidth]{Figures/chapter4/DataSelection/{B1042_antipr.pl1.1800_7.6_all_mc_iss_ratio}.pdf}
+\caption[The antiproton statistics comparison between MC and ISS data.]{The statistics comparison between antiproton numbers from MC simulation and antiproton events from ISS data. The jumps in the ISS data are due to the different selections in different rigidity ranges. The statistics of antiproton MC is at least ten times larger than the antiproton events from ISS data.}
+\label{MCISSStatisticsCompare}
+\end{figure}
+
+%657: discuss the jumps in the spectral shapes
+
+In figure \ref{MCISSStatisticsCompare}, the statistics of antiproton MC simulation and the antiproton events from the ISS data (which will be given in the following sections) are shown. The antiproton MC statistics is at least ten times larger than the antiproton events determined from the ISS data.        \par
+
+Different MC datasets are generated in different momentum ranges for various purposes. For example, one of the main purposes of using MC proton data in this analysis is to study the proton charge confusion events, which are proton events but measured with the wrong rigidity sign. The reasons are finite tracker rigidity resolution and the interactions with the sub-detectors \cite{ChargeConfusionReasonsAndTrackerResolutionPaper}. By selecting the negative rigidity data samples from the proton MC dataset, the proton charge confusion events can be studied. This issue will be discussed in more detail in Section \ref{chargeconfusion}. The MC datasets are also used for other purposes like calculating effective acceptance and determining the systematic uncertainties due to acceptance, these will be shown in detail later in this chapter.    \par  
+
+%% MC data reweighting
+For the simulated MC events, the generated momentum spectrum does not perfectly match the real cosmic spectrum. This could introduce bias in some variable distributions in MC. In order to correct this, the weight of each event in a MC dataset has to be reassigned by making the flux computed from this MC dataset equal to a reference flux. For example, the AMS-02 published proton flux result \cite{AMS02ProtonPaper} is used as the reference flux for proton MC datasets. The acquired re-weighting factor will be used in filling variable histograms for further study.  \par  
+
+%\begin{equation}
+%w=\frac{\phi}{MC}
+%\end{equation}
+
+%Fabian:
+% To correct this, a weight is determined for each event such that a flux computed from the MC events is equal to a reference flux. In this analysis, a model for the electron flux is used as a reference (Appendix A.2) and the protons are assumed to follow a power law with a spectral index of γ = −2.7 and solar modulation calculated according to the force field approximation (equation 2.4) with a potential of φ = 500 MV.
+%Manbing:
+% To get a realistic distribution of MC data, reweighting of each event is applied. This is done using the flux spectrum measured by AMS [14] as a scaler. Figure 4.5 presents the lithium MC event weights as a function of the true rigidity.
+% With the weight factors, the MC rigidity spectrum has the same shape as the data sample.
+%Mine_old:
+%In order to correct this, the weights of MC events are reassigned by making the spectrum of MC simulation is same as the reference one. 
+
+
+%% Introducing data selection
+Up to May 2021, the AMS-02 experiment has collected more than 174 billion cosmic ray events. To select antiproton events from them, cuts and event selections are applied. There are two levels of selection; the first one is the so-called “Preselection” and the second one is the more refined “Selection”. In the next few subsections, the definition of all selections and their pass ratios will be given. The pass ratio is the event number passed in this cut to the total event number before applying the selector (a group of cuts at this level of selection) to which this cut belongs. \par 
+%676: the "pass ratio" is not well defined. What exactly is the denominator? Events before all cuts? After the previous cut? ...?
+
+%  SubSection 2. : Preselection
+\subsection{Preselection Cuts}
+The first level of cuts and selections is the preselection. The purpose is to discard data taken during bad sub-detectors operation conditions or have bad quality. These selections are general and applied before any cosmic ray component AMS-02 analyses. The preselection consists of two parts: data taking quality cuts and analysis data quality cuts. Each part is a selector. \par 
+
+%% 2.1 Preselection: data taking quality cuts
+Data taking quality cuts require all the sub-detectors running in nominal conditions, and the data taking conditions are normal. The first one excludes the period that any sub-detector operates under special conditions or undergoes testing. For example, the TRD gas refill procedure takes place once per month. In this period, the data taken is not included in this analysis. The second one requires that the data taking period is normal. For instance, if the ISS is in the SAA area, the data taken in this period is not included in this analysis. In summary, Table \ref{data taking quality cuts} shows the pass ratios of all the data taking quality cuts. \par
+%The pass ratio is defined as the ratio of event numbers passed in this cut to the total event numbers before applying the cuts in the list.
+
+
+\begin{table}[tp]
+\renewcommand\arraystretch{1.3}
+\caption{List of data taking quality cuts and their pass ratios}
+\label{data taking quality cuts}
+\begin{tabular}{l p{7.5cm}  c} 
+\hline
+Cuts & Description & Pass Ratio \\
+\hline
+
+\textbf{Bad Runs}                                &  Remove the events collected when the sub-detector is in unstable condition, for example the TRD gas refill period or when the DAQ was unavailable.                & 99.73 \% \\
+%RTI data Available                & RTI info available for second                                      & 100    \% \\
+%Most Events Triggered         & Most events in second triggered                                 & 100    \% \\
+\textbf{Second Within Run}                 & Remove the events collected without a run ID.            & 99.92  \% \\
+\textbf{Bad Reconstruction Period}     & Remove the events collected in low reconstruction efficiency. The number of reconstructed events over the trigger rate should be nominal, otherwise the reconstruction efficiency is very low.                            & 95.15  \%  \\
+\textbf{Bad Facing Angle}                    & Remove the events collected when the zenith angle of the ISS is larger than $40^{\circ}$.                              & 99.78  \% \\
+\textbf{No Missed Events}                   & Remove the seconds if there are more than 10\% events missing in this second. This situation could result from transferring problems in the DAQ boards or buffer overflows issues.                                                         &    99.91 \% \\
+\textbf{Bad Live Time}                         & Remove the seconds when the live time fraction (see Section \ref{MeasuringTimeSection}) < 0.5.        & 95.67  \% \\
+\textbf{Too Many Events In Second}   & Remove the seconds if it contains more than 1800 reconstructed events. The rejected events are mostly taken from the SAA area or near the pole regions.                     & 97.86  \% \\
+\textbf{Good Alignment}                      & Remove the seconds when the external tracker planes are not in good alignment. The shifts of the external tracker planes to be corrected are estimated by different AMS-02 groups and they should be consistent.                     & 99.86  \% \\
+\textbf{High TRD Occupancy Period}  & Remove the seconds when the TRD occupancy is very high, namely the mean number of recorded TRD hits per second is larger than 1000.                             & 97.80   \%  \\
+\textbf{No Hardware Errors}                & Remove the seconds when the hardware errors are detected, for example the bit-flips in the electronic boards.      & 99.91   \% \\
+%TrdCalibrationAvailable        & Full TRD Calibration available                                   & 100      \% \\
+\hline
+\end{tabular}
+\end{table}
+
+
+\begin{comment}  	
+Bad Runs 
+2. Nominal data taking period
+The AMS-02 collaboration keeps track of time intervals in which the detector was in an unstable condition, such as the first weeks of commissioning, all periods where the TRD gas system is refilled, when the DAQ was unavailable, etc. These so-called “bad runs” are excluded when analyzing the ISS data.
+
+Bad Reconstruction Period 
+1. Nominal reconstruction period
+The ratio of reconstructed particles over the trigger rate in each second should be nominal.
+Figure A.1 shows a plot of the trigger rate as function of the ratio: reconstructed particles over
+the trigger rate. The red dashed line y = 1600 · x separates the nominal reconstruction period 0.07
+from the non-nominal reconstruction period, where the reconstruction efficiency is low. All entries left of the line are rejected for further analysis.
+
+Bad Facing Angle
+4. Nominal ISS zenith angle
+The zenith angle of the ISS must be less than 40°. Periods when the ISS was rotated must be excluded for analysis.
+
+No Missed Events 
+5. No missed events
+If there are more than 10 \% of the events missing in a second, exclude the second for analysis. 
+There are rare reasons that can lead to missing events, for instance transfer problems in the DAQ boards, or buffer overflows on the data reduction boards.
+
+Bad Live Time
+8. Nominal live-time
+If the detector was busy for more than 50 \% in a second, reject the time period.
+
+Too Many Events In Second
+7. Too many events in second
+If the amount of reconstructed events exceeds 1800 in a second, reject the time period. Events in these conditions are mostly taken near the SAA [Kurnosova1962] or in the pole regions, where the detector is filled with low energy particles. These periods should be rejected.
+
+Good Alignment  
+6. Good tracker alignment
+The tracker alignment of the external tracker planes (Layer 1 and Layer 9) is performed independently by the Perugia and CIEMAT groups. Both alignment procedures should yield a similar set of alignment parameters for a given time period. Two important parameters are the shifts of the whole tracker plane with respect to the inner tracker: ∆X and ∆Y. If the ∆X or ∆Y in Layer 1 between the Perugia / CIEMAT method differs by more than 70 μm the time period is excluded. Likewise if the ∆X or ∆Y in Layer 9 differs by more than 100 μm the time period is excluded as well.
+
+High TRD Occupancy Period
+10. Nominal occupancy in TRD
+Usually, the mean number of hits recorded in the TRD in each second is ≈ 60. If the mean number of hits per second exceeds 1000, the second will be rejected. This happens frequently at the edges of the SAA or in the pole regions.
+
+No Hardware Errors  
+9. Nominal DAQ condition
+If hardware errors were detected in the second, reject it. Hardware errors might be bit-flips in the electronic boards, or duplicated events that got recorded, due to problems in the DAQ.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+My but not in Nico's:
+Second Within Run   
+
+Nico's but not in mine:
+%3. Nominal trigger performance
+%The amount of recorded events in each second of ISS data must be compatible with the expectation from the trigger rate: ftrigger/Nevents > 0.98
+\end{comment}  	
+
+
+
+
+%% 2.2 Preselection: analysis data quality cuts
+The data taking quality cuts ensure that the events selected were collected during normal operation time periods, but for analysis, further quality selections are needed to ensure the analysis based on these data is meaningful. The analysis data quality cuts are used to discard the bad quality collected data. In Table \ref{analysis data quality cuts}, the complete list of the analysis data quality cuts and their correspondent pass ratios are shown. The definitions of analysis data quality cuts are the following:  
+
+\begin{table}[ht]
+\renewcommand\arraystretch{1.3}
+\centering
+\caption{List of analysis data quality cuts and their pass ratios}
+\label{analysis data quality cuts}
+\begin{tabular}{lc}
+\hline
+Cuts  & Pass Ratio \\
+\hline
+% only high: TrackerTrackInEcalAcceptance
+% only low:  CutPhysicsTriggerChargedParticles, CutTofNumberOfLayers, CutRigidityAboveGeomagneticCutoff.  
+%Has at least one analysis particle                          & 99.95 \% \\
+%Trigger information available                                  & 99 \% \\
+%%%%Has TOF Beta Measurement                        & 68.02  \%  \\        (old, merged then)
+%%%%Particle is Downgoing                                   & 88.03 \%   \\        (old, merged then)
+\textbf{Particle is Downgoing}                                               & 59.84 \% \\
+%Has Tracker Track                                                    & XX \%\\
+%Has Tracker Track Fit                                               & 69.52 \% \\
+%HasTrackerTrackCoordinates                               & 100 \% \\
+\textbf{Has Hits in Central Inner Tracker}                              & 70.16 \% \\
+%Has charge measurement in inner Tracker             & 100 \% \\
+%Has TOF charge measurement                              & 100 \%\\
+\textbf{Has Single Tracker Track}                                        & 61.01 \% \\
+\textbf{Tracker Track Fit $\chi^2$ in X}                                       & 97.33 \% \\
+\textbf{Tracker Track Fit $\chi^2$ in Y}                                     & 90.64 \% \\
+\textbf{Has Hits in all four TOF Layers}                                   & 89.44 \% \\
+%Rigidity Above Geomagnetic Cutoff                    & XX \% \\
+\hline
+\end{tabular}
+\end{table}           
+
+\begin{itemize}
+%\item The \textbf{Has TOF Beta Measurement} requires that the TOF beta measurement is available. The TOF beta is used to separate antiproton signals and backgrounds in low rigidity ranges.
+%\item The \textbf{Particle is Downgoing} is the cut on particle going direction. By requiring TOF beta measurement is positive, the particle going from upper TOF to lower TOF is selected. 
+\item The \textbf{Particle is Downgoing} is the cut on the particle’s moving direction. By requiring that the TOF has $\beta$ measurement and the TOF $\beta$ to be positive, particles moving from the upper TOF to the lower TOF are selected. In this way, the particle's going direction from the top of the instrument to the bottom is achieved. 
+%\item The \textbf{Has Tracker Track Fit} is the cut on events that have fitted tracker tracks. 
+\item The \textbf{Has Hits in Central Inner Tracker} requires hits in the tracker layers 3 or 4, 5 or 6,  7 or 8. To have an accurate rigidity measurement, the tracker hits inside the magnet are necessary. Therefore the central inner tracker should have enough hits for the rigidity measurement.    
+\item The \textbf{Has Single Tracker Track} requires that for each event, only one reconstructed tracker track is found. To avoid multiple tracker tracks produced by interaction, this analysis only uses single tracker track events. 
+\item The \textbf{Tracker Track Fit $\chi^2$ in X} and \textbf{Tracker Track Fit $\chi^2$ in Y} are the cuts that require the $\chi^2$/ndf of the tracker track fit to be less than 10 in both X and Y directions. To ensure the events used for analysis have good tracker track fit quality and subsequently correctly reconstructed rigidity, the cuts on $\chi^2$/ndf in the bending and unbending directions are mandatory. 
+\item The \textbf{Has Hits in all four TOF Layers} requires that all the four TOF layers have hits. Since the TOF provides trigger and also the $\beta$ measurement, hits on all four TOF layers give a precise response of the TOF.
+\end{itemize}
+
+%  SubSection 3. : Selections
+\subsection{Selection Cuts}
+After the Preselection, a series of selection cuts relevant to the antiproton to proton ratio analysis are applied. These cuts are mainly used to select particles with charge equal to one (charge one particles) and ensure the good quality of the analysis events. The selection cuts and the pass ratios are presented in Table \ref{Quality cuts}. There are three selectors in this table: Tracker Charge, Upper and Lower TOF Charge, all the rest cuts in this table. The definitions of these cuts are the following: 
+
+%To have good quality analysis variables like particle charge or beta, the basic reconstruction of events needs to be done with the minimum response of sub-detectors. 
+\begin{table}[h]
+\renewcommand\arraystretch{1.3}
+\centering
+\caption{List of selection cuts and their pass ratios}
+\label{Quality cuts}
+\begin{tabular}{lc}
+\hline
+Cuts & Pass Ratio \\
+\hline
+\textbf{Tracker Charge}                                           &   87.16\%    \\
+%Tracker Track Fit Absolute Rigidity  (0.7 to18)     &   77.11\%    \\
+\textbf{Upper TOF Charge}                                     &    97.46\%   \\
+\textbf{Lower TOF Charge}                                     &    97.22\%   \\
+%Tof Inverse Beta  (0 to 3.334)                              &    100.00\% \\
+\textbf{TRD Number Of Raw Hits}                          &    98.89\%   \\
+\textbf{TRD Active Layers}                                      &    90.71\%   \\ 
+%Trd Vertices XZ  (0 to 2)                                      &    100.00\%  \\
+%Trd Vertices YZ  (0 to 2)                                      &    100.00\%  \\
+\textbf{Tracker Track In Trd Acceptance}                &     87.48\%   \\
+\textbf{TRD TOF Track Match XY}                          &     96.76\%   \\
+\hline
+\end{tabular}
+\end{table}  
+
+\begin{itemize}
+\item The \textbf{Tracker Charge} is the cut applied on the inner tracker charge $Q_{\rm{inner\; tracker}}$. With the cut of 0.7 < $Q_{\rm{inner\; tracker}}$ < 1.3, the charge one particle is selected from the tracker. The low rigidity analysis does not require any hits in the tracker layers L1 and L9. Therefore only the charge measurement in the inner tracker is guaranteed.   
+
+\item The \textbf{Upper TOF Charge} is the cut on the upper TOF charge $Q_{\rm{UppTOF}}$: 0 < $Q_{\rm{UppTOF}}$ < 1.5. The lower value is 0, which cuts away the badly charge reconstructed events, and the higher value is 1.5, which cuts away events with charge 2 or higher.
+
+\item The \textbf{Lower TOF Charge} is the cut on the lower TOF charge $Q_{\rm{LowTOF}}$: 0 < $Q_{\rm{LowTOF}}$ < 2. The lower limit is 0 and the higher limit is 2. Due to the possible interaction between the two TOF layers, the cut value on the lower TOF is wider than on the upper TOF. In figure \ref{LowerTOFChargeCutPlot}, the lower TOF charge distributions for ISS positive rigidity data and Proton MC in the rigidity bin of 0.7 to 18 GV are shown with the applied cut value. 
+
+\item The \textbf{TRD Number Of Raw Hits} is the cut on the TRD Number Of Raw Hits $N_{\rm{TRD\;raw\;hits}}$: 8 < $N_{\rm{TRD\;raw\;hits}}$ < 1000. To ensure a good reconstruction of TRD variables, cuts on the minimum number of TRD raw hits are necessary. 
+
+\item The \textbf{TRD Active Layers} is the cut on the TRD Active Layers $N_{\rm{TRD\;active\;layers}}$: 14 < $N_{\rm{TRD\;active\;layers}}$ < 20. To ensure a good TRD measurement of the event and construct the TRD Likelihood $\Lambda_\mathrm{TRD}$ (see Section \ref{TRDEstimatorSection}) precisely, a minimum of TRD active layers is required.    
+
+\item The \textbf{Tracker Track In Trd Acceptance} requires that the tracker track of the event is inside the TRD's geometrical acceptance. Therefore, the number of events with tracker tracks entering the detector from its side or are produced from interactions within the detector material can be reduced. 
+
+\item The \textbf{TRD TOF Track Match XY} requires that the TRD track match the TOF track in X and Y directions. This ensures that the TRD track and TOF track are consistent with each other and a clean traverse path is obtained.
+%the distance between the TRD track and the TOF track in X and Y directions is small. 
+
+\end{itemize}
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.0\textwidth, height=0.5\textheight]{Figures/chapter4/DataSelection/{Compare_LowerTofCharge_B1042_antipr.pl1.1800_7.6_all_Tree_negative_RemoveTOFChargeCut_AllCut}.pdf}
+\caption[Comparison of the lower TOF charge distributions for ISS and proton MC.]{Comparison of the lower TOF charge distributions for ISS positive rigidity data and proton MC in the rigidity bin of 0.7 to 18 GV. The vertical black dashed line denotes the cut value. Higher charge events are removed after the cut. There are some differences between the tails of the distributions of data and MC, but this have no impact on the analysis since the templates in the low and intermediate rigidity range are taken from data directly (see Section \ref{TempalteFitSection}).}
+\label{LowerTOFChargeCutPlot}
+
+\end{figure}
+
+
